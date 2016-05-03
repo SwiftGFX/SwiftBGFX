@@ -14,6 +14,30 @@ The examples are in a barely working state, to exercise the bindings, however th
 
 I also plan to use the Swift Package Manager and file bugs if there are any issues. Recently, support landed for [compiling C](http://ankit.im/swift/2016/04/06/compiling-and-interpolating-C-using-swift-package-manager/).
 
+
+Fetching
+--------
+
+```sh
+$ git clone --recursive https://github.com/stuartcarnie/SwiftBGFX.git
+```
+
+
+Building
+--------
+
+### OS X
+
+1. Build bgfx library
+
+```sh
+$ cd SwiftBGFX/3rdparty/bgfx
+$ make -j 8 osx-debug64
+```
+
+2. Open workspace and build / run example
+
+
 Examples
 --------
 
