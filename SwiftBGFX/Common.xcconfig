@@ -1,0 +1,16 @@
+//
+//  Common.xcconfig
+//  Examples
+//
+//  Created by Stuart Carnie on 5/3/16.
+//  Copyright © 2016 SGC. All rights reserved.
+//
+
+OTHER_BASE  = ../3rdparty
+BGFX_BUILD  = $(OTHER_BASE)/bgfx/.build/osx64_clang/bin
+BGFX_PATH   = $(OTHER_BASE)/bgfx/include
+BX_PATH     = $(OTHER_BASE)/bx/include
+
+HEADER_SEARCH_PATHS = $(inherited) $(BGFX_PATH) $(BX_PATH)
+CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
+LIBRARY_SEARCH_PATHS = $(inherited) $(BGFX_BUILD)

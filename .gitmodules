@@ -1,0 +1,6 @@
+[submodule "3rdparty/bx"]
+	path = 3rdparty/bx
+	url = git@github.com:bkaradzic/bx.git
+[submodule "3rdparty/bgfx"]
+	path = 3rdparty/bgfx
+	url = git@github.com:bkaradzic/bgfx.git

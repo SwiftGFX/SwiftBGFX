@@ -1,0 +1,9 @@
+//
+//  Release.xcconfig
+//  Examples
+//
+//  Created by Stuart Carnie on 5/3/16.
+//  Copyright © 2016 SGC. All rights reserved.
+//
+
+OTHER_LDFLAGS = -lbgfxRelease
