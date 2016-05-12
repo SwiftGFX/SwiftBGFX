@@ -4,3 +4,6 @@
 [submodule "3rdparty/bgfx"]
 	path = 3rdparty/bgfx
 	url = git@github.com:bkaradzic/bgfx.git
+[submodule "3rdparty/Math"]
+	path = 3rdparty/Math
+	url = https://github.com/SwiftGL/Math.git

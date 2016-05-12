@@ -89,6 +89,8 @@
 		05B1B6A51CD884AA00401D8C /* VertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744571CCAB06200E821CE /* VertexBuffer.swift */; };
 		05B1B6A61CD884AA00401D8C /* VertexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744581CCAB06200E821CE /* VertexLayout.swift */; };
 		05B1B6A71CD884AF00401D8C /* bgfx-helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D561CC6C18F005B38C5 /* bgfx-helper.c */; };
+		05EAF86D1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */; };
+		05EAF86E1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -162,6 +164,7 @@
 		05B1B6AA1CD8857000401D8C /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		05B1B6AB1CD885BA00401D8C /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		05B1B6AC1CD885C200401D8C /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSGLMath.a; path = ../3rdparty/Math/.build/debug/libSGLMath.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,7 @@
 				052744F81CCD66BC00E821CE /* QuartzCore.framework in Frameworks */,
 				052744FA1CCD66BC00E821CE /* Cocoa.framework in Frameworks */,
 				052744FB1CCD66BC00E821CE /* OpenGL.framework in Frameworks */,
+				05EAF86E1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */,
 				052744FC1CCD66BC00E821CE /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,6 +187,7 @@
 				055B3D4B1CC6B77B005B38C5 /* QuartzCore.framework in Frameworks */,
 				055B3D4D1CC6B77B005B38C5 /* Cocoa.framework in Frameworks */,
 				055B3D4E1CC6B77B005B38C5 /* OpenGL.framework in Frameworks */,
+				05EAF86D1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */,
 				055B3D4F1CC6B77B005B38C5 /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,6 +336,7 @@
 		058076C01CC2D09B00C43477 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */,
 				058076BE1CC2D09300C43477 /* QuartzCore.framework */,
 				058076B81CC2D01200C43477 /* Cocoa.framework */,
 				058076B61CC2D00400C43477 /* OpenGL.framework */,
