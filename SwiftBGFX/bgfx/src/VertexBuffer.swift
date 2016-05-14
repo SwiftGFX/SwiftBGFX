@@ -6,7 +6,7 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-public class VertexBuffer : CustomDebugStringConvertible {
+public class VertexBuffer {
     let handle: bgfx_vertex_buffer_handle_t
     
     public init(memory: MemoryBlock, layout: VertexLayout, flags: BufferFlags = [.None]) {
@@ -15,9 +15,5 @@ public class VertexBuffer : CustomDebugStringConvertible {
     
     deinit {
         bgfx_destroy_vertex_buffer(handle)
-    }
-    
-    public var debugDescription: String {
-        return "Handle \(handle)"
     }
 }

@@ -7,7 +7,7 @@
 //
 
 /// Represents a buffer that can contain indirect drawing commands created and processed entirely on the GPU
-public class IndirectBuffer : CustomDebugStringConvertible {
+public class IndirectBuffer {
     let handle: bgfx_indirect_buffer_handle_t
     
     public init(size: UInt32) {
@@ -16,9 +16,5 @@ public class IndirectBuffer : CustomDebugStringConvertible {
     
     deinit {
         bgfx_destroy_indirect_buffer(handle)
-    }
-    
-    public var debugDescription: String {
-        return "Handle \(handle)"
     }
 }

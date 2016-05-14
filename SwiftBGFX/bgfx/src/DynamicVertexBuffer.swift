@@ -7,7 +7,7 @@
 //
 
 /// Represents a dynamically updateable index buffer
-public class DynamicVertexBuffer : CustomDebugStringConvertible {
+public class DynamicVertexBuffer {
     let handle: bgfx_dynamic_vertex_buffer_handle_t
 
     /// Initializes a new instance
@@ -44,9 +44,5 @@ public class DynamicVertexBuffer : CustomDebugStringConvertible {
     
     deinit {
         bgfx_destroy_dynamic_vertex_buffer(handle)
-    }
-    
-    public var debugDescription: String {
-        return "Handle \(handle)"
     }
 }

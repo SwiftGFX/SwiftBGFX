@@ -7,7 +7,7 @@
 //
 
 /// Represents a static index buffer
-public class IndexBuffer : CustomDebugStringConvertible {
+public class IndexBuffer {
     let handle: bgfx_index_buffer_handle_t
     
     public init(memory: MemoryBlock, flags: BufferFlags = [.None]) {
@@ -16,9 +16,5 @@ public class IndexBuffer : CustomDebugStringConvertible {
     
     deinit {
         bgfx_destroy_index_buffer(handle)
-    }
-    
-    public var debugDescription: String {
-        return "Handle \(handle)"
     }
 }

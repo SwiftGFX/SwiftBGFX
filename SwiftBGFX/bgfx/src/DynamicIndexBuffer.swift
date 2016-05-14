@@ -7,7 +7,7 @@
 //
 
 /// Represents a dynamically updateable index buffer
-public class DynamicIndexBuffer : CustomDebugStringConvertible {
+public class DynamicIndexBuffer {
     let handle: bgfx_dynamic_index_buffer_handle_t
     
     public init(indexCount: UInt32, flags: BufferFlags = [.None]) {
@@ -30,9 +30,5 @@ public class DynamicIndexBuffer : CustomDebugStringConvertible {
     
     deinit {
         bgfx_destroy_dynamic_index_buffer(handle)
-    }
-    
-    public var debugDescription: String {
-        return "Handle \(handle)"
     }
 }

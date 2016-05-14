@@ -8,7 +8,7 @@
 
 
 /// Represents an occlusion query
-public class OcclusionQuery : CustomDebugStringConvertible {
+public class OcclusionQuery {
     let handle: bgfx_occlusion_query_handle_t
     
     /// Gets the result of the query
@@ -28,9 +28,5 @@ public class OcclusionQuery : CustomDebugStringConvertible {
     /// Sets the condition for which the query should check
     public func setCondition(visible: Bool) {
         bgfx_set_condition(handle, visible)
-    }
-    
-    public var debugDescription: String {
-        return "Handle \(handle)"
     }
 }
