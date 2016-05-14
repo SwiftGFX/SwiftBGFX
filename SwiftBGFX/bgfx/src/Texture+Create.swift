@@ -31,7 +31,6 @@ public extension Texture {
         return Texture(handle: handle, info: info)
     }
     
-    ///
     /// Creates a new 2D texture that scales with backbuffer size
     ///
     /// - parameters:
@@ -53,7 +52,6 @@ public extension Texture {
         return Texture(handle: handle, info: info)
     }
     
-    ///
     /// Creates a new texture from a file loaded in memory
     ///
     /// - parameters:

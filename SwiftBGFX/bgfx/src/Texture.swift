@@ -62,7 +62,6 @@ public final class Texture {
         self.info = info
     }
     
-    ///
     /// Updates the data in a 2D texture
     ///
     /// - parameters:
@@ -79,7 +78,6 @@ public final class Texture {
         bgfx_update_texture_2d(handle, mipLevel, x, y, width, height, memory.handle, pitch)
     }
     
-    ///
     /// Blits the contents of the texture to another texture
     ///
     /// - parameters:
@@ -102,7 +100,6 @@ public final class Texture {
         blit(viewId: viewId, dest: dest, destMip: 0, destX: destX, destY: destY, destZ: 0, srcMip: 0, srcX: srcX, srcY: srcY, srcZ: 0, width: width, height: height, depth: 0)
     }
     
-    ///
     /// Blits the contents of the texture to another texture
     ///
     /// - parameters:
@@ -130,8 +127,13 @@ public final class Texture {
         bgfx_blit(viewId, dest.handle, destMip, destX, destY, destZ, handle, srcMip, srcX, srcY, srcZ, width, height, depth)
     }
     
-    ///
     /// Reads the contents of the texture and stores them in memory pointed to by `data`
+    ///
+    /// - parameters:
+    ///
+    ///     - data: The destination for the read image data
+    ///
+    /// - remark: The texture must have been created with the `TextureFlags.ReadBack` flag
     ///
     public func read(data: UnsafeMutablePointer<Void>) {
         bgfx_read_texture(handle, data)

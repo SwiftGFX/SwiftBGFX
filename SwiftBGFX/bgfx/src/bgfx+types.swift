@@ -9,6 +9,9 @@
 /// Platform specific data, such as window handle and rendering context
 public typealias PlatformData = bgfx_platform_data_t
 
+/// Platform specific native window handle
+public typealias NativeWindowHandle = UnsafeMutablePointer<Void>
+
 /// Renderer statistics data
 public struct Stats {
 

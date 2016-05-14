@@ -156,7 +156,7 @@ public class bgfx {
     /// - parameter data: A collection of platform-specific data pointers
     ///
     /// - warning: Must be called before `initialize`
-    public static func setWindowHandle(handle: UnsafeMutablePointer<Void>) {
+    public static func setWindowHandle(handle: NativeWindowHandle) {
         var data = PlatformData()
         data.nwh = handle
         bgfx_set_platform_data(&data)
