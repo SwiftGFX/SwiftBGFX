@@ -91,6 +91,8 @@
 		05B1B6A71CD884AF00401D8C /* bgfx-helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D561CC6C18F005B38C5 /* bgfx-helper.c */; };
 		05EAF86D1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */; };
 		05EAF86E1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */; };
+		05EAF8701CE79ECF002DFF6E /* Texture+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */; };
+		05EAF8711CE79ECF002DFF6E /* Texture+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -165,6 +167,7 @@
 		05B1B6AB1CD885BA00401D8C /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		05B1B6AC1CD885C200401D8C /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSGLMath.a; path = ../3rdparty/Math/.build/debug/libSGLMath.a; sourceTree = "<group>"; };
+		05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Texture+Create.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +220,7 @@
 				052744821CCABAB900E821CE /* Shader.swift */,
 				052744D01CCD61E700E821CE /* StencilFlags.swift */,
 				052744561CCAB06200E821CE /* Texture.swift */,
+				05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */,
 				052745041CCE734E00E821CE /* Timing.swift */,
 				052744C41CCAD44500E821CE /* TransientIndexBuffer.swift */,
 				052744C71CCAE01600E821CE /* TransientVertexBuffer.swift */,
@@ -456,6 +460,7 @@
 				05B1B6971CD884AA00401D8C /* IndirectBuffer.swift in Sources */,
 				05B1B6901CD884AA00401D8C /* Callbacks.swift in Sources */,
 				05B1B69C1CD884AA00401D8C /* RenderState.swift in Sources */,
+				05EAF8711CE79ECF002DFF6E /* Texture+Create.swift in Sources */,
 				05B1B6931CD884AA00401D8C /* DynamicVertexBuffer.swift in Sources */,
 				05B1B6941CD884AA00401D8C /* enums.swift in Sources */,
 				05B1B6A41CD884AA00401D8C /* VectorTransforms.swift in Sources */,
@@ -500,6 +505,7 @@
 				055B3D5A1CC70135005B38C5 /* logo.swift in Sources */,
 				05B1B6761CD881E300401D8C /* Callbacks.swift in Sources */,
 				05B1B67A1CD881E300401D8C /* enums.swift in Sources */,
+				05EAF8701CE79ECF002DFF6E /* Texture+Create.swift in Sources */,
 				055B3D481CC6B77B005B38C5 /* entry+osx.swift in Sources */,
 				05B1B6731CD881E300401D8C /* bgfx+types.swift in Sources */,
 				05B1B6781CD881E300401D8C /* DynamicIndexBuffer.swift in Sources */,

@@ -238,7 +238,21 @@ extension bgfx {
         var p = proj
         bgfx_set_view_transform(viewId, &v, &p)
     }
-
+    
+    /// Set view view and projection matrices, all draw primitives in this view
+    /// will use these matrices.
+    ///
+    /// - Parameters:
+    ///
+    ///     - viewId: View id
+    ///     - view: View matrix
+    ///     - proj: Projection matrix
+    public static func setViewTransform(viewId: UInt8, view: [Float], proj: [Float]) {
+        var v = view
+        var p = proj
+        bgfx_set_view_transform(viewId, &v, &p)
+    }
+    
     /// Set view frame buffer
     ///
     /// - Parameters:
