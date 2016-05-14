@@ -9,5 +9,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "bgfx-swift"
+    name: "SwiftBGFX",
+    dependencies: [
+      .Package(url: "../../3rdparty/Math", majorVersion: 1),
+    ]
 )
+
+let ar = Product(name: "SwiftBGFX", type: .Library(.Static), modules: "SwiftBGFX")
+products.append(ar)
