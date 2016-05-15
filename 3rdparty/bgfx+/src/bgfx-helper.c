@@ -7,7 +7,7 @@
 //
 
 #include <stdint.h>
-#include "bgfx-bridging.h"
+#include <bgfx/bgfx+.h>
 
 void bgfx_dbg_text_print(uint16_t _x, uint16_t _y, uint8_t _attr, const char* _text)
 {

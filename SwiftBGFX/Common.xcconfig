@@ -7,13 +7,14 @@
 //
 
 OTHER_BASE  = $(SRCROOT)/../3rdparty
-BGFX_BUILD  = $(OTHER_BASE)/bgfx/.build/osx64_clang/bin
+BGFXP_BUILD = $(OTHER_BASE)/bgfx+/.build/osx64_clang/bin
 BGFX_PATH   = $(OTHER_BASE)/bgfx/include
+BGFXP_PATH  = $(OTHER_BASE)/bgfx+/include
 BX_PATH     = $(OTHER_BASE)/bx/include
 
 LIB_MATH    = $(OTHER_BASE)/Math/.build/debug
 
-HEADER_SEARCH_PATHS = $(inherited) $(BGFX_PATH) $(BX_PATH)
+HEADER_SEARCH_PATHS = $(inherited) $(BGFX_PATH) $(BX_PATH) $(BGFXP_PATH)
 CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
-LIBRARY_SEARCH_PATHS = $(inherited) $(BGFX_BUILD) $(LIB_MATH)
+LIBRARY_SEARCH_PATHS = $(inherited) $(BGFXP_BUILD) $(LIB_MATH)
 SWIFT_INCLUDE_PATHS = $(inherited) $(LIB_MATH)

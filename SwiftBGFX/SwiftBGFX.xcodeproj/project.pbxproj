@@ -31,7 +31,6 @@
 		055B3D4E1CC6B77B005B38C5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058076B61CC2D00400C43477 /* OpenGL.framework */; };
 		055B3D4F1CC6B77B005B38C5 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058076B41CC2CFF100C43477 /* Metal.framework */; };
 		055B3D551CC6B78C005B38C5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D3F1CC6B716005B38C5 /* main.swift */; };
-		055B3D581CC6C18F005B38C5 /* bgfx-helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D561CC6C18F005B38C5 /* bgfx-helper.c */; };
 		055B3D5A1CC70135005B38C5 /* logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D591CC70135005B38C5 /* logo.swift */; };
 		055B3D731CC70E8F005B38C5 /* queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D721CC70E8F005B38C5 /* queue.swift */; };
 		055B3D751CC73EE5005B38C5 /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D741CC73EE5005B38C5 /* event.swift */; };
@@ -88,7 +87,6 @@
 		05B1B6A41CD884AA00401D8C /* VectorTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052745071CCE7CCE00E821CE /* VectorTransforms.swift */; };
 		05B1B6A51CD884AA00401D8C /* VertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744571CCAB06200E821CE /* VertexBuffer.swift */; };
 		05B1B6A61CD884AA00401D8C /* VertexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744581CCAB06200E821CE /* VertexLayout.swift */; };
-		05B1B6A71CD884AF00401D8C /* bgfx-helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D561CC6C18F005B38C5 /* bgfx-helper.c */; };
 		05EAF86D1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */; };
 		05EAF86E1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */; };
 		05EAF8701CE79ECF002DFF6E /* Texture+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */; };
@@ -153,7 +151,6 @@
 		055B3D3C1CC6B670005B38C5 /* entry+osx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "entry+osx.swift"; sourceTree = "<group>"; };
 		055B3D3F1CC6B716005B38C5 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		055B3D541CC6B77B005B38C5 /* 00-helloworld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "00-helloworld"; sourceTree = BUILT_PRODUCTS_DIR; };
-		055B3D561CC6C18F005B38C5 /* bgfx-helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "bgfx-helper.c"; sourceTree = "<group>"; };
 		055B3D591CC70135005B38C5 /* logo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logo.swift; sourceTree = "<group>"; };
 		055B3D721CC70E8F005B38C5 /* queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = queue.swift; sourceTree = "<group>"; };
 		055B3D741CC73EE5005B38C5 /* event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = event.swift; sourceTree = "<group>"; };
@@ -332,7 +329,6 @@
 				0527444B1CCAAFE000E821CE /* src */,
 				052744481CCAA48400E821CE /* Package.swift */,
 				058076B11CC2B1B700C43477 /* bgfx-bridging.h */,
-				055B3D561CC6C18F005B38C5 /* bgfx-helper.c */,
 			);
 			path = bgfx;
 			sourceTree = "<group>";
@@ -446,7 +442,6 @@
 				052744E91CCD66BC00E821CE /* event.swift in Sources */,
 				05B1B6961CD884AA00401D8C /* IndexBuffer.swift in Sources */,
 				05B1B69A1CD884AA00401D8C /* OcclusionQuery.swift in Sources */,
-				05B1B6A71CD884AF00401D8C /* bgfx-helper.c in Sources */,
 				05B1B69D1CD884AA00401D8C /* Shader.swift in Sources */,
 				05B1B6A31CD884AA00401D8C /* Uniform.swift in Sources */,
 				052744EA1CCD66BC00E821CE /* logo.swift in Sources */,
@@ -487,7 +482,6 @@
 				055B3D431CC6B77B005B38C5 /* entry.swift in Sources */,
 				05B1B68C1CD881E300401D8C /* VertexLayout.swift in Sources */,
 				05B1B6821CD881E300401D8C /* RenderState.swift in Sources */,
-				055B3D581CC6C18F005B38C5 /* bgfx-helper.c in Sources */,
 				05B1B67F1CD881E300401D8C /* MemoryBlock.swift in Sources */,
 				05B1B6801CD881E300401D8C /* OcclusionQuery.swift in Sources */,
 				05B1B6811CD881E300401D8C /* Program.swift in Sources */,
