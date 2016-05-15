@@ -458,7 +458,7 @@ extension bgfx {
     ///
     ///     - buf: The instance data
     ///     - count: The number of entries to pull from the buffer
-    public static func setInstanceDataBuffer(buf: InstanceBuffer, count: UInt32 = UInt32.max) {
+    public static func setInstanceDataBuffer(buf: InstanceDataBuffer, count: UInt32 = UInt32.max) {
         bgfx_set_instance_data_buffer(buf.handle, count)
     }
 

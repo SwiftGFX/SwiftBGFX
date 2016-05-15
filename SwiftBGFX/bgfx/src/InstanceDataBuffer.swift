@@ -1,5 +1,5 @@
 //
-//  instancebuffer.swift
+//  InstanceDataBuffer.swift
 //  bgfx Test
 //
 //  Created by Stuart Carnie on 4/22/16.
@@ -7,7 +7,7 @@
 //
 
 /// Maintains a data buffer that contains instancing data
-public class InstanceBuffer {
+public class InstanceDataBuffer {
     let handle: UnsafePointer<bgfx_instance_data_buffer_t>
     
     /// A pointer that can be filled with instance data
@@ -27,8 +27,8 @@ public class InstanceBuffer {
     ///    - count: The number of elements in the buffer
     ///    - stride: The stride of each element
     ///
-    public init(count: UInt32, stride: UInt16) {
-        handle = bgfx_alloc_instance_data_buffer(count, stride)
+    public init(count: Int, stride: Int) {
+        handle = bgfx_alloc_instance_data_buffer(UInt32(count), UInt16(stride))
     }
     
     /// Checks for available space to allocate an instance buffer

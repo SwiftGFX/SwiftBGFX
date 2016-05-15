@@ -45,7 +45,7 @@
 		05B1B67B1CD881E300401D8C /* FrameBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744521CCAB06200E821CE /* FrameBuffer.swift */; };
 		05B1B67C1CD881E300401D8C /* IndexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744531CCAB06200E821CE /* IndexBuffer.swift */; };
 		05B1B67D1CD881E300401D8C /* IndirectBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744541CCAB06200E821CE /* IndirectBuffer.swift */; };
-		05B1B67E1CD881E300401D8C /* InstanceBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744791CCAB6F400E821CE /* InstanceBuffer.swift */; };
+		05B1B67E1CD881E300401D8C /* InstanceDataBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744791CCAB6F400E821CE /* InstanceDataBuffer.swift */; };
 		05B1B67F1CD881E300401D8C /* MemoryBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744551CCAB06200E821CE /* MemoryBlock.swift */; };
 		05B1B6801CD881E300401D8C /* OcclusionQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744731CCAB47400E821CE /* OcclusionQuery.swift */; };
 		05B1B6811CD881E300401D8C /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527447C1CCAB84D00E821CE /* Program.swift */; };
@@ -71,7 +71,7 @@
 		05B1B6951CD884AA00401D8C /* FrameBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744521CCAB06200E821CE /* FrameBuffer.swift */; };
 		05B1B6961CD884AA00401D8C /* IndexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744531CCAB06200E821CE /* IndexBuffer.swift */; };
 		05B1B6971CD884AA00401D8C /* IndirectBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744541CCAB06200E821CE /* IndirectBuffer.swift */; };
-		05B1B6981CD884AA00401D8C /* InstanceBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744791CCAB6F400E821CE /* InstanceBuffer.swift */; };
+		05B1B6981CD884AA00401D8C /* InstanceDataBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744791CCAB6F400E821CE /* InstanceDataBuffer.swift */; };
 		05B1B6991CD884AA00401D8C /* MemoryBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744551CCAB06200E821CE /* MemoryBlock.swift */; };
 		05B1B69A1CD884AA00401D8C /* OcclusionQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744731CCAB47400E821CE /* OcclusionQuery.swift */; };
 		05B1B69B1CD884AA00401D8C /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527447C1CCAB84D00E821CE /* Program.swift */; };
@@ -98,7 +98,7 @@
 		05EAF8811CE81C52002DFF6E /* TransientVertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744C71CCAE01600E821CE /* TransientVertexBuffer.swift */; };
 		05EAF8821CE81C52002DFF6E /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527447C1CCAB84D00E821CE /* Program.swift */; };
 		05EAF8831CE81C52002DFF6E /* entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D3A1CC6B4DC005B38C5 /* entry.swift */; };
-		05EAF8841CE81C52002DFF6E /* InstanceBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744791CCAB6F400E821CE /* InstanceBuffer.swift */; };
+		05EAF8841CE81C52002DFF6E /* InstanceDataBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744791CCAB6F400E821CE /* InstanceDataBuffer.swift */; };
 		05EAF8851CE81C52002DFF6E /* StencilFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744D01CCD61E700E821CE /* StencilFlags.swift */; };
 		05EAF8861CE81C52002DFF6E /* FrameBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744521CCAB06200E821CE /* FrameBuffer.swift */; };
 		05EAF8871CE81C52002DFF6E /* bgfx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744CA1CCAE28A00E821CE /* bgfx.swift */; };
@@ -179,7 +179,7 @@
 		052744581CCAB06200E821CE /* VertexLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VertexLayout.swift; sourceTree = "<group>"; };
 		052744731CCAB47400E821CE /* OcclusionQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OcclusionQuery.swift; sourceTree = "<group>"; };
 		052744761CCAB5E600E821CE /* DynamicVertexBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicVertexBuffer.swift; sourceTree = "<group>"; };
-		052744791CCAB6F400E821CE /* InstanceBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceBuffer.swift; sourceTree = "<group>"; };
+		052744791CCAB6F400E821CE /* InstanceDataBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceDataBuffer.swift; sourceTree = "<group>"; };
 		0527447C1CCAB84D00E821CE /* Program.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
 		0527447F1CCAB89900E821CE /* RenderState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderState.swift; sourceTree = "<group>"; };
 		052744821CCABAB900E821CE /* Shader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shader.swift; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 				052744521CCAB06200E821CE /* FrameBuffer.swift */,
 				052744531CCAB06200E821CE /* IndexBuffer.swift */,
 				052744541CCAB06200E821CE /* IndirectBuffer.swift */,
-				052744791CCAB6F400E821CE /* InstanceBuffer.swift */,
+				052744791CCAB6F400E821CE /* InstanceDataBuffer.swift */,
 				052744551CCAB06200E821CE /* MemoryBlock.swift */,
 				052744731CCAB47400E821CE /* OcclusionQuery.swift */,
 				0527447C1CCAB84D00E821CE /* Program.swift */,
@@ -541,7 +541,7 @@
 				05B1B6A21CD884AA00401D8C /* TransientVertexBuffer.swift in Sources */,
 				05B1B69B1CD884AA00401D8C /* Program.swift in Sources */,
 				052744E11CCD66BC00E821CE /* entry.swift in Sources */,
-				05B1B6981CD884AA00401D8C /* InstanceBuffer.swift in Sources */,
+				05B1B6981CD884AA00401D8C /* InstanceDataBuffer.swift in Sources */,
 				05B1B69E1CD884AA00401D8C /* StencilFlags.swift in Sources */,
 				05B1B6951CD884AA00401D8C /* FrameBuffer.swift in Sources */,
 				05B1B68E1CD884AA00401D8C /* bgfx.swift in Sources */,
@@ -609,7 +609,7 @@
 				055B3D481CC6B77B005B38C5 /* entry+osx.swift in Sources */,
 				05B1B6731CD881E300401D8C /* bgfx+types.swift in Sources */,
 				05B1B6781CD881E300401D8C /* DynamicIndexBuffer.swift in Sources */,
-				05B1B67E1CD881E300401D8C /* InstanceBuffer.swift in Sources */,
+				05B1B67E1CD881E300401D8C /* InstanceDataBuffer.swift in Sources */,
 				055B3D771CC7CBCF005B38C5 /* input.swift in Sources */,
 				05B1B6871CD881E300401D8C /* TransientIndexBuffer.swift in Sources */,
 			);
@@ -627,7 +627,7 @@
 				05EAF8811CE81C52002DFF6E /* TransientVertexBuffer.swift in Sources */,
 				05EAF8821CE81C52002DFF6E /* Program.swift in Sources */,
 				05EAF8831CE81C52002DFF6E /* entry.swift in Sources */,
-				05EAF8841CE81C52002DFF6E /* InstanceBuffer.swift in Sources */,
+				05EAF8841CE81C52002DFF6E /* InstanceDataBuffer.swift in Sources */,
 				05EAF8851CE81C52002DFF6E /* StencilFlags.swift in Sources */,
 				05EAF8861CE81C52002DFF6E /* FrameBuffer.swift in Sources */,
 				05EAF8871CE81C52002DFF6E /* bgfx.swift in Sources */,
