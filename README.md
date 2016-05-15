@@ -18,9 +18,7 @@ I also plan to use the Swift Package Manager and file bugs if there are any issu
 Fetching
 --------
 
-```sh
-$ git clone --recursive https://github.com/stuartcarnie/SwiftBGFX.git
-```
+    $ git clone --recursive https://github.com/stuartcarnie/SwiftBGFX.git
 
 
 Building
@@ -28,21 +26,25 @@ Building
 
 ### OS X
 
-1. Build bgfx library
+Build bgfx library
 
-```sh
-$ cd SwiftBGFX/3rdparty/bgfx
-$ make -j 8 osx-debug64
-```
+    $ cd SwiftBGFX/3rdparty/bgfx+
+    $ make -j 8 osx
 
-2. Open workspace and build / run example
 
+build Math package
+
+    $ cd SwiftBGFX/3rdparty/Math
+    $ swift build
+
+Open workspace and build / run example
 
 Examples
 --------
 
 * 00-helloworld
 * 01-cubes
+* 05-instancing
 
 **Note:**
 
