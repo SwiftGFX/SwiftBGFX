@@ -10,7 +10,6 @@
 		052744E11CCD66BC00E821CE /* entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D3A1CC6B4DC005B38C5 /* entry.swift */; };
 		052744E81CCD66BC00E821CE /* queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D721CC70E8F005B38C5 /* queue.swift */; };
 		052744E91CCD66BC00E821CE /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D741CC73EE5005B38C5 /* event.swift */; };
-		052744EA1CCD66BC00E821CE /* logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D591CC70135005B38C5 /* logo.swift */; };
 		052744F11CCD66BC00E821CE /* entry+osx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D3C1CC6B670005B38C5 /* entry+osx.swift */; };
 		052744F31CCD66BC00E821CE /* input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D761CC7CBCF005B38C5 /* input.swift */; };
 		052744F81CCD66BC00E821CE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058076BE1CC2D09300C43477 /* QuartzCore.framework */; };
@@ -91,6 +90,47 @@
 		05EAF86E1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */; };
 		05EAF8701CE79ECF002DFF6E /* Texture+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */; };
 		05EAF8711CE79ECF002DFF6E /* Texture+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */; };
+		05EAF87B1CE81C52002DFF6E /* Capabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527444F1CCAB06200E821CE /* Capabilities.swift */; };
+		05EAF87C1CE81C52002DFF6E /* Timing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052745041CCE734E00E821CE /* Timing.swift */; };
+		05EAF87E1CE81C52002DFF6E /* entry+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE8791CCF4630009923F4 /* entry+utils.swift */; };
+		05EAF87F1CE81C52002DFF6E /* bgfx+native.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527444D1CCAB06200E821CE /* bgfx+native.swift */; };
+		05EAF8801CE81C52002DFF6E /* io.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE86F1CCF1BA1009923F4 /* io.swift */; };
+		05EAF8811CE81C52002DFF6E /* TransientVertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744C71CCAE01600E821CE /* TransientVertexBuffer.swift */; };
+		05EAF8821CE81C52002DFF6E /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527447C1CCAB84D00E821CE /* Program.swift */; };
+		05EAF8831CE81C52002DFF6E /* entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D3A1CC6B4DC005B38C5 /* entry.swift */; };
+		05EAF8841CE81C52002DFF6E /* InstanceBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744791CCAB6F400E821CE /* InstanceBuffer.swift */; };
+		05EAF8851CE81C52002DFF6E /* StencilFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744D01CCD61E700E821CE /* StencilFlags.swift */; };
+		05EAF8861CE81C52002DFF6E /* FrameBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744521CCAB06200E821CE /* FrameBuffer.swift */; };
+		05EAF8871CE81C52002DFF6E /* bgfx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744CA1CCAE28A00E821CE /* bgfx.swift */; };
+		05EAF8881CE81C52002DFF6E /* queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D721CC70E8F005B38C5 /* queue.swift */; };
+		05EAF8891CE81C52002DFF6E /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D741CC73EE5005B38C5 /* event.swift */; };
+		05EAF88A1CE81C52002DFF6E /* IndexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744531CCAB06200E821CE /* IndexBuffer.swift */; };
+		05EAF88B1CE81C52002DFF6E /* OcclusionQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744731CCAB47400E821CE /* OcclusionQuery.swift */; };
+		05EAF88C1CE81C52002DFF6E /* Shader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744821CCABAB900E821CE /* Shader.swift */; };
+		05EAF88D1CE81C52002DFF6E /* Uniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744851CCABACC00E821CE /* Uniform.swift */; };
+		05EAF88F1CE81C52002DFF6E /* DynamicIndexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744501CCAB06200E821CE /* DynamicIndexBuffer.swift */; };
+		05EAF8901CE81C52002DFF6E /* TransientIndexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744C41CCAD44500E821CE /* TransientIndexBuffer.swift */; };
+		05EAF8911CE81C52002DFF6E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE8751CCF1D87009923F4 /* File.swift */; };
+		05EAF8921CE81C52002DFF6E /* VertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744571CCAB06200E821CE /* VertexBuffer.swift */; };
+		05EAF8931CE81C52002DFF6E /* Texture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744561CCAB06200E821CE /* Texture.swift */; };
+		05EAF8941CE81C52002DFF6E /* entry+osx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D3C1CC6B670005B38C5 /* entry+osx.swift */; };
+		05EAF8951CE81C52002DFF6E /* bgfx+types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527444E1CCAB06200E821CE /* bgfx+types.swift */; };
+		05EAF8961CE81C52002DFF6E /* IndirectBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744541CCAB06200E821CE /* IndirectBuffer.swift */; };
+		05EAF8971CE81C52002DFF6E /* Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744CD1CCBCF2E00E821CE /* Callbacks.swift */; };
+		05EAF8981CE81C52002DFF6E /* RenderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527447F1CCAB89900E821CE /* RenderState.swift */; };
+		05EAF8991CE81C52002DFF6E /* Texture+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */; };
+		05EAF89A1CE81C52002DFF6E /* DynamicVertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744761CCAB5E600E821CE /* DynamicVertexBuffer.swift */; };
+		05EAF89B1CE81C52002DFF6E /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744511CCAB06200E821CE /* enums.swift */; };
+		05EAF89C1CE81C52002DFF6E /* VectorTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052745071CCE7CCE00E821CE /* VectorTransforms.swift */; };
+		05EAF89D1CE81C52002DFF6E /* VertexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744581CCAB06200E821CE /* VertexLayout.swift */; };
+		05EAF89E1CE81C52002DFF6E /* input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D761CC7CBCF005B38C5 /* input.swift */; };
+		05EAF89F1CE81C52002DFF6E /* MemoryBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744551CCAB06200E821CE /* MemoryBlock.swift */; };
+		05EAF8A11CE81C52002DFF6E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058076BE1CC2D09300C43477 /* QuartzCore.framework */; };
+		05EAF8A21CE81C52002DFF6E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058076B81CC2D01200C43477 /* Cocoa.framework */; };
+		05EAF8A31CE81C52002DFF6E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058076B61CC2D00400C43477 /* OpenGL.framework */; };
+		05EAF8A41CE81C52002DFF6E /* libSGLMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */; };
+		05EAF8A51CE81C52002DFF6E /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058076B41CC2CFF100C43477 /* Metal.framework */; };
+		05EAF8AB1CE81C68002DFF6E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EAF8761CE81C46002DFF6E /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -104,6 +144,15 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		055B3D501CC6B77B005B38C5 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		05EAF8A61CE81C52002DFF6E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -155,7 +204,6 @@
 		055B3D721CC70E8F005B38C5 /* queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = queue.swift; sourceTree = "<group>"; };
 		055B3D741CC73EE5005B38C5 /* event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = event.swift; sourceTree = "<group>"; };
 		055B3D761CC7CBCF005B38C5 /* input.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = input.swift; sourceTree = "<group>"; };
-		058076B11CC2B1B700C43477 /* bgfx-bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bgfx-bridging.h"; sourceTree = "<group>"; };
 		058076B41CC2CFF100C43477 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		058076B61CC2D00400C43477 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		058076B81CC2D01200C43477 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -165,6 +213,9 @@
 		05B1B6AC1CD885C200401D8C /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSGLMath.a; path = ../3rdparty/Math/.build/debug/libSGLMath.a; sourceTree = "<group>"; };
 		05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Texture+Create.swift"; sourceTree = "<group>"; };
+		05EAF8731CE7FE61002DFF6E /* bgfx-bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bgfx-bridging.h"; sourceTree = "<group>"; };
+		05EAF8761CE81C46002DFF6E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		05EAF8AA1CE81C52002DFF6E /* 05-instancing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "05-instancing"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +240,18 @@
 				055B3D4E1CC6B77B005B38C5 /* OpenGL.framework in Frameworks */,
 				05EAF86D1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */,
 				055B3D4F1CC6B77B005B38C5 /* Metal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05EAF8A01CE81C52002DFF6E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05EAF8A11CE81C52002DFF6E /* QuartzCore.framework in Frameworks */,
+				05EAF8A21CE81C52002DFF6E /* Cocoa.framework in Frameworks */,
+				05EAF8A31CE81C52002DFF6E /* OpenGL.framework in Frameworks */,
+				05EAF8A41CE81C52002DFF6E /* libSGLMath.a in Frameworks */,
+				05EAF8A51CE81C52002DFF6E /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +336,10 @@
 		055B3D381CC6B327005B38C5 /* examples */ = {
 			isa = PBXGroup;
 			children = (
+				05EAF8741CE818B5002DFF6E /* vox-00 */,
 				055B3D3E1CC6B6A1005B38C5 /* 00-helloworld */,
 				052744D31CCD65E500E821CE /* 01-cubes */,
+				05EAF8751CE81C25002DFF6E /* 05-instancing */,
 				055B3D391CC6B4BD005B38C5 /* common */,
 			);
 			path = examples;
@@ -319,6 +384,7 @@
 			children = (
 				055B3D541CC6B77B005B38C5 /* 00-helloworld */,
 				052745011CCD66BC00E821CE /* 01-cubes */,
+				05EAF8AA1CE81C52002DFF6E /* 05-instancing */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -326,9 +392,9 @@
 		058076A61CC2B10000C43477 /* bgfx */ = {
 			isa = PBXGroup;
 			children = (
+				05EAF8721CE7FE42002DFF6E /* include */,
 				0527444B1CCAAFE000E821CE /* src */,
 				052744481CCAA48400E821CE /* Package.swift */,
-				058076B11CC2B1B700C43477 /* bgfx-bridging.h */,
 			);
 			path = bgfx;
 			sourceTree = "<group>";
@@ -353,6 +419,29 @@
 				05B1B6AC1CD885C200401D8C /* Release.xcconfig */,
 			);
 			name = configs;
+			sourceTree = "<group>";
+		};
+		05EAF8721CE7FE42002DFF6E /* include */ = {
+			isa = PBXGroup;
+			children = (
+				05EAF8731CE7FE61002DFF6E /* bgfx-bridging.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		05EAF8741CE818B5002DFF6E /* vox-00 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "vox-00";
+			sourceTree = "<group>";
+		};
+		05EAF8751CE81C25002DFF6E /* 05-instancing */ = {
+			isa = PBXGroup;
+			children = (
+				05EAF8761CE81C46002DFF6E /* main.swift */,
+			);
+			path = "05-instancing";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +481,23 @@
 			productReference = 055B3D541CC6B77B005B38C5 /* 00-helloworld */;
 			productType = "com.apple.product-type.tool";
 		};
+		05EAF8791CE81C52002DFF6E /* 05-instancing */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05EAF8A71CE81C52002DFF6E /* Build configuration list for PBXNativeTarget "05-instancing" */;
+			buildPhases = (
+				05EAF87A1CE81C52002DFF6E /* Sources */,
+				05EAF8A01CE81C52002DFF6E /* Frameworks */,
+				05EAF8A61CE81C52002DFF6E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "05-instancing";
+			productName = "bgfx Test";
+			productReference = 05EAF8AA1CE81C52002DFF6E /* 05-instancing */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -416,6 +522,7 @@
 			targets = (
 				055B3D411CC6B77B005B38C5 /* 00-helloworld */,
 				052744D41CCD66BC00E821CE /* 01-cubes */,
+				05EAF8791CE81C52002DFF6E /* 05-instancing */,
 			);
 		};
 /* End PBXProject section */
@@ -444,7 +551,6 @@
 				05B1B69A1CD884AA00401D8C /* OcclusionQuery.swift in Sources */,
 				05B1B69D1CD884AA00401D8C /* Shader.swift in Sources */,
 				05B1B6A31CD884AA00401D8C /* Uniform.swift in Sources */,
-				052744EA1CCD66BC00E821CE /* logo.swift in Sources */,
 				05B1B6921CD884AA00401D8C /* DynamicIndexBuffer.swift in Sources */,
 				05B1B6A11CD884AA00401D8C /* TransientIndexBuffer.swift in Sources */,
 				054FE8771CCF3DC8009923F4 /* File.swift in Sources */,
@@ -509,6 +615,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05EAF87A1CE81C52002DFF6E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05EAF87B1CE81C52002DFF6E /* Capabilities.swift in Sources */,
+				05EAF87C1CE81C52002DFF6E /* Timing.swift in Sources */,
+				05EAF87E1CE81C52002DFF6E /* entry+utils.swift in Sources */,
+				05EAF87F1CE81C52002DFF6E /* bgfx+native.swift in Sources */,
+				05EAF8801CE81C52002DFF6E /* io.swift in Sources */,
+				05EAF8811CE81C52002DFF6E /* TransientVertexBuffer.swift in Sources */,
+				05EAF8821CE81C52002DFF6E /* Program.swift in Sources */,
+				05EAF8831CE81C52002DFF6E /* entry.swift in Sources */,
+				05EAF8841CE81C52002DFF6E /* InstanceBuffer.swift in Sources */,
+				05EAF8851CE81C52002DFF6E /* StencilFlags.swift in Sources */,
+				05EAF8861CE81C52002DFF6E /* FrameBuffer.swift in Sources */,
+				05EAF8871CE81C52002DFF6E /* bgfx.swift in Sources */,
+				05EAF8881CE81C52002DFF6E /* queue.swift in Sources */,
+				05EAF8891CE81C52002DFF6E /* event.swift in Sources */,
+				05EAF88A1CE81C52002DFF6E /* IndexBuffer.swift in Sources */,
+				05EAF88B1CE81C52002DFF6E /* OcclusionQuery.swift in Sources */,
+				05EAF88C1CE81C52002DFF6E /* Shader.swift in Sources */,
+				05EAF88D1CE81C52002DFF6E /* Uniform.swift in Sources */,
+				05EAF88F1CE81C52002DFF6E /* DynamicIndexBuffer.swift in Sources */,
+				05EAF8901CE81C52002DFF6E /* TransientIndexBuffer.swift in Sources */,
+				05EAF8911CE81C52002DFF6E /* File.swift in Sources */,
+				05EAF8921CE81C52002DFF6E /* VertexBuffer.swift in Sources */,
+				05EAF8931CE81C52002DFF6E /* Texture.swift in Sources */,
+				05EAF8941CE81C52002DFF6E /* entry+osx.swift in Sources */,
+				05EAF8951CE81C52002DFF6E /* bgfx+types.swift in Sources */,
+				05EAF8961CE81C52002DFF6E /* IndirectBuffer.swift in Sources */,
+				05EAF8971CE81C52002DFF6E /* Callbacks.swift in Sources */,
+				05EAF8981CE81C52002DFF6E /* RenderState.swift in Sources */,
+				05EAF8991CE81C52002DFF6E /* Texture+Create.swift in Sources */,
+				05EAF89A1CE81C52002DFF6E /* DynamicVertexBuffer.swift in Sources */,
+				05EAF89B1CE81C52002DFF6E /* enums.swift in Sources */,
+				05EAF89C1CE81C52002DFF6E /* VectorTransforms.swift in Sources */,
+				05EAF8AB1CE81C68002DFF6E /* main.swift in Sources */,
+				05EAF89D1CE81C52002DFF6E /* VertexLayout.swift in Sources */,
+				05EAF89E1CE81C52002DFF6E /* input.swift in Sources */,
+				05EAF89F1CE81C52002DFF6E /* MemoryBlock.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -521,6 +670,7 @@
 					"$(PROJECT_DIR)/bgfx",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bgfx/include/bgfx-bridging.h";
 			};
 			name = Debug;
 		};
@@ -533,6 +683,7 @@
 					"$(PROJECT_DIR)/bgfx",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bgfx/include/bgfx-bridging.h";
 			};
 			name = Release;
 		};
@@ -646,6 +797,32 @@
 			};
 			name = Release;
 		};
+		05EAF8A81CE81C52002DFF6E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05B1B6AB1CD885BA00401D8C /* Debug.xcconfig */;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/bgfx",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bgfx/include/bgfx-bridging.h";
+			};
+			name = Debug;
+		};
+		05EAF8A91CE81C52002DFF6E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05B1B6AC1CD885C200401D8C /* Release.xcconfig */;
+			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/bgfx",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bgfx/include/bgfx-bridging.h";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -672,6 +849,15 @@
 			buildConfigurations = (
 				058076A11CC2B0D600C43477 /* Debug */,
 				058076A21CC2B0D600C43477 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05EAF8A71CE81C52002DFF6E /* Build configuration list for PBXNativeTarget "05-instancing" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05EAF8A81CE81C52002DFF6E /* Debug */,
+				05EAF8A91CE81C52002DFF6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

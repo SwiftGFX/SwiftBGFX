@@ -1,8 +1,8 @@
 //
 //  bgfx-bridging.h
-//  bgfx Test
+//  SwiftBGFX
 //
-//  Created by Stuart Carnie on 4/16/16.
+//  Created by Stuart Carnie on 5/14/16.
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
