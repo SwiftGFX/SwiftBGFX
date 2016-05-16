@@ -57,7 +57,6 @@
 		05B1B6871CD881E300401D8C /* TransientIndexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744C41CCAD44500E821CE /* TransientIndexBuffer.swift */; };
 		05B1B6881CD881E300401D8C /* TransientVertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744C71CCAE01600E821CE /* TransientVertexBuffer.swift */; };
 		05B1B6891CD881E300401D8C /* Uniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744851CCABACC00E821CE /* Uniform.swift */; };
-		05B1B68A1CD881E300401D8C /* VectorTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052745071CCE7CCE00E821CE /* VectorTransforms.swift */; };
 		05B1B68B1CD881E300401D8C /* VertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744571CCAB06200E821CE /* VertexBuffer.swift */; };
 		05B1B68C1CD881E300401D8C /* VertexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744581CCAB06200E821CE /* VertexLayout.swift */; };
 		05B1B68D1CD884AA00401D8C /* bgfx+types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527444E1CCAB06200E821CE /* bgfx+types.swift */; };
@@ -83,7 +82,6 @@
 		05B1B6A11CD884AA00401D8C /* TransientIndexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744C41CCAD44500E821CE /* TransientIndexBuffer.swift */; };
 		05B1B6A21CD884AA00401D8C /* TransientVertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744C71CCAE01600E821CE /* TransientVertexBuffer.swift */; };
 		05B1B6A31CD884AA00401D8C /* Uniform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744851CCABACC00E821CE /* Uniform.swift */; };
-		05B1B6A41CD884AA00401D8C /* VectorTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052745071CCE7CCE00E821CE /* VectorTransforms.swift */; };
 		05B1B6A51CD884AA00401D8C /* VertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744571CCAB06200E821CE /* VertexBuffer.swift */; };
 		05B1B6A61CD884AA00401D8C /* VertexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744581CCAB06200E821CE /* VertexLayout.swift */; };
 		05EAF86D1CDFB4C7002DFF6E /* libSGLMath.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EAF86C1CDFB4C7002DFF6E /* libSGLMath.a */; };
@@ -121,7 +119,6 @@
 		05EAF8991CE81C52002DFF6E /* Texture+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EAF86F1CE79ECF002DFF6E /* Texture+Create.swift */; };
 		05EAF89A1CE81C52002DFF6E /* DynamicVertexBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744761CCAB5E600E821CE /* DynamicVertexBuffer.swift */; };
 		05EAF89B1CE81C52002DFF6E /* enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744511CCAB06200E821CE /* enums.swift */; };
-		05EAF89C1CE81C52002DFF6E /* VectorTransforms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052745071CCE7CCE00E821CE /* VectorTransforms.swift */; };
 		05EAF89D1CE81C52002DFF6E /* VertexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744581CCAB06200E821CE /* VertexLayout.swift */; };
 		05EAF89E1CE81C52002DFF6E /* input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D761CC7CBCF005B38C5 /* input.swift */; };
 		05EAF89F1CE81C52002DFF6E /* MemoryBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744551CCAB06200E821CE /* MemoryBlock.swift */; };
@@ -192,7 +189,6 @@
 		052745011CCD66BC00E821CE /* 01-cubes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "01-cubes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		052745021CCD66E700E821CE /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		052745041CCE734E00E821CE /* Timing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
-		052745071CCE7CCE00E821CE /* VectorTransforms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTransforms.swift; sourceTree = "<group>"; };
 		054FE86F1CCF1BA1009923F4 /* io.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = io.swift; sourceTree = "<group>"; };
 		054FE8751CCF1D87009923F4 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		054FE8791CCF4630009923F4 /* entry+utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "entry+utils.swift"; sourceTree = "<group>"; };
@@ -285,7 +281,6 @@
 				052744C41CCAD44500E821CE /* TransientIndexBuffer.swift */,
 				052744C71CCAE01600E821CE /* TransientVertexBuffer.swift */,
 				052744851CCABACC00E821CE /* Uniform.swift */,
-				052745071CCE7CCE00E821CE /* VectorTransforms.swift */,
 				052744571CCAB06200E821CE /* VertexBuffer.swift */,
 				052744581CCAB06200E821CE /* VertexLayout.swift */,
 			);
@@ -564,7 +559,6 @@
 				05EAF8711CE79ECF002DFF6E /* Texture+Create.swift in Sources */,
 				05B1B6931CD884AA00401D8C /* DynamicVertexBuffer.swift in Sources */,
 				05B1B6941CD884AA00401D8C /* enums.swift in Sources */,
-				05B1B6A41CD884AA00401D8C /* VectorTransforms.swift in Sources */,
 				05B1B6A61CD884AA00401D8C /* VertexLayout.swift in Sources */,
 				052744F31CCD66BC00E821CE /* input.swift in Sources */,
 				05B1B6991CD884AA00401D8C /* MemoryBlock.swift in Sources */,
@@ -595,7 +589,6 @@
 				05B1B67D1CD881E300401D8C /* IndirectBuffer.swift in Sources */,
 				05B1B6831CD881E300401D8C /* Shader.swift in Sources */,
 				05B1B6881CD881E300401D8C /* TransientVertexBuffer.swift in Sources */,
-				05B1B68A1CD881E300401D8C /* VectorTransforms.swift in Sources */,
 				05B1B6791CD881E300401D8C /* DynamicVertexBuffer.swift in Sources */,
 				05B1B6891CD881E300401D8C /* Uniform.swift in Sources */,
 				05B1B6771CD881E300401D8C /* Capabilities.swift in Sources */,
@@ -650,7 +643,6 @@
 				05EAF8991CE81C52002DFF6E /* Texture+Create.swift in Sources */,
 				05EAF89A1CE81C52002DFF6E /* DynamicVertexBuffer.swift in Sources */,
 				05EAF89B1CE81C52002DFF6E /* enums.swift in Sources */,
-				05EAF89C1CE81C52002DFF6E /* VectorTransforms.swift in Sources */,
 				05EAF8AB1CE81C68002DFF6E /* main.swift in Sources */,
 				05EAF89D1CE81C52002DFF6E /* VertexLayout.swift in Sources */,
 				05EAF89E1CE81C52002DFF6E /* input.swift in Sources */,
