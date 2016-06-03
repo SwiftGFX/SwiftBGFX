@@ -56,12 +56,16 @@ extension bgfx {
     /// swaps internal buffers, kicks render thread, and returns. In singlethreaded
     /// renderer this call does frame rendering.
     ///
+    /// - parameters:
+    ///     
+    ///     - capture: `true` to capture the frame
+    ///
     /// - returns:
     /// Current frame number. This might be used in conjunction with double/multi
     /// buffering data outside the library and passing it to library via
     /// `bgfx::makeRef` calls.
-    public static func frame() -> UInt32 {
-        return bgfx_frame()
+    public static func frame(capture: Bool = false) -> UInt32 {
+        return bgfx_frame(capture)
     }
 
     // MARK:- Debug
@@ -238,7 +242,19 @@ extension bgfx {
         var p = proj
         bgfx_set_view_transform(viewId, &v, &p)
     }
-    
+
+    /// Set view view and projection matrices, all draw primitives in this view
+    /// will use these matrices.
+    ///
+    /// - Parameters:
+    ///
+    ///     - viewId: View id
+    ///     - proj: Projection matrix
+    public static func setViewTransform(viewId: UInt8, proj: float4x4) {
+        var p = proj
+        bgfx_set_view_transform(viewId, nil, &p)
+    }
+
     /// Set view view and projection matrices, all draw primitives in this view
     /// will use these matrices.
     ///
@@ -489,7 +505,13 @@ extension bgfx {
         var ptr = value
         bgfx_set_uniform(uniform.handle, &ptr, 1)
     }
-
+    
+    /// Sets the value of a uniform parameter
+    public static func setUniform(uniform: Uniform, value: float4x4) {
+        var ptr = value
+        bgfx_set_uniform(uniform.handle, &ptr, 1)
+    }
+    
     /// Sets a texture to use for drawing primitives
     ///
     /// - parameters:

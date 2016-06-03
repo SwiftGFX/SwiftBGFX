@@ -39,7 +39,7 @@ public class Uniform {
     ///    - type: The type of data represented by the unifor
     ///    - num: Size of the array, if the uniform is an array type
     ///
-    public init(name: String, type: UniformType, num: UInt16) {
+    public init(name: String, type: UniformType, num: UInt16 = 1) {
         handle = bgfx_create_uniform(name, bgfx_uniform_type_t(type.rawValue), num)
     }
     
