@@ -133,9 +133,11 @@ public final class Texture {
     ///
     ///     - data: The destination for the read image data
     ///
+    /// - returns: The frame number when the result will be available. See `bgfx.frame`
+    ///
     /// - remark: The texture must have been created with the `TextureFlags.ReadBack` flag
     ///
-    public func read(data: UnsafeMutablePointer<Void>) {
-        bgfx_read_texture(handle, data)
+    public func read(data: UnsafeMutablePointer<Void>) -> UInt32 {
+        return bgfx_read_texture(handle, data)
     }
 }

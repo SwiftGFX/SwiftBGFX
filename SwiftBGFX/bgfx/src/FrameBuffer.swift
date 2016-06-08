@@ -125,9 +125,11 @@ public class FrameBuffer {
     ///     - attachment: The frame buffer attachment from which to read
     ///     - data: The destination for the read image data
     ///
+    /// - returns: The frame number when the result will be available. See `bgfx.frame`
+    ///
     /// - remark: The attachment must have been created with the `TextureFlags.ReadBack` flag
     ///
-    public func read(attachment: UInt8, data: UnsafeMutablePointer<Void>) {
-        bgfx_read_frame_buffer(handle, attachment, data)
+    public func read(attachment: UInt8, data: UnsafeMutablePointer<Void>) -> UInt32 {
+        return bgfx_read_frame_buffer(handle, attachment, data)
     }
 }
