@@ -7,7 +7,7 @@
 //
 
 public protocol AppI {
-    func startup(argc: Int, argv:[String])
+    func startup(_ argc: Int, argv:[String])
     func shutdown() -> Int
     func update() -> Bool
 }
@@ -18,19 +18,19 @@ var s_reset: ResetOptions = []
 
 extension AppI {
     
-    public func processEvents(inout width: UInt16, inout height: UInt16, inout debug: DebugOptions, inout reset: ResetOptions) -> Bool {
+    public func processEvents(_ width: inout UInt16, height: inout UInt16, debug: inout DebugOptions, reset: inout ResetOptions) -> Bool {
         s_debug = debug
         var forceReset = reset != s_reset
         s_reset = reset
         
         while let ev = s_ctx.poll() {
             switch ev {
-            case .Size(let w, let h):
+            case .size(let w, let h):
                 width = w
                 height = h
                 forceReset = true
                 
-            case .Exit:
+            case .exit:
                 return true
                 
             default:
@@ -46,7 +46,8 @@ extension AppI {
     }
 }
 
-func runApp(app: AppI, argc: Int, argv:[String]) -> Int {
+@discardableResult
+func runApp(_ app: AppI, argc: Int, argv:[String]) -> Int {
     app.startup(argc, argv: argv)
     
     while app.update() {}

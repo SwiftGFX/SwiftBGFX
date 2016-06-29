@@ -18,7 +18,7 @@ final public class VertexLayout {
     /// Starts a stream of vertex attribute additions to the layout
     ///
     /// - returns: `self`
-    public func begin(renderer: RendererBackend = .None) -> Self {
+    public func begin(_ renderer: RendererBackend = .none) -> Self {
         bgfx_vertex_decl_begin(&handle, bgfx_renderer_type_t(renderer.rawValue))
         return self
     }
@@ -48,7 +48,7 @@ final public class VertexLayout {
     /// - returns: `self`
     ///
     /// - remark: Must be called between `begin`/`end`
-    public func add(attrib: VertexAttributeUsage, num: UInt8, type: VertexAttribType, normalized: Bool = false, asInt: Bool = false) -> Self {
+    public func add(_ attrib: VertexAttributeUsage, num: UInt8, type: VertexAttribType, normalized: Bool = false, asInt: Bool = false) -> Self {
         bgfx_vertex_decl_add(&handle, bgfx_attrib_t(attrib.rawValue), num, bgfx_attrib_type_t(type.rawValue), normalized, asInt)
         return self
     }
@@ -56,7 +56,7 @@ final public class VertexLayout {
     /// Skip `num` bytes in vertex stream
     ///
     /// - returns: `Self`
-    public func skip(num: UInt8) -> Self {
+    public func skip(_ num: UInt8) -> Self {
         bgfx_vertex_decl_skip(&handle, num)
         return self
     }

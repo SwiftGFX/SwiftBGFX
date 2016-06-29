@@ -22,7 +22,7 @@ public protocol Callbacks {
     ///
     /// This method can be called from any thread
     ///
-    func reportError(type: BgfxError, message: String)
+    func reportError(_ type: BgfxError, message: String)
     
     /// Called to print debug messages
     ///
@@ -34,49 +34,49 @@ public protocol Callbacks {
     ///     
     /// - remark: This method can be called from any thread
     ///
-    func reportDebug(fileName: String, line: UInt16, format: String)
+    func reportDebug(_ fileName: String, line: UInt16, format: String)
 }
 
 private var callbacks: Callbacks?
 private var vtablep: UnsafeMutablePointer<bgfx_callback_vtbl_t>?
 private var cbip: UnsafeMutablePointer<bgfx_callback_interface_t>?
 
-internal func makeCallbackHandler(cb: Callbacks) -> UnsafeMutablePointer<bgfx_callback_interface_t> {
+internal func makeCallbackHandler(_ cb: Callbacks) -> UnsafeMutablePointer<bgfx_callback_interface_t> {
     cleanupCallbackHandler()
     callbacks = cb
 
     var vt = bgfx_callback_vtbl_t()
     
     // setup callbacks
-    vt.fatal = { (a: UnsafeMutablePointer<bgfx_callback_interface_t>, b: bgfx_fatal_t, c: UnsafePointer<Int8>) in
-        callbacks!.reportError(BgfxError(rawValue: b.rawValue)!, message: String.fromCString(c)!)
+    vt.fatal = { (a: UnsafeMutablePointer<bgfx_callback_interface_t>?, b: bgfx_fatal_t, c: UnsafePointer<Int8>?) in
+        callbacks!.reportError(BgfxError(rawValue: b.rawValue)!, message: String(cString: c!))
     }
     
     // TODO: implement shim in C in order to unpack va_list
-    vt.trace_vargs = { (a: UnsafeMutablePointer<bgfx_callback_interface_t>,
-        path: UnsafePointer<Int8>, line: UInt16, format: UnsafePointer<Int8>, args: CVaListPointer) in
-        callbacks!.reportDebug(String.fromCString(path)!, line: line, format: String.fromCString(format)!)
+    vt.trace_vargs = { (a: UnsafeMutablePointer<bgfx_callback_interface_t>?,
+        path: UnsafePointer<Int8>?, line: UInt16, format: UnsafePointer<Int8>?, args: CVaListPointer) in
+        callbacks!.reportDebug(String(cString: path!), line: line, format: String(cString: format!))
     }
 
-    vtablep = UnsafeMutablePointer<bgfx_callback_vtbl_t>.alloc(1)
-    vtablep?.initialize(vt)
+    vtablep = UnsafeMutablePointer<bgfx_callback_vtbl_t>(allocatingCapacity: 1)
+    vtablep?.initialize(with: vt)
     
-    cbip = UnsafeMutablePointer<bgfx_callback_interface_t>.alloc(1)
-    cbip!.initialize(bgfx_callback_interface_t(vtbl: vtablep!))
+    cbip = UnsafeMutablePointer<bgfx_callback_interface_t>(allocatingCapacity: 1)
+    cbip!.initialize(with: bgfx_callback_interface_t(vtbl: vtablep!))
     
     return cbip!
 }
 
 internal func cleanupCallbackHandler() {
     if let cbi = cbip {
-        cbi.destroy()
-        cbi.dealloc(1)
+        cbi.deinitialize()
+        cbi.deallocateCapacity(1)
         cbip = nil
     }
     
     if let vtable = vtablep {
-        vtable.destroy()
-        vtable.dealloc(1)
+        vtable.deinitialize()
+        vtable.deallocateCapacity(1)
         vtablep = nil
     }
     

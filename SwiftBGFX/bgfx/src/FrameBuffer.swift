@@ -58,7 +58,7 @@ public class FrameBuffer {
     ///    - height: The height of the render target
     ///    - format: A desired format for a depth buffer, if applicable
     ///
-    public init(windowHandle: NativeWindowHandle, width: UInt16, height: UInt16, depthFormat: TextureFormat = .UnknownDepth) {
+    public init(windowHandle: NativeWindowHandle, width: UInt16, height: UInt16, depthFormat: TextureFormat = .unknownDepth) {
         handle = bgfx_create_frame_buffer_from_nwh(windowHandle, width, height, bgfx_texture_format_t(depthFormat.rawValue))
     }
     
@@ -82,12 +82,12 @@ public class FrameBuffer {
     ///
     /// - remark: The destination texture must be created with the `TextureFlags.BlitDestination` flag
     ///
-    public func blit(viewId viewId: UInt8, dest: Texture, destX: UInt16, destY: UInt16,
+    public func blit(_ viewId: UInt8, dest: Texture, destX: UInt16, destY: UInt16,
                             attachment: UInt8,
                             srcX: UInt16, srcY: UInt16,
                             width: UInt16, height: UInt16, depth: UInt16) {
         
-        blit(viewId: viewId, dest: dest, destMip: 0, destX: destX, destY: destY, destZ: 0, attachment: attachment, srcMip: 0, srcX: srcX, srcY: srcY, srcZ: 0, width: width, height: height, depth: 0)
+        blit(viewId, dest: dest, destMip: 0, destX: destX, destY: destY, destZ: 0, attachment: attachment, srcMip: 0, srcX: srcX, srcY: srcY, srcZ: 0, width: width, height: height, depth: 0)
     }
     
     /// Blits the contents of the texture to another texture
@@ -111,7 +111,7 @@ public class FrameBuffer {
     ///
     /// - remark: The destination texture must be created with the `TextureFlags.BlitDestination` flag
     ///
-    public func blit(viewId viewId: UInt8, dest: Texture, destMip: UInt8, destX: UInt16, destY: UInt16, destZ: UInt16,
+    public func blit(_ viewId: UInt8, dest: Texture, destMip: UInt8, destX: UInt16, destY: UInt16, destZ: UInt16,
                             attachment: UInt8, srcMip: UInt8, srcX: UInt16, srcY: UInt16, srcZ: UInt16,
                             width: UInt16, height: UInt16, depth: UInt16) {
         
@@ -129,7 +129,7 @@ public class FrameBuffer {
     ///
     /// - remark: The attachment must have been created with the `TextureFlags.ReadBack` flag
     ///
-    public func read(attachment: UInt8, data: UnsafeMutablePointer<Void>) -> UInt32 {
+    public func read(_ attachment: UInt8, data: UnsafeMutablePointer<Void>) -> UInt32 {
         return bgfx_read_frame_buffer(handle, attachment, data)
     }
 }

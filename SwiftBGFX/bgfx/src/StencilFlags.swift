@@ -7,7 +7,7 @@
 //
 
 /// Specifies state information used to configure rendering operations
-public struct StencilFlags : OptionSetType {
+public struct StencilFlags : OptionSet {
     public let rawValue: UInt32
     public init(rawValue: UInt32) {
         self.rawValue = rawValue
@@ -117,7 +117,7 @@ public struct StencilFlags : OptionSetType {
     /// - parameter reference: The stencil reference value
     ///
     /// - returns: The encoded stencil state
-    public static func referenceValue(reference: UInt8) -> StencilFlags {
+    public static func referenceValue(_ reference: UInt8) -> StencilFlags {
         return StencilFlags(rawValue: UInt32(reference))
     }
 
@@ -126,7 +126,7 @@ public struct StencilFlags : OptionSetType {
     /// - parameter mask: The mask
     ///
     /// - returns: The encoded stencil state
-    public static func readMask(mask: UInt8) -> StencilFlags {
+    public static func readMask(_ mask: UInt8) -> StencilFlags {
         return StencilFlags(rawValue: (UInt32(mask) << ReadMaskShift) & ReadMaskMask)
     }
 

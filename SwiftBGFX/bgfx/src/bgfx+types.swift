@@ -34,7 +34,7 @@ public struct Stats {
     public let gpuTimeFreq: UInt64
 
     init(stats: UnsafePointer<bgfx_stats_t>) {
-        let v = stats.memory
+        let v = stats.pointee
         cpuTimeBegin = v.cpuTimeBegin
         cpuTimeEnd = v.cpuTimeEnd
         cpuTimeFreq = v.cpuTimerFreq

@@ -9,7 +9,7 @@
 import Foundation
 
 public enum FileError : IOError {
-    case PathError(String, String, Int32)
+    case pathError(String, String, Int32)
 }
 
 public struct File {
@@ -18,7 +18,7 @@ public struct File {
 }
 
 extension File: Reader {
-    public func read(inout dest: [UInt8]) throws -> Int {
+    public func read(_ dest: inout [UInt8]) throws -> Int {
         let c = fread(&dest, 1, dest.count, fd)
         
         return c
@@ -31,15 +31,15 @@ extension File: Closer {
     }
 }
 
-public func open(path: String) throws -> File {
+public func open(_ path: String) throws -> File {
     return try openFile(path)
 }
 
-internal func openFile(path: String) throws -> File {
+internal func openFile(_ path: String) throws -> File {
     let fd = fopen(path, "r")
     guard fd != nil else {
-        throw FileError.PathError("open", path, errno)
+        throw FileError.pathError("open", path, errno)
     }
     
-    return File(fd: fd, name: path)
+    return File(fd: fd!, name: path)
 }

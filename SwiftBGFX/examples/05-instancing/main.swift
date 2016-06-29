@@ -6,9 +6,6 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-import simd
-import SGLMath
-
 struct PosColorVertex {
     let x, y, z: Float
     let col: UInt32
@@ -24,8 +21,8 @@ struct PosColorVertex {
         let l = VertexLayout()
         l
             .begin()
-            .add(.Position, num: 3, type: .Float)
-            .add(.Color0, num: 4, type: .UInt8, normalized: true)
+            .add(.position, num: 3, type: .float)
+            .add(.color0, num: 4, type: .uint8, normalized: true)
             .end()
         
         return l
@@ -70,7 +67,7 @@ class ExampleInstancing: AppI {
     var timeOffset: UInt64 = 0
     
     
-    func startup(argc: Int, argv: [String]) {
+    func startup(_ argc: Int, argv: [String]) {
         bgfx.initialize()
         
         bgfx.reset(width: width, height: height, options: reset)
@@ -82,7 +79,7 @@ class ExampleInstancing: AppI {
         
         do {
             prog = try loadProgram("vs_instancing", fsPath: "fs_instancing")
-        } catch (FileError.PathError(let op, _, _)) {
+        } catch (FileError.pathError(let op, _, _)) {
             print("error: \(op)")
         } catch {
             print("unknown error")
@@ -90,8 +87,6 @@ class ExampleInstancing: AppI {
         
         last = Timing.counter
         offset = Timing.counter
-        glmLeftHanded = true
-        glmDepthZeroToOne = false
     }
     
     func shutdown() -> Int {
@@ -117,56 +112,44 @@ class ExampleInstancing: AppI {
             let time = Float(now - offset) / 1000000000.0
             
             bgfx.debugTextClear()
-            bgfx.debugTextPrint(x: 0, y: 1, foreColor: .White, backColor: .Blue, string: "bgfx/examples/05-instancing")
-            bgfx.debugTextPrint(x: 0, y: 2, foreColor: .White, backColor: .Cyan, string: "Description: Geometry instancing")
+            bgfx.debugTextPrint(x: 0, y: 1, foreColor: .white, backColor: .blue, string: "bgfx/examples/05-instancing")
+            bgfx.debugTextPrint(x: 0, y: 2, foreColor: .white, backColor: .cyan, string: "Description: Geometry instancing")
             let frameTimeStr = String(format: "% 7.3f[ms]", (Double(frameTime) / 1000000000.0 * 1000.0))
-            bgfx.debugTextPrint(x: 0, y: 3, foreColor: .White, backColor: .Transparent, string: "Frame: \(frameTimeStr)")
+            bgfx.debugTextPrint(x: 0, y: 3, foreColor: .white, backColor: .transparent, string: "Frame: \(frameTimeStr)")
             
             if !bgfx.capabilities.supported.contains(.Instancing) {
                 let blink = UInt32(time*3.0)&1 == 0x1
-                let fore = blink ? DebugColor.White : DebugColor.Red
-                let back = blink ? DebugColor.Red   : DebugColor.Transparent
+                let fore = blink ? DebugColor.white : DebugColor.red
+                let back = blink ? DebugColor.red   : DebugColor.transparent
                 bgfx.debugTextPrint(x: 0, y: 5, foreColor: fore, backColor: back, string: " Instancing is not supported by GPU ")
             }
             
-            let view = SGLMath.lookAt(
-                vec3(x: 0.0, y: 0.0, z: -35.0),
-                vec3(0),
-                vec3(x: 0.0, y: 1.0, z: 0.0)
-            )
+            let view = bgfx.lookAt(eye: vec3(0.0, 0.0, -35.0), at: vec3(0))
+            let proj = bgfx.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
             
-            let proj = SGLMath.perspective(60.0/180.0*Float(M_PI), Float(width) / Float(height), 0.1, 100.0)
-            let mtx = mat4(
-                1.0, 0.0, 0.0, 0.0,
-                0.0, 1.0, 0.0, 0.0,
-                0.0, 0.0, 1.0, 0.0,
-                0.0, 0.0, 0.0, 1.0
-            )
-            
-            bgfx.setViewTransform(0, view: unsafeBitCast(view, float4x4.self), proj: unsafeBitCast(proj, float4x4.self))
+            bgfx.setViewTransform(0, view: view, proj: proj)
             bgfx.setViewRect(0, x: 0, y: 0, width: width, height: height)
             bgfx.touch(0)
             
             let instanceStride = 80
             let idb = InstanceDataBuffer(count: 121, stride: instanceStride)
-            var data = unsafeBitCast(idb.data, UnsafeMutablePointer<InstanceData>.self)
+            var data = unsafeBitCast(idb.data, to: UnsafeMutablePointer<InstanceData>.self)
             
             for yy in 0...10 {
                 for xx in 0...10 {
-                    var m1 = SGLMath.rotate(mtx, time + Float(xx)*0.21, vec3(1.0, 0.0, 0.0))
-                    m1 = SGLMath.rotate(m1, time + Float(yy)*0.37, vec3(0.0, 1.0, 0.0))
-                    m1[3].x = -15.0 + Float(xx)*3.0
-                    m1[3].y = -15.0 + Float(yy)*3.0
-                    m1[3].z = 0.0
+                    var mtx = Matrix4x4f.rotateXY(x: time + Float(xx)*0.21, y: time + Float(yy)*0.37)
+                    mtx[3].x = -15.0 + Float(xx)*3.0
+                    mtx[3].y = -15.0 + Float(yy)*3.0
+                    mtx[3].z = 0.0
                     
-                    data.memory.mtx = m1
-                    data.memory.col = vec4(
+                    data.pointee.mtx = mtx
+                    data.pointee.col = vec4(
                         x: sinf(time+Float(xx)/11.0)*0.5+0.5,
                         y: cosf(time+Float(yy)/11.0)*0.5+0.5,
                         z: sinf(time*3.0)*0.5+0.5,
                         w: 1.0)
                     
-                    data = data.advancedBy(1)
+                    data = data.advanced(by: 1)
                 }
             }
             

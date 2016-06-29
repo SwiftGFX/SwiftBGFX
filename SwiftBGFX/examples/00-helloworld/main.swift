@@ -14,7 +14,7 @@ class HelloWorld: AppI {
     private var debug: DebugOptions = [.Text]
     private var reset: ResetOptions = [.VSync]
 
-    func startup(argc: Int, argv: [String]) {
+    func startup(_ argc: Int, argv: [String]) {
         bgfx.initialize()
 
         bgfx.reset(width: width, height: height, options: reset)
@@ -37,8 +37,8 @@ class HelloWorld: AppI {
             bgfx.debugTextClear()
 
             bgfx.debugTextImage(x: 20, y: 20, width: 40, height: 12, data: logo, pitch: 160)
-            bgfx.debugTextPrint(x: 0, y: 1, foreColor: .White, backColor: .Blue, string: "bgfx/examples/00-helloworld")
-            bgfx.debugTextPrint(x: 0, y: 2, foreColor: .White, backColor: .Cyan, string: "Description: Initialization and debug text.")
+            bgfx.debugTextPrint(x: 0, y: 1, foreColor: .white, backColor: .blue, string: "bgfx/examples/00-helloworld")
+            bgfx.debugTextPrint(x: 0, y: 2, foreColor: .white, backColor: .cyan, string: "Description: Initialization and debug text.")
 
             bgfx.frame()
 

@@ -14,7 +14,7 @@ public class Shader {
         var uh = bgfx_uniform_handle_t()
         
         let count = bgfx_get_shader_uniforms(self.handle, nil, 0)
-        var hh = [bgfx_uniform_handle_t](count: Int(count), repeatedValue: bgfx_uniform_handle_t())
+        var hh = [bgfx_uniform_handle_t](repeating: bgfx_uniform_handle_t(), count: Int(count))
         
         bgfx_get_shader_uniforms(self.handle, &hh, count)
 

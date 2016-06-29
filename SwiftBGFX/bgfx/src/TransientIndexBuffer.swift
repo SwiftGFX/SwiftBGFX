@@ -12,7 +12,7 @@
 /// The contents of the buffer are valid for the current frame only.
 /// You must call SetVertexBuffer with the buffer or a leak could occur.
 public struct TransientIndexBuffer {
-    public let data: UnsafeMutablePointer<UInt8> = nil
+    public let data: UnsafeMutablePointer<UInt8>? = nil
     public let size: UInt32 = 0
     
     let handle: UInt16 = 0
@@ -25,7 +25,7 @@ public struct TransientIndexBuffer {
     /// - count: The number of 16-bit indices to allocate
     ///
     /// - returns: `true` if there is space available for the given number of indices
-    public static func checkAvailableSpace(count: UInt32) -> Bool {
+    public static func checkAvailableSpace(_ count: UInt32) -> Bool {
         return bgfx_check_avail_transient_index_buffer(count)
     }
 }

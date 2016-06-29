@@ -12,12 +12,12 @@ public class InstanceDataBuffer {
     
     /// A pointer that can be filled with instance data
     public var data: UnsafeMutablePointer<UInt8> {
-        return handle.memory.data
+        return handle.pointee.data
     }
     
     /// The size of the data buffer
     public var size: UInt32 {
-        return handle.memory.size
+        return handle.pointee.size
     }
     
     /// Initializes a new instance buffer
@@ -40,7 +40,7 @@ public class InstanceDataBuffer {
     ///
     /// - returns: `true` if there is space available to allocate the buffer
     ///
-    public static func checkAvailableSpace(count: UInt32, stride: UInt16) -> Bool {
+    public static func checkAvailableSpace(_ count: UInt32, stride: UInt16) -> Bool {
         return bgfx_check_avail_instance_data_buffer(count, stride)
     }
 }

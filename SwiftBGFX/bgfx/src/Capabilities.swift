@@ -54,7 +54,7 @@ public struct Capabilities {
     public let formats: [TextureFormatSupport]
     
     init(caps: UnsafePointer<bgfx_caps_t>) {
-        var s = caps.memory
+        var s = caps.pointee
         backend = RendererBackend(rawValue: s.rendererType.rawValue)!
         supported = CapsOptions(rawValue: s.supported)
         maxDrawCalls = s.maxDrawCalls
@@ -66,7 +66,7 @@ public struct Capabilities {
         homogeneousDepth = s.homogeneousDepth
         originBottomLeft = s.originBottomLeft
         
-        var gpus = [GPU](count: Int(s.numGPUs), repeatedValue: GPU())
+        var gpus = [GPU](repeating: GPU(), count: Int(s.numGPUs))
         switch s.numGPUs {
         case 4:
             gpus[3] = GPU(v:s.gpu.3)
@@ -89,7 +89,7 @@ public struct Capabilities {
         
         GPUs = gpus
         
-        var formats = [TextureFormatSupport](count: Int(BGFX_TEXTURE_FORMAT_COUNT.rawValue), repeatedValue: TextureFormatSupport.None)
+        var formats = [TextureFormatSupport](repeating: TextureFormatSupport.None, count: Int(BGFX_TEXTURE_FORMAT_COUNT.rawValue))
         memcpy(&formats, &s.formats.0, sizeof(TextureFormatSupport) * Int(BGFX_TEXTURE_FORMAT_COUNT.rawValue))
         self.formats = formats
     }

@@ -9,104 +9,104 @@
 /// Specifies the supported rendering backend APIs.
 public enum RendererBackend: UInt32 {
     /// No backend given.
- 	case None = 0
+ 	case none = 0
     
     /// Direct3D 9
- 	case Direct3D9
+ 	case direct3D9
     
     /// Direct3D 11
- 	case Direct3D11
+ 	case direct3D11
     
     /// Direct3D 12
- 	case Direct3D12
+ 	case direct3D12
     
     /// Apple Metal.
- 	case Metal
+ 	case metal
     
     /// OpenGL ES
- 	case OpenGLES
+ 	case openGLES
     
     /// OpenGL
- 	case OpenGL
+ 	case openGL
     
     /// Vulkan
- 	case Vulkan
+ 	case vulkan
     
     /// Used during initialization; specifies that the library should
     /// pick the best renderer for the running hardware and OS.
- 	case Default
+ 	case `default`
 }
 
 /// Specifies vertex attribute usages
 public enum VertexAttributeUsage: UInt32 {
     /// Position data.
-	case Position = 0
+	case position = 0
     
     /// Normals.
-	case Normal
+	case normal
     
     /// Tangents.
-	case Tangent
+	case tangent
     
     /// Bitangents.
-	case Bitangent
+	case bitangent
     
     /// First color channel.
-	case Color0
+	case color0
     
     /// Second color channel.
-	case Color1
+	case color1
     
     /// Indices.
-	case Indices
+	case indices
     
     /// Animation weights.
-	case Weight
+	case weight
     
     /// First texture coordinate channel (arbitrary data).
-	case TexCoord0
+	case texCoord0
     
     /// Second texture coordinate channel (arbitrary data).
-	case TexCoord1
+	case texCoord1
     
     /// Third texture coordinate channel (arbitrary data).
-	case TexCoord2
+	case texCoord2
     
     /// Fourth texture coordinate channel (arbitrary data).
-	case TexCoord3
+	case texCoord3
     
     /// Fifth texture coordinate channel (arbitrary data).
-	case TexCoord4
+	case texCoord4
     
     /// Sixth texture coordinate channel (arbitrary data).
-	case TexCoord5
+	case texCoord5
     
     /// Seventh texture coordinate channel (arbitrary data).
-	case TexCoord6
+	case texCoord6
     
     /// Eighth texture coordinate channel (arbitrary data).
-	case TexCoord7
+	case texCoord7
 }
 
 /// Specifies data types for vertex attributes
 public enum VertexAttribType: UInt32 {
     
     /// One-byte unsigned integer
-    case UInt8 = 0
+    case uint8 = 0
     
     /// 10-bit unsigned integer
     /// - remark: Availability depends on Caps flags
-    case UInt10
+    case uint10
     
     /// Two-byte signed integer
-    case Int16
+    case int16
     
     /// Two-byte float
     /// - remark: Availability depends on Caps flags
-    case Half
+    case half
     
     /// Four-byte float
-    case Float
+    case float
 }
 
 
@@ -116,252 +116,252 @@ public enum VertexAttribType: UInt32 {
 /// Check Caps flags for hardware format support.
 public enum TextureFormat: UInt32 {
     /// Block compression with three color channels, 1 bit alpha.
-	case BC1 = 0
+	case bc1 = 0
     
     /// Block compression with three color channels, 4 bits alpha.
-	case BC2
+	case bc2
     
     /// Block compression with three color channels, 8 bits alpha.
-	case BC3
+	case bc3
     
     /// Block compression for 1-channel color.
-	case BC4
+	case bc4
     
     /// Block compression for 2-channel color.
-	case BC5
+	case bc5
     
     /// Block compression for three-channel HDR color.
-	case BC6H
+	case bc6H
     
     /// Highest quality block compression.
-	case BC7
+	case bc7
     
     /// Original ETC block compression.
-	case ETC1
+	case etc1
     
     /// Improved ETC block compression (no alpha).
-	case ETC2
+	case etc2
     
     /// Improved ETC block compression with full alpha.
-	case ETC2A
+	case etc2A
     
     /// Improved ETC block compression with 1-bit punchthrough alpha.
-	case ETC2A1
+	case etc2A1
     
     /// PVRTC1 compression (2 bits per pixel)
-	case PTC12
+	case ptc12
     
     /// PVRTC1 compression (4 bits per pixel)
-	case PTC14
+	case ptc14
     
     /// PVRTC1 compression with alpha (2 bits per pixel)
-	case PTC12A
+	case ptc12A
     
     /// PVRTC1 compression with alpha (4 bits per pixel)
-	case PTC14A
+	case ptc14A
     
     /// PVRTC2 compression with alpha (2 bits per pixel)
-	case PTC22
+	case ptc22
     
     /// PVRTC2 compression with alpha (4 bits per pixel)
-	case PTC24
+	case ptc24
     
     /// Unknown texture format.
-	case Unknown
+	case unknown
     
     /// 1-bit single channel.
-	case R1
+	case r1
     
     /// 8-bit single channel (alpha).
-	case A8
+	case a8
     
     /// 8-bit single channel.
-	case R8
+	case r8
     
     /// 8-bit single channel (integer).
-	case R8I
+	case r8i
     
     /// 8-bit single channel (unsigned).
-	case R8U
+	case r8u
     
     /// 8-bit single channel (signed).
-	case R8S
+	case r8s
     
     /// 16-bit single channel.
-	case R16
+	case r16
     
     /// 16-bit single channel (integer).
-	case R16I
+	case r16I
     
     /// 16-bit single channel (unsigned).
-	case R16U
+	case r16U
     
     /// 16-bit single channel (float).
-	case R16F
+	case r16F
     
     /// 16-bit single channel (signed).
-	case R16S
+	case r16S
     
     /// 32-bit single channel (integer).
-	case R32I
+	case r32I
     
     /// 32-bit single channel (unsigned).
-	case R32U
+	case r32U
     
     /// 32-bit single channel (float).
-	case R32F
+	case r32F
     
     /// 8-bit two channel.
-	case RG8
+	case rg8
     
     /// 8-bit two channel (integer).
-	case RG8I
+	case rg8I
     
     /// 8-bit two channel (unsigned).
-	case RG8U
+	case rg8U
     
     /// 8-bit two channel (signed).
-	case RG8S
+	case rg8S
     
     /// 16-bit two channel.
-	case RG16
+	case rg16
     
     /// 16-bit two channel (integer).
-	case RG16I
+	case rg16I
     
     /// 16-bit two channel (unsigned).
-	case RG16U
+	case rg16U
     
     /// 16-bit two channel (float).
-	case RG16F
+	case rg16F
     
     /// 16-bit two channel (signed).
-	case RG16S
+	case rg16S
     
     /// 32-bit two channel (integer).
-	case RG32I
+	case rg32I
     
     /// 32-bit two channel (unsigned).
-	case RG32U
+	case rg32U
     
     /// 32-bit two channel (float).
-	case RG32F
+	case rg32F
     
     /// 8-bit three channel.
-	case RGB8
+	case rgb8
     
     /// 8-bit three channel (integer).
-	case RGB8I
+	case rgb8I
     
     /// 8-bit three channel (unsigned).
-	case RGB8U
+	case rgb8U
     
     /// 8-bit three channel (signed).
-	case RGB8S
+	case rgb8S
     
     /// 9-bit three channel floating point with shared 5-bit exponent.
-	case RGB9E5F
+	case rgb9E5F
     
     /// 8-bit BGRA color.
-	case BGRA8
+	case bgra8
     
     /// 8-bit RGBA color.
-	case RGBA8
+	case rgba8
     
     /// 8-bit RGBA color (integer).
-	case RGBA8I
+	case rgba8I
     
     /// 8-bit RGBA color (unsigned).
-	case RGBA8U
+	case rgba8U
     
     /// 8-bit RGBA color (signed).
-	case RGBA8S
+	case rgba8S
     
     /// 16-bit RGBA color.
-	case RGBA16
+	case rgba16
     
     /// 16-bit RGBA color (integer).
-	case RGBA16I
+	case rgba16I
     
     /// 16-bit RGBA color (unsigned).
-	case RGBA16U
+	case rgba16U
     
     /// 16-bit RGBA color (float).
-	case RGBA16F
+	case rgba16F
     
     /// 16-bit RGBA color (signed).
-	case RGBA16S
+	case rgba16S
     
     /// 32-bit RGBA color (integer).
-	case RGBA32I
+	case rgba32I
     
     /// 32-bit RGBA color (unsigned).
-	case RGBA32U
+	case rgba32U
     
     /// 32-bit RGBA color (float).
-	case RGBA32F
+	case rgba32F
     
     /// 5-6-6 color.
-	case R5G6B5
+	case r5g6B5
     
     /// 4-bit RGBA color.
-	case RGBA4
+	case rgba4
     
     /// 5-bit RGB color with 1-bit alpha.
-	case RGB5A1
+	case rgb5A1
     
     /// 10-bit RGB color with 2-bit alpha.
-	case RGB10A2
+	case rgb10A2
     
     /// 11-11-10 color (float).
-	case R11G11B10F
+	case r11G11B10F
     
     /// Unknown depth format.
-	case UnknownDepth
+	case unknownDepth
     
     /// 16-bit depth.
-	case D16
+	case d16
     
     /// 24-bit depth.
-	case D24
+	case d24
     
     /// 24-bit depth, 8-bit stencil.
-	case D24S8
+	case d24S8
     
     /// 32-bit depth.
-	case D32
+	case d32
     
     /// 16-bit depth (float).
-	case D16F
+	case d16F
     
     /// 24-bit depth (float).
-	case D24F
+	case d24F
     
     /// 32-bit depth (float).
-	case D32F
+	case d32F
     
     /// 8-bit stencil.
-	case D0S8
+	case d0s8
 }
 
 /// Specifies the type of uniform data.
 public enum UniformType : UInt32 {
     
     /// Single integer.
-    case Int1
+    case int1
     
     /// 4D vector.
-    case Vector4 = 2
+    case vector4 = 2
     
     /// 3x3 matrix.
-    case Matrix3x3
+    case matrix3x3
     
     /// 4x4 matrix.
-    case Matrix4x4
+    case matrix4x4
 }
 
 /// Specifies various settings to change during a reset call
-public struct ResetOptions: OptionSetType {
+public struct ResetOptions: OptionSet {
     public let rawValue: UInt32
     
     public init(rawValue: UInt32) { self.rawValue = rawValue }
@@ -423,7 +423,7 @@ public struct ResetOptions: OptionSetType {
 }
 
 /// DebugOptions provides various options for debugging bgfx
-public struct DebugOptions: OptionSetType {
+public struct DebugOptions: OptionSet {
     public let rawValue: UInt32
     
     public init(rawValue: UInt32) { self.rawValue = rawValue }
@@ -445,7 +445,7 @@ public struct DebugOptions: OptionSetType {
     public static let Text = DebugOptions(rawValue: 0x0000_0008)
 }
 
-public struct ClearTargets: OptionSetType {
+public struct ClearTargets: OptionSet {
     public let rawValue: UInt16
     public init(rawValue: UInt16) { self.rawValue = rawValue }
     
@@ -493,7 +493,7 @@ public struct ClearTargets: OptionSetType {
 }
 
 /// Specifies various capabilities supported by the rendering device
-public struct CapsOptions: OptionSetType {
+public struct CapsOptions: OptionSet {
     public let rawValue: UInt64
 
     public init(rawValue: UInt64) { self.rawValue = rawValue }
@@ -563,7 +563,7 @@ public struct CapsOptions: OptionSetType {
 }
 
 /// Indicates the level of support for a specific texture format
-public struct TextureFormatSupport: OptionSetType {
+public struct TextureFormatSupport: OptionSet {
     public let rawValue: UInt16
 
     public init(rawValue: UInt16) { self.rawValue = rawValue }
@@ -615,7 +615,7 @@ public struct TextureFormatSupport: OptionSetType {
 }
 
 /// Specifies various texture flags.
-public struct TextureFlags : OptionSetType {
+public struct TextureFlags : OptionSet {
     public let rawValue: UInt32
     public init(rawValue: UInt32) { self.rawValue = rawValue }
     
@@ -725,52 +725,52 @@ public struct TextureFlags : OptionSetType {
 /// Describes access rights for a compute buffer.
 public enum ComputeBufferAccess: UInt32 {
     /// The buffer can only be read.
-    case Read
+    case read
     
     /// The buffer can only be written to.
-    case Write
+    case write
     
     /// The buffer can be read and written.
-    case ReadWrite
+    case readWrite
 }
 
 /// Addresses a particular face of a cube map.
 public enum CubeMapFace : UInt8 {
     /// The right face.
-    case Right
+    case right
     
     /// The left face.
-    case Left
+    case left
     
     /// The top face.
-    case Top
+    case top
     
     /// The bottom face.
-    case Bottom
+    case bottom
     
     /// The front face.
-    case Front
+    case front
     
     /// The back face.
-    case Back
+    case back
 }
 
 /// Specifies known vendor IDs
 public enum VendorID: UInt16 {
     /// Autoselect adapter
-    case None = 0x0000
+    case none = 0x0000
     
     /// Special flag to use platform's software rasterizer, if available
-    case SoftwareRasterizer = 0x0001
+    case softwareRasterizer = 0x0001
     
     /// AMD adapter
-    case AMD = 0x1002
+    case amd = 0x1002
     
     /// Intel adapter
-    case Intel = 0x8086
+    case intel = 0x8086
     
     /// nVIDIA adapter
-    case NVIDIA = 0x10de
+    case nvidia = 0x10de
 }
 
 
@@ -778,26 +778,26 @@ public enum VendorID: UInt16 {
 public enum BackbufferRatio: UInt32 {
     
     /// Surface is equal to the backbuffer size
-    case Equal = 0
+    case equal = 0
     
     /// Surface is half the backbuffer size
-    case Half
+    case half
     
     /// Surface is a quater of the backbuffer size
-    case Quarter
+    case quarter
     
     /// Surface is an eighth of the backbuffer size
-    case Eigth
+    case eigth
     
     /// Surface is a sixteenth of the backbuffer size
-    case Sixteenth
+    case sixteenth
     
     /// Surface is double the backbuffer size
-    case Double
+    case double
 }
 
 /// Specifies various flags that control vertex and index buffer behavior.
-public struct BufferFlags : OptionSetType {
+public struct BufferFlags : OptionSet {
     public let rawValue: UInt16
     public init(rawValue: UInt16) { self.rawValue = rawValue }
     
@@ -863,95 +863,95 @@ public struct BufferFlags : OptionSetType {
 /// Specifies various error types that can be reported by bgfx.
 public enum BgfxError: UInt32 {
     /// A debug check failed; the program can safely continue, but the issue should be investigated.
-    case DebugCheck
+    case debugCheck
     
     /// The user's hardware failed checks for the minimum required specs.
-    case MinimumRequiredSpecs
+    case minimumRequiredSpecs
     
     /// The program tried to compile an invalid shader.
-    case InvalidShader
+    case invalidShader
     
     /// An error occurred during bgfx library initialization.
-    case UnableToInitialize
+    case unableToInitialize
     
     /// Failed while trying to create a texture.
-    case UnableToCreateTexture
+    case unableToCreateTexture
     
     /// The graphics device was lost and the library was unable to recover.
-    case DeviceLost
+    case deviceLost
 }
 
 /// Specifies debug text colors.
 public enum DebugColor: UInt8 {
     /// Transparent.
-    case Transparent = 0
+    case transparent = 0
     
     /// Red.
-    case Red
+    case red
     
     /// Green.
-    case Green
+    case green
     
     /// Yellow.
-    case Yellow
+    case yellow
     
     /// Blue.
-    case Blue
+    case blue
     
     /// Purple.
-    case Purple
+    case purple
     
     /// Cyan.
-    case Cyan
+    case cyan
     
     /// Gray.
-    case Gray
+    case gray
     
     /// Dark gray.
-    case DarkGray
+    case darkGray
     
     /// Light red.
-    case LightRed
+    case lightRed
     
     /// Light green.
-    case LightGreen
+    case lightGreen
     
     /// Light yellow.
-    case LightYellow
+    case lightYellow
     
     /// Light blue.
-    case LightBlue
+    case lightBlue
     
     /// Light purple.
-    case LightPurple
+    case lightPurple
     
     /// Light cyan.
-    case LightCyan
+    case lightCyan
     
     /// White.
-    case White
+    case white
 }
 
 /// Specifies results of an occlusion query.
 public enum OcclusionQueryResult: UInt32 {
     /// Objects are invisible.
-    case Invisible
+    case invisible
     
     /// Objects are visible.
-    case Visible
+    case visible
     
     /// Result is not ready or is unknown.
-    case NoResult
+    case noResult
 }
 
 /// Specifies results of manually rendering a single frame
 public enum RenderFrameResult: UInt32 {
     /// No device context has been created yet
-    case NoContext = 0
+    case noContext = 0
     
     /// The frame was rendered
-    case Render
+    case render
     
     /// Rendering is done; the program should exit
-    case Exiting
+    case exiting
 }

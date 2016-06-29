@@ -6,7 +6,7 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-public struct RenderState: OptionSetType {
+public struct RenderState: OptionSet {
     public let rawValue: UInt64
     public init(rawValue: UInt64) {
         self.rawValue = rawValue
@@ -149,7 +149,7 @@ public struct RenderState: OptionSetType {
     /// - parameter alpha: The alpha reference value
     ///
     /// - returns: The encoded render state
-    public static func alphaRef(alpha: UInt8) -> RenderState {
+    public static func alphaRef(_ alpha: UInt8) -> RenderState {
         return RenderState(rawValue: (UInt64(alpha) << AlphaRefShift) & AlphaRefMask)
     }
 
@@ -158,7 +158,7 @@ public struct RenderState: OptionSetType {
     /// - parameter alpha: The point size
     ///
     /// - returns: The encoded render state
-    public static func pointSize(size: UInt8) -> RenderState {
+    public static func pointSize(_ size: UInt8) -> RenderState {
         return RenderState(rawValue: (UInt64(size) << PointSizeShift) & PointSizeMask)
     }
 
@@ -170,7 +170,7 @@ public struct RenderState: OptionSetType {
     ///    - destination: The destination blend operation
     ///
     /// - returns: The render state for the blend function
-    public static func blendFunction(source: RenderState, destination: RenderState) -> RenderState {
+    public static func blendFunction(_ source: RenderState, destination: RenderState) -> RenderState {
         return blendFunction(source, destinationColor: destination, sourceAlpha: source, destinationAlpha: destination)
     }
 
@@ -184,7 +184,7 @@ public struct RenderState: OptionSetType {
     ///    - destinationAlpha: The destination alpha blend operation
     ///
     /// - returns: The render state for the blend function
-    public static func blendFunction(sourceColor: RenderState, destinationColor: RenderState,
+    public static func blendFunction(_ sourceColor: RenderState, destinationColor: RenderState,
                                      sourceAlpha: RenderState, destinationAlpha: RenderState) -> RenderState {
         return (sourceColor | (destinationColor << 4)) | ((sourceAlpha | (destinationAlpha << 4)) << 8)
     }
@@ -194,7 +194,7 @@ public struct RenderState: OptionSetType {
     /// - parameter equation: The equation
     ///
     /// - returns: The render state for the blend equation
-    public static func blendEquation(equation: RenderState) -> RenderState {
+    public static func blendEquation(_ equation: RenderState) -> RenderState {
         return blendEquation(equation, alphaEquation: equation)
     }
 
@@ -205,7 +205,7 @@ public struct RenderState: OptionSetType {
     ///    - alphaEquation: The alpha equation
     ///
     /// - returns: The render state for the blend equation
-    public static func blendEquation(sourceEquation: RenderState, alphaEquation: RenderState) -> RenderState {
+    public static func blendEquation(_ sourceEquation: RenderState, alphaEquation: RenderState) -> RenderState {
         return sourceEquation | (alphaEquation << 3)
     }
 

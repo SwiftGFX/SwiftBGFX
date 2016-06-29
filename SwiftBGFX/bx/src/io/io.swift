@@ -6,12 +6,12 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-public protocol IOError : ErrorType {
+public protocol IOError : ErrorProtocol {
     
 }
 
-public enum ReaderError : ErrorType {
-    case EOF
+public enum ReaderError : ErrorProtocol {
+    case eof
 }
 
 /// Reader is the protocol that wraps the basic read method.
@@ -20,7 +20,7 @@ public protocol Reader {
     ///
     /// - throws: `IOError.EOF`
     ///
-    func read(inout dest: [UInt8]) throws -> Int;
+    func read(_ dest: inout [UInt8]) throws -> Int;
 }
 
 /// Closer is the protocol that wraps the basic Close method.

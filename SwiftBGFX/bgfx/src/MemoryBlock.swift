@@ -8,8 +8,8 @@
 
 import Foundation
 
-public enum MemoryBlockError: ErrorType {
-    case EmptyBuffer
+public enum MemoryBlockError: ErrorProtocol {
+    case emptyBuffer
 }
 
 public struct MemoryBlock {
@@ -17,12 +17,12 @@ public struct MemoryBlock {
        
     /// The pointer to the raw data
     public var data: UnsafeMutablePointer<UInt8> {
-        return handle.memory.data
+        return handle.pointee.data
     }
     
     /// The size of the block, in bytes
     public var size: UInt32 {
-        return handle.memory.size
+        return handle.pointee.size
     }
 
     private init(handle: UnsafePointer<bgfx_memory_t>) {
@@ -39,7 +39,7 @@ public struct MemoryBlock {
     }
     
     public init(text: String) {
-        self.init(handle: bgfx_copy(text, UInt32(text.lengthOfBytesUsingEncoding(NSASCIIStringEncoding))))
+        self.init(handle: bgfx_copy(text, UInt32(text.lengthOfBytes(using: String.Encoding.ascii))))
     }
     
     /// Creates a reference to the given data
@@ -54,9 +54,9 @@ public struct MemoryBlock {
     ///
     /// - throws: `MemoryBlockError.EmptyBuffer` if the `data` is empty
     ///
-    public static func makeRef<T>(data: [T]) throws -> MemoryBlock {
+    public static func makeRef<T>(_ data: [T]) throws -> MemoryBlock {
         if data.count == 0 {
-            throw MemoryBlockError.EmptyBuffer
+            throw MemoryBlockError.emptyBuffer
         }
         
         return MemoryBlock(handle: bgfx_make_ref(data, UInt32(sizeof(T) * data.count)))

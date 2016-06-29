@@ -22,7 +22,8 @@ extension bgfx {
     ///
     /// - Returns: `true` if initialization was successful
     ///
-    public static func initialize(type type: RendererBackend = .Default, vendorId: VendorID = .None, callback: Callbacks? = nil) -> Bool {
+    @discardableResult
+    public static func initialize(_ type: RendererBackend = .`default`, vendorId: VendorID = .none, callback: Callbacks? = nil) -> Bool {
         var cbi: UnsafeMutablePointer<bgfx_callback_interface_t>?
         if let cb = callback {
             cbi = makeCallbackHandler(cb)
@@ -48,7 +49,7 @@ extension bgfx {
     ///     - height: Back-buffer height
     ///     - options: See `ResetOptions`
     ///
-    public static func reset(width width: UInt16, height: UInt16, options: ResetOptions) {
+    public static func reset(width: UInt16, height: UInt16, options: ResetOptions) {
         bgfx_reset(UInt32(width), UInt32(height), options.rawValue)
     }
 
@@ -64,7 +65,8 @@ extension bgfx {
     /// Current frame number. This might be used in conjunction with double/multi
     /// buffering data outside the library and passing it to library via
     /// `bgfx::makeRef` calls.
-    public static func frame(capture: Bool = false) -> UInt32 {
+    @discardableResult
+    public static func frame(_ capture: Bool = false) -> UInt32 {
         return bgfx_frame(capture)
     }
 
@@ -77,15 +79,15 @@ extension bgfx {
         }
     }
 
-    public static func debugTextClear(color: DebugColor = .Transparent, small: Bool = false) {
+    public static func debugTextClear(color: DebugColor = .transparent, small: Bool = false) {
         bgfx_dbg_text_clear(color.rawValue << 4, small)
     }
 
-    public static func debugTextPrint(x x: UInt16, y: UInt16, foreColor: DebugColor, backColor: DebugColor, string: String) {
+    public static func debugTextPrint(x: UInt16, y: UInt16, foreColor: DebugColor, backColor: DebugColor, string: String) {
         bgfx_dbg_text_print(x, y, (backColor.rawValue << 4) | foreColor.rawValue, string)
     }
 
-    public static func debugTextImage(x x: UInt16, y: UInt16, width: UInt16, height: UInt16, data: [UInt8], pitch: UInt16) {
+    public static func debugTextImage(x: UInt16, y: UInt16, width: UInt16, height: UInt16, data: [UInt8], pitch: UInt16) {
         bgfx_dbg_text_image(x, y, width, height, data, pitch)
     }
 
@@ -102,7 +104,7 @@ extension bgfx {
     }
 
     public static var stats: Stats {
-        return unsafeBitCast(bgfx_get_stats().memory, Stats.self)
+        return unsafeBitCast(bgfx_get_stats().pointee, to: Stats.self)
     }
 
     // MARK:- Head Mounted Display
@@ -120,7 +122,7 @@ extension bgfx {
     ///     - g: green color value
     ///     - b: blue color value
     ///     - a: alpha color value
-    public static func setPaletteColor(index: UInt8, r: Float, g: Float, b: Float, a: Float) {
+    public static func setPaletteColor(_ index: UInt8, r: Float, g: Float, b: Float, a: Float) {
         var rgba = (r, g, b, a)
         bgfx_set_palette_color(index, &rgba.0)
     }
@@ -139,7 +141,7 @@ extension bgfx {
     ///
     /// - remark: This is debug only feature
     ///
-    public static func setViewName(viewId: UInt8, name: String) {
+    public static func setViewName(_ viewId: UInt8, name: String) {
         bgfx_set_view_name(viewId, name)
     }
 
@@ -152,7 +154,7 @@ extension bgfx {
     ///     - y: Position y from the top corner of the window
     ///     - width: Width of the viewport region
     ///     - height: Height of the viewport region
-    public static func setViewRect(viewId: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16) {
+    public static func setViewRect(_ viewId: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16) {
         bgfx_set_view_rect(viewId, x, y, width, height)
     }
 
@@ -165,7 +167,7 @@ extension bgfx {
     ///     - y: Position y from the top corner of the window
     ///     - ratio: Backbuffer ratio
     ///
-    public static func setViewRect(viewId: UInt8, x: UInt16, y: UInt16, ratio: BackbufferRatio) {
+    public static func setViewRect(_ viewId: UInt8, x: UInt16, y: UInt16, ratio: BackbufferRatio) {
         bgfx_set_view_rect_auto(viewId, x, y, bgfx_backbuffer_ratio_t(ratio.rawValue))
     }
 
@@ -179,7 +181,7 @@ extension bgfx {
     ///     - y: Position y from the top corner of the window
     ///     - width: Width of the viewport region
     ///     - height: Height of the viewport region
-    public static func setViewScissor(viewId: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16) {
+    public static func setViewScissor(_ viewId: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16) {
         bgfx_set_view_scissor(viewId, x, y, width, height)
     }
 
@@ -194,7 +196,7 @@ extension bgfx {
     ///     - depth: Depth clear value
     ///     - stencil: Stencil clear value
     ///
-    public static func setViewClear(viewId: UInt8, options: ClearTargets, rgba: UInt32, depth: Float, stencil: UInt8) {
+    public static func setViewClear(_ viewId: UInt8, options: ClearTargets, rgba: UInt32, depth: Float, stencil: UInt8) {
         bgfx_set_view_clear(viewId, options.rawValue, rgba, depth, stencil)
     }
 
@@ -209,7 +211,7 @@ extension bgfx {
     ///     - depth: Depth clear value
     ///     - stencil: Stencil clear value
     ///
-    public static func setViewClear(viewId: UInt8, options: ClearTargets, depth: Float, stencil: UInt8,
+    public static func setViewClear(_ viewId: UInt8, options: ClearTargets, depth: Float, stencil: UInt8,
                                     b0: UInt8 = UInt8.max, b1: UInt8 = UInt8.max,
                                     b2: UInt8 = UInt8.max, b3: UInt8 = UInt8.max,
                                     b4: UInt8 = UInt8.max, b5: UInt8 = UInt8.max,
@@ -225,7 +227,7 @@ extension bgfx {
     ///
     ///     - viewId: View id
     ///     - enabled: `true` to enable sequential mode
-    public static func setViewSequential(viewId: UInt8, enabled: Bool) {
+    public static func setViewSequential(_ viewId: UInt8, enabled: Bool) {
         bgfx_set_view_seq(viewId, enabled)
     }
 
@@ -237,7 +239,7 @@ extension bgfx {
     ///     - viewId: View id
     ///     - view: View matrix
     ///     - proj: Projection matrix
-    public static func setViewTransform(viewId: UInt8, view: float4x4, proj: float4x4) {
+    public static func setViewTransform(_ viewId: UInt8, view: float4x4, proj: float4x4) {
         var v = view
         var p = proj
         bgfx_set_view_transform(viewId, &v, &p)
@@ -250,7 +252,7 @@ extension bgfx {
     ///
     ///     - viewId: View id
     ///     - proj: Projection matrix
-    public static func setViewTransform(viewId: UInt8, proj: float4x4) {
+    public static func setViewTransform(_ viewId: UInt8, proj: float4x4) {
         var p = proj
         bgfx_set_view_transform(viewId, nil, &p)
     }
@@ -263,7 +265,7 @@ extension bgfx {
     ///     - viewId: View id
     ///     - view: View matrix
     ///     - proj: Projection matrix
-    public static func setViewTransform(viewId: UInt8, view: [Float], proj: [Float]) {
+    public static func setViewTransform(_ viewId: UInt8, view: [Float], proj: [Float]) {
         var v = view
         var p = proj
         bgfx_set_view_transform(viewId, &v, &p)
@@ -279,7 +281,7 @@ extension bgfx {
     ///
     /// - Remark: Not persistent after `reset`
     ///
-    public static func setViewFrameBuffer(viewId: UInt8, buffer: FrameBuffer) {
+    public static func setViewFrameBuffer(_ viewId: UInt8, buffer: FrameBuffer) {
         bgfx_set_view_frame_buffer(viewId, buffer.handle)
     }
 
@@ -290,7 +292,7 @@ extension bgfx {
     /// Sets a marker that can be used for debugging purposes
     ///
     /// - parameter name: The user-defined name of the marker
-    public static func setDebugMarker(name: String) {
+    public static func setDebugMarker(_ name: String) {
         bgfx_set_marker(name)
     }
 
@@ -301,7 +303,7 @@ extension bgfx {
     /// - returns: Scissor cache index
     ///
     /// - remark: to set the scissor for all primitives in view see `bgfx.setViewScissor`
-    public static func setScissor(x: UInt16, y: UInt16, width: UInt16, height: UInt16) -> UInt16 {
+    public static func setScissor(_ x: UInt16, y: UInt16, width: UInt16, height: UInt16) -> UInt16 {
         return bgfx_set_scissor(x, y, width, height)
     }
 
@@ -313,7 +315,7 @@ extension bgfx {
     /// - returns: Scissor cache index
     ///
     /// - remark: to set the scissor for all primitives in view see `bgfx.setViewScissor`
-    public static func setScissor(cache: UInt16) {
+    public static func setScissor(_ cache: UInt16) {
         bgfx_set_scissor_cached(cache)
     }
 
@@ -325,11 +327,13 @@ extension bgfx {
     /// - returns: index into matrix cache in case the same model matrix has to be
     ///            used for additional draw primitive calls
     ///
-    public static func setTransform(matrix: [float4x4]) -> UInt32 {
-        return bgfx_set_transform(matrix, UInt16(matrix.count))
+    @discardableResult
+    public static func setTransform(_ matrix: Matrix4x4f) -> UInt32 {
+        var mtx = matrix
+        return bgfx_set_transform(&mtx, 1)
     }
     
-    public static func setTransform(matrix: [Float]) -> UInt32 {
+    public static func setTransform(_ matrix: [Float]) -> UInt32 {
         return bgfx_set_transform(matrix, 1)
     }
 
@@ -339,7 +343,7 @@ extension bgfx {
     ///
     ///    - cache: index in matrix cache
     ///    - num: number of matrices from cache
-    public static func setTransform(cache: UInt32, num: UInt16) {
+    public static func setTransform(_ cache: UInt32, num: UInt16) {
         bgfx_set_transform_cached(cache, num)
     }
 
@@ -350,7 +354,7 @@ extension bgfx {
     /// Sets the index buffer to use for drawing primitives
     ///
     /// - parameter buf: Index buffer
-    public static func setIndexBuffer(buf: IndexBuffer) {
+    public static func setIndexBuffer(_ buf: IndexBuffer) {
         bgfx_set_index_buffer(buf.handle, 0, UInt32.max)
     }
 
@@ -361,7 +365,7 @@ extension bgfx {
     ///    - buf: Index buffer
     ///    - firstIndex: First index to render
     ///    - count: Number of indices to render
-    public static func setIndexBuffer(buf: IndexBuffer, firstIndex: UInt32, count: UInt32) {
+    public static func setIndexBuffer(_ buf: IndexBuffer, firstIndex: UInt32, count: UInt32) {
         bgfx_set_index_buffer(buf.handle, firstIndex, count)
     }
 
@@ -370,7 +374,7 @@ extension bgfx {
     /// - parameters:
     ///
     ///     - buf: Dynamic index buffer
-    public static func setIndexBuffer(buf: DynamicIndexBuffer) {
+    public static func setIndexBuffer(_ buf: DynamicIndexBuffer) {
         bgfx_set_dynamic_index_buffer(buf.handle, 0, UInt32.max)
     }
 
@@ -381,7 +385,7 @@ extension bgfx {
     ///     - buf: Dynamic index buffer
     ///     - firstIndex: First index to render
     ///     - count: Number of indices to render
-    public static func setIndexBuffer(buf: DynamicIndexBuffer, firstIndex: UInt32, count: UInt32) {
+    public static func setIndexBuffer(_ buf: DynamicIndexBuffer, firstIndex: UInt32, count: UInt32) {
         bgfx_set_dynamic_index_buffer(buf.handle, firstIndex, count)
     }
 
@@ -390,8 +394,8 @@ extension bgfx {
     /// - parameters:
     ///
     ///     - buf: Transient index buffer
-    public static func setIndexBuffer(buf: TransientIndexBuffer) {
-        var d = unsafeBitCast(buf, bgfx_transient_index_buffer_t.self)
+    public static func setIndexBuffer(_ buf: TransientIndexBuffer) {
+        var d = unsafeBitCast(buf, to: bgfx_transient_index_buffer_t.self)
         bgfx_set_transient_index_buffer(&d, 0, UInt32.max)
     }
 
@@ -402,8 +406,8 @@ extension bgfx {
     ///     - buf: Transient index buffer
     ///     - firstIndex: First index to render
     ///     - count: Number of indices to render
-    public static func setIndexBuffer(buf: TransientIndexBuffer, firstIndex: UInt32, count: UInt32) {
-        var d = unsafeBitCast(buf, bgfx_transient_index_buffer_t.self)
+    public static func setIndexBuffer(_ buf: TransientIndexBuffer, firstIndex: UInt32, count: UInt32) {
+        var d = unsafeBitCast(buf, to: bgfx_transient_index_buffer_t.self)
         bgfx_set_transient_index_buffer(&d, firstIndex, count)
     }
 
@@ -411,7 +415,7 @@ extension bgfx {
     /// Sets the vertex buffer to use for drawing primitives
     ///
     /// - parameter buf: Vertex buffer
-    public static func setVertexBuffer(buf: VertexBuffer) {
+    public static func setVertexBuffer(_ buf: VertexBuffer) {
         bgfx_set_vertex_buffer(buf.handle, 0, UInt32.max)
     }
 
@@ -422,7 +426,7 @@ extension bgfx {
     ///    - buf: Vertex buffer
     ///     - firstVertex: First vertex to render
     ///    - count: Number of indices to render
-    public static func setVertexBuffer(buf: VertexBuffer, firstVertex: UInt32, count: UInt32) {
+    public static func setVertexBuffer(_ buf: VertexBuffer, firstVertex: UInt32, count: UInt32) {
         bgfx_set_vertex_buffer(buf.handle, firstVertex, count)
     }
 
@@ -431,7 +435,7 @@ extension bgfx {
     /// - parameters:
     ///
     ///     - buf: Dynamic vertex buffer
-    public static func setVertexBuffer(buf: DynamicVertexBuffer) {
+    public static func setVertexBuffer(_ buf: DynamicVertexBuffer) {
         bgfx_set_dynamic_vertex_buffer(buf.handle, 0, UInt32.max)
     }
 
@@ -442,7 +446,7 @@ extension bgfx {
     ///     - buf: Dynamic vertex buffer
     ///     - firstVertex: First vertex to render
     ///     - count: Number of indices to render
-    public static func setVertexBuffer(buf: DynamicVertexBuffer, firstVertex: UInt32, count: UInt32) {
+    public static func setVertexBuffer(_ buf: DynamicVertexBuffer, firstVertex: UInt32, count: UInt32) {
         bgfx_set_dynamic_vertex_buffer(buf.handle, firstVertex, count)
     }
 
@@ -451,8 +455,8 @@ extension bgfx {
     /// - parameters:
     ///
     ///     - buf: Transient vertex buffer
-    public static func setVertexBuffer(buf: TransientVertexBuffer) {
-        var d = unsafeBitCast(buf, bgfx_transient_vertex_buffer_t.self)
+    public static func setVertexBuffer(_ buf: TransientVertexBuffer) {
+        var d = unsafeBitCast(buf, to: bgfx_transient_vertex_buffer_t.self)
         bgfx_set_transient_vertex_buffer(&d, 0, UInt32.max)
     }
 
@@ -463,8 +467,8 @@ extension bgfx {
     ///     - buf: Transient vertex buffer
     ///     - firstVertex: First vertex to render
     ///     - count: Number of indices to render
-    public static func setVertexBuffer(buf: TransientVertexBuffer, firstVertex: UInt32, count: UInt32) {
-        var d = unsafeBitCast(buf, bgfx_transient_vertex_buffer_t.self)
+    public static func setVertexBuffer(_ buf: TransientVertexBuffer, firstVertex: UInt32, count: UInt32) {
+        var d = unsafeBitCast(buf, to: bgfx_transient_vertex_buffer_t.self)
         bgfx_set_transient_vertex_buffer(&d, firstVertex, count)
     }
 
@@ -474,7 +478,7 @@ extension bgfx {
     ///
     ///     - buf: The instance data
     ///     - count: The number of entries to pull from the buffer
-    public static func setInstanceDataBuffer(buf: InstanceDataBuffer, count: UInt32 = UInt32.max) {
+    public static func setInstanceDataBuffer(_ buf: InstanceDataBuffer, count: UInt32 = UInt32.max) {
         bgfx_set_instance_data_buffer(buf.handle, count)
     }
 
@@ -485,7 +489,7 @@ extension bgfx {
     ///     - buf: The instance data
     ///     - firstVertex: First vertex to render
     ///     - count: The number of entries to pull from the buffer
-    public static func setInstanceDataBuffer(buf: VertexBuffer, firstVertex: UInt32, count: UInt32) {
+    public static func setInstanceDataBuffer(_ buf: VertexBuffer, firstVertex: UInt32, count: UInt32) {
         bgfx_set_instance_data_from_vertex_buffer(buf.handle, firstVertex, count)
     }
 
@@ -496,18 +500,18 @@ extension bgfx {
     ///     - buf: The instance data
     ///     - firstVertex: First vertex to render
     ///     - count: The number of entries to pull from the buffer
-    public static func setInstanceDataBuffer(buf: DynamicVertexBuffer, firstVertex: UInt32, count: UInt32) {
+    public static func setInstanceDataBuffer(_ buf: DynamicVertexBuffer, firstVertex: UInt32, count: UInt32) {
         bgfx_set_instance_data_from_dynamic_vertex_buffer(buf.handle, firstVertex, count)
     }
 
     /// Sets the value of a uniform parameter
-    public static func setUniform(uniform: Uniform, value: float4) {
+    public static func setUniform(_ uniform: Uniform, value: float4) {
         var ptr = value
         bgfx_set_uniform(uniform.handle, &ptr, 1)
     }
     
     /// Sets the value of a uniform parameter
-    public static func setUniform(uniform: Uniform, value: float4x4) {
+    public static func setUniform(_ uniform: Uniform, value: float4x4) {
         var ptr = value
         bgfx_set_uniform(uniform.handle, &ptr, 1)
     }
@@ -520,7 +524,7 @@ extension bgfx {
     ///    - sampler: The sampler uniform
     ///    - texture: The texture to set
     ///    - flags: Sampling flags that override the default flags in the texture itself
-    public static func setTexture(unit: UInt8, sampler: Uniform, texture: Texture, flags: TextureFlags = [.Default]) {
+    public static func setTexture(_ unit: UInt8, sampler: Uniform, texture: Texture, flags: TextureFlags = [.Default]) {
         bgfx_set_texture(unit, sampler.handle, texture.handle, flags.rawValue)
     }
 
@@ -533,7 +537,7 @@ extension bgfx {
     ///    - frameBuffer: The frame buffer
     ///    - attachment: The index of the attachment to set
     ///    - flags: Sampling flags that override the default flags in the texture itself
-    public static func setTexture(unit: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8 = 0, flags: TextureFlags = [.Default]) {
+    public static func setTexture(_ unit: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8 = 0, flags: TextureFlags = [.Default]) {
         bgfx_set_texture_from_frame_buffer(unit, sampler.handle, frameBuffer.handle, attachment, flags.rawValue)
     }
 
@@ -547,7 +551,7 @@ extension bgfx {
     ///    - mip: The index of the mip level within the texture to set
     ///    - access: Access control flags
     ///    - format: The format of the buffer data
-    public static func setComputeImage(stage: UInt8, sampler: Uniform, texture: Texture, mip: UInt8, access: ComputeBufferAccess, format: TextureFormat = .Unknown) {
+    public static func setComputeImage(_ stage: UInt8, sampler: Uniform, texture: Texture, mip: UInt8, access: ComputeBufferAccess, format: TextureFormat = .unknown) {
         bgfx_set_image(stage, sampler.handle, texture.handle, mip, bgfx_access_t(access.rawValue), bgfx_texture_format_t(format.rawValue))
     }
 
@@ -561,7 +565,7 @@ extension bgfx {
     ///    - attachment: The attachment index
     ///    - access: Access control flags
     ///    - format: The format of the buffer data
-    public static func setComputeImage(stage: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8, access: ComputeBufferAccess, format: TextureFormat = .Unknown) {
+    public static func setComputeImage(_ stage: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8, access: ComputeBufferAccess, format: TextureFormat = .unknown) {
         bgfx_set_image_from_frame_buffer(stage, sampler.handle, frameBuffer.handle, attachment, bgfx_access_t(access.rawValue), bgfx_texture_format_t(format.rawValue))
     }
 
@@ -572,7 +576,7 @@ extension bgfx {
     ///    - stage: The buffer stage to set
     ///    - buffer: The buffer to set
     ///    - access: Access control flags
-    public static func setComputeBuffer(stage: UInt8, buffer: IndexBuffer, access: ComputeBufferAccess) {
+    public static func setComputeBuffer(_ stage: UInt8, buffer: IndexBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_index_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
 
@@ -583,7 +587,7 @@ extension bgfx {
     ///    - stage: The buffer stage to set
     ///    - buffer: The buffer to set
     ///    - access: Access control flags
-    public static func setComputeBuffer(stage: UInt8, buffer: VertexBuffer, access: ComputeBufferAccess) {
+    public static func setComputeBuffer(_ stage: UInt8, buffer: VertexBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_vertex_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
 
@@ -594,7 +598,7 @@ extension bgfx {
     ///    - stage: The buffer stage to set
     ///    - buffer: The buffer to set
     ///    - access: Access control flags
-    public static func setComputeBuffer(stage: UInt8, buffer: DynamicIndexBuffer, access: ComputeBufferAccess) {
+    public static func setComputeBuffer(_ stage: UInt8, buffer: DynamicIndexBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_dynamic_index_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
 
@@ -605,7 +609,7 @@ extension bgfx {
     ///    - stage: The buffer stage to set
     ///    - buffer: The buffer to set
     ///    - access: Access control flags
-    public static func setComputeBuffer(stage: UInt8, buffer: DynamicVertexBuffer, access: ComputeBufferAccess) {
+    public static func setComputeBuffer(_ stage: UInt8, buffer: DynamicVertexBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_dynamic_vertex_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
 
@@ -616,7 +620,7 @@ extension bgfx {
     ///    - stage: The buffer stage to set
     ///    - buffer: The buffer to set
     ///    - access: Access control flags
-    public static func setComputeBuffer(stage: UInt8, buffer: IndirectBuffer, access: ComputeBufferAccess) {
+    public static func setComputeBuffer(_ stage: UInt8, buffer: IndirectBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_indirect_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
 
@@ -629,12 +633,13 @@ extension bgfx {
     ///     - viewId: the view ID
     ///
     /// - Returns: Number of draw calls
-    public static func touch(viewId: UInt8) -> UInt32 {
+    @discardableResult
+    public static func touch(_ viewId: UInt8) -> UInt32 {
         return bgfx_touch(viewId)
     }
 
     /// Resets all view settings to default
-    public static func resetView(viewId: UInt8) {
+    public static func resetView(_ viewId: UInt8) {
         bgfx_reset_view(viewId)
     }
 
@@ -648,7 +653,8 @@ extension bgfx {
     ///    - preserveState: `true` to preserve internal draw state after the call
     ///
     /// - returns: Number of draw calls
-    public static func submit(viewId: UInt8, program: Program, depth: Int32 = 0, preserveState: Bool = false) -> UInt32 {
+    @discardableResult
+    public static func submit(_ viewId: UInt8, program: Program, depth: Int32 = 0, preserveState: Bool = false) -> UInt32 {
         return bgfx_submit(viewId, program.handle, depth, preserveState)
     }
 
@@ -663,7 +669,8 @@ extension bgfx {
     ///    - preserveState: `true` to preserve internal draw state after the call
     ///
     /// - returns: Number of draw calls
-    public static func submit(viewId: UInt8, program: Program, query: OcclusionQuery, depth: Int32 = 0, preserveState: Bool = false) -> UInt32 {
+    @discardableResult
+    public static func submit(_ viewId: UInt8, program: Program, query: OcclusionQuery, depth: Int32 = 0, preserveState: Bool = false) -> UInt32 {
         return bgfx_submit_occlusion_query(viewId, program.handle, query.handle, depth, preserveState)
     }
 
@@ -680,7 +687,8 @@ extension bgfx {
     ///    - preserveState: `true` to preserve internal draw state after the call
     ///
     /// - returns: Number of draw calls
-    public static func submit(viewId: UInt8, program: Program, indirectBuffer: IndirectBuffer, startIndex: UInt16 = 0, count: UInt16 = 1, depth: Int32 = 0, preserveState: Bool = false) -> UInt32 {
+    @discardableResult
+    public static func submit(_ viewId: UInt8, program: Program, indirectBuffer: IndirectBuffer, startIndex: UInt16 = 0, count: UInt16 = 1, depth: Int32 = 0, preserveState: Bool = false) -> UInt32 {
         return bgfx_submit_indirect(viewId, program.handle, indirectBuffer.handle, startIndex, count, depth, preserveState)
     }
 
@@ -698,7 +706,7 @@ extension bgfx {
     ///    - xCount: The size of the job in the first dimension
     ///    - yCount: The size of the job in the second dimension
     ///    - zCount: The size of the job in the third dimension
-    public static func dispatch(viewId: UInt8, program: Program, xCount: UInt16 = 1, yCount: UInt16 = 1, zCount: UInt16 = 1) {
+    public static func dispatch(_ viewId: UInt8, program: Program, xCount: UInt16 = 1, yCount: UInt16 = 1, zCount: UInt16 = 1) {
         bgfx_dispatch(viewId, program.handle, xCount, yCount, zCount, 0)
     }
 
@@ -712,14 +720,14 @@ extension bgfx {
     ///    - xCount: The size of the job in the first dimension
     ///    - yCount: The size of the job in the second dimension
     ///    - zCount: The size of the job in the third dimension
-    public static func dispatch(viewId: UInt8, program: Program, buffer: IndirectBuffer, startIndex: UInt16 = 1, count: UInt16 = 1, zCount: UInt16 = 1) {
+    public static func dispatch(_ viewId: UInt8, program: Program, buffer: IndirectBuffer, startIndex: UInt16 = 1, count: UInt16 = 1, zCount: UInt16 = 1) {
         bgfx_dispatch_indirect(viewId, program.handle, buffer.handle, startIndex, count, 0)
     }
     
     /// Requests that a screenshot be saved. The ScreenshotTaken event will be fired to save the result
     ///
     /// - parameter filePath: The file path that will be passed to the callback event
-    public static func saveScreenShot(filePath: String) {
+    public static func saveScreenShot(_ filePath: String) {
         bgfx_save_screen_shot(filePath)
     }
 
@@ -729,14 +737,14 @@ extension bgfx {
     ///
     ///    - state: The set of states to set
     ///    - colorRgba: The color used for "factor" blending modes
-    public static func setRenderState(state: RenderState, colorRgba: UInt32) {
+    public static func setRenderState(_ state: RenderState, colorRgba: UInt32) {
         bgfx_set_state(state.rawValue, colorRgba)
     }
 
     /// Sets stencil test state
     ///
     /// - parameter frontFace: The stencil state to use for front faces
-    public static func setStencil(frontFace frontFace: StencilFlags) {
+    public static func setStencil(_ frontFace: StencilFlags) {
         bgfx_set_stencil(frontFace.rawValue, StencilFlags.None.rawValue)
     }
 
@@ -746,7 +754,7 @@ extension bgfx {
     ///
     ///    - frontFace: The stencil state to use for front faces
     ///    - backFace: The stencil state to use for back faces
-    public static func setStencil(frontFace frontFace: StencilFlags, backFace: StencilFlags) {
+    public static func setStencil(_ frontFace: StencilFlags, backFace: StencilFlags) {
         bgfx_set_stencil(frontFace.rawValue, backFace.rawValue)
     }
 }

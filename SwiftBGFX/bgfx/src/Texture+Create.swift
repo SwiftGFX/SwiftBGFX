@@ -23,7 +23,7 @@ public extension Texture {
     ///
     /// - returns: The newly created texture handle
     ///
-    public static func make2D(width: UInt16, height: UInt16, mipCount: UInt8, format: TextureFormat, flags: TextureFlags = [.None], memory: MemoryBlock? = nil) -> Texture {
+    public static func make2D(_ width: UInt16, height: UInt16, mipCount: UInt8, format: TextureFormat, flags: TextureFlags = [.None], memory: MemoryBlock? = nil) -> Texture {
         var info = TextureInfo()
         bgfx_calc_texture_size(&info, width, height, 1, false, mipCount, bgfx_texture_format_t(format.rawValue))
         let handle = bgfx_create_texture_2d(info.width, info.height, info.numMips, bgfx_texture_format_t(format.rawValue), flags.rawValue, memory?.handle ?? nil)
@@ -42,9 +42,9 @@ public extension Texture {
     ///
     /// - returns: The newly created texture handle
     ///
-    public static func make2D(ratio: BackbufferRatio, mipCount: UInt8, format: TextureFormat, flags: TextureFlags = [.None]) -> Texture {
+    public static func make2D(_ ratio: BackbufferRatio, mipCount: UInt8, format: TextureFormat, flags: TextureFlags = [.None]) -> Texture {
         var info = TextureInfo()
-        info.format = unsafeBitCast(format, bgfx_texture_format_t.self)
+        info.format = unsafeBitCast(format, to: bgfx_texture_format_t.self)
         info.numMips = mipCount
         
         let handle = bgfx_create_texture_2d_scaled(bgfx_backbuffer_ratio_t(ratio.rawValue), mipCount, bgfx_texture_format_t(format.rawValue), flags.rawValue)
@@ -70,7 +70,7 @@ public extension Texture {
     ///
     public convenience init(memory: MemoryBlock, flags: TextureFlags = [.None], skipMips: UInt8 = 0) {
         var info = TextureInfo()
-        let handle = bgfx_create_texture(memory.handle, unsafeBitCast(flags, UInt32.self), skipMips, &info)
+        let handle = bgfx_create_texture(memory.handle, unsafeBitCast(flags, to: UInt32.self), skipMips, &info)
         self.init(handle: handle, info: info)
     }
 }

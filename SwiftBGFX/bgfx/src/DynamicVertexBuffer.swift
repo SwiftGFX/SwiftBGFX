@@ -38,7 +38,7 @@ public class DynamicVertexBuffer {
     ///
     ///     - startIndex: Position of the first index to update
     ///     - mem: The new index data with which to fill the buffer
-    public func update(startIndex: UInt32, mem: MemoryBlock) {
+    public func update(_ startIndex: UInt32, mem: MemoryBlock) {
         bgfx_update_dynamic_vertex_buffer(handle, startIndex, mem.handle)
     }
     

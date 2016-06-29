@@ -17,7 +17,7 @@ public final class Queue<T> {
     }
     
     /// Add a new item to the back of the queue.
-    public func enqueue(value: T) {
+    public func enqueue(_ value: T) {
         _back.next = _QueueItem(value)
         _back = _back.next!
     }
