@@ -6,8 +6,6 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-import simd
-
 extension bgfx {
 
     // MARK:- Initialization and shutdown
@@ -239,7 +237,7 @@ extension bgfx {
     ///     - viewId: View id
     ///     - view: View matrix
     ///     - proj: Projection matrix
-    public static func setViewTransform(_ viewId: UInt8, view: float4x4, proj: float4x4) {
+    public static func setViewTransform(_ viewId: UInt8, view: Matrix4x4f, proj: Matrix4x4f) {
         var v = view
         var p = proj
         bgfx_set_view_transform(viewId, &v, &p)
@@ -252,7 +250,7 @@ extension bgfx {
     ///
     ///     - viewId: View id
     ///     - proj: Projection matrix
-    public static func setViewTransform(_ viewId: UInt8, proj: float4x4) {
+    public static func setViewTransform(_ viewId: UInt8, proj: Matrix4x4f) {
         var p = proj
         bgfx_set_view_transform(viewId, nil, &p)
     }
@@ -505,13 +503,13 @@ extension bgfx {
     }
 
     /// Sets the value of a uniform parameter
-    public static func setUniform(_ uniform: Uniform, value: float4) {
+    public static func setUniform(_ uniform: Uniform, value: Vector4f) {
         var ptr = value
         bgfx_set_uniform(uniform.handle, &ptr, 1)
     }
     
     /// Sets the value of a uniform parameter
-    public static func setUniform(_ uniform: Uniform, value: float4x4) {
+    public static func setUniform(_ uniform: Uniform, value: Matrix4x4f) {
         var ptr = value
         bgfx_set_uniform(uniform.handle, &ptr, 1)
     }

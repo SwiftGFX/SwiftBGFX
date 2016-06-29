@@ -183,7 +183,7 @@ class Context {
         
         eventQueue.postExitEvent()
         
-        while bgfx.renderFrame() != .noContext {}
+        while bgfx.renderFrame() != .nocontext {}
         while !thread.isFinished {}
     }
     

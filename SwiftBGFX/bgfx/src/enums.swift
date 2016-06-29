@@ -761,7 +761,7 @@ public enum VendorID: UInt16 {
     case none = 0x0000
     
     /// Special flag to use platform's software rasterizer, if available
-    case softwareRasterizer = 0x0001
+    case software = 0x0001
     
     /// AMD adapter
     case amd = 0x1002
@@ -947,7 +947,7 @@ public enum OcclusionQueryResult: UInt32 {
 /// Specifies results of manually rendering a single frame
 public enum RenderFrameResult: UInt32 {
     /// No device context has been created yet
-    case noContext = 0
+    case nocontext = 0
     
     /// The frame was rendered
     case render

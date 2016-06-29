@@ -6,13 +6,11 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-/// **
 /// Represents a transient index buffer
 ///
 /// - remark:
 /// The contents of the buffer are valid for the current frame only.
 /// You must call SetVertexBuffer with the buffer or a leak could occur.
-/// */
 public struct TransientVertexBuffer {
     // - NOTE: This structure must match the layout of bgfx_transient_vertex_buffer_t
     

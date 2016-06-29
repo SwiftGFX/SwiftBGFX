@@ -6,8 +6,6 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-import simd
-
 public class bgfx {
 
     /// Checks for available space to allocate transient index and vertex buffers
@@ -59,7 +57,7 @@ public class bgfx {
     ///    - layout: The layout of the vertex stream
     ///    - data: The pointer to the vertex data stream
     ///    - index: The index of the vertex within the stream
-    public static func vertexPack(_ input: float4, inputNormalized: Bool, attribute: VertexAttributeUsage,
+    public static func vertexPack(_ input: Vector4f, inputNormalized: Bool, attribute: VertexAttributeUsage,
                                   layout: VertexLayout, data: UnsafeMutablePointer<Void>, index: UInt32 = 0) {
         typealias tuple = (CFloat, CFloat, CFloat, CFloat)
         var vec = unsafeBitCast(input, to: tuple.self)
@@ -75,7 +73,7 @@ public class bgfx {
     ///    - layout: The layout of the vertex stream
     ///    - data: The pointer to the vertex data stream
     ///    - index: The index of the vertex within the stream
-    public static func vertexUnpack(_ output: inout float4, attribute: VertexAttributeUsage,
+    public static func vertexUnpack(_ output: inout Vector4f, attribute: VertexAttributeUsage,
                                   layout: VertexLayout, data: UnsafeMutablePointer<Void>, index: UInt32 = 0) {
         let vec = toFloatPtr(&output)
         bgfx_vertex_unpack(vec, bgfx_attrib_t(attribute.rawValue), &layout.handle, data, index)
@@ -185,7 +183,7 @@ public class bgfx {
         return RenderFrameResult(rawValue: res.rawValue)!
     }
 
-    private static func toFloatPtr(_ v: UnsafeMutablePointer<float4>) -> UnsafeMutablePointer<Float> {
+    private static func toFloatPtr(_ v: UnsafeMutablePointer<Vector4f>) -> UnsafeMutablePointer<Float> {
         return unsafeBitCast(v, to: UnsafeMutablePointer<Float>.self)
     }
 }

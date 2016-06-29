@@ -166,8 +166,8 @@ class ExampleRaymarch: AppI {
                 bgfx.debugTextPrint(x: 0, y: 5, foreColor: fore, backColor: back, string: " Instancing is not supported by GPU ")
             }
             
-            let view = bgfx.lookAt(eye: vec3(0.0, 0.0, -15.0), at: vec3(0))
-            let proj = bgfx.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
+            let view = mat4.lookAt(eye: vec3(0.0, 0.0, -15.0), at: vec3(0))
+            let proj = mat4.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
             let mtx = mat4(
                 1.0, 0.0, 0.0, 0.0,
                 0.0, 1.0, 0.0, 0.0,
@@ -177,7 +177,7 @@ class ExampleRaymarch: AppI {
             
             bgfx.setViewTransform(0, view: view, proj: proj)
             
-            let ortho = bgfx.ortho(left: 0, right: 1280, bottom: 720, top: 0, near: 0, far: 100)
+            let ortho = mat4.ortho(left: 0, right: 1280, bottom: 720, top: 0, near: 0, far: 100)
             bgfx.setViewTransform(1, proj: ortho)
             
             let vec = vec4(-0.5, -0.3, 0.2, time)

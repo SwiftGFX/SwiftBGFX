@@ -93,6 +93,42 @@
 		055B3D731CC70E8F005B38C5 /* queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D721CC70E8F005B38C5 /* queue.swift */; };
 		055B3D751CC73EE5005B38C5 /* event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D741CC73EE5005B38C5 /* event.swift */; };
 		055B3D771CC7CBCF005B38C5 /* input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055B3D761CC7CBCF005B38C5 /* input.swift */; };
+		058E33A31D244AE0001133AA /* math+platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33A21D244AE0001133AA /* math+platform.swift */; };
+		058E33A41D244AE0001133AA /* math+platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33A21D244AE0001133AA /* math+platform.swift */; };
+		058E33A51D244AE0001133AA /* math+platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33A21D244AE0001133AA /* math+platform.swift */; };
+		058E33A61D244AE0001133AA /* math+platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33A21D244AE0001133AA /* math+platform.swift */; };
+		058E33A81D245CB2001133AA /* Matrix4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33A71D245CB2001133AA /* Matrix4x4.swift */; };
+		058E33A91D245CB2001133AA /* Matrix4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33A71D245CB2001133AA /* Matrix4x4.swift */; };
+		058E33AA1D245CB2001133AA /* Matrix4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33A71D245CB2001133AA /* Matrix4x4.swift */; };
+		058E33AB1D245CB2001133AA /* Matrix4x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33A71D245CB2001133AA /* Matrix4x4.swift */; };
+		058E33AD1D245CD5001133AA /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33AC1D245CD5001133AA /* Vector4.swift */; };
+		058E33AE1D245CD5001133AA /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33AC1D245CD5001133AA /* Vector4.swift */; };
+		058E33AF1D245CD5001133AA /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33AC1D245CD5001133AA /* Vector4.swift */; };
+		058E33B01D245CD5001133AA /* Vector4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33AC1D245CD5001133AA /* Vector4.swift */; };
+		058E33B21D24654A001133AA /* Vector4+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33B11D24654A001133AA /* Vector4+nosimd.swift */; };
+		058E33B31D24654A001133AA /* Vector4+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33B11D24654A001133AA /* Vector4+nosimd.swift */; };
+		058E33B41D24654A001133AA /* Vector4+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33B11D24654A001133AA /* Vector4+nosimd.swift */; };
+		058E33B51D24654A001133AA /* Vector4+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33B11D24654A001133AA /* Vector4+nosimd.swift */; };
+		058E33B71D246595001133AA /* Matrix4x4+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33B61D246595001133AA /* Matrix4x4+nosimd.swift */; };
+		058E33B81D246595001133AA /* Matrix4x4+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33B61D246595001133AA /* Matrix4x4+nosimd.swift */; };
+		058E33B91D246595001133AA /* Matrix4x4+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33B61D246595001133AA /* Matrix4x4+nosimd.swift */; };
+		058E33BA1D246595001133AA /* Matrix4x4+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33B61D246595001133AA /* Matrix4x4+nosimd.swift */; };
+		058E33BC1D2469DC001133AA /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33BB1D2469DC001133AA /* Vector3.swift */; };
+		058E33BD1D2469DC001133AA /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33BB1D2469DC001133AA /* Vector3.swift */; };
+		058E33BE1D2469DC001133AA /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33BB1D2469DC001133AA /* Vector3.swift */; };
+		058E33BF1D2469DC001133AA /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33BB1D2469DC001133AA /* Vector3.swift */; };
+		058E33C11D2469FB001133AA /* Vector3+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33C01D2469FB001133AA /* Vector3+nosimd.swift */; };
+		058E33C21D2469FB001133AA /* Vector3+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33C01D2469FB001133AA /* Vector3+nosimd.swift */; };
+		058E33C31D2469FB001133AA /* Vector3+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33C01D2469FB001133AA /* Vector3+nosimd.swift */; };
+		058E33C41D2469FB001133AA /* Vector3+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33C01D2469FB001133AA /* Vector3+nosimd.swift */; };
+		058E33C61D248197001133AA /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33C51D248197001133AA /* Vector2.swift */; };
+		058E33C71D248197001133AA /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33C51D248197001133AA /* Vector2.swift */; };
+		058E33C81D248197001133AA /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33C51D248197001133AA /* Vector2.swift */; };
+		058E33C91D248197001133AA /* Vector2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33C51D248197001133AA /* Vector2.swift */; };
+		058E33CB1D2481A6001133AA /* Vector2+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33CA1D2481A6001133AA /* Vector2+nosimd.swift */; };
+		058E33CC1D2481A6001133AA /* Vector2+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33CA1D2481A6001133AA /* Vector2+nosimd.swift */; };
+		058E33CD1D2481A6001133AA /* Vector2+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33CA1D2481A6001133AA /* Vector2+nosimd.swift */; };
+		058E33CE1D2481A6001133AA /* Vector2+nosimd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E33CA1D2481A6001133AA /* Vector2+nosimd.swift */; };
 		05B1B6731CD881E300401D8C /* bgfx+types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527444E1CCAB06200E821CE /* bgfx+types.swift */; };
 		05B1B6741CD881E300401D8C /* bgfx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052744CA1CCAE28A00E821CE /* bgfx.swift */; };
 		05B1B6751CD881E300401D8C /* bgfx+native.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0527444D1CCAB06200E821CE /* bgfx+native.swift */; };
@@ -276,6 +312,15 @@
 		058076B61CC2D00400C43477 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		058076B81CC2D01200C43477 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		058076BE1CC2D09300C43477 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		058E33A21D244AE0001133AA /* math+platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "math+platform.swift"; sourceTree = "<group>"; };
+		058E33A71D245CB2001133AA /* Matrix4x4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix4x4.swift; sourceTree = "<group>"; };
+		058E33AC1D245CD5001133AA /* Vector4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector4.swift; sourceTree = "<group>"; };
+		058E33B11D24654A001133AA /* Vector4+nosimd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vector4+nosimd.swift"; sourceTree = "<group>"; };
+		058E33B61D246595001133AA /* Matrix4x4+nosimd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Matrix4x4+nosimd.swift"; sourceTree = "<group>"; };
+		058E33BB1D2469DC001133AA /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		058E33C01D2469FB001133AA /* Vector3+nosimd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vector3+nosimd.swift"; sourceTree = "<group>"; };
+		058E33C51D248197001133AA /* Vector2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector2.swift; sourceTree = "<group>"; };
+		058E33CA1D2481A6001133AA /* Vector2+nosimd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Vector2+nosimd.swift"; sourceTree = "<group>"; };
 		05B1B6AA1CD8857000401D8C /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		05B1B6AB1CD885BA00401D8C /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		05B1B6AC1CD885C200401D8C /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -387,9 +432,18 @@
 		052951571D1EED860041DA32 /* math */ = {
 			isa = PBXGroup;
 			children = (
+				058E33A21D244AE0001133AA /* math+platform.swift */,
+				058E33A71D245CB2001133AA /* Matrix4x4.swift */,
+				058E33B61D246595001133AA /* Matrix4x4+nosimd.swift */,
 				053D63FC1D1F1F5A00259AB3 /* Matrix4x4+simd.swift */,
+				058E33C51D248197001133AA /* Vector2.swift */,
+				058E33CA1D2481A6001133AA /* Vector2+nosimd.swift */,
 				052951581D1EF4AA0041DA32 /* Vector2+simd.swift */,
+				058E33BB1D2469DC001133AA /* Vector3.swift */,
+				058E33C01D2469FB001133AA /* Vector3+nosimd.swift */,
 				053D64061D1F37EB00259AB3 /* Vector3+simd.swift */,
+				058E33AC1D245CD5001133AA /* Vector4.swift */,
+				058E33B11D24654A001133AA /* Vector4+nosimd.swift */,
 				053D64011D1F200D00259AB3 /* Vector4+simd.swift */,
 				0529515D1D1EFCC20041DA32 /* bgfx+math.swift */,
 			);
@@ -666,14 +720,19 @@
 				05195BD01CEBA309002941B0 /* main.swift in Sources */,
 				05195BA31CEBA2F1002941B0 /* Timing.swift in Sources */,
 				05195BA41CEBA2F1002941B0 /* entry+utils.swift in Sources */,
+				058E33C31D2469FB001133AA /* Vector3+nosimd.swift in Sources */,
 				05195BA51CEBA2F1002941B0 /* bgfx+native.swift in Sources */,
 				05195BA61CEBA2F1002941B0 /* io.swift in Sources */,
 				05195BA71CEBA2F1002941B0 /* TransientVertexBuffer.swift in Sources */,
+				058E33AA1D245CB2001133AA /* Matrix4x4.swift in Sources */,
 				05195BA81CEBA2F1002941B0 /* Program.swift in Sources */,
 				05195BA91CEBA2F1002941B0 /* entry.swift in Sources */,
+				058E33B41D24654A001133AA /* Vector4+nosimd.swift in Sources */,
 				05195BAA1CEBA2F1002941B0 /* InstanceDataBuffer.swift in Sources */,
+				058E33C81D248197001133AA /* Vector2.swift in Sources */,
 				05195BAB1CEBA2F1002941B0 /* StencilFlags.swift in Sources */,
 				05195BAC1CEBA2F1002941B0 /* FrameBuffer.swift in Sources */,
+				058E33B91D246595001133AA /* Matrix4x4+nosimd.swift in Sources */,
 				05195BAD1CEBA2F1002941B0 /* bgfx.swift in Sources */,
 				05195BAE1CEBA2F1002941B0 /* queue.swift in Sources */,
 				05195BAF1CEBA2F1002941B0 /* event.swift in Sources */,
@@ -691,16 +750,20 @@
 				0529515B1D1EF4AA0041DA32 /* Vector2+simd.swift in Sources */,
 				05195BBA1CEBA2F1002941B0 /* bgfx+types.swift in Sources */,
 				053D63FF1D1F1F5A00259AB3 /* Matrix4x4+simd.swift in Sources */,
+				058E33AF1D245CD5001133AA /* Vector4.swift in Sources */,
 				05195BBB1CEBA2F1002941B0 /* IndirectBuffer.swift in Sources */,
 				05195BBC1CEBA2F1002941B0 /* Callbacks.swift in Sources */,
 				05195BBD1CEBA2F1002941B0 /* RenderState.swift in Sources */,
 				05195BBE1CEBA2F1002941B0 /* Texture+Create.swift in Sources */,
+				058E33A51D244AE0001133AA /* math+platform.swift in Sources */,
+				058E33CD1D2481A6001133AA /* Vector2+nosimd.swift in Sources */,
 				05195BBF1CEBA2F1002941B0 /* DynamicVertexBuffer.swift in Sources */,
 				053D64091D1F37EB00259AB3 /* Vector3+simd.swift in Sources */,
 				05195BC01CEBA2F1002941B0 /* enums.swift in Sources */,
 				053D64041D1F200D00259AB3 /* Vector4+simd.swift in Sources */,
 				05195BC21CEBA2F1002941B0 /* VertexLayout.swift in Sources */,
 				05195BC31CEBA2F1002941B0 /* input.swift in Sources */,
+				058E33BE1D2469DC001133AA /* Vector3.swift in Sources */,
 				05195BC41CEBA2F1002941B0 /* MemoryBlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -713,14 +776,19 @@
 				05B1B6A01CD884AA00401D8C /* Timing.swift in Sources */,
 				052745031CCD66E700E821CE /* main.swift in Sources */,
 				054FE87B1CCF46B5009923F4 /* entry+utils.swift in Sources */,
+				058E33C21D2469FB001133AA /* Vector3+nosimd.swift in Sources */,
 				05B1B68F1CD884AA00401D8C /* bgfx+native.swift in Sources */,
 				054FE8781CCF3DCF009923F4 /* io.swift in Sources */,
 				05B1B6A21CD884AA00401D8C /* TransientVertexBuffer.swift in Sources */,
+				058E33A91D245CB2001133AA /* Matrix4x4.swift in Sources */,
 				05B1B69B1CD884AA00401D8C /* Program.swift in Sources */,
 				052744E11CCD66BC00E821CE /* entry.swift in Sources */,
+				058E33B31D24654A001133AA /* Vector4+nosimd.swift in Sources */,
 				05B1B6981CD884AA00401D8C /* InstanceDataBuffer.swift in Sources */,
+				058E33C71D248197001133AA /* Vector2.swift in Sources */,
 				05B1B69E1CD884AA00401D8C /* StencilFlags.swift in Sources */,
 				05B1B6951CD884AA00401D8C /* FrameBuffer.swift in Sources */,
+				058E33B81D246595001133AA /* Matrix4x4+nosimd.swift in Sources */,
 				05B1B68E1CD884AA00401D8C /* bgfx.swift in Sources */,
 				052744E81CCD66BC00E821CE /* queue.swift in Sources */,
 				052744E91CCD66BC00E821CE /* event.swift in Sources */,
@@ -738,16 +806,20 @@
 				0529515A1D1EF4AA0041DA32 /* Vector2+simd.swift in Sources */,
 				05B1B68D1CD884AA00401D8C /* bgfx+types.swift in Sources */,
 				053D63FE1D1F1F5A00259AB3 /* Matrix4x4+simd.swift in Sources */,
+				058E33AE1D245CD5001133AA /* Vector4.swift in Sources */,
 				05B1B6971CD884AA00401D8C /* IndirectBuffer.swift in Sources */,
 				05B1B6901CD884AA00401D8C /* Callbacks.swift in Sources */,
 				05B1B69C1CD884AA00401D8C /* RenderState.swift in Sources */,
 				05EAF8711CE79ECF002DFF6E /* Texture+Create.swift in Sources */,
+				058E33A41D244AE0001133AA /* math+platform.swift in Sources */,
+				058E33CC1D2481A6001133AA /* Vector2+nosimd.swift in Sources */,
 				05B1B6931CD884AA00401D8C /* DynamicVertexBuffer.swift in Sources */,
 				053D64081D1F37EB00259AB3 /* Vector3+simd.swift in Sources */,
 				05B1B6941CD884AA00401D8C /* enums.swift in Sources */,
 				053D64031D1F200D00259AB3 /* Vector4+simd.swift in Sources */,
 				05B1B6A61CD884AA00401D8C /* VertexLayout.swift in Sources */,
 				052744F31CCD66BC00E821CE /* input.swift in Sources */,
+				058E33BD1D2469DC001133AA /* Vector3.swift in Sources */,
 				05B1B6991CD884AA00401D8C /* MemoryBlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -760,12 +832,16 @@
 				053D63FD1D1F1F5A00259AB3 /* Matrix4x4+simd.swift in Sources */,
 				052951591D1EF4AA0041DA32 /* Vector2+simd.swift in Sources */,
 				05B1B68B1CD881E300401D8C /* VertexBuffer.swift in Sources */,
+				058E33A31D244AE0001133AA /* math+platform.swift in Sources */,
 				05B1B6851CD881E300401D8C /* Texture.swift in Sources */,
 				05B1B67B1CD881E300401D8C /* FrameBuffer.swift in Sources */,
 				054FE87A1CCF4630009923F4 /* entry+utils.swift in Sources */,
 				05B1B6841CD881E300401D8C /* StencilFlags.swift in Sources */,
+				058E33C61D248197001133AA /* Vector2.swift in Sources */,
 				054FE8761CCF1D87009923F4 /* File.swift in Sources */,
+				058E33C11D2469FB001133AA /* Vector3+nosimd.swift in Sources */,
 				05B1B6751CD881E300401D8C /* bgfx+native.swift in Sources */,
+				058E33A81D245CB2001133AA /* Matrix4x4.swift in Sources */,
 				05B1B6741CD881E300401D8C /* bgfx.swift in Sources */,
 				053D64071D1F37EB00259AB3 /* Vector3+simd.swift in Sources */,
 				05B1B6861CD881E300401D8C /* Timing.swift in Sources */,
@@ -773,6 +849,7 @@
 				055B3D431CC6B77B005B38C5 /* entry.swift in Sources */,
 				05B1B68C1CD881E300401D8C /* VertexLayout.swift in Sources */,
 				05B1B6821CD881E300401D8C /* RenderState.swift in Sources */,
+				058E33CB1D2481A6001133AA /* Vector2+nosimd.swift in Sources */,
 				05B1B67F1CD881E300401D8C /* MemoryBlock.swift in Sources */,
 				05B1B6801CD881E300401D8C /* OcclusionQuery.swift in Sources */,
 				05B1B6811CD881E300401D8C /* Program.swift in Sources */,
@@ -788,8 +865,10 @@
 				055B3D751CC73EE5005B38C5 /* event.swift in Sources */,
 				055B3D5A1CC70135005B38C5 /* logo.swift in Sources */,
 				05B1B6761CD881E300401D8C /* Callbacks.swift in Sources */,
+				058E33B21D24654A001133AA /* Vector4+nosimd.swift in Sources */,
 				05B1B67A1CD881E300401D8C /* enums.swift in Sources */,
 				05EAF8701CE79ECF002DFF6E /* Texture+Create.swift in Sources */,
+				058E33B71D246595001133AA /* Matrix4x4+nosimd.swift in Sources */,
 				055B3D481CC6B77B005B38C5 /* entry+osx.swift in Sources */,
 				05B1B6731CD881E300401D8C /* bgfx+types.swift in Sources */,
 				05B1B6781CD881E300401D8C /* DynamicIndexBuffer.swift in Sources */,
@@ -797,6 +876,8 @@
 				05B1B67E1CD881E300401D8C /* InstanceDataBuffer.swift in Sources */,
 				055B3D771CC7CBCF005B38C5 /* input.swift in Sources */,
 				05B1B6871CD881E300401D8C /* TransientIndexBuffer.swift in Sources */,
+				058E33AD1D245CD5001133AA /* Vector4.swift in Sources */,
+				058E33BC1D2469DC001133AA /* Vector3.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,14 +889,19 @@
 				05EAF87C1CE81C52002DFF6E /* Timing.swift in Sources */,
 				05EAF87E1CE81C52002DFF6E /* entry+utils.swift in Sources */,
 				05EAF87F1CE81C52002DFF6E /* bgfx+native.swift in Sources */,
+				058E33C41D2469FB001133AA /* Vector3+nosimd.swift in Sources */,
 				05EAF8801CE81C52002DFF6E /* io.swift in Sources */,
 				05EAF8811CE81C52002DFF6E /* TransientVertexBuffer.swift in Sources */,
 				05EAF8821CE81C52002DFF6E /* Program.swift in Sources */,
+				058E33AB1D245CB2001133AA /* Matrix4x4.swift in Sources */,
 				05EAF8831CE81C52002DFF6E /* entry.swift in Sources */,
 				05EAF8841CE81C52002DFF6E /* InstanceDataBuffer.swift in Sources */,
+				058E33B51D24654A001133AA /* Vector4+nosimd.swift in Sources */,
 				05EAF8851CE81C52002DFF6E /* StencilFlags.swift in Sources */,
+				058E33C91D248197001133AA /* Vector2.swift in Sources */,
 				05EAF8861CE81C52002DFF6E /* FrameBuffer.swift in Sources */,
 				05EAF8871CE81C52002DFF6E /* bgfx.swift in Sources */,
+				058E33BA1D246595001133AA /* Matrix4x4+nosimd.swift in Sources */,
 				05EAF8881CE81C52002DFF6E /* queue.swift in Sources */,
 				05EAF8891CE81C52002DFF6E /* event.swift in Sources */,
 				05EAF88A1CE81C52002DFF6E /* IndexBuffer.swift in Sources */,
@@ -833,16 +919,20 @@
 				0529515C1D1EF4AA0041DA32 /* Vector2+simd.swift in Sources */,
 				05EAF8961CE81C52002DFF6E /* IndirectBuffer.swift in Sources */,
 				053D64001D1F1F5A00259AB3 /* Matrix4x4+simd.swift in Sources */,
+				058E33B01D245CD5001133AA /* Vector4.swift in Sources */,
 				05EAF8971CE81C52002DFF6E /* Callbacks.swift in Sources */,
 				05EAF8981CE81C52002DFF6E /* RenderState.swift in Sources */,
 				05EAF8991CE81C52002DFF6E /* Texture+Create.swift in Sources */,
 				05EAF89A1CE81C52002DFF6E /* DynamicVertexBuffer.swift in Sources */,
+				058E33A61D244AE0001133AA /* math+platform.swift in Sources */,
+				058E33CE1D2481A6001133AA /* Vector2+nosimd.swift in Sources */,
 				05EAF89B1CE81C52002DFF6E /* enums.swift in Sources */,
 				053D640A1D1F37EB00259AB3 /* Vector3+simd.swift in Sources */,
 				05EAF8AB1CE81C68002DFF6E /* main.swift in Sources */,
 				053D64051D1F200D00259AB3 /* Vector4+simd.swift in Sources */,
 				05EAF89D1CE81C52002DFF6E /* VertexLayout.swift in Sources */,
 				05EAF89E1CE81C52002DFF6E /* input.swift in Sources */,
+				058E33BF1D2469DC001133AA /* Vector3.swift in Sources */,
 				05EAF89F1CE81C52002DFF6E /* MemoryBlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

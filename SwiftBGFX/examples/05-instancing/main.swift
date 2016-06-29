@@ -124,8 +124,8 @@ class ExampleInstancing: AppI {
                 bgfx.debugTextPrint(x: 0, y: 5, foreColor: fore, backColor: back, string: " Instancing is not supported by GPU ")
             }
             
-            let view = bgfx.lookAt(eye: vec3(0.0, 0.0, -35.0), at: vec3(0))
-            let proj = bgfx.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
+            let view = mat4.lookAt(eye: vec3(0.0, 0.0, -35.0), at: vec3(0))
+            let proj = mat4.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
             
             bgfx.setViewTransform(0, view: view, proj: proj)
             bgfx.setViewRect(0, x: 0, y: 0, width: width, height: height)
@@ -137,7 +137,9 @@ class ExampleInstancing: AppI {
             
             for yy in 0...10 {
                 for xx in 0...10 {
-                    var mtx = Matrix4x4f.rotateXY(x: time + Float(xx)*0.21, y: time + Float(yy)*0.37)
+                    let sy = Float(yy)*0.1 + 1.0
+                    let s = Matrix4x4f.scale(sx: sy, sy: sy, sz: sy)
+                    var mtx: Matrix4x4f = Matrix4x4f.rotate(x: time + Float(xx)*0.21, y: time + Float(yy)*0.37) * s
                     mtx[3].x = -15.0 + Float(xx)*3.0
                     mtx[3].y = -15.0 + Float(yy)*3.0
                     mtx[3].z = 0.0
