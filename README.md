@@ -1,6 +1,8 @@
 SwiftBGFX
 =========
 
+[![Join the chat at https://gitter.im/stuartcarnie/SwiftBGFX](https://badges.gitter.im/stuartcarnie/SwiftBGFX.svg)](https://gitter.im/stuartcarnie/SwiftBGFX?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Swift bindings to [bgfx](https://github.com/bkaradzic/bgfx), a cross-platform, graphics API agnostic, "Bring Your Own Engine/Framework" style rendering library.
 
 Status
