@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum MemoryBlockError: ErrorProtocol {
+public enum MemoryBlockError: Error {
     case emptyBuffer
 }
 
@@ -35,7 +35,7 @@ public struct MemoryBlock {
     }
     
     public init<T>(data: [T]) {
-        self.init(handle: bgfx_copy(data, UInt32(sizeof(T) * data.count)))
+        self.init(handle: bgfx_copy(data, UInt32(sizeof(T.self) * data.count)))
     }
     
     public init(text: String) {
@@ -59,6 +59,6 @@ public struct MemoryBlock {
             throw MemoryBlockError.emptyBuffer
         }
         
-        return MemoryBlock(handle: bgfx_make_ref(data, UInt32(sizeof(T) * data.count)))
+        return MemoryBlock(handle: bgfx_make_ref(data, UInt32(sizeof(T.self) * data.count)))
     }
 }

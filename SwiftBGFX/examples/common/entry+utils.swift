@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ProgramLoadError: ErrorProtocol {
+public enum ProgramLoadError: Error {
     case loadFailed
 }
 
@@ -61,7 +61,7 @@ extension AppI {
         
         var mem: [UInt8] = []
         var buf = [UInt8](repeating: 0, count: 4096)
-        while let c = try? f.read(&buf) where c > 0 {
+        while let c = try? f.read(&buf), c > 0 {
             mem.append(contentsOf: buf[0..<c])
         }
         

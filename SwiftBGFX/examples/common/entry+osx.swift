@@ -134,9 +134,9 @@ class Context {
         NSApp.activateIgnoringOtherApps(true)
         NSApp.finishLaunching()
         
-        NotificationCenter.default()
+        NotificationCenter.default
             .post(name: NSNotification.Name.NSApplicationWillFinishLaunching, object: NSApp)
-        NotificationCenter.default()
+        NotificationCenter.default
             .post(name: NSNotification.Name.NSApplicationDidFinishLaunching, object: NSApp)
         
         let qmi = NSMenuItem(title: "Quit", action: #selector(NSApp.terminate), keyEquivalent: "q")
@@ -155,16 +155,16 @@ class Context {
         let style: NSWindowStyleMask = [.titled , .closable , .resizable , .miniaturizable]
         
         let win = NSWindow(contentRect: rect, styleMask: style, backing: .buffered, defer: false)
-        win.title = ProcessInfo.processInfo().processName
+        win.title = ProcessInfo.processInfo.processName
         win.makeKeyAndOrderFront(nil)
         win.acceptsMouseMovedEvents = true
-        win.backgroundColor = NSColor.black()
+        win.backgroundColor = NSColor.black
         self.win = win
         winDelegate.windowCreated(win)
         
         
         var pd = PlatformData()
-        pd.nwh = UnsafeMutablePointer(OpaquePointer(bitPattern: Unmanaged.passRetained(win)))
+        pd.nwh = UnsafeMutablePointer(Unmanaged.passRetained(win).toOpaque())
         bgfx.setPlatformData(pd)
         
         let mte = MainThreadEntry()
@@ -194,7 +194,7 @@ class Context {
     func peekEvent() -> NSEvent? {
         return NSApp.nextEvent(matching: NSEventMask(rawValue: UInt64(Int(NSEventMask.any.rawValue & 0xFFFF_FFFF))),
                                            until: Date.distantPast,
-                                           inMode: RunLoopMode.defaultRunLoopMode.rawValue,
+                                           inMode: RunLoopMode.defaultRunLoopMode,
                                            dequeue: true)
     }
     

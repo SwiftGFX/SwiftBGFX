@@ -6,11 +6,11 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-public protocol IOError : ErrorProtocol {
+public protocol IOError : Error {
     
 }
 
-public enum ReaderError : ErrorProtocol {
+public enum ReaderError : Error {
     case eof
 }
 

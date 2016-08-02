@@ -58,11 +58,11 @@ internal func makeCallbackHandler(_ cb: Callbacks) -> UnsafeMutablePointer<bgfx_
         callbacks!.reportDebug(String(cString: path!), line: line, format: String(cString: format!))
     }
 
-    vtablep = UnsafeMutablePointer<bgfx_callback_vtbl_t>(allocatingCapacity: 1)
-    vtablep?.initialize(with: vt)
+    vtablep = UnsafeMutablePointer<bgfx_callback_vtbl_t>.allocate(capacity: 1)
+    vtablep?.initialize(to: vt)
     
-    cbip = UnsafeMutablePointer<bgfx_callback_interface_t>(allocatingCapacity: 1)
-    cbip!.initialize(with: bgfx_callback_interface_t(vtbl: vtablep!))
+    cbip = UnsafeMutablePointer<bgfx_callback_interface_t>.allocate(capacity: 1)
+    cbip!.initialize(to: bgfx_callback_interface_t(vtbl: vtablep!))
     
     return cbip!
 }
@@ -70,13 +70,13 @@ internal func makeCallbackHandler(_ cb: Callbacks) -> UnsafeMutablePointer<bgfx_
 internal func cleanupCallbackHandler() {
     if let cbi = cbip {
         cbi.deinitialize()
-        cbi.deallocateCapacity(1)
+        cbi.deallocate(capacity: 1)
         cbip = nil
     }
     
     if let vtable = vtablep {
         vtable.deinitialize()
-        vtable.deallocateCapacity(1)
+        vtable.deallocate(capacity: 1)
         vtablep = nil
     }
     
