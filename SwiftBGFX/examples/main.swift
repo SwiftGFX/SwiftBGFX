@@ -6,6 +6,8 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
+import SwiftMath
+
 struct PosColorTexCoord0Vertex {
     var x, y, z: Float
     var col: UInt32
@@ -137,8 +139,8 @@ class ExampleRaymarch: AppI {
     var offset: UInt64 = 0
     
     struct InstanceData {
-        var mtx: mat4
-        var col: vec4
+        var mtx: Matrix4x4f
+        var col: Vector4f
     }
     
     func update() -> Bool {
@@ -166,9 +168,9 @@ class ExampleRaymarch: AppI {
                 bgfx.debugTextPrint(x: 0, y: 5, foreColor: fore, backColor: back, string: " Instancing is not supported by GPU ")
             }
             
-            let view = mat4.lookAt(eye: vec3(0.0, 0.0, -15.0), at: vec3(0))
-            let proj = mat4.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
-            let mtx = mat4(
+            let view = Matrix4x4f.lookAt(eye: vec3(0.0, 0.0, -15.0), at: vec3(0))
+            let proj = Matrix4x4f.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
+            let mtx = Matrix4x4f(
                 1.0, 0.0, 0.0, 0.0,
                 0.0, 1.0, 0.0, 0.0,
                 0.0, 0.0, 1.0, 0.0,
@@ -177,7 +179,7 @@ class ExampleRaymarch: AppI {
             
             bgfx.setViewTransform(0, view: view, proj: proj)
             
-            let ortho = mat4.ortho(left: 0, right: 1280, bottom: 720, top: 0, near: 0, far: 100)
+            let ortho = Matrix4x4f.ortho(left: 0, right: 1280, bottom: 720, top: 0, near: 0, far: 100)
             bgfx.setViewTransform(1, proj: ortho)
             
             let vec = vec4(-0.5, -0.3, 0.2, time)

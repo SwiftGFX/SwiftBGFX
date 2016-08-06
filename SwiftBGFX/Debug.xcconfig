@@ -6,4 +6,5 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-OTHER_LDFLAGS = -lbgfxDebug
+MATH_PATH = $(MATH_BASE)/debug
+OTHER_LDFLAGS = $(inherited) -lbgfxDebug

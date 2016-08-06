@@ -6,8 +6,6 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-import simd
-
 let invPi  = 1.0/Float.pi
 let piHalf = Float.pi/2.0
 let sqrt2  = Float(1.41421356237309504880)

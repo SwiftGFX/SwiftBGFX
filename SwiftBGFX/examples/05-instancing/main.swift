@@ -6,6 +6,8 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
+import SwiftMath
+
 struct PosColorVertex {
     let x, y, z: Float
     let col: UInt32
@@ -99,8 +101,8 @@ class ExampleInstancing: AppI {
     var offset: UInt64 = 0
     
     struct InstanceData {
-        var mtx: mat4
-        var col: vec4
+        var mtx: Matrix4x4f
+        var col: Vector4f
     }
     
     func update() -> Bool {
@@ -124,8 +126,8 @@ class ExampleInstancing: AppI {
                 bgfx.debugTextPrint(x: 0, y: 5, foreColor: fore, backColor: back, string: " Instancing is not supported by GPU ")
             }
             
-            let view = mat4.lookAt(eye: vec3(0.0, 0.0, -35.0), at: vec3(0))
-            let proj = mat4.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
+            let view = Matrix4x4f.lookAt(eye: vec3(0.0, 0.0, -35.0), at: vec3(0))
+            let proj = Matrix4x4f.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
             
             bgfx.setViewTransform(0, view: view, proj: proj)
             bgfx.setViewRect(0, x: 0, y: 0, width: width, height: height)

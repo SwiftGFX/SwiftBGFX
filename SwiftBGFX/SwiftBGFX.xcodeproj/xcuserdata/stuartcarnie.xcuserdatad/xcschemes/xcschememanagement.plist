@@ -14,14 +14,24 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>03-raymarch.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>05-instancing.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>4</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>05195BA01CEBA2F1002941B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>052744D41CCD66BC00E821CE</key>
 		<dict>
 			<key>primary</key>

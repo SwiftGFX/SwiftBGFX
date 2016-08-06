@@ -6,6 +6,8 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
+import SwiftMath
+
 extension bgfx {
 
     // MARK:- Initialization and shutdown

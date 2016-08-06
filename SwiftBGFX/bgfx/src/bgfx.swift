@@ -6,6 +6,8 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
+import SwiftMath
+
 public class bgfx {
 
     /// Checks for available space to allocate transient index and vertex buffers
