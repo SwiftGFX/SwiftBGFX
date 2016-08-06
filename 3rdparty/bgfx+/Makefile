@@ -23,6 +23,7 @@ endif
 
 BX_DIR?=../bx
 GENIE?=$(BX_DIR)/tools/bin/$(OS)/genie
+PROJECT ?= ninja
 
 .PHONY: help
 
@@ -63,12 +64,12 @@ linux-release64: .build/projects/gmake-linux ## Build - Linux x64 Release
 	$(MAKE) -R -C .build/projects/gmake-linux config=release64
 linux: linux-debug32 linux-release32 linux-debug64 linux-release64 ## Build - Linux x86/x64 Debug and Release
 
-.build/projects/gmake-osx:
-	$(GENIE) --gcc=osx gmake
-osx-debug64: .build/projects/gmake-osx ## Build - OSX x64 Debug
-	$(MAKE) -C .build/projects/gmake-osx config=debug64
-osx-release64: .build/projects/gmake-osx ## Build - OSX x64 Release
-	$(MAKE) -C .build/projects/gmake-osx config=release64
+.build/projects/$(PROJECT)-osx:
+	$(GENIE) --gcc=osx $(PROJECT)
+osx-debug64: .build/projects/$(PROJECT)-osx ## Build - OSX x64 Debug
+	$(MAKE) -C .build/projects/$(PROJECT)-osx config=debug64
+osx-release64: .build/projects/$(PROJECT)-osx ## Build - OSX x64 Release
+	$(MAKE) -C .build/projects/$(PROJECT)-osx config=release64
 osx: osx-debug64 osx-release64 ## Build - OSX x64 Debug and Release
 
 .build/projects/gmake-ios-arm:
