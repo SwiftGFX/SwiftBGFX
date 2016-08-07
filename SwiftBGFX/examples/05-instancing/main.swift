@@ -30,12 +30,12 @@ struct PosColorVertex {
 let cubeVertices: [PosColorVertex] = [
     PosColorVertex(-1.0,  1.0,  1.0, 0xff000000),
     PosColorVertex( 1.0,  1.0,  1.0, 0xff0000ff),
-    PosColorVertex(-1.0, -1.0,  1.0, 0xff00ff00 ),
-    PosColorVertex( 1.0, -1.0,  1.0, 0xff00ffff ),
-    PosColorVertex(-1.0,  1.0, -1.0, 0xffff0000 ),
-    PosColorVertex( 1.0,  1.0, -1.0, 0xffff00ff ),
-    PosColorVertex(-1.0, -1.0, -1.0, 0xffffff00 ),
-    PosColorVertex( 1.0, -1.0, -1.0, 0xffffffff ),
+    PosColorVertex(-1.0, -1.0,  1.0, 0xff00ff00),
+    PosColorVertex( 1.0, -1.0,  1.0, 0xff00ffff),
+    PosColorVertex(-1.0,  1.0, -1.0, 0xffff0000),
+    PosColorVertex( 1.0,  1.0, -1.0, 0xffff00ff),
+    PosColorVertex(-1.0, -1.0, -1.0, 0xffffff00),
+    PosColorVertex( 1.0, -1.0, -1.0, 0xffffffff),
 ]
 
 let cubeIndices: [UInt16] = [

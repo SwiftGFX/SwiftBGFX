@@ -16,9 +16,6 @@ class HelloWorld: AppI {
         bgfx.reset(width: width, height: height, options: reset)
         bgfx.debug = debug
         bgfx.setViewClear(0, options: [.Color, .Depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
-        
-        let i = Matrix4x4f.identity
-        print(i)
     }
 
     func shutdown() -> Int {
