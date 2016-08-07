@@ -30,7 +30,7 @@ public enum RendererBackend: UInt32 {
     
     /// Used during initialization; specifies that the library should
     /// pick the best renderer for the running hardware and OS.
- 	case `default`
+ 	case best
 }
 
 /// Specifies vertex attribute usages

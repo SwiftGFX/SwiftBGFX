@@ -19,7 +19,7 @@ extension bgfx {
     /// - Returns: `true` if initialization was successful
     ///
     @discardableResult
-    public static func initialize(_ type: RendererBackend = .`default`, vendorId: VendorID = .none, callback: Callbacks? = nil) -> Bool {
+    public static func initialize(_ type: RendererBackend = .best, vendorId: VendorID = .none, callback: Callbacks? = nil) -> Bool {
         var cbi: UnsafeMutablePointer<bgfx_callback_interface_t>?
         if let cb = callback {
             cbi = makeCallbackHandler(cb)
