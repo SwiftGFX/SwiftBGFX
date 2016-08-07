@@ -1,9 +1,5 @@
-//
-//  bgfx+types.swift
-//  bgfx Test
-//
-//  Created by Stuart Carnie on 4/18/16.
-//  Copyright © 2016 SGC. All rights reserved.
+// Copyright 2016 Stuart Carnie.
+// License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
 /// Platform specific data, such as window handle and rendering context

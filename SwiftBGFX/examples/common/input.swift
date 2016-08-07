@@ -1,9 +1,5 @@
-//
-//  input.swift
-//  bgfx Test
-//
-//  Created by Stuart Carnie on 4/20/16.
-//  Copyright © 2016 SGC. All rights reserved.
+// Copyright 2016 Stuart Carnie.
+// License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
 typealias InputBindingFn = (ud: Any) -> Void

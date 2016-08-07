@@ -1,9 +1,5 @@
-//
-//  stencilflags.swift
-//  bgfx Test
-//
-//  Created by Stuart Carnie on 4/24/16.
-//  Copyright © 2016 SGC. All rights reserved.
+// Copyright 2016 Stuart Carnie.
+// License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
 /// Specifies state information used to configure rendering operations

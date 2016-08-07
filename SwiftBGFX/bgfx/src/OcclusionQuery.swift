@@ -1,11 +1,6 @@
+// Copyright 2016 Stuart Carnie.
+// License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
-//  occlusionquery.swift
-//  bgfx Test
-//
-//  Created by Stuart Carnie on 4/22/16.
-//  Copyright © 2016 SGC. All rights reserved.
-//
-
 
 /// Represents an occlusion query
 public class OcclusionQuery {

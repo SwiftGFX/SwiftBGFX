@@ -1,9 +1,5 @@
-//
-//  Texture+Create.swift
-//  SwiftBGFX
-//
-//  Created by Stuart Carnie on 5/14/16.
-//  Copyright © 2016 SGC. All rights reserved.
+// Copyright 2016 Stuart Carnie.
+// License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
 import Foundation

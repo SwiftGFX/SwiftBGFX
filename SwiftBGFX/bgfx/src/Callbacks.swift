@@ -1,9 +1,5 @@
-//
-//  callbacks.swift
-//  bgfx Test
-//
-//  Created by Stuart Carnie on 4/23/16.
-//  Copyright © 2016 SGC. All rights reserved.
+// Copyright 2016 Stuart Carnie.
+// License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
 /// Provides an interface for programs to respond to callbacks from the bgfx library
