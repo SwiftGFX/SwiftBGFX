@@ -2,8 +2,6 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
-import Foundation
-
 public enum MemoryBlockError: Error {
     case emptyBuffer
 }

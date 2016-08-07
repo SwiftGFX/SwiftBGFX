@@ -2,8 +2,6 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
-import Foundation
-
 public extension Texture {
     
     /// Creates a new 2D texture

@@ -2,7 +2,11 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
-import Foundation
+#if os(Linux)
+import Glibc
+#else
+import Darwin
+#endif
 
 public enum FileError : IOError {
     case pathError(String, String, Int32)
