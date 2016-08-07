@@ -56,10 +56,6 @@
 		052744FB1CCD66BC00E821CE /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058076B61CC2D00400C43477 /* OpenGL.framework */; };
 		052744FC1CCD66BC00E821CE /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058076B41CC2CFF100C43477 /* Metal.framework */; };
 		052745031CCD66E700E821CE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052745021CCD66E700E821CE /* main.swift */; };
-		0529515E1D1EFCC20041DA32 /* bgfx+math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529515D1D1EFCC20041DA32 /* bgfx+math.swift */; };
-		0529515F1D1EFCC20041DA32 /* bgfx+math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529515D1D1EFCC20041DA32 /* bgfx+math.swift */; };
-		052951601D1EFCC20041DA32 /* bgfx+math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529515D1D1EFCC20041DA32 /* bgfx+math.swift */; };
-		052951611D1EFCC20041DA32 /* bgfx+math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529515D1D1EFCC20041DA32 /* bgfx+math.swift */; };
 		054FE8701CCF1BA1009923F4 /* io.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE86F1CCF1BA1009923F4 /* io.swift */; };
 		054FE8761CCF1D87009923F4 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE8751CCF1D87009923F4 /* File.swift */; };
 		054FE8771CCF3DC8009923F4 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054FE8751CCF1D87009923F4 /* File.swift */; };
@@ -240,7 +236,6 @@
 		052745011CCD66BC00E821CE /* 01-cubes */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "01-cubes"; sourceTree = BUILT_PRODUCTS_DIR; };
 		052745021CCD66E700E821CE /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		052745041CCE734E00E821CE /* Timing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timing.swift; sourceTree = "<group>"; };
-		0529515D1D1EFCC20041DA32 /* bgfx+math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "bgfx+math.swift"; sourceTree = "<group>"; };
 		054FE86F1CCF1BA1009923F4 /* io.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = io.swift; sourceTree = "<group>"; };
 		054FE8751CCF1D87009923F4 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		054FE8791CCF4630009923F4 /* entry+utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "entry+utils.swift"; sourceTree = "<group>"; };
@@ -324,7 +319,6 @@
 		0527444B1CCAAFE000E821CE /* src */ = {
 			isa = PBXGroup;
 			children = (
-				052951571D1EED860041DA32 /* math */,
 				0527444E1CCAB06200E821CE /* bgfx+types.swift */,
 				052744CA1CCAE28A00E821CE /* bgfx.swift */,
 				0527444D1CCAB06200E821CE /* bgfx+native.swift */,
@@ -361,14 +355,6 @@
 				052745021CCD66E700E821CE /* main.swift */,
 			);
 			path = "01-cubes";
-			sourceTree = "<group>";
-		};
-		052951571D1EED860041DA32 /* math */ = {
-			isa = PBXGroup;
-			children = (
-				0529515D1D1EFCC20041DA32 /* bgfx+math.swift */,
-			);
-			path = math;
 			sourceTree = "<group>";
 		};
 		054FE8681CCF1ADF009923F4 /* bx */ = {
@@ -655,7 +641,6 @@
 				05195BB11CEBA2F1002941B0 /* OcclusionQuery.swift in Sources */,
 				05195BB21CEBA2F1002941B0 /* Shader.swift in Sources */,
 				05195BB31CEBA2F1002941B0 /* Uniform.swift in Sources */,
-				052951601D1EFCC20041DA32 /* bgfx+math.swift in Sources */,
 				05195BB41CEBA2F1002941B0 /* DynamicIndexBuffer.swift in Sources */,
 				05195BB51CEBA2F1002941B0 /* TransientIndexBuffer.swift in Sources */,
 				05195BB61CEBA2F1002941B0 /* File.swift in Sources */,
@@ -698,7 +683,6 @@
 				05B1B69A1CD884AA00401D8C /* OcclusionQuery.swift in Sources */,
 				05B1B69D1CD884AA00401D8C /* Shader.swift in Sources */,
 				05B1B6A31CD884AA00401D8C /* Uniform.swift in Sources */,
-				0529515F1D1EFCC20041DA32 /* bgfx+math.swift in Sources */,
 				05B1B6921CD884AA00401D8C /* DynamicIndexBuffer.swift in Sources */,
 				05B1B6A11CD884AA00401D8C /* TransientIndexBuffer.swift in Sources */,
 				054FE8771CCF3DC8009923F4 /* File.swift in Sources */,
@@ -732,7 +716,6 @@
 				05B1B6751CD881E300401D8C /* bgfx+native.swift in Sources */,
 				05B1B6741CD881E300401D8C /* bgfx.swift in Sources */,
 				05B1B6861CD881E300401D8C /* Timing.swift in Sources */,
-				0529515E1D1EFCC20041DA32 /* bgfx+math.swift in Sources */,
 				055B3D431CC6B77B005B38C5 /* entry.swift in Sources */,
 				05B1B68C1CD881E300401D8C /* VertexLayout.swift in Sources */,
 				05B1B6821CD881E300401D8C /* RenderState.swift in Sources */,
@@ -785,7 +768,6 @@
 				05EAF88C1CE81C52002DFF6E /* Shader.swift in Sources */,
 				05EAF88D1CE81C52002DFF6E /* Uniform.swift in Sources */,
 				05EAF88F1CE81C52002DFF6E /* DynamicIndexBuffer.swift in Sources */,
-				052951611D1EFCC20041DA32 /* bgfx+math.swift in Sources */,
 				05EAF8901CE81C52002DFF6E /* TransientIndexBuffer.swift in Sources */,
 				05EAF8911CE81C52002DFF6E /* File.swift in Sources */,
 				05EAF8921CE81C52002DFF6E /* VertexBuffer.swift in Sources */,
