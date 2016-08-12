@@ -7,15 +7,15 @@ import SwiftMath
 class HelloWorld: AppI {
     private var width: UInt16 = 1280
     private var height: UInt16 = 720
-    private var debug: DebugOptions = [.Text]
-    private var reset: ResetOptions = [.VSync]
+    private var debug: DebugOptions = [.text]
+    private var reset: ResetOptions = [.vsync]
 
     func startup(_ argc: Int, argv: [String]) {
         bgfx.initialize()
 
         bgfx.reset(width: width, height: height, options: reset)
         bgfx.debug = debug
-        bgfx.setViewClear(0, options: [.Color, .Depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
+        bgfx.setViewClear(0, options: [.color, .depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
     }
 
     func shutdown() -> Int {

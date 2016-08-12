@@ -69,7 +69,7 @@ extension bgfx {
     // MARK:- Debug
 
     /// Set debug options
-    public static var debug: DebugOptions = DebugOptions.None {
+    public static var debug: DebugOptions = DebugOptions.none {
         willSet(newOptions) {
             bgfx_set_debug(newOptions.rawValue)
         }
@@ -186,7 +186,7 @@ extension bgfx {
     /// - Parameters:
     ///
     ///     - viewId: View id
-    ///     - options: Clear options. Use `ClearTargets.None` to remove any clear
+    ///     - options: Clear options. Use `ClearTargets.none` to remove any clear
     ///                operation
     ///     - rgba: Color clear value
     ///     - depth: Depth clear value
@@ -201,7 +201,7 @@ extension bgfx {
     /// - Parameters:
     ///
     ///     - viewId: View id
-    ///     - options: Clear options. Use `ClearTargets.None` to remove any clear
+    ///     - options: Clear options. Use `ClearTargets.none` to remove any clear
     ///                operation
     ///     - rgba: Color clear value
     ///     - depth: Depth clear value
@@ -520,7 +520,7 @@ extension bgfx {
     ///    - sampler: The sampler uniform
     ///    - texture: The texture to set
     ///    - flags: Sampling flags that override the default flags in the texture itself
-    public static func setTexture(_ unit: UInt8, sampler: Uniform, texture: Texture, flags: TextureFlags = [.Default]) {
+    public static func setTexture(_ unit: UInt8, sampler: Uniform, texture: Texture, flags: TextureFlags = [.default]) {
         bgfx_set_texture(unit, sampler.handle, texture.handle, flags.rawValue)
     }
 
@@ -533,7 +533,7 @@ extension bgfx {
     ///    - frameBuffer: The frame buffer
     ///    - attachment: The index of the attachment to set
     ///    - flags: Sampling flags that override the default flags in the texture itself
-    public static func setTexture(_ unit: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8 = 0, flags: TextureFlags = [.Default]) {
+    public static func setTexture(_ unit: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8 = 0, flags: TextureFlags = [.default]) {
         bgfx_set_texture_from_frame_buffer(unit, sampler.handle, frameBuffer.handle, attachment, flags.rawValue)
     }
 

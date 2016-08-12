@@ -363,59 +363,59 @@ public struct ResetOptions: OptionSet {
     public init(rawValue: UInt32) { self.rawValue = rawValue }
     
     /// No reset flags
-    public static let None = ResetOptions(rawValue: 0x0000_0000)
+    public static let none = ResetOptions(rawValue: 0x0000_0000)
     
     /// Not supported yet
-    public static let FullScreen = ResetOptions(rawValue: 0x0000_0001)
+    public static let fullScreen = ResetOptions(rawValue: 0x0000_0001)
     
     /// Enable 2x MSAA
-    public static let MSAAx2 = ResetOptions(rawValue: 0x0000_0010)
+    public static let msaax2 = ResetOptions(rawValue: 0x0000_0010)
     
     /// Enable 4x MSAA
-    public static let MSAAx4 = ResetOptions(rawValue: 0x0000_0020)
+    public static let msaax4 = ResetOptions(rawValue: 0x0000_0020)
     
     /// Enable 8x MSAA
-    public static let MSAAx8 = ResetOptions(rawValue: 0x0000_0030)
+    public static let msaax8 = ResetOptions(rawValue: 0x0000_0030)
     
     /// Enable 16x MSAA
-    public static let MSAAx16 = ResetOptions(rawValue: 0x0000_0040)
+    public static let msaax16 = ResetOptions(rawValue: 0x0000_0040)
     
     /// Enable V-Sync
-    public static let VSync = ResetOptions(rawValue: 0x0000_0080)
+    public static let vsync = ResetOptions(rawValue: 0x0000_0080)
     
     /// Turn on/off max anisotropy
-    public static let MaxAnisotropy = ResetOptions(rawValue: 0x0000_0100)
+    public static let maxAnisotropy = ResetOptions(rawValue: 0x0000_0100)
     
     /// Begin screen capture
-    public static let Capture = ResetOptions(rawValue: 0x0000_0200)
+    public static let capture = ResetOptions(rawValue: 0x0000_0200)
     
     /// HMD stereo rendering
-    public static let HMD = ResetOptions(rawValue: 0x0000_0400)
+    public static let hmd = ResetOptions(rawValue: 0x0000_0400)
     
     /// HMD stereo rendering debug mode
-    public static let HMDDebug = ResetOptions(rawValue: 0x0000_0800)
+    public static let hmdDebug = ResetOptions(rawValue: 0x0000_0800)
     
     /// HMD calibration
-    public static let HMDRecenter = ResetOptions(rawValue: 0x0000_1000)
+    public static let hmdRecenter = ResetOptions(rawValue: 0x0000_1000)
     
     /// Flush rendering after submitting to GPU
-    public static let FlushAfterRender = ResetOptions(rawValue: 0x0000_2000)
+    public static let flushAfterRender = ResetOptions(rawValue: 0x0000_2000)
     
     /// This flag specifies where flip occurs. Default behavior is that flip occurs
     /// before rendering new frame. This flag only has effect when `BGFX_CONFIG_MULTITHREADED=0`
-    public static let FlipAfterRender = ResetOptions(rawValue: 0x0000_4000)
+    public static let flipAfterRender = ResetOptions(rawValue: 0x0000_4000)
     
     /// Enable sRGB backbuffer
     public static let sRGBBackBuffer = ResetOptions(rawValue: 0x0000_8000)
     
     /// Enable HiDPI rendering
-    public static let HiDPI = ResetOptions(rawValue: 0x0001_0000)
+    public static let hiDPI = ResetOptions(rawValue: 0x0001_0000)
     
     /// Enable depth clamp
-    public static let DepthClamp = ResetOptions(rawValue: 0x0002_0000)
+    public static let depthClamp = ResetOptions(rawValue: 0x0002_0000)
     
     /// Suspend rendering
-    public static let Suspend = ResetOptions(rawValue: 0x0004_0000)
+    public static let suspend = ResetOptions(rawValue: 0x0004_0000)
 }
 
 /// DebugOptions provides various options for debugging bgfx
@@ -425,20 +425,20 @@ public struct DebugOptions: OptionSet {
     public init(rawValue: UInt32) { self.rawValue = rawValue }
     
     /// Don't enable any debugging features
-    public static let None = DebugOptions(rawValue: 0x0000_0000)
+    public static let none = DebugOptions(rawValue: 0x0000_0000)
     
     /// Enable wireframe for all primitives
-    public static let Wireframe = DebugOptions(rawValue: 0x0000_0001)
+    public static let wireframe = DebugOptions(rawValue: 0x0000_0001)
     
     /// Enable infinitely fast hardware test. No draw calls will be submitted to
     /// driver. It’s useful when profiling to quickly assess bottleneck between CPU and GPU.
     public static let IFH = DebugOptions(rawValue: 0x0000_0002)
     
     /// Display internal statistics
-    public static let Stats = DebugOptions(rawValue: 0x0000_0004)
+    public static let stats = DebugOptions(rawValue: 0x0000_0004)
     
     /// Enable debug text display
-    public static let Text = DebugOptions(rawValue: 0x0000_0008)
+    public static let text = DebugOptions(rawValue: 0x0000_0008)
 }
 
 public struct ClearTargets: OptionSet {
@@ -446,46 +446,46 @@ public struct ClearTargets: OptionSet {
     public init(rawValue: UInt16) { self.rawValue = rawValue }
     
     /// No clear flags
-    public static let None = ClearTargets(rawValue: 0x0000)
+    public static let none = ClearTargets(rawValue: 0x0000)
     
     /// Clear color
-    public static let Color = ClearTargets(rawValue: 0x0001)
+    public static let color = ClearTargets(rawValue: 0x0001)
     
     /// Clear depth
-    public static let Depth = ClearTargets(rawValue: 0x0002)
+    public static let depth = ClearTargets(rawValue: 0x0002)
     
     /// Clear stencil
-    public static let Stencil = ClearTargets(rawValue: 0x0004)
+    public static let stencil = ClearTargets(rawValue: 0x0004)
     
     /// Discard frame buffer attachment 0
-    public static let DiscardColor0 = ClearTargets(rawValue: 0x0008)
+    public static let discardColor0 = ClearTargets(rawValue: 0x0008)
     
     /// Discard frame buffer attachment 1
-    public static let DiscardColor1 = ClearTargets(rawValue: 0x0010)
+    public static let discardColor1 = ClearTargets(rawValue: 0x0010)
     
     /// Discard frame buffer attachment 2
-    public static let DiscardColor2 = ClearTargets(rawValue: 0x0020)
+    public static let discardColor2 = ClearTargets(rawValue: 0x0020)
     
     /// Discard frame buffer attachment 3
-    public static let DiscardColor3 = ClearTargets(rawValue: 0x0040)
+    public static let discardColor3 = ClearTargets(rawValue: 0x0040)
     
     /// Discard frame buffer attachment 4
-    public static let DiscardColor4 = ClearTargets(rawValue: 0x0080)
+    public static let discardColor4 = ClearTargets(rawValue: 0x0080)
     
     /// Discard frame buffer attachment 5
-    public static let DiscardColor5 = ClearTargets(rawValue: 0x0100)
+    public static let discardColor5 = ClearTargets(rawValue: 0x0100)
     
     /// Discard frame buffer attachment 6
-    public static let DiscardColor6 = ClearTargets(rawValue: 0x0200)
+    public static let discardColor6 = ClearTargets(rawValue: 0x0200)
     
     /// Discard frame buffer attachment 7
-    public static let DiscardColor7 = ClearTargets(rawValue: 0x0400)
+    public static let discardColor7 = ClearTargets(rawValue: 0x0400)
     
     /// Discard frame buffer depth attachment
-    public static let DiscardDepth = ClearTargets(rawValue: 0x0800)
+    public static let discardDepth = ClearTargets(rawValue: 0x0800)
     
     /// Discard frame buffer stencil attachment
-    public static let DiscardStencil = ClearTargets(rawValue: 0x1000)
+    public static let discardStencil = ClearTargets(rawValue: 0x1000)
 }
 
 /// Specifies various capabilities supported by the rendering device
@@ -495,67 +495,67 @@ public struct CapsOptions: OptionSet {
     public init(rawValue: UInt64) { self.rawValue = rawValue }
 
     /// Device supports "Less than or equal to" texture comparison mode
-    public static let TextureCompareLessOrEqual = CapsOptions(rawValue: 0x0000_0000_0000_0001)
+    public static let textureCompareLessOrEqual = CapsOptions(rawValue: 0x0000_0000_0000_0001)
 
     /// Device supports all texture comparison modes
-    public static let TextureCompareAll = CapsOptions(rawValue: 0x0000_0000_0000_0003)
+    public static let textureCompareAll = CapsOptions(rawValue: 0x0000_0000_0000_0003)
 
     /// Device supports 3D textures
-    public static let Texture3D = CapsOptions(rawValue: 0x0000_0000_0000_0004)
+    public static let texture3D = CapsOptions(rawValue: 0x0000_0000_0000_0004)
 
     /// Device supports 16-bit floats as vertex attributes
-    public static let VertexAttributeHalf = CapsOptions(rawValue: 0x0000_0000_0000_0008)
+    public static let vertexAttributeHalf = CapsOptions(rawValue: 0x0000_0000_0000_0008)
 
     /// UInt10 vertex attributes are supported
-    public static let VertexAttribUInt10 = CapsOptions(rawValue: 0x0000_0000_0000_0010)
+    public static let vertexAttribUInt10 = CapsOptions(rawValue: 0x0000_0000_0000_0010)
 
     /// Device supports instancing
-    public static let Instancing = CapsOptions(rawValue: 0x0000_0000_0000_0020)
+    public static let instancing = CapsOptions(rawValue: 0x0000_0000_0000_0020)
 
     /// Device supports multithreaded rendering
-    public static let RendererMultithreaded = CapsOptions(rawValue: 0x0000_0000_0000_0040)
+    public static let rendererMultithreaded = CapsOptions(rawValue: 0x0000_0000_0000_0040)
 
     /// Fragment shaders can access depth values
-    public static let FragmentDepth = CapsOptions(rawValue: 0x0000_0000_0000_0080)
+    public static let fragmentDepth = CapsOptions(rawValue: 0x0000_0000_0000_0080)
 
     /// Device supports independent blending of simultaneous render targets
-    public static let BlendIndependent = CapsOptions(rawValue: 0x0000_0000_0000_0100)
+    public static let blendIndependent = CapsOptions(rawValue: 0x0000_0000_0000_0100)
 
     /// Device supports compute shaders
-    public static let Compute = CapsOptions(rawValue: 0x0000_0000_0000_0200)
+    public static let compute = CapsOptions(rawValue: 0x0000_0000_0000_0200)
 
     /// Device supports ordering of fragment output
-    public static let FragmentOrdering = CapsOptions(rawValue: 0x0000_0000_0000_0400)
+    public static let fragmentOrdering = CapsOptions(rawValue: 0x0000_0000_0000_0400)
 
     /// Indicates whether the device can render to multiple swap chains
-    public static let SwapChain = CapsOptions(rawValue: 0x0000_0000_0000_0800)
+    public static let swapChain = CapsOptions(rawValue: 0x0000_0000_0000_0800)
 
     /// Head mounted displays are supported
-    public static let HeadMountedDisplay = CapsOptions(rawValue: 0x0000_0000_0000_1000)
+    public static let headMountedDisplay = CapsOptions(rawValue: 0x0000_0000_0000_1000)
 
     /// Device supports 32-bit indices
-    public static let Index32 = CapsOptions(rawValue: 0x0000_0000_0000_2000)
+    public static let index32 = CapsOptions(rawValue: 0x0000_0000_0000_2000)
 
     /// Device supports indirect drawing via GPU buffers
-    public static let DrawIndirect = CapsOptions(rawValue: 0x0000_0000_0000_4000)
+    public static let drawIndirect = CapsOptions(rawValue: 0x0000_0000_0000_4000)
 
     /// Device supports high-DPI rendering
-    public static let HiDPI = CapsOptions(rawValue: 0x0000_0000_0000_8000)
+    public static let hiDPI = CapsOptions(rawValue: 0x0000_0000_0000_8000)
 
     /// Device supports texture blits
-    public static let TextureBlit = CapsOptions(rawValue: 0x0000_0000_0001_0000)
+    public static let textureBlit = CapsOptions(rawValue: 0x0000_0000_0001_0000)
 
     /// Device supports reading back texture data
-    public static let TextureReadBack = CapsOptions(rawValue: 0x0000_0000_0002_0000)
+    public static let textureReadBack = CapsOptions(rawValue: 0x0000_0000_0002_0000)
 
     /// Device supports occlusion queries
-    public static let OcclusionQuery = CapsOptions(rawValue: 0x0000_0000_0004_0000)
+    public static let occlusionQuery = CapsOptions(rawValue: 0x0000_0000_0004_0000)
 
     /// Device supports alpha to coverage
-    public static let AlphaToCoverage = CapsOptions(rawValue: 0x0000_0000_0008_0000)
+    public static let alphaToCoverage = CapsOptions(rawValue: 0x0000_0000_0008_0000)
 
     /// Device supports conservative rasterization
-    public static let ConservativeRaster = CapsOptions(rawValue: 0x0000_0000_0010_0000)
+    public static let conservativeRaster = CapsOptions(rawValue: 0x0000_0000_0010_0000)
 }
 
 /// Indicates the level of support for a specific texture format
@@ -565,49 +565,49 @@ public struct TextureFormatSupport: OptionSet {
     public init(rawValue: UInt16) { self.rawValue = rawValue }
 
     /// The format is unsupported
-    public static let None = TextureFormatSupport(rawValue: 0x0000)
+    public static let none = TextureFormatSupport(rawValue: 0x0000)
 
     /// The format is supported for 2D color data and operations
-    public static let Texture2D = TextureFormatSupport(rawValue: 0x0001)
+    public static let texture2D = TextureFormatSupport(rawValue: 0x0001)
 
     /// The format is supported for 2D sRGB operations
-    public static let Texture2DsRGB = TextureFormatSupport(rawValue: 0x0002)
+    public static let texture2DsRGB = TextureFormatSupport(rawValue: 0x0002)
 
     /// The format is supported for 2D textures through library emulation
-    public static let Texture2DEmulated = TextureFormatSupport(rawValue: 0x0004)
+    public static let texture2DEmulated = TextureFormatSupport(rawValue: 0x0004)
 
     /// The format is supported for 3D color data and operations
-    public static let Texture3D = TextureFormatSupport(rawValue: 0x0008)
+    public static let texture3D = TextureFormatSupport(rawValue: 0x0008)
 
     /// The format is supported for 3D sRGB operations
-    public static let Texture3DsRGB = TextureFormatSupport(rawValue: 0x0010)
+    public static let texture3DsRGB = TextureFormatSupport(rawValue: 0x0010)
 
     /// The format is supported for 3D textures through library emulation
-    public static let Texture3DEmulated = TextureFormatSupport(rawValue: 0x0020)
+    public static let texture3DEmulated = TextureFormatSupport(rawValue: 0x0020)
 
     /// The format is supported for cube color data and operations
-    public static let Cube = TextureFormatSupport(rawValue: 0x0040)
+    public static let cube = TextureFormatSupport(rawValue: 0x0040)
 
     /// The format is supported for cube sRGB operations
-    public static let CubesRGB = TextureFormatSupport(rawValue: 0x0080)
+    public static let cubesRGB = TextureFormatSupport(rawValue: 0x0080)
 
     /// The format is supported for cube textures through library emulation
-    public static let CubeEmulated = TextureFormatSupport(rawValue: 0x0100)
+    public static let cubeEmulated = TextureFormatSupport(rawValue: 0x0100)
 
     /// The format is supported for vertex texturing
-    public static let Vertex = TextureFormatSupport(rawValue: 0x0200)
+    public static let vertex = TextureFormatSupport(rawValue: 0x0200)
 
     /// The format is supported for compute image operations
-    public static let Image = TextureFormatSupport(rawValue: 0x0400)
+    public static let image = TextureFormatSupport(rawValue: 0x0400)
 
     /// The format is supported for framebuffers
-    public static let FrameBuffer = TextureFormatSupport(rawValue: 0x0800)
+    public static let frameBuffer = TextureFormatSupport(rawValue: 0x0800)
 
     /// The format is supported for MSAA framebuffers
-    public static let FrameBufferMSAA = TextureFormatSupport(rawValue: 0x1000)
+    public static let frameBufferMSAA = TextureFormatSupport(rawValue: 0x1000)
 
     /// The format is supported for MSAA sampling
-    public static let MSAA = TextureFormatSupport(rawValue: 0x2000)
+    public static let msaa = TextureFormatSupport(rawValue: 0x2000)
 }
 
 /// Specifies various texture flags.
@@ -616,106 +616,106 @@ public struct TextureFlags : OptionSet {
     public init(rawValue: UInt32) { self.rawValue = rawValue }
     
     /// No flags set.
-    public static let None = TextureFlags(rawValue: 0x00000000)
+    public static let none = TextureFlags(rawValue: 0x00000000)
     
     /// Mirror the texture in the U coordinate.
-    public static let MirrorU = TextureFlags(rawValue: 0x00000001)
+    public static let mirrorU = TextureFlags(rawValue: 0x00000001)
     
     /// Clamp the texture in the U coordinate.
-    public static let ClampU = TextureFlags(rawValue: 0x00000002)
+    public static let clampU = TextureFlags(rawValue: 0x00000002)
     
     /// Use a border color for addresses outside the range in the U coordinate.
-    public static let BorderU = TextureFlags(rawValue: 0x00000003)
+    public static let borderU = TextureFlags(rawValue: 0x00000003)
     
     /// Mirror the texture in the V coordinate.
-    public static let MirrorV = TextureFlags(rawValue: 0x00000004)
+    public static let mirrorV = TextureFlags(rawValue: 0x00000004)
     
     /// Clamp the texture in the V coordinate.
-    public static let ClampV = TextureFlags(rawValue: 0x00000008)
+    public static let clampV = TextureFlags(rawValue: 0x00000008)
     
     /// Use a border color for addresses outside the range in the V coordinate.
-    public static let BorderV = TextureFlags(rawValue: 0x0000000c)
+    public static let borderV = TextureFlags(rawValue: 0x0000000c)
     
     /// Mirror the texture in the W coordinate.
-    public static let MirrorW = TextureFlags(rawValue: 0x00000010)
+    public static let mirrorW = TextureFlags(rawValue: 0x00000010)
     
     /// Clamp the texture in the W coordinate.
-    public static let ClampW = TextureFlags(rawValue: 0x00000020)
+    public static let clampW = TextureFlags(rawValue: 0x00000020)
     
     /// Use a border color for addresses outside the range in the W coordinate.
-    public static let BorderW = TextureFlags(rawValue: 0x00000030)
+    public static let borderW = TextureFlags(rawValue: 0x00000030)
     
     /// Use point filtering for texture minification.
-    public static let MinFilterPoint = TextureFlags(rawValue: 0x00000040)
+    public static let minFilterPoint = TextureFlags(rawValue: 0x00000040)
     
     /// Use anisotropic filtering for texture minification.
-    public static let MinFilterAnisotropic = TextureFlags(rawValue: 0x00000080)
+    public static let minFilterAnisotropic = TextureFlags(rawValue: 0x00000080)
     
     /// Use point filtering for texture magnification.
-    public static let MagFilterPoint = TextureFlags(rawValue: 0x00000100)
+    public static let magFilterPoint = TextureFlags(rawValue: 0x00000100)
     
     /// Use anisotropic filtering for texture magnification.
-    public static let MagFilterAnisotropic = TextureFlags(rawValue: 0x00000200)
+    public static let magFilterAnisotropic = TextureFlags(rawValue: 0x00000200)
     
     /// Use point filtering for texture mipmaps.
-    public static let MipFilterPoint = TextureFlags(rawValue: 0x00000400)
+    public static let mipFilterPoint = TextureFlags(rawValue: 0x00000400)
     
     /// The texture will be used as a render target.
-    public static let RenderTarget = TextureFlags(rawValue: 0x00001000)
+    public static let renderTarget = TextureFlags(rawValue: 0x00001000)
     
     /// The render target texture support 2x multisampling.
-    public static let RenderTargetMultisample2x = TextureFlags(rawValue: 0x00002000)
+    public static let renderTargetMultisample2x = TextureFlags(rawValue: 0x00002000)
     
     /// The render target texture support 4x multisampling.
-    public static let RenderTargetMultisample4x = TextureFlags(rawValue: 0x00003000)
+    public static let renderTargetMultisample4x = TextureFlags(rawValue: 0x00003000)
     
     /// The render target texture support 8x multisampling.
-    public static let RenderTargetMultisample8x = TextureFlags(rawValue: 0x00004000)
+    public static let renderTargetMultisample8x = TextureFlags(rawValue: 0x00004000)
     
     /// The render target texture support 16x multisampling.
-    public static let RenderTargetMultisample16x = TextureFlags(rawValue: 0x00005000)
+    public static let renderTargetMultisample16x = TextureFlags(rawValue: 0x00005000)
     
     /// The texture is only writeable (render target).
-    public static let RenderTargetWriteOnly = TextureFlags(rawValue: 0x00008000)
+    public static let renderTargetWriteOnly = TextureFlags(rawValue: 0x00008000)
     
     /// Use a "less than" operator when comparing textures.
-    public static let CompareLess = TextureFlags(rawValue: 0x00010000)
+    public static let compareLess = TextureFlags(rawValue: 0x00010000)
     
     /// Use a "less than or equal" operator when comparing textures.
-    public static let CompareLessEqual = TextureFlags(rawValue: 0x00020000)
+    public static let compareLessEqual = TextureFlags(rawValue: 0x00020000)
     
     /// Use an equality operator when comparing textures.
-    public static let CompareEqual = TextureFlags(rawValue: 0x00030000)
+    public static let compareEqual = TextureFlags(rawValue: 0x00030000)
     
     /// Use a "greater than or equal" operator when comparing textures.
-    public static let CompareGreaterEqual = TextureFlags(rawValue: 0x00040000)
+    public static let compareGreaterEqual = TextureFlags(rawValue: 0x00040000)
     
     /// Use a "greater than" operator when comparing textures.
-    public static let CompareGreater = TextureFlags(rawValue: 0x00050000)
+    public static let compareGreater = TextureFlags(rawValue: 0x00050000)
     
     /// Use an inequality operator when comparing textures.
-    public static let CompareNotEqual = TextureFlags(rawValue: 0x00060000)
+    public static let compareNotEqual = TextureFlags(rawValue: 0x00060000)
     
     /// Never compare two textures as equal.
-    public static let CompareNever = TextureFlags(rawValue: 0x00070000)
+    public static let compareNever = TextureFlags(rawValue: 0x00070000)
     
     /// Always compare two textures as equal.
-    public static let CompareAlways = TextureFlags(rawValue: 0x00080000)
+    public static let compareAlways = TextureFlags(rawValue: 0x00080000)
     
     /// Texture is the target of compute shader writes.
-    public static let ComputeWrite = TextureFlags(rawValue: 0x00100000)
+    public static let computeWrite = TextureFlags(rawValue: 0x00100000)
     
     /// Texture data is in non-linear sRGB format.
-    public static let Srgb = TextureFlags(rawValue: 0x00200000)
+    public static let srgb = TextureFlags(rawValue: 0x00200000)
     
     /// Texture can be used as the destination of a blit operation.
-    public static let BlitDestination = TextureFlags(rawValue: 0x00400000)
+    public static let blitDestination = TextureFlags(rawValue: 0x00400000)
     
     /// Texture data can be read back.
-    public static let ReadBack = TextureFlags(rawValue: 0x00800000)
+    public static let readBack = TextureFlags(rawValue: 0x00800000)
 
     /// Default flags
-    public static let Default = TextureFlags(rawValue: UInt32.max)
+    public static let `default` = TextureFlags(rawValue: UInt32.max)
 }
 
 /// Describes access rights for a compute buffer.
@@ -798,62 +798,62 @@ public struct BufferFlags : OptionSet {
     public init(rawValue: UInt16) { self.rawValue = rawValue }
     
     /// No flags specified.
-    public static let None = BufferFlags(rawValue: 0x00)
+    public static let none = BufferFlags(rawValue: 0x00)
     
     /// Specifies the format of data in a compute buffer as being 8x1.
-    public static let ComputeFormat8x1 = BufferFlags(rawValue: 0x1)
+    public static let computeFormat8x1 = BufferFlags(rawValue: 0x1)
     
     /// Specifies the format of data in a compute buffer as being 8x2.
-    public static let ComputeFormat8x2 = BufferFlags(rawValue: 0x2)
+    public static let computeFormat8x2 = BufferFlags(rawValue: 0x2)
     
     /// Specifies the format of data in a compute buffer as being 8x4.
-    public static let ComputeFormat8x4 = BufferFlags(rawValue: 0x3)
+    public static let computeFormat8x4 = BufferFlags(rawValue: 0x3)
     
     /// Specifies the format of data in a compute buffer as being 16x1.
-    public static let ComputeFormat16x1 = BufferFlags(rawValue: 0x4)
+    public static let computeFormat16x1 = BufferFlags(rawValue: 0x4)
     
     /// Specifies the format of data in a compute buffer as being 16x2.
-    public static let ComputeFormat16x2 = BufferFlags(rawValue: 0x5)
+    public static let computeFormat16x2 = BufferFlags(rawValue: 0x5)
     
     /// Specifies the format of data in a compute buffer as being 16x4.
-    public static let ComputeFormat16x4 = BufferFlags(rawValue: 0x6)
+    public static let computeFormat16x4 = BufferFlags(rawValue: 0x6)
     
     /// Specifies the format of data in a compute buffer as being 32x1.
-    public static let ComputeFormat32x1 = BufferFlags(rawValue: 0x7)
+    public static let computeFormat32x1 = BufferFlags(rawValue: 0x7)
     
     /// Specifies the format of data in a compute buffer as being 32x2.
-    public static let ComputeFormat32x2 = BufferFlags(rawValue: 0x8)
+    public static let computeFormat32x2 = BufferFlags(rawValue: 0x8)
     
     /// Specifies the format of data in a compute buffer as being 32x4.
-    public static let ComputeFormat32x4 = BufferFlags(rawValue: 0x9)
+    public static let computeFormat32x4 = BufferFlags(rawValue: 0x9)
     
     /// Specifies the type of data in a compute buffer as being unsigned integers.
-    public static let ComputeTypeUInt = BufferFlags(rawValue: 0x10)
+    public static let computeTypeUInt = BufferFlags(rawValue: 0x10)
     
     /// Specifies the type of data in a compute buffer as being signed integers.
-    public static let ComputeTypeInt = BufferFlags(rawValue: 0x20)
+    public static let computeTypeInt = BufferFlags(rawValue: 0x20)
     
     /// Specifies the type of data in a compute buffer as being floating point values.
-    public static let ComputeTypeFloat = BufferFlags(rawValue: 0x30)
+    public static let computeTypeFloat = BufferFlags(rawValue: 0x30)
     
     /// Buffer will be read by a compute shader.
-    public static let ComputeRead = BufferFlags(rawValue: 0x100)
+    public static let computeRead = BufferFlags(rawValue: 0x100)
     
     /// Buffer will be written into by a compute shader. It cannot be accessed by the CPU.
-    public static let ComputeWrite = BufferFlags(rawValue: 0x200)
+    public static let computeWrite = BufferFlags(rawValue: 0x200)
     
     /// Buffer is the source of indirect draw commands.
-    public static let DrawIndirect = BufferFlags(rawValue: 0x400)
+    public static let drawIndirect = BufferFlags(rawValue: 0x400)
     
     /// Buffer will resize on update if a different quantity of data is passed. If this flag is not set
     /// the data will be trimmed to fit in the existing buffer size. Effective only for dynamic buffers.
-    public static let AllowResize = BufferFlags(rawValue: 0x800)
+    public static let allowResize = BufferFlags(rawValue: 0x800)
     
     /// Buffer is using 32-bit indices. Useful only for index buffers.
-    public static let Index32 = BufferFlags(rawValue: 0x1000)
+    public static let index32 = BufferFlags(rawValue: 0x1000)
     
     /// Buffer will be read and written by a compute shader.
-    public static let ComputeReadWrite = [BufferFlags.ComputeRead, BufferFlags.ComputeWrite]
+    public static let computeReadWrite = [BufferFlags.computeRead, BufferFlags.computeWrite]
 }
 
 /// Specifies various error types that can be reported by bgfx.

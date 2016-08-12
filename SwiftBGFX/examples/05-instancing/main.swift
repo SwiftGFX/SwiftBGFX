@@ -56,9 +56,9 @@ let cubeIndices: [UInt16] = [
 class ExampleInstancing: AppI {
     var width: UInt16 = 1280
     var height: UInt16 = 720
-    var debug: DebugOptions = [.Text]
-    var reset: ResetOptions = .VSync
-    
+    var debug: DebugOptions = [.text]
+    var reset: ResetOptions = .vsync
+
     var vbh: VertexBuffer?
     var ibh: IndexBuffer?
     var prog: Program?
@@ -70,7 +70,7 @@ class ExampleInstancing: AppI {
         
         bgfx.reset(width: width, height: height, options: reset)
         bgfx.debug = debug
-        bgfx.setViewClear(0, options: [.Color, .Depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
+        bgfx.setViewClear(0, options: [.color, .depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
         
         vbh = VertexBuffer(memory: try! MemoryBlock.makeRef(cubeVertices), layout: PosColorVertex.layout)
         ibh = IndexBuffer(memory: try! MemoryBlock.makeRef(cubeIndices))
@@ -115,7 +115,7 @@ class ExampleInstancing: AppI {
             let frameTimeStr = String(format: "% 7.3f[ms]", (Double(frameTime) / 1000000000.0 * 1000.0))
             bgfx.debugTextPrint(x: 0, y: 3, foreColor: .white, backColor: .transparent, string: "Frame: \(frameTimeStr)")
             
-            if !bgfx.capabilities.supported.contains(.Instancing) {
+            if !bgfx.capabilities.supported.contains(.instancing) {
                 let blink = UInt32(time*3.0)&1 == 0x1
                 let fore = blink ? DebugColor.white : DebugColor.red
                 let back = blink ? DebugColor.red   : DebugColor.transparent

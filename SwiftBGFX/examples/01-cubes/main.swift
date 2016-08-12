@@ -56,8 +56,8 @@ let cubeIndices: [UInt16] = [
 class ExampleCubes: AppI {
     var width: UInt16 = 1280
     var height: UInt16 = 720
-    var debug: DebugOptions = [.Text]
-    var reset: ResetOptions = .VSync
+    var debug: DebugOptions = [.text]
+    var reset: ResetOptions = .vsync
     
     var vbh: VertexBuffer?
     var ibh: IndexBuffer?
@@ -70,7 +70,7 @@ class ExampleCubes: AppI {
         
         bgfx.reset(width: width, height: height, options: reset)
         bgfx.debug = debug
-        bgfx.setViewClear(0, options: [.Color, .Depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
+        bgfx.setViewClear(0, options: [.color, .depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
 
         vbh = VertexBuffer(memory: try! MemoryBlock.makeRef(cubeVertices), layout: PosColorVertex.layout)
         ibh = IndexBuffer(memory: try! MemoryBlock.makeRef(cubeIndices))

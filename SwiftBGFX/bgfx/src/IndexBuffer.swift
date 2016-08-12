@@ -6,7 +6,7 @@
 public class IndexBuffer {
     let handle: bgfx_index_buffer_handle_t
     
-    public init(memory: MemoryBlock, flags: BufferFlags = [.None]) {
+    public init(memory: MemoryBlock, flags: BufferFlags = [.none]) {
         handle = bgfx_create_index_buffer(memory.handle, flags.rawValue)
     }
     

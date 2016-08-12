@@ -5,7 +5,7 @@
 public class VertexBuffer {
     let handle: bgfx_vertex_buffer_handle_t
     
-    public init(memory: MemoryBlock, layout: VertexLayout, flags: BufferFlags = [.None]) {
+    public init(memory: MemoryBlock, layout: VertexLayout, flags: BufferFlags = [.none]) {
         handle = bgfx_create_vertex_buffer(memory.handle, &layout.handle, flags.rawValue)
     }
     

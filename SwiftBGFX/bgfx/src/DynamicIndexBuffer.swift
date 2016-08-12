@@ -6,11 +6,11 @@
 public class DynamicIndexBuffer {
     let handle: bgfx_dynamic_index_buffer_handle_t
     
-    public init(indexCount: UInt32, flags: BufferFlags = [.None]) {
+    public init(indexCount: UInt32, flags: BufferFlags = [.none]) {
         handle = bgfx_create_dynamic_index_buffer(indexCount, flags.rawValue)
     }
     
-    public init(memory: MemoryBlock, flags: BufferFlags = [.None]) {
+    public init(memory: MemoryBlock, flags: BufferFlags = [.none]) {
         handle = bgfx_create_dynamic_index_buffer_mem(memory.handle, flags.rawValue)
     }
     

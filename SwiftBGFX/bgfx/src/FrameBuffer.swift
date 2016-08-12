@@ -25,7 +25,7 @@ public class FrameBuffer {
     ///
     /// - returns: new frame buffer
     ///
-    public init(width: UInt16, height: UInt16, format: TextureFormat, flags: TextureFlags = [.ClampU, .ClampV]) {
+    public init(width: UInt16, height: UInt16, format: TextureFormat, flags: TextureFlags = [.clampU, .clampV]) {
         handle = bgfx_create_frame_buffer(width, height, bgfx_texture_format_t(format.rawValue), flags.rawValue)
     }
     
@@ -39,7 +39,7 @@ public class FrameBuffer {
     ///
     /// - returns: new frame buffer
     ///
-    public init(ratio: BackbufferRatio, format: TextureFormat, flags: TextureFlags = [.ClampU, .ClampV]) {
+    public init(ratio: BackbufferRatio, format: TextureFormat, flags: TextureFlags = [.clampU, .clampV]) {
         handle = bgfx_create_frame_buffer_scaled(bgfx_backbuffer_ratio_t(ratio.rawValue), bgfx_texture_format_t(format.rawValue), flags.rawValue)
     }
     
