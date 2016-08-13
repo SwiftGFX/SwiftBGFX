@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StencilFlags Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/StencilFlags" class="dashAnchor"></a>
+    <a title="StencilFlags Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (72% documented)</p>
+        <p class="header-right"><a href="https://github.com/stuartcarnie/SwiftBGFX"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        StencilFlags Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicIndexBuffer.html">DynamicIndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicVertexBuffer.html">DynamicVertexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C13_0_helloworld10EventQueue">EventQueue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FrameBuffer.html">FrameBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IndexBuffer.html">IndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IndirectBuffer.html">IndirectBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InstanceDataBuffer.html">InstanceDataBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OcclusionQuery.html">OcclusionQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Program.html">Program</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Queue.html">Queue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Shader.html">Shader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Texture.html">Texture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Timing.html">Timing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Uniform.html">Uniform</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertexBuffer.html">VertexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertexLayout.html">VertexLayout</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/bgfx.html">bgfx</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v13_0_helloworld9sharedAppPS_4AppI_">sharedApp</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BackbufferRatio.html">BackbufferRatio</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BgfxError.html">BgfxError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonState.html">ButtonState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ComputeBufferAccess.html">ComputeBufferAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CubeMapFace.html">CubeMapFace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DebugColor.html">DebugColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Event.html">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/FileError.html">FileError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GamepadAxis.html">GamepadAxis</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/KeyCode.html">KeyCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MemoryBlockError.html">MemoryBlockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MouseButton.html">MouseButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OcclusionQueryResult.html">OcclusionQueryResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProgramLoadError.html">ProgramLoadError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReaderError.html">ReaderError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RenderFrameResult.html">RenderFrameResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RendererBackend.html">RendererBackend</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SuspendState.html">SuspendState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextureFormat.html">TextureFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextureType.html">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UniformType.html">UniformType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VendorID.html">VendorID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertexAttribType.html">VertexAttribType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertexAttributeUsage.html">VertexAttributeUsage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworldoi2llFTVS_11RenderStateSi_S0_">&lt;&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworld4openFzSSVS_4File">open(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworldoi1oFTVS_11RenderStateS0__S0_">|(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AppI.html">AppI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Callbacks.html">Callbacks</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Closer.html">Closer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P13_0_helloworld7IOError">IOError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Reader.html">Reader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/BufferFlags.html">BufferFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Capabilities.html">Capabilities</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Capabilities/GPU.html">– GPU</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CapsOptions.html">CapsOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ClearTargets.html">ClearTargets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DebugOptions.html">DebugOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/File.html">File</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyModifier.html">KeyModifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MemoryBlock.html">MemoryBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RenderState.html">RenderState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ResetOptions.html">ResetOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stats.html">Stats</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StencilFlags.html">StencilFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TextureFlags.html">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TextureFormatSupport.html">TextureFormatSupport</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransientIndexBuffer.html">TransientIndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransientVertexBuffer.html">TransientVertexBuffer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13_0_helloworld18NativeWindowHandle">NativeWindowHandle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13_0_helloworld12PlatformData">PlatformData</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>StencilFlags</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">StencilFlags</span> <span class="p">:</span> <span class="kt">OptionSet</span></code></pre>
+
+                </div>
+              </div>
+            <p>Specifies state information used to configure rendering operations</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vPs16RawRepresentable8rawValuewx8RawValue"></a>
+                    <a name="//apple_ref/swift/Property/rawValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vPs16RawRepresentable8rawValuewx8RawValue">rawValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies state information used to configure rendering operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">rawValue</span><span class="p">:</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FPs9OptionSetcFT8rawValuewx8RawValue_x"></a>
+                    <a name="//apple_ref/swift/Method/init(rawValue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FPs9OptionSetcFT8rawValuewx8RawValue_x">init(rawValue:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies state information used to configure rendering operations</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rawValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The raw value of the option set to create. Each bit of <code>rawValue</code> potentially represents an element of the option set, though raw values may include bits that are not defined as distinct values of the <code>OptionSet</code> type.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags4NoneS0_"></a>
+                    <a name="//apple_ref/swift/Variable/None" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags4NoneS0_">None</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>No state bits set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">None</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags8TestLessS0_"></a>
+                    <a name="//apple_ref/swift/Variable/TestLess" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags8TestLessS0_">TestLess</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Perform a <q>less than</q> stencil test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TestLess</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00010000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags13TestLessEqualS0_"></a>
+                    <a name="//apple_ref/swift/Variable/TestLessEqual" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags13TestLessEqualS0_">TestLessEqual</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Perform a <q>less than or equal</q> stencil test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TestLessEqual</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00020000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags9TestEqualS0_"></a>
+                    <a name="//apple_ref/swift/Variable/TestEqual" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags9TestEqualS0_">TestEqual</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Perform an equality stencil test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TestEqual</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00030000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags16TestGreaterEqualS0_"></a>
+                    <a name="//apple_ref/swift/Variable/TestGreaterEqual" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags16TestGreaterEqualS0_">TestGreaterEqual</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Perform a <q>greater than or equal</q> stencil test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TestGreaterEqual</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00040000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags11TestGreaterS0_"></a>
+                    <a name="//apple_ref/swift/Variable/TestGreater" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags11TestGreaterS0_">TestGreater</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Perform a <q>greater than</q> stencil test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TestGreater</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00050000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags12TestNotEqualS0_"></a>
+                    <a name="//apple_ref/swift/Variable/TestNotEqual" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags12TestNotEqualS0_">TestNotEqual</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Perform an inequality stencil test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TestNotEqual</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00060000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags9TestNeverS0_"></a>
+                    <a name="//apple_ref/swift/Variable/TestNever" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags9TestNeverS0_">TestNever</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Never pass the stencil test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TestNever</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00070000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags10TestAlwaysS0_"></a>
+                    <a name="//apple_ref/swift/Variable/TestAlways" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags10TestAlwaysS0_">TestAlways</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Always pass the stencil test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">TestAlways</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00080000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags9FailSZeroS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailSZero" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags9FailSZeroS0_">FailSZero</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, zero out the stencil value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailSZero</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags9FailSKeepS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailSKeep" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags9FailSKeepS0_">FailSKeep</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, keep the old stencil value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailSKeep</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00100000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags12FailSReplaceS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailSReplace" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags12FailSReplaceS0_">FailSReplace</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, replace the stencil value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailSReplace</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00200000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags14FailSIncrementS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailSIncrement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags14FailSIncrementS0_">FailSIncrement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, increment the stencil value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailSIncrement</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00300000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags22FailSIncrementSaturateS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailSIncrementSaturate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags22FailSIncrementSaturateS0_">FailSIncrementSaturate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, increment the stencil value (with saturation).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailSIncrementSaturate</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00400000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags14FailSDecrementS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailSDecrement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags14FailSDecrementS0_">FailSDecrement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, decrement the stencil value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailSDecrement</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00500000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags22FailSDecrementSaturateS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailSDecrementSaturate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags22FailSDecrementSaturateS0_">FailSDecrementSaturate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, decrement the stencil value (with saturation).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailSDecrementSaturate</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00600000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags11FailSInvertS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailSInvert" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags11FailSInvertS0_">FailSInvert</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, invert the stencil value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailSInvert</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00700000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags9FailZZeroS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailZZero" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags9FailZZeroS0_">FailZZero</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, zero out the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailZZero</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags9FailZKeepS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailZKeep" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags9FailZKeepS0_">FailZKeep</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, keep the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailZKeep</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x01000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags12FailZReplaceS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailZReplace" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags12FailZReplaceS0_">FailZReplace</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, replace the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailZReplace</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x02000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags14FailZIncrementS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailZIncrement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags14FailZIncrementS0_">FailZIncrement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, increment the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailZIncrement</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x03000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags22FailZIncrementSaturateS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailZIncrementSaturate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags22FailZIncrementSaturateS0_">FailZIncrementSaturate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, increment the depth value (with saturation).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailZIncrementSaturate</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x04000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags14FailZDecrementS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailZDecrement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags14FailZDecrementS0_">FailZDecrement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, decrement the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailZDecrement</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x05000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags22FailZDecrementSaturateS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailZDecrementSaturate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags22FailZDecrementSaturateS0_">FailZDecrementSaturate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, decrement the depth value (with saturation).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailZDecrementSaturate</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x06000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags11FailZInvertS0_"></a>
+                    <a name="//apple_ref/swift/Variable/FailZInvert" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags11FailZInvertS0_">FailZInvert</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On failing the stencil test, invert the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">FailZInvert</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x07000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags9PassZZeroS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PassZZero" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags9PassZZeroS0_">PassZZero</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On passing the stencil test, zero out the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PassZZero</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x00000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags9PassZKeepS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PassZKeep" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags9PassZKeepS0_">PassZKeep</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On passing the stencil test, keep the old depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PassZKeep</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x10000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags12PassZReplaceS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PassZReplace" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags12PassZReplaceS0_">PassZReplace</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On passing the stencil test, replace the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PassZReplace</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x20000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags14PassZIncrementS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PassZIncrement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags14PassZIncrementS0_">PassZIncrement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On passing the stencil test, increment the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PassZIncrement</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x30000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags22PassZIncrementSaturateS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PassZIncrementSaturate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags22PassZIncrementSaturateS0_">PassZIncrementSaturate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On passing the stencil test, increment the depth value (with saturation).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PassZIncrementSaturate</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x40000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags14PassZDecrementS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PassZDecrement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags14PassZDecrementS0_">PassZDecrement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On passing the stencil test, decrement the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PassZDecrement</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x50000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags22PassZDecrementSaturateS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PassZDecrementSaturate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags22PassZDecrementSaturateS0_">PassZDecrementSaturate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On passing the stencil test, decrement the depth value (with saturation).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PassZDecrementSaturate</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x60000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld12StencilFlags11PassZInvertS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PassZInvert" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld12StencilFlags11PassZInvertS0_">PassZInvert</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On passing the stencil test, invert the depth value.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PassZInvert</span> <span class="o">=</span> <span class="kt">StencilFlags</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x70000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV13_0_helloworld12StencilFlags14referenceValueFVs5UInt8S0_"></a>
+                    <a name="//apple_ref/swift/Method/referenceValue(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV13_0_helloworld12StencilFlags14referenceValueFVs5UInt8S0_">referenceValue(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Encodes a reference value in a stencil state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">referenceValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">reference</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">StencilFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>reference</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The stencil reference value</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The encoded stencil state</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV13_0_helloworld12StencilFlags8readMaskFVs5UInt8S0_"></a>
+                    <a name="//apple_ref/swift/Method/readMask(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV13_0_helloworld12StencilFlags8readMaskFVs5UInt8S0_">readMask(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Encodes a read mask in a stencil state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">readMask</span><span class="p">(</span><span class="n">_</span> <span class="nv">mask</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">StencilFlags</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>mask</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The mask</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The encoded stencil state</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/stuartcarnie" target="_blank" rel="external">Stuart Carnie</a>. All rights reserved. (Last updated: 2016-08-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

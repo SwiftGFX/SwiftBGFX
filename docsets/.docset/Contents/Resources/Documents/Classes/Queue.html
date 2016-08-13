@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Queue Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/Queue" class="dashAnchor"></a>
+    <a title="Queue Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (72% documented)</p>
+        <p class="header-right"><a href="https://github.com/stuartcarnie/SwiftBGFX"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Queue Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicIndexBuffer.html">DynamicIndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicVertexBuffer.html">DynamicVertexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C13_0_helloworld10EventQueue">EventQueue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FrameBuffer.html">FrameBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IndexBuffer.html">IndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IndirectBuffer.html">IndirectBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InstanceDataBuffer.html">InstanceDataBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OcclusionQuery.html">OcclusionQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Program.html">Program</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Queue.html">Queue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Shader.html">Shader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Texture.html">Texture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Timing.html">Timing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Uniform.html">Uniform</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertexBuffer.html">VertexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertexLayout.html">VertexLayout</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/bgfx.html">bgfx</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v13_0_helloworld9sharedAppPS_4AppI_">sharedApp</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BackbufferRatio.html">BackbufferRatio</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BgfxError.html">BgfxError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonState.html">ButtonState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ComputeBufferAccess.html">ComputeBufferAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CubeMapFace.html">CubeMapFace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DebugColor.html">DebugColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Event.html">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/FileError.html">FileError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GamepadAxis.html">GamepadAxis</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/KeyCode.html">KeyCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MemoryBlockError.html">MemoryBlockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MouseButton.html">MouseButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OcclusionQueryResult.html">OcclusionQueryResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProgramLoadError.html">ProgramLoadError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReaderError.html">ReaderError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RenderFrameResult.html">RenderFrameResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RendererBackend.html">RendererBackend</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SuspendState.html">SuspendState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextureFormat.html">TextureFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextureType.html">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UniformType.html">UniformType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VendorID.html">VendorID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertexAttribType.html">VertexAttribType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertexAttributeUsage.html">VertexAttributeUsage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworldoi2llFTVS_11RenderStateSi_S0_">&lt;&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworld4openFzSSVS_4File">open(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworldoi1oFTVS_11RenderStateS0__S0_">|(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AppI.html">AppI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Callbacks.html">Callbacks</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Closer.html">Closer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P13_0_helloworld7IOError">IOError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Reader.html">Reader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/BufferFlags.html">BufferFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Capabilities.html">Capabilities</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Capabilities/GPU.html">– GPU</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CapsOptions.html">CapsOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ClearTargets.html">ClearTargets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DebugOptions.html">DebugOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/File.html">File</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyModifier.html">KeyModifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MemoryBlock.html">MemoryBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RenderState.html">RenderState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ResetOptions.html">ResetOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stats.html">Stats</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StencilFlags.html">StencilFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TextureFlags.html">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TextureFormatSupport.html">TextureFormatSupport</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransientIndexBuffer.html">TransientIndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransientVertexBuffer.html">TransientVertexBuffer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13_0_helloworld18NativeWindowHandle">NativeWindowHandle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13_0_helloworld12PlatformData">PlatformData</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Queue</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Queue</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Queue implements a FIFO container</p>
+
+<div class="aside aside-remark">
+    <p class="aside-title">Remark</p>
+    Supports exactly one producer and once consumer on separate threads
+
+</div>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld5QueuecFT_GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld5QueuecFT_GS0_x_">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Queue</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld5Queue7enqueueFxT_"></a>
+                    <a name="//apple_ref/swift/Method/enqueue(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld5Queue7enqueueFxT_">enqueue(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add a new item to the back of the queue.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">enqueue</span><span class="p">(</span><span class="n">_</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld5Queue7dequeueFT_GSqx_"></a>
+                    <a name="//apple_ref/swift/Method/dequeue()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld5Queue7dequeueFT_GSqx_">dequeue()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Return and remove the item at the front of the queue.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">dequeue</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld5Queue5frontFT_GSqx_"></a>
+                    <a name="//apple_ref/swift/Method/front()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld5Queue5frontFT_GSqx_">front()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Queue</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld5Queue7isEmptyFT_Sb"></a>
+                    <a name="//apple_ref/swift/Method/isEmpty()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld5Queue7isEmptyFT_Sb">isEmpty()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Queue</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/stuartcarnie" target="_blank" rel="external">Stuart Carnie</a>. All rights reserved. (Last updated: 2016-08-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

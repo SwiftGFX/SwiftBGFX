@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RenderState Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/RenderState" class="dashAnchor"></a>
+    <a title="RenderState Struct Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (72% documented)</p>
+        <p class="header-right"><a href="https://github.com/stuartcarnie/SwiftBGFX"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        RenderState Struct Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicIndexBuffer.html">DynamicIndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicVertexBuffer.html">DynamicVertexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C13_0_helloworld10EventQueue">EventQueue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FrameBuffer.html">FrameBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IndexBuffer.html">IndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IndirectBuffer.html">IndirectBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InstanceDataBuffer.html">InstanceDataBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OcclusionQuery.html">OcclusionQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Program.html">Program</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Queue.html">Queue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Shader.html">Shader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Texture.html">Texture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Timing.html">Timing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Uniform.html">Uniform</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertexBuffer.html">VertexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertexLayout.html">VertexLayout</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/bgfx.html">bgfx</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v13_0_helloworld9sharedAppPS_4AppI_">sharedApp</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BackbufferRatio.html">BackbufferRatio</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BgfxError.html">BgfxError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonState.html">ButtonState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ComputeBufferAccess.html">ComputeBufferAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CubeMapFace.html">CubeMapFace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DebugColor.html">DebugColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Event.html">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/FileError.html">FileError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GamepadAxis.html">GamepadAxis</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/KeyCode.html">KeyCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MemoryBlockError.html">MemoryBlockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MouseButton.html">MouseButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OcclusionQueryResult.html">OcclusionQueryResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProgramLoadError.html">ProgramLoadError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReaderError.html">ReaderError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RenderFrameResult.html">RenderFrameResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RendererBackend.html">RendererBackend</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SuspendState.html">SuspendState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextureFormat.html">TextureFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextureType.html">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UniformType.html">UniformType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VendorID.html">VendorID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertexAttribType.html">VertexAttribType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertexAttributeUsage.html">VertexAttributeUsage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworldoi2llFTVS_11RenderStateSi_S0_">&lt;&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworld4openFzSSVS_4File">open(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworldoi1oFTVS_11RenderStateS0__S0_">|(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AppI.html">AppI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Callbacks.html">Callbacks</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Closer.html">Closer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P13_0_helloworld7IOError">IOError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Reader.html">Reader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/BufferFlags.html">BufferFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Capabilities.html">Capabilities</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Capabilities/GPU.html">– GPU</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CapsOptions.html">CapsOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ClearTargets.html">ClearTargets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DebugOptions.html">DebugOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/File.html">File</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyModifier.html">KeyModifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MemoryBlock.html">MemoryBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RenderState.html">RenderState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ResetOptions.html">ResetOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stats.html">Stats</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StencilFlags.html">StencilFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TextureFlags.html">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TextureFormatSupport.html">TextureFormatSupport</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransientIndexBuffer.html">TransientIndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransientVertexBuffer.html">TransientVertexBuffer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13_0_helloworld18NativeWindowHandle">NativeWindowHandle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13_0_helloworld12PlatformData">PlatformData</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>RenderState</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vPs16RawRepresentable8rawValuewx8RawValue"></a>
+                    <a name="//apple_ref/swift/Property/rawValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vPs16RawRepresentable8rawValuewx8RawValue">rawValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">rawValue</span><span class="p">:</span> <span class="kt">UInt64</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FPs9OptionSetcFT8rawValuewx8RawValue_x"></a>
+                    <a name="//apple_ref/swift/Method/init(rawValue:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FPs9OptionSetcFT8rawValuewx8RawValue_x">init(rawValue:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="kt">UInt64</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>rawValue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The raw value of the option set to create. Each bit of <code>rawValue</code> potentially represents an element of the option set, though raw values may include bits that are not defined as distinct values of the <code>OptionSet</code> type.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState4NoneS0_"></a>
+                    <a name="//apple_ref/swift/Variable/None" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState4NoneS0_">None</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>No state bits set.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">None</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState10ColorWriteS0_"></a>
+                    <a name="//apple_ref/swift/Variable/ColorWrite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState10ColorWriteS0_">ColorWrite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enable writing color data to the framebuffer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">ColorWrite</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000001</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState10AlphaWriteS0_"></a>
+                    <a name="//apple_ref/swift/Variable/AlphaWrite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState10AlphaWriteS0_">AlphaWrite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enable writing alpha data to the framebuffer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">AlphaWrite</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000002</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState10DepthWriteS0_"></a>
+                    <a name="//apple_ref/swift/Variable/DepthWrite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState10DepthWriteS0_">DepthWrite</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enable writing to the depth buffer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">DepthWrite</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000004</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState13DepthTestLessS0_"></a>
+                    <a name="//apple_ref/swift/Variable/DepthTestLess" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState13DepthTestLessS0_">DepthTestLess</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use a <q>less than</q> comparison to pass the depth test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">DepthTestLess</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000010</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState18DepthTestLessEqualS0_"></a>
+                    <a name="//apple_ref/swift/Variable/DepthTestLessEqual" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState18DepthTestLessEqualS0_">DepthTestLessEqual</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use a <q>less than or equal to</q> comparison to pass the depth test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">DepthTestLessEqual</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000020</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState14DepthTestEqualS0_"></a>
+                    <a name="//apple_ref/swift/Variable/DepthTestEqual" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState14DepthTestEqualS0_">DepthTestEqual</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pass the depth test if both values are equal.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">DepthTestEqual</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000030</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState21DepthTestGreaterEqualS0_"></a>
+                    <a name="//apple_ref/swift/Variable/DepthTestGreaterEqual" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState21DepthTestGreaterEqualS0_">DepthTestGreaterEqual</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use a <q>greater than or equal to</q> comparison to pass the depth test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">DepthTestGreaterEqual</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000040</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState16DepthTestGreaterS0_"></a>
+                    <a name="//apple_ref/swift/Variable/DepthTestGreater" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState16DepthTestGreaterS0_">DepthTestGreater</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use a <q>greater than</q> comparison to pass the depth test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">DepthTestGreater</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000050</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState17DepthTestNotEqualS0_"></a>
+                    <a name="//apple_ref/swift/Variable/DepthTestNotEqual" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState17DepthTestNotEqualS0_">DepthTestNotEqual</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Pass the depth test if both values are not equal.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">DepthTestNotEqual</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000060</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState14DepthTestNeverS0_"></a>
+                    <a name="//apple_ref/swift/Variable/DepthTestNever" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState14DepthTestNeverS0_">DepthTestNever</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Never pass the depth test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">DepthTestNever</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000070</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState15DepthTestAlwaysS0_"></a>
+                    <a name="//apple_ref/swift/Variable/DepthTestAlways" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState15DepthTestAlwaysS0_">DepthTestAlways</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Always pass the depth test.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">DepthTestAlways</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000080</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState9BlendZeroS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendZero" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState9BlendZeroS0_">BlendZero</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use a value of 0 as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendZero</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000001000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState8BlendOneS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendOne" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState8BlendOneS0_">BlendOne</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use a value of 1 as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendOne</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000002000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState16BlendSourceColorS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendSourceColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState16BlendSourceColorS0_">BlendSourceColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use the source pixel color as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendSourceColor</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000003000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState23BlendInverseSourceColorS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendInverseSourceColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState23BlendInverseSourceColorS0_">BlendInverseSourceColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use one minus the source pixel color as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendInverseSourceColor</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000004000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState16BlendSourceAlphaS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendSourceAlpha" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState16BlendSourceAlphaS0_">BlendSourceAlpha</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use the source pixel alpha as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendSourceAlpha</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000005000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState23BlendInverseSourceAlphaS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendInverseSourceAlpha" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState23BlendInverseSourceAlphaS0_">BlendInverseSourceAlpha</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use one minus the source pixel alpha as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendInverseSourceAlpha</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000006000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState21BlendDestinationAlphaS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendDestinationAlpha" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState21BlendDestinationAlphaS0_">BlendDestinationAlpha</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use the destination pixel alpha as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendDestinationAlpha</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000007000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState28BlendInverseDestinationAlphaS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendInverseDestinationAlpha" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState28BlendInverseDestinationAlphaS0_">BlendInverseDestinationAlpha</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use one minus the destination pixel alpha as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendInverseDestinationAlpha</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000008000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState21BlendDestinationColorS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendDestinationColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState21BlendDestinationColorS0_">BlendDestinationColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use the destination pixel color as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendDestinationColor</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000009000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState28BlendInverseDestinationColorS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendInverseDestinationColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState28BlendInverseDestinationColorS0_">BlendInverseDestinationColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use one minus the destination pixel color as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendInverseDestinationColor</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x000000000000a000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState24BlendSourceAlphaSaturateS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendSourceAlphaSaturate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState24BlendSourceAlphaSaturateS0_">BlendSourceAlphaSaturate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use the source pixel alpha (saturated) as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendSourceAlphaSaturate</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x000000000000b000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState11BlendFactorS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendFactor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState11BlendFactorS0_">BlendFactor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use an application supplied blending factor as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendFactor</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x000000000000c000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState18BlendInverseFactorS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendInverseFactor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState18BlendInverseFactorS0_">BlendInverseFactor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Use one minus an application supplied blending factor as an input to a blend equation.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendInverseFactor</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x000000000000d000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState16BlendEquationAddS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendEquationAdd" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState16BlendEquationAddS0_">BlendEquationAdd</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blend equation: A + B</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendEquationAdd</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState16BlendEquationSubS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendEquationSub" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState16BlendEquationSubS0_">BlendEquationSub</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blend equation: B - A</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendEquationSub</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000010000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState23BlendEquationReverseSubS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendEquationReverseSub" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState23BlendEquationReverseSubS0_">BlendEquationReverseSub</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blend equation: A - B</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendEquationReverseSub</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000020000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState16BlendEquationMinS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendEquationMin" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState16BlendEquationMinS0_">BlendEquationMin</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blend equation: min(a, b)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendEquationMin</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000030000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState16BlendEquationMaxS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendEquationMax" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState16BlendEquationMaxS0_">BlendEquationMax</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blend equation: max(a, b)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendEquationMax</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000040000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState16BlendIndependentS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendIndependent" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState16BlendIndependentS0_">BlendIndependent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enable independent blending of simultaenous render targets.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendIndependent</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000400000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState20BlendAlphaToCoverageS0_"></a>
+                    <a name="//apple_ref/swift/Variable/BlendAlphaToCoverage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState20BlendAlphaToCoverageS0_">BlendAlphaToCoverage</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enable alpha to coverage blending.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">BlendAlphaToCoverage</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000800000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState9NoCullingS0_"></a>
+                    <a name="//apple_ref/swift/Variable/NoCulling" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState9NoCullingS0_">NoCulling</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Don&rsquo;t perform culling of back faces.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">NoCulling</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState13CullClockwiseS0_"></a>
+                    <a name="//apple_ref/swift/Variable/CullClockwise" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState13CullClockwiseS0_">CullClockwise</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Perform culling of clockwise faces.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">CullClockwise</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000001000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState20CullCounterclockwiseS0_"></a>
+                    <a name="//apple_ref/swift/Variable/CullCounterclockwise" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState20CullCounterclockwiseS0_">CullCounterclockwise</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Perform culling of counter-clockwise faces.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">CullCounterclockwise</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000002000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState18PrimitiveTrianglesS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PrimitiveTriangles" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState18PrimitiveTrianglesS0_">PrimitiveTriangles</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Primitive topology: triangle list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PrimitiveTriangles</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0000000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState22PrimitiveTriangleStripS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PrimitiveTriangleStrip" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState22PrimitiveTriangleStripS0_">PrimitiveTriangleStrip</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Primitive topology: triangle strip.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PrimitiveTriangleStrip</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0001000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState14PrimitiveLinesS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PrimitiveLines" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState14PrimitiveLinesS0_">PrimitiveLines</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Primitive topology: line list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PrimitiveLines</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0002000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState18PrimitiveLineStripS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PrimitiveLineStrip" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState18PrimitiveLineStripS0_">PrimitiveLineStrip</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Primitive topology: line strip.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PrimitiveLineStrip</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0003000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState15PrimitivePointsS0_"></a>
+                    <a name="//apple_ref/swift/Variable/PrimitivePoints" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState15PrimitivePointsS0_">PrimitivePoints</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Primitive topology: point list.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">PrimitivePoints</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x0004000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState13MultisamplingS0_"></a>
+                    <a name="//apple_ref/swift/Variable/Multisampling" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState13MultisamplingS0_">Multisampling</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enable multisampling.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">Multisampling</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x1000000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState6LineAAS0_"></a>
+                    <a name="//apple_ref/swift/Variable/LineAA" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState6LineAAS0_">LineAA</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enable line antialiasing.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">LineAA</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x2000000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState25ConservativeRasterizationS0_"></a>
+                    <a name="//apple_ref/swift/Variable/ConservativeRasterization" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState25ConservativeRasterizationS0_">ConservativeRasterization</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Enable conservative rasterization.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">ConservativeRasterization</span> <span class="o">=</span> <span class="kt">RenderState</span><span class="p">(</span><span class="nv">rawValue</span><span class="p">:</span> <span class="mh">0x4000000000000000</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvV13_0_helloworld11RenderState7DefaultS0_"></a>
+                    <a name="//apple_ref/swift/Variable/Default" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvV13_0_helloworld11RenderState7DefaultS0_">Default</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Provides a set of sane defaults</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">Default</span><span class="p">:</span> <span class="kt">RenderState</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Structs/RenderState.html#/s:ZvV13_0_helloworld11RenderState10ColorWriteS0_">ColorWrite</a></span><span class="p">,</span> <span class="kt"><a href="../Structs/RenderState.html#/s:ZvV13_0_helloworld11RenderState10AlphaWriteS0_">AlphaWrite</a></span><span class="p">,</span> <span class="kt"><a href="../Structs/RenderState.html#/s:ZvV13_0_helloworld11RenderState10DepthWriteS0_">DepthWrite</a></span><span class="p">,</span> <span class="kt"><a href="../Structs/RenderState.html#/s:ZvV13_0_helloworld11RenderState13DepthTestLessS0_">DepthTestLess</a></span><span class="p">,</span> <span class="kt"><a href="../Structs/RenderState.html#/s:ZvV13_0_helloworld11RenderState13CullClockwiseS0_">CullClockwise</a></span><span class="p">,</span> <span class="kt"><a href="../Structs/RenderState.html#/s:ZvV13_0_helloworld11RenderState13MultisamplingS0_">Multisampling</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV13_0_helloworld11RenderState8alphaRefFVs5UInt8S0_"></a>
+                    <a name="//apple_ref/swift/Method/alphaRef(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV13_0_helloworld11RenderState8alphaRefFVs5UInt8S0_">alphaRef(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Encodes an alpha reference value in a render state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">alphaRef</span><span class="p">(</span><span class="n">_</span> <span class="nv">alpha</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RenderState</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The alpha reference value</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The encoded render state</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV13_0_helloworld11RenderState9pointSizeFVs5UInt8S0_"></a>
+                    <a name="//apple_ref/swift/Method/pointSize(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV13_0_helloworld11RenderState9pointSizeFVs5UInt8S0_">pointSize(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Encodes a point size value in a render state</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">pointSize</span><span class="p">(</span><span class="n">_</span> <span class="nv">size</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RenderState</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>alpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The point size</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The encoded render state</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV13_0_helloworld11RenderState13blendFunctionFTS0_11destinationS0__S0_"></a>
+                    <a name="//apple_ref/swift/Method/blendFunction(_:destination:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV13_0_helloworld11RenderState13blendFunctionFTS0_11destinationS0__S0_">blendFunction(_:destination:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Builds a render state for a blend function</p>
+
+<ul>
+<li><p>parameters:</p>
+
+<ul>
+<li>source: The source blend operation</li>
+<li>destination: The destination blend operation</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">blendFunction</span><span class="p">(</span><span class="n">_</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">RenderState</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">RenderState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RenderState</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>source</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The source blend operation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destination</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination blend operation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The render state for the blend function</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV13_0_helloworld11RenderState13blendFunctionFTS0_16destinationColorS0_11sourceAlphaS0_16destinationAlphaS0__S0_"></a>
+                    <a name="//apple_ref/swift/Method/blendFunction(_:destinationColor:sourceAlpha:destinationAlpha:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV13_0_helloworld11RenderState13blendFunctionFTS0_16destinationColorS0_11sourceAlphaS0_16destinationAlphaS0__S0_">blendFunction(_:destinationColor:sourceAlpha:destinationAlpha:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Builds a render state for a blend function</p>
+
+<ul>
+<li><p>parameters:</p>
+
+<ul>
+<li>sourceColor: The source color blend operation</li>
+<li>destinationColor: The destination color blend operation</li>
+<li>source:Alpha The source alpha blend operation</li>
+<li>destinationAlpha: The destination alpha blend operation</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">blendFunction</span><span class="p">(</span><span class="n">_</span> <span class="nv">sourceColor</span><span class="p">:</span> <span class="kt">RenderState</span><span class="p">,</span> <span class="nv">destinationColor</span><span class="p">:</span> <span class="kt">RenderState</span><span class="p">,</span>
+                                     <span class="nv">sourceAlpha</span><span class="p">:</span> <span class="kt">RenderState</span><span class="p">,</span> <span class="nv">destinationAlpha</span><span class="p">:</span> <span class="kt">RenderState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RenderState</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sourceColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The source color blend operation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destinationColor</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination color blend operation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>source</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Alpha The source alpha blend operation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destinationAlpha</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination alpha blend operation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The render state for the blend function</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV13_0_helloworld11RenderState13blendEquationFS0_S0_"></a>
+                    <a name="//apple_ref/swift/Method/blendEquation(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV13_0_helloworld11RenderState13blendEquationFS0_S0_">blendEquation(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Builds a render state for a blend equation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">blendEquation</span><span class="p">(</span><span class="n">_</span> <span class="nv">equation</span><span class="p">:</span> <span class="kt">RenderState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RenderState</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>equation</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The equation</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The render state for the blend equation</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFV13_0_helloworld11RenderState13blendEquationFTS0_13alphaEquationS0__S0_"></a>
+                    <a name="//apple_ref/swift/Method/blendEquation(_:alphaEquation:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFV13_0_helloworld11RenderState13blendEquationFTS0_13alphaEquationS0__S0_">blendEquation(_:alphaEquation:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Builds a render state for a blend equation</p>
+
+<ul>
+<li><p>parameters</p>
+
+<ul>
+<li>sourceEquation: The source equation</li>
+<li>alphaEquation: The alpha equation</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">blendEquation</span><span class="p">(</span><span class="n">_</span> <span class="nv">sourceEquation</span><span class="p">:</span> <span class="kt">RenderState</span><span class="p">,</span> <span class="nv">alphaEquation</span><span class="p">:</span> <span class="kt">RenderState</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">RenderState</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The render state for the blend equation</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/stuartcarnie" target="_blank" rel="external">Stuart Carnie</a>. All rights reserved. (Last updated: 2016-08-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

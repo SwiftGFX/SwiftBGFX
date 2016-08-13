@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FrameBuffer Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/FrameBuffer" class="dashAnchor"></a>
+    <a title="FrameBuffer Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (72% documented)</p>
+        <p class="header-right"><a href="https://github.com/stuartcarnie/SwiftBGFX"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        FrameBuffer Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicIndexBuffer.html">DynamicIndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicVertexBuffer.html">DynamicVertexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:C13_0_helloworld10EventQueue">EventQueue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/FrameBuffer.html">FrameBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IndexBuffer.html">IndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/IndirectBuffer.html">IndirectBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/InstanceDataBuffer.html">InstanceDataBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OcclusionQuery.html">OcclusionQuery</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Program.html">Program</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Queue.html">Queue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Shader.html">Shader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Texture.html">Texture</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Timing.html">Timing</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Uniform.html">Uniform</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertexBuffer.html">VertexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/VertexLayout.html">VertexLayout</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/bgfx.html">bgfx</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Global Variables.html#/s:v13_0_helloworld9sharedAppPS_4AppI_">sharedApp</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BackbufferRatio.html">BackbufferRatio</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BgfxError.html">BgfxError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ButtonState.html">ButtonState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ComputeBufferAccess.html">ComputeBufferAccess</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/CubeMapFace.html">CubeMapFace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DebugColor.html">DebugColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Event.html">Event</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/FileError.html">FileError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/GamepadAxis.html">GamepadAxis</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/KeyCode.html">KeyCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MemoryBlockError.html">MemoryBlockError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/MouseButton.html">MouseButton</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OcclusionQueryResult.html">OcclusionQueryResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ProgramLoadError.html">ProgramLoadError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/ReaderError.html">ReaderError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RenderFrameResult.html">RenderFrameResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RendererBackend.html">RendererBackend</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SuspendState.html">SuspendState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextureFormat.html">TextureFormat</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/TextureType.html">TextureType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/UniformType.html">UniformType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VendorID.html">VendorID</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertexAttribType.html">VertexAttribType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/VertexAttributeUsage.html">VertexAttributeUsage</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworldoi2llFTVS_11RenderStateSi_S0_">&lt;&lt;(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworld4openFzSSVS_4File">open(_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F13_0_helloworldoi1oFTVS_11RenderStateS0__S0_">|(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AppI.html">AppI</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Callbacks.html">Callbacks</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Closer.html">Closer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:P13_0_helloworld7IOError">IOError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Reader.html">Reader</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/BufferFlags.html">BufferFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Capabilities.html">Capabilities</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Capabilities/GPU.html">– GPU</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/CapsOptions.html">CapsOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ClearTargets.html">ClearTargets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DebugOptions.html">DebugOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/File.html">File</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/KeyModifier.html">KeyModifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/MemoryBlock.html">MemoryBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RenderState.html">RenderState</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ResetOptions.html">ResetOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Stats.html">Stats</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/StencilFlags.html">StencilFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TextureFlags.html">TextureFlags</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TextureFormatSupport.html">TextureFormatSupport</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransientIndexBuffer.html">TransientIndexBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/TransientVertexBuffer.html">TransientVertexBuffer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Typealiases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13_0_helloworld18NativeWindowHandle">NativeWindowHandle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:13_0_helloworld12PlatformData">PlatformData</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>FrameBuffer</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">FrameBuffer</span></code></pre>
+
+                </div>
+              </div>
+            <p>An aggregated frame buffer, with one or more attached texture surfaces</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZvC13_0_helloworld11FrameBuffer13InvalidHandleS0_"></a>
+                    <a name="//apple_ref/swift/Variable/InvalidHandle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZvC13_0_helloworld11FrameBuffer13InvalidHandleS0_">InvalidHandle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">FrameBuffer</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld11FrameBuffercFT5widthVs6UInt166heightS1_6formatOS_13TextureFormat5flagsVS_12TextureFlags_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(width:height:format:flags:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld11FrameBuffercFT5widthVs6UInt166heightS1_6formatOS_13TextureFormat5flagsVS_12TextureFlags_S0_">init(width:height:format:flags:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new frame buffer</p>
+
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>You must call <code>destroy</code> to clean up any resources used by the frame buffer</p>
+
+</div>
+
+<p><li><p>parameters:</p></p>
+
+<p><ul>
+<li>width: The width of the render target</li>
+<li>height: The height of the render target</li>
+<li>format: The format of the new surface</li>
+<li>flags: Texture sampling flags</li>
+</ul></li></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">width</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextureFormat.html">TextureFormat</a></span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Structs/TextureFlags.html">TextureFlags</a></span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">clampU</span><span class="p">,</span> <span class="o">.</span><span class="n">clampV</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The width of the render target</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height of the render target</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>format</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The format of the new surface</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>flags</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Texture sampling flags</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>new frame buffer</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld11FrameBuffercFT5ratioOS_15BackbufferRatio6formatOS_13TextureFormat5flagsVS_12TextureFlags_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(ratio:format:flags:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld11FrameBuffercFT5ratioOS_15BackbufferRatio6formatOS_13TextureFormat5flagsVS_12TextureFlags_S0_">init(ratio:format:flags:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new frame buffer</p>
+
+<ul>
+<li><p>parameters:</p>
+
+<ul>
+<li>ratio: The amount to scale when the backbuffer resizes</li>
+<li>format: The format of the new surface</li>
+<li>flags: Texture sampling flags</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">ratio</span><span class="p">:</span> <span class="kt"><a href="../Enums/BackbufferRatio.html">BackbufferRatio</a></span><span class="p">,</span> <span class="nv">format</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextureFormat.html">TextureFormat</a></span><span class="p">,</span> <span class="nv">flags</span><span class="p">:</span> <span class="kt"><a href="../Structs/TextureFlags.html">TextureFlags</a></span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="n">clampU</span><span class="p">,</span> <span class="o">.</span><span class="n">clampV</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>ratio</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The amount to scale when the backbuffer resizes</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>format</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The format of the new surface</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>flags</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Texture sampling flags</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>new frame buffer</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld11FrameBuffercFT12windowHandleGSpT__5widthVs6UInt166heightS1_11depthFormatOS_13TextureFormat_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(windowHandle:width:height:depthFormat:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld11FrameBuffercFT12windowHandleGSpT__5widthVs6UInt166heightS1_11depthFormatOS_13TextureFormat_S0_">init(windowHandle:width:height:depthFormat:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a new frame buffer</p>
+
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    <p>You must call <code>destroy</code> to clean up any resources used by the frame buffer</p>
+
+</div>
+
+<p><li><p>parameters:</p></p>
+
+<p><ul>
+<li>windowHandle: A reference to a native window handle</li>
+<li>width: The width of the render target</li>
+<li>height: The height of the render target</li>
+<li>format: A desired format for a depth buffer, if applicable</li>
+</ul></li></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">windowHandle</span><span class="p">:</span> <span class="kt"><a href="../Typealiases.html#/s:13_0_helloworld18NativeWindowHandle">NativeWindowHandle</a></span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">depthFormat</span><span class="p">:</span> <span class="kt"><a href="../Enums/TextureFormat.html">TextureFormat</a></span> <span class="o">=</span> <span class="o">.</span><span class="n">unknownDepth</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>windowHandle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A reference to a native window handle</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The width of the render target</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height of the render target</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>format</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A desired format for a depth buffer, if applicable</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld11FrameBuffercFT8texturesGSaCS_7Texture_15destroyTexturesSb_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(textures:destroyTextures:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld11FrameBuffercFT8texturesGSaCS_7Texture_15destroyTexturesSb_S0_">init(textures:destroyTextures:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new frame buffer using textures</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">textures</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Texture.html">Texture</a></span><span class="p">],</span> <span class="nv">destroyTextures</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>textures</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the source textures for the frame buffer</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destroyTextures</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>if true, textures will be destroyed when the frame buffer is destroyed</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld11FrameBuffer4blitFTVs5UInt84destCS_7Texture5destXVs6UInt165destYS3_10attachmentS1_4srcXS3_4srcYS3_5widthS3_6heightS3_5depthS3__T_"></a>
+                    <a name="//apple_ref/swift/Method/blit(_:dest:destX:destY:attachment:srcX:srcY:width:height:depth:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld11FrameBuffer4blitFTVs5UInt84destCS_7Texture5destXVs6UInt165destYS3_10attachmentS1_4srcXS3_4srcYS3_5widthS3_6heightS3_5depthS3__T_">blit(_:dest:destX:destY:attachment:srcX:srcY:width:height:depth:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blits the contents of the framebuffer to a texture</p>
+
+<p><li><p>parameters:</p></p>
+
+<p><ul>
+<li>viewId: The view in which the blit will be ordered.</li>
+<li>dest: The destination texture.</li>
+<li>destX: The destination X position.</li>
+<li>destY: The destination Y position.</li>
+<li>attachment: The frame buffer attachment from which to blit</li>
+<li>srcX: The source X position.</li>
+<li>srcY: The source Y position.</li>
+<li>width: The width of the region to blit.</li>
+<li>height: The height of the region to blit.</li>
+</ul></li>
+<div class="aside aside-remark">
+    <p class="aside-title">Remark</p>
+    <p>The destination texture must be created with the <code>TextureFlags.BlitDestination</code> flag</p></p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">blit</span><span class="p">(</span><span class="n">_</span> <span class="nv">viewId</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">dest</span><span class="p">:</span> <span class="kt"><a href="../Classes/Texture.html">Texture</a></span><span class="p">,</span> <span class="nv">destX</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">destY</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span>
+                            <span class="nv">attachment</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span>
+                            <span class="nv">srcX</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">srcY</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span>
+                            <span class="nv">width</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">depth</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view in which the blit will be ordered.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dest</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination texture.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination X position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination Y position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attachment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The frame buffer attachment from which to blit</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>srcX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The source X position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>srcY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The source Y position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The width of the region to blit.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height of the region to blit.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld11FrameBuffer4blitFTVs5UInt84destCS_7Texture7destMipS1_5destXVs6UInt165destYS3_5destZS3_10attachmentS1_6srcMipS1_4srcXS3_4srcYS3_4srcZS3_5widthS3_6heightS3_5depthS3__T_"></a>
+                    <a name="//apple_ref/swift/Method/blit(_:dest:destMip:destX:destY:destZ:attachment:srcMip:srcX:srcY:srcZ:width:height:depth:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld11FrameBuffer4blitFTVs5UInt84destCS_7Texture7destMipS1_5destXVs6UInt165destYS3_5destZS3_10attachmentS1_6srcMipS1_4srcXS3_4srcYS3_4srcZS3_5widthS3_6heightS3_5depthS3__T_">blit(_:dest:destMip:destX:destY:destZ:attachment:srcMip:srcX:srcY:srcZ:width:height:depth:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blits the contents of the texture to another texture</p>
+
+<p><li><p>parameters:</p></p>
+
+<p><ul>
+<li>viewId: The view in which the blit will be ordered.</li>
+<li>dest: The destination texture.</li>
+<li>destMip: The destination mip level.</li>
+<li>destX: The destination X position.</li>
+<li>destY: The destination Y position.</li>
+<li>destZ: The destination Z position.</li>
+<li>attachment: The frame buffer attachment from which to blit</li>
+<li>srcMip: The source mip level.</li>
+<li>srcX: The source X position.</li>
+<li>srcY: The source Y position.</li>
+<li>srcZ: The source Z position.</li>
+<li>width: The width of the region to blit.</li>
+<li>height: The height of the region to blit.</li>
+<li>depth: The depth of the region to blit.</li>
+</ul></li>
+<div class="aside aside-remark">
+    <p class="aside-title">Remark</p>
+    <p>The destination texture must be created with the <code>TextureFlags.BlitDestination</code> flag</p></p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">blit</span><span class="p">(</span><span class="n">_</span> <span class="nv">viewId</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">dest</span><span class="p">:</span> <span class="kt"><a href="../Classes/Texture.html">Texture</a></span><span class="p">,</span> <span class="nv">destMip</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">destX</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">destY</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">destZ</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span>
+                            <span class="nv">attachment</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">srcMip</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">srcX</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">srcY</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">srcZ</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span>
+                            <span class="nv">width</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">,</span> <span class="nv">depth</span><span class="p">:</span> <span class="kt">UInt16</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>viewId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The view in which the blit will be ordered.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>dest</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination texture.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destMip</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination mip level.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination X position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination Y position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destZ</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination Z position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attachment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The frame buffer attachment from which to blit</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>srcMip</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The source mip level.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>srcX</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The source X position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>srcY</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The source Y position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>srcZ</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The source Z position.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>width</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The width of the region to blit.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>height</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The height of the region to blit.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>depth</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The depth of the region to blit.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC13_0_helloworld11FrameBuffer4readFTVs5UInt84dataGSpT___Vs6UInt32"></a>
+                    <a name="//apple_ref/swift/Method/read(_:data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC13_0_helloworld11FrameBuffer4readFTVs5UInt84dataGSpT___Vs6UInt32">read(_:data:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reads the contents of the framebuffer and stores them in memory pointed to by <code>data</code></p>
+
+<p><li><p>parameters:</p></p>
+
+<p><ul>
+<li>attachment: The frame buffer attachment from which to read</li>
+<li>data: The destination for the read image data</li>
+</ul></li>
+<div class="aside aside-remark">
+    <p class="aside-title">Remark</p>
+    <p>The attachment must have been created with the <code>TextureFlags.ReadBack</code> flag</p></p>
+
+<p></div></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">read</span><span class="p">(</span><span class="n">_</span> <span class="nv">attachment</span><span class="p">:</span> <span class="kt">UInt8</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UInt32</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>attachment</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The frame buffer attachment from which to read</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The destination for the read image data</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The frame number when the result will be available. See <code>bgfx.frame</code></p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2016 <a class="link" href="https://github.com/stuartcarnie" target="_blank" rel="external">Stuart Carnie</a>. All rights reserved. (Last updated: 2016-08-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
