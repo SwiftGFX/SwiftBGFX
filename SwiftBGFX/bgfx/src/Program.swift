@@ -8,21 +8,17 @@ public class Program {
     
     /// Initializes a new program with the specified shaders
     ///
-    /// - parameters:
-    ///
-    ///    - vertex: The vertex shader
-    ///    - fragment: The fragment shader
-    ///    - destroyShaders: specify `true` to release the shaders after creating the program
+    /// - parameter vertex: The vertex shader
+    /// - parameter fragment: The fragment shader
+    /// - parameter destroyShaders: specify `true` to release the shaders after creating the program
     public init(vertex: Shader, fragment: Shader, destroyShaders: Bool = false) {
         handle = bgfx_create_program(vertex.handle, fragment.handle, destroyShaders)
     }
-    
+
     /// Initializes a new compute program
     ///
-    /// - parameters:
-    ///
-    ///    - compute: The compute shader
-    ///    - destroyShaders: specify `true` to release the shaders after creating the program
+    /// - parameter compute: The compute shader
+    /// - parameter destroyShaders: specify `true` to release the shaders after creating the program
     public init(compute: Shader, destroyShaders: Bool = false) {
         handle = bgfx_create_compute_program(compute.handle, destroyShaders)
     }

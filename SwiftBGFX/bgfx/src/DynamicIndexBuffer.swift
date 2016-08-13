@@ -16,10 +16,8 @@ public class DynamicIndexBuffer {
     
     /// Updates the data in the buffer
     ///
-    /// - parameters:
-    ///
-    ///    - startIndex: Position of the first index to update
-    ///    - mem: The new index data with which to fill the buffer
+    /// - parameter startIndex: Position of the first index to update
+    /// - parameter mem: The new index data with which to fill the buffer
     public func update(_ startIndex: UInt32, mem: MemoryBlock) {
         bgfx_update_dynamic_index_buffer(handle, startIndex, mem.handle)
     }

@@ -4,7 +4,7 @@
 
 import Foundation
 
-public enum ProgramLoadError: Error {
+enum ProgramLoadError: Error {
     case loadFailed
 }
 

@@ -45,7 +45,7 @@ public struct Capabilities {
         }
     }
     
-    public let GPUs: [GPU]
+    public let gpus: [GPU]
     
     public let formats: [TextureFormatSupport]
     
@@ -83,7 +83,7 @@ public struct Capabilities {
             break
         }
         
-        GPUs = gpus
+        self.gpus = gpus
         
         var formats = [TextureFormatSupport](repeating: TextureFormatSupport.none, count: Int(BGFX_TEXTURE_FORMAT_COUNT.rawValue))
         memcpy(&formats, &s.formats.0, sizeof(TextureFormatSupport.self) * Int(BGFX_TEXTURE_FORMAT_COUNT.rawValue))

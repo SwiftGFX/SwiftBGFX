@@ -2,7 +2,7 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
-public protocol AppI {
+protocol AppI {
     func startup(_ argc: Int, argv:[String])
     func shutdown() -> Int
     func update() -> Bool

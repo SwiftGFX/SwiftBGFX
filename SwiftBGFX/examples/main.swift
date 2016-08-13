@@ -85,7 +85,7 @@ func renderScreenSpaceQuad(_ viewId: UInt8, program: Program, x: Float, y: Float
     indices[4] = 3
     indices[5] = 2
     
-    bgfx.setRenderState(RenderState.Default, colorRgba: 0x000)
+    bgfx.setRenderState(RenderState.default, colorRgba: 0x000)
     bgfx.setIndexBuffer(tib)
     bgfx.setVertexBuffer(tvb)
     bgfx.submit(viewId, program: program)
@@ -195,7 +195,7 @@ class ExampleRaymarch: AppI {
     }
 }
 
-public var sharedApp: AppI {
+var sharedApp: AppI {
     return ExampleRaymarch()
 }
 

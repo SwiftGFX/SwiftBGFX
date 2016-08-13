@@ -2,86 +2,86 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
-public enum GamepadAxis {
+enum GamepadAxis {
     case leftX, leftY, leftZ, rightX, rightY, rightZ
 }
 
-public enum KeyCode: Int32 {
+enum KeyCode: Int32 {
     case none
-    
+
     case esc, `return`, tab, space, backspace
     case up, down, left, right
     case insert, delete, home, end, pageUp, pageDown
     case print
-    
+
     case plus, minus, leftBracket, rightBracket, semicolon
     case quote, comma, period, slash, backslash, tilde
-    
+
     case f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12
-    
+
     case numPad0, numPad1, numPad2, numPad3, numPad4
     case numPad5, numPad6, numPad7, numPad8, numPad9
-    
+
     case key0, key1, key2, key3, key4, key5, key6, key7, key8, key9
-    
+
     case keyA, keyB, keyC, keyD, keyE, keyF, keyG, keyH
     case keyI, keyJ, keyK, keyL, keyM, keyN, keyO, keyP
     case keyQ, keyR, keyS, keyT, keyU, keyV, keyW, keyX
     case keyY, keyZ
-    
+
     case gamepadA, gamepadB, gamepadX, gamepadY, gamepadThumbL, gamepadThumbR
     case gamepadShoulderL, gamepadShoulderR, gamepadUp, gamepadDown, gamepadLeft
     case gamepadRight, gamepadBack, gamepadStart, gamepadGuide
 }
 
-public struct KeyModifier : OptionSet {
-    public let rawValue: UInt8
-    public init(rawValue: UInt8) { self.rawValue = rawValue }
-    
-    public static let None = KeyModifier(rawValue: 0x00)
-    public static let LeftAlt = KeyModifier(rawValue: 0x01)
-    public static let RightAlt = KeyModifier(rawValue: 0x02)
-    public static let LeftCtrl = KeyModifier(rawValue: 0x04)
-    public static let RightCtrl = KeyModifier(rawValue: 0x08)
-    public static let LeftShift = KeyModifier(rawValue: 0x10)
-    public static let RightShift = KeyModifier(rawValue: 0x20)
-    public static let LeftMeta = KeyModifier(rawValue: 0x40)
-    public static let RightMeta = KeyModifier(rawValue: 0x80)
+struct KeyModifier : OptionSet {
+    let rawValue: UInt8
+    init(rawValue: UInt8) { self.rawValue = rawValue }
+
+    static let None = KeyModifier(rawValue: 0x00)
+    static let LeftAlt = KeyModifier(rawValue: 0x01)
+    static let RightAlt = KeyModifier(rawValue: 0x02)
+    static let LeftCtrl = KeyModifier(rawValue: 0x04)
+    static let RightCtrl = KeyModifier(rawValue: 0x08)
+    static let LeftShift = KeyModifier(rawValue: 0x10)
+    static let RightShift = KeyModifier(rawValue: 0x20)
+    static let LeftMeta = KeyModifier(rawValue: 0x40)
+    static let RightMeta = KeyModifier(rawValue: 0x80)
 }
 
-public enum ButtonState {
+enum ButtonState {
     case up, down
 }
 
-public enum MouseButton {
+enum MouseButton {
     case none, left, middle, right
 }
 
-public enum SuspendState {
+enum SuspendState {
     case willSuspend, didSuspend, willResume, didResume
 }
 
-public enum Event {
+enum Event {
     case axis(GamepadAxis)
-    
+
     case char(UnicodeScalar)
-    
+
     case exit
-    
+
     case gamepad
-    
+
     case key(KeyCode, KeyModifier, ButtonState)
-    
+
     case mouse(x: UInt16, y: UInt16, z: Int32, button: MouseButton, state: ButtonState)
-    
+
     case size(width: UInt16, height: UInt16)
-    
+
     case window
-    
+
     case suspend
 }
 
-public class EventQueue {
+class EventQueue {
     private let queue: Queue = Queue<Event>()
     
     func postSizeEvent(_ width: UInt16, height: UInt16) {

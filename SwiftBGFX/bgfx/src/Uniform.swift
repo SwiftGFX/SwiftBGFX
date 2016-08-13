@@ -29,11 +29,9 @@ public class Uniform {
     
     /// Initializes a new instance
     ///
-    /// - parameters:
-    ///
-    ///    - name: The name of the uniform
-    ///    - type: The type of data represented by the unifor
-    ///    - num: Size of the array, if the uniform is an array type
+    /// - parameter name: The name of the uniform
+    /// - parameter type: The type of data represented by the unifor
+    /// - parameter num: Size of the array, if the uniform is an array type
     ///
     public init(name: String, type: UniformType, num: UInt16 = 1) {
         handle = bgfx_create_uniform(name, bgfx_uniform_type_t(type.rawValue), num)

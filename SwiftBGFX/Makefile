@@ -4,4 +4,4 @@
 
 docs:
 	@echo Making documentation...
-	@jazzy -o Docs/output/master
+	@jazzy --output docs/output/master

@@ -157,7 +157,7 @@ class ExampleInstancing: AppI {
             bgfx.setIndexBuffer(ibh!)
             bgfx.setInstanceDataBuffer(idb)
             
-            bgfx.setRenderState(.Default, colorRgba: 0x00)
+            bgfx.setRenderState(.`default`, colorRgba: 0x00)
             bgfx.submit(0, program: prog!)
             bgfx.frame()
             
@@ -168,7 +168,7 @@ class ExampleInstancing: AppI {
     }
 }
 
-public var sharedApp: AppI {
+var sharedApp: AppI {
     return ExampleInstancing()
 }
 

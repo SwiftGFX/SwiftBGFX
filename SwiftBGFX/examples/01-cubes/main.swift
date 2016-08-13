@@ -128,7 +128,7 @@ class ExampleCubes: AppI {
                     bgfx.setVertexBuffer(vbh!)
                     bgfx.setIndexBuffer(ibh!)
                     
-                    bgfx.setRenderState(.Default, colorRgba: 0x00)
+                    bgfx.setRenderState(.default, colorRgba: 0x00)
                     bgfx.submit(0, program: prog!)
                 }
             }
@@ -142,7 +142,7 @@ class ExampleCubes: AppI {
     }
 }
 
-public var sharedApp: AppI {
+var sharedApp: AppI {
     return ExampleCubes()
 }
 

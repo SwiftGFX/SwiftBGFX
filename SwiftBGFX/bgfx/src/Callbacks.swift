@@ -7,10 +7,8 @@ public protocol Callbacks {
     
     /// Called when an error occurs in the library
     ///
-    /// - parameters:
-    ///
-    ///     - type: The type of error that occurred
-    ///     - message: Message string detailing what went wrong
+    /// - parameter type: The type of error that occurred
+    /// - parameter message: Message string detailing what went wrong
     ///
     /// - remark:
     /// If the error type is not `ErrorType.DebugCheck`, bgfx is in an
@@ -22,11 +20,9 @@ public protocol Callbacks {
     
     /// Called to print debug messages
     ///
-    /// - parameters:
-    ///
-    ///     - fileName: The name of the source file in which the message originated
-    ///     - line: The line number in which the message originated
-    ///     - format: The message format string
+    ///  - parameter fileName: The name of the source file in which the message originated
+    ///  - parameter line: The line number in which the message originated
+    ///  - parameter format: The message format string
     ///     
     /// - remark: This method can be called from any thread
     ///

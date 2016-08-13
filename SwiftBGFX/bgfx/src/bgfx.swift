@@ -8,33 +8,31 @@ public class bgfx {
 
     /// Checks for available space to allocate transient index and vertex buffers
     ///
-    /// - parameters:
-    ///
-    ///    - vertexCount: The number of vertices to allocate
-    ///    - layout: The layout of each vertex
-    ///    - indexCount: The number of indices to allocate
+    /// - parameter vertexCount: The number of vertices to allocate
+    /// - parameter layout: The layout of each vertex
+    /// - parameter indexCount: The number of indices to allocate
     ///
     /// - returns: `true` if there is sufficient space for both vertex and index buffers
-    public static func checkAvailableTransientBufferSpace(_ vertexCount: UInt32, layout: VertexLayout, indexCount: UInt32) -> Bool {
+    public static func checkAvailableTransientBufferSpace(_ vertexCount: UInt32, layout: VertexLayout,
+                                                          indexCount: UInt32) -> Bool {
         return bgfx_check_avail_transient_buffers(vertexCount, &layout.handle, indexCount)
     }
 
     /// Attempts to allocate both a transient vertex buffer and index buffer
     ///
-    /// - parameters:
-    ///
-    ///    - vertexCount: The number of vertices to allocate
-    ///    - layout: The layout of each vertex
-    ///    - indexCount: The number of indices to allocate
-    ///    - vertexBuffer: Returns the allocated transient vertex buffer
-    ///    - indexBuffer: Returns the allocated transient index buffer
+    /// - parameter vertexCount: The number of vertices to allocate
+    /// - parameter layout: The layout of each vertex
+    /// - parameter indexCount: The number of indices to allocate
+    /// - parameter vertexBuffer: Returns the allocated transient vertex buffer
+    /// - parameter indexBuffer: Returns the allocated transient index buffer
     ///
     /// - returns: `true` if both space requirements are satisfied and the buffers were allocated
     @discardableResult
     public static func allocateTransientBuffers(_ vertexCount: UInt32, layout: VertexLayout, indexCount: UInt32,
                                                 vertexBuffer: inout TransientVertexBuffer,
                                                 indexBuffer: inout TransientIndexBuffer) -> Bool {
-        return _allocateTransientBuffers(vertexCount, layout: layout, indexCount: indexCount, vertexBuffer: &vertexBuffer, indexBuffer: &indexBuffer)
+        return _allocateTransientBuffers(vertexCount, layout: layout, indexCount: indexCount,
+                                         vertexBuffer: &vertexBuffer, indexBuffer: &indexBuffer)
     }
 
     private static func _allocateTransientBuffers(_ vertexCount: UInt32, layout: VertexLayout, indexCount: UInt32,
@@ -47,14 +45,12 @@ public class bgfx {
 
     /// Packs a vector into vertex stream format
     ///
-    /// - parameters:
-    ///
-    ///    - input: The four element vector to pack
-    ///    - inputNormalized: `true` if the input vector is normalized
-    ///    - attribute: The attribute usage of the vector data
-    ///    - layout: The layout of the vertex stream
-    ///    - data: The pointer to the vertex data stream
-    ///    - index: The index of the vertex within the stream
+    /// - parameter input: The four element vector to pack
+    /// - parameter inputNormalized: `true` if the input vector is normalized
+    /// - parameter attribute: The attribute usage of the vector data
+    /// - parameter layout: The layout of the vertex stream
+    /// - parameter data: The pointer to the vertex data stream
+    /// - parameter index: The index of the vertex within the stream
     public static func vertexPack(_ input: Vector4f, inputNormalized: Bool, attribute: VertexAttributeUsage,
                                   layout: VertexLayout, data: UnsafeMutablePointer<Void>, index: UInt32 = 0) {
         typealias tuple = (CFloat, CFloat, CFloat, CFloat)
@@ -64,13 +60,11 @@ public class bgfx {
 
     /// Unpacks a vector from a vertex stream
     ///
-    /// - parameters:
-    ///
-    ///    - output: A pointer to four floats that will receive the unpacked vector
-    ///    - attribute: The attribute usage of the vector data
-    ///    - layout: The layout of the vertex stream
-    ///    - data: The pointer to the vertex data stream
-    ///    - index: The index of the vertex within the stream
+    /// - parameter output: A pointer to four floats that will receive the unpacked vector
+    /// - parameter attribute: The attribute usage of the vector data
+    /// - parameter layout: The layout of the vertex stream
+    /// - parameter data: The pointer to the vertex data stream
+    /// - parameter index: The index of the vertex within the stream
     public static func vertexUnpack(_ output: inout Vector4f, attribute: VertexAttributeUsage,
                                   layout: VertexLayout, data: UnsafeMutablePointer<Void>, index: UInt32 = 0) {
         let vec = toFloatPtr(&output)
@@ -79,64 +73,58 @@ public class bgfx {
 
     /// Converts a stream of vertex data from one format to another
     ///
-    /// - parameters:
-    ///
-    ///    - destinationLayout: The destination vertext format
-    ///    - destinationData: A pointer to the output location
-    ///    - sourceLayout: The source vertext format
-    ///    - sourceData: A pointer to the source data to convert
-    ///    - count: The number of vertices to convert
+    /// - parameter destinationLayout: The destination vertext format
+    /// - parameter destinationData: A pointer to the output location
+    /// - parameter sourceLayout: The source vertext format
+    /// - parameter sourceData: A pointer to the source data to convert
+    /// - parameter count: The number of vertices to convert
     public static func vertexConvert(_ destinationLayout: VertexLayout, destinationData: UnsafeMutablePointer<Void>,
                                      sourceLayout: VertexLayout, sourceData: UnsafeMutablePointer<Void>,
                                      count: UInt32 = 1) {
         bgfx_vertex_convert(&destinationLayout.handle, destinationData, &sourceLayout.handle, sourceData, count);
     }
-    
+
     /// Welds vertices that are close together
-    /// 
-    /// - parameters:
-    /// 
-    ///     - layout: The layout of the vertex stream
-    ///     - data: A pointer to the vertex data stream
-    ///     - count: The number of vertices in the stream
-    ///     - remappingTable: An output remapping table from the original vertices to the welded ones
-    ///     - epsilon: The tolerance for welding vertex positions
+    ///
+    /// - parameter layout: The layout of the vertex stream
+    /// - parameter data: A pointer to the vertex data stream
+    /// - parameter count: The number of vertices in the stream
+    /// - parameter remappingTable: An output remapping table from the original vertices to the welded ones
+    /// - parameter epsilon: The tolerance for welding vertex positions
     ///
     /// - returns: The number of unique vertices after welding
-    ///
     @discardableResult
-    public static func weldVertices(_ layout: VertexLayout, data: UnsafeMutablePointer<Void>, count: UInt16, remappingTable: inout [UInt16], epsilon: Float = 0.001) -> UInt16 {
+    public static func weldVertices(_ layout: VertexLayout, data: UnsafeMutablePointer<Void>, count: UInt16,
+                                    remappingTable: inout [UInt16], epsilon: Float = 0.001) -> UInt16 {
         remappingTable = [UInt16](repeating: 0, count: Int(count))
         return bgfx_weld_vertices(&remappingTable, &layout.handle, data, count, epsilon)
     }
 
     /// Swizzles an RGBA8 image to BGRA8
     ///
-    /// - parameters:
-    ///
-    ///    - width: The width of the image
-    ///    - height: The height of the image
-    ///    - pitch: The pitch of the image in bytes
-    ///    - source: The source image data
-    ///    - dest: The destination image data
+    /// - parameter width: The width of the image
+    /// - parameter height: The height of the image
+    /// - parameter pitch: The pitch of the image in bytes
+    /// - parameter source: The source image data
+    /// - parameter dest: The destination image data
     ///
     /// - remark: This API can operate in the source data in place
-    public static func imageSwizzleBGR8(_ width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32], dest: inout [UInt32]) {
+    public static func imageSwizzleBGR8(_ width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32],
+                                        dest: inout [UInt32]) {
         bgfx_image_swizzle_bgra8(width, height, pitch, source, &dest)
     }
 
     /// Downsamples an RGBA8 image with a 2x2 pixel average filter
     ///
-    /// - parameters:
-    ///
-    ///    - width: The width of the image
-    ///    - height: The height of the image
-    ///    - pitch: The pitch of the image in bytes
-    ///    - source: The source image data
-    ///    - dest: The destination image data
+    /// - parameter width: The width of the image
+    /// - parameter height: The height of the image
+    /// - parameter pitch: The pitch of the image in bytes
+    /// - parameter source: The source image data
+    /// - parameter dest: The destination image data
     ///
     /// - remark: This API can operate in the source data in place
-    public static func imageRGBADownsample2x2(_ width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32], dest: inout [UInt32]) {
+    public static func imageRGBADownsample2x2(_ width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32],
+                                              dest: inout [UInt32]) {
         bgfx_image_rgba8_downsample_2x2(width, height, pitch, source, &dest)
     }
 

@@ -19,9 +19,7 @@ public struct TransientVertexBuffer {
     
     /// Checks for available space to allocate an instance buffer
     ///
-    /// - parameters:
-    ///
-    /// - count: The number of 16-bit indices to allocate
+    /// - parameter count: The number of 16-bit indices to allocate
     ///
     /// - returns: `true` if there is space available for the given number of indices
     public static func checkAvailableSpace(_ count: UInt32, layout: VertexLayout) -> Bool {

@@ -6,14 +6,12 @@ public extension Texture {
     
     /// Creates a new 2D texture
     ///
-    /// - parameters:
-    ///
-    ///     - width: The width of the texture
-    ///     - height: The height of the texture
-    ///     - mipCount: The number of mip levels
-    ///     - format: The format of the texture data
-    ///     - flags: Flags that control texture behavior
-    ///     - memory: Optional source for texture data
+    /// - parameter parameter width: The width of the texture
+    /// - parameter height: The height of the texture
+    /// - parameter mipCount: The number of mip levels
+    /// - parameter format: The format of the texture data
+    /// - parameter flags: Flags that control texture behavior
+    /// - parameter memory: Optional source for texture data
     ///
     /// - returns: The newly created texture handle
     ///
@@ -21,18 +19,16 @@ public extension Texture {
         var info = bgfx_texture_info_t()
         bgfx_calc_texture_size(&info, width, height, 1, false, mipCount, bgfx_texture_format_t(format.rawValue))
         let handle = bgfx_create_texture_2d(info.width, info.height, info.numMips, bgfx_texture_format_t(format.rawValue), flags.rawValue, memory?.handle ?? nil)
-        
+
         return Texture(handle: handle, info: info)
     }
-    
+
     /// Creates a new 2D texture that scales with backbuffer size
     ///
-    /// - parameters:
-    ///
-    ///     - ratio: The amount to scale when the backbuffer resizes
-    ///     - mipCount: The number of mip levels
-    ///     - format: The format of the texture data
-    ///     - flags: Flags that control texture behavior
+    /// - parameter ratio: The amount to scale when the backbuffer resizes
+    /// - parameter mipCount: The number of mip levels
+    /// - parameter format: The format of the texture data
+    /// - parameter flags: Flags that control texture behavior
     ///
     /// - returns: The newly created texture handle
     ///
@@ -40,19 +36,17 @@ public extension Texture {
         var info = bgfx_texture_info_t()
         info.format = unsafeBitCast(format, to: bgfx_texture_format_t.self)
         info.numMips = mipCount
-        
+
         let handle = bgfx_create_texture_2d_scaled(bgfx_backbuffer_ratio_t(ratio.rawValue), mipCount, bgfx_texture_format_t(format.rawValue), flags.rawValue)
-        
+
         return Texture(handle: handle, info: info)
     }
-    
+
     /// Creates a new texture from a file loaded in memory
     ///
-    /// - parameters:
-    ///
-    ///     - memory: The content of the file
-    ///     - flags: Flags that control texture behavior
-    ///     - skipMips: A number of top level mips to skip when parsing texture data
+    /// - parameter memory: The content of the file
+    /// - parameter flags: Flags that control texture behavior
+    /// - parameter skipMips: A number of top level mips to skip when parsing texture data
     ///
     /// - returns: new texture
     ///

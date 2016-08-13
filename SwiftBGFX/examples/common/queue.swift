@@ -2,12 +2,10 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
-/**
- Queue implements a FIFO container
- 
- - remark: Supports exactly one producer and once consumer on separate threads
- */
-public final class Queue<T> {
+/// Queue implements a FIFO container
+///
+/// - remark: Supports exactly one producer and once consumer on separate threads
+final class Queue<T> {
     
     typealias Element = T
     

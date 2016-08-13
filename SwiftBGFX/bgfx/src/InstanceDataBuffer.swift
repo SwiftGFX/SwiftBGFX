@@ -18,10 +18,8 @@ public class InstanceDataBuffer {
     
     /// Initializes a new instance buffer
     ///
-    /// - parameters:
-    ///
-    ///    - count: The number of elements in the buffer
-    ///    - stride: The stride of each element
+    /// - parameter count: The number of elements in the buffer
+    /// - parameter stride: The stride of each element
     ///
     public init(count: Int, stride: Int) {
         handle = bgfx_alloc_instance_data_buffer(UInt32(count), UInt16(stride))
@@ -29,10 +27,8 @@ public class InstanceDataBuffer {
     
     /// Checks for available space to allocate an instance buffer
     ///
-    /// - parameters:
-    ///
-    ///    - count: The number of elements to allocate
-    ///    - stride: The stride of each element
+    /// - parameter count: The number of elements to allocate
+    /// - parameter stride: The stride of each element
     ///
     /// - returns: `true` if there is space available to allocate the buffer
     ///

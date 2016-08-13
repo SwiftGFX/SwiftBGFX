@@ -2,16 +2,16 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
-public protocol IOError : Error {
+protocol IOError : Error {
     
 }
 
-public enum ReaderError : Error {
+enum ReaderError : Error {
     case eof
 }
 
 /// Reader is the protocol that wraps the basic read method.
-public protocol Reader {
+protocol Reader {
     /// read reads up to `dest.count` bytes into `dest`
     ///
     /// - throws: `IOError.EOF`
@@ -23,6 +23,6 @@ public protocol Reader {
 ///
 /// Specific implementations may document their own behavior.
 ///
-public protocol Closer {
+protocol Closer {
     func close() throws
 }

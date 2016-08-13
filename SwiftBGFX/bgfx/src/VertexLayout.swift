@@ -26,20 +26,18 @@ final public class VertexLayout {
     
     /// Add attribute to VertexDecl
     ///
-    /// - parameters:
-    ///
-    ///     - attrib: The kind of attribute to add
-    ///     - num: Number of elements (1, 2, 3 or 4)
-    ///     - type: The type of data described by the attribute
-    ///     - normalized:
-    ///         When using fixed point AttribType (f.e. `UInt8`) value will be normalized
-    ///         for vertex shader usage. When normalized is set to true,
-    ///         `AttribType.Uint8` value in range 0-255 will be in range 0.0-1.0 in
-    ///         vertex shader
-    ///     - asInt:
-    ///         Packaging rule for `vertexPack`, `vertexUnpack`, and `vertexConvert` for
-    ///         `AttribType::UInt8` and `AttribType.Int16`. Unpacking code must be
-    ///         implemented inside vertex shader
+    /// - parameter attrib: The kind of attribute to add
+    /// - parameter num: Number of elements (1, 2, 3 or 4)
+    /// - parameter type: The type of data described by the attribute
+    /// - parameter normalized:
+    ///     When using fixed point AttribType (f.e. `UInt8`) value will be normalized
+    ///     for vertex shader usage. When normalized is set to true,
+    ///     `AttribType.Uint8` value in range 0-255 will be in range 0.0-1.0 in
+    ///     vertex shader
+    /// - parameter asInt:
+    ///     Packaging rule for `vertexPack`, `vertexUnpack`, and `vertexConvert` for
+    ///     `AttribType::UInt8` and `AttribType.Int16`. Unpacking code must be
+    ///     implemented inside vertex shader
     ///
     /// - returns: `self`
     ///

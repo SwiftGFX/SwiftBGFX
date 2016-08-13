@@ -1,7 +1,7 @@
 author: Stuart Carnie
 author_url: https://github.com/stuartcarnie
 github_url: https://github.com/stuartcarnie/SwiftBGFX
-documentation: Docs/*.md
+documentation: docs/*.md
 
 custom_categories:
   - name: Documentation

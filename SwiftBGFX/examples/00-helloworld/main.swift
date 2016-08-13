@@ -45,7 +45,7 @@ class HelloWorld: AppI {
     }
 }
 
-public var sharedApp: AppI {
+var sharedApp: AppI {
     return HelloWorld()
 }
 

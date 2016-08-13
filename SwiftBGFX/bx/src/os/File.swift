@@ -8,11 +8,11 @@ import Glibc
 import Darwin
 #endif
 
-public enum FileError : IOError {
+enum FileError : IOError {
     case pathError(String, String, Int32)
 }
 
-public struct File {
+struct File {
     let fd: UnsafeMutablePointer<FILE>
     let name: String
 }
@@ -31,7 +31,7 @@ extension File: Closer {
     }
 }
 
-public func open(_ path: String) throws -> File {
+func open(_ path: String) throws -> File {
     return try openFile(path)
 }
 
