@@ -7,11 +7,8 @@ public enum TextureType {
 }
 
 public final class Texture {
-    typealias TextureHandle = bgfx_texture_handle_t
-    typealias TextureInfo = bgfx_texture_info_t
-    
-    let handle: TextureHandle
-    let info: TextureInfo
+    let handle: bgfx_texture_handle_t
+    let info: bgfx_texture_info_t
     
     /// The width of the texture
     public var Width: UInt16 {
@@ -53,7 +50,7 @@ public final class Texture {
         return unsafeBitCast(info.format, to: TextureFormat.self)
     }
     
-    init(handle: TextureHandle, info: TextureInfo) {
+    init(handle: bgfx_texture_handle_t, info: bgfx_texture_info_t) {
         self.handle = handle
         self.info = info
     }

@@ -58,6 +58,17 @@ public class FrameBuffer {
         handle = bgfx_create_frame_buffer_from_nwh(windowHandle, width, height, bgfx_texture_format_t(depthFormat.rawValue))
     }
     
+    
+    /// Create a new frame buffer using textures
+    ///
+    /// - parameter textures:        the source textures for the frame buffer
+    /// - parameter destroyTextures: if true, textures will be destroyed when the frame buffer is destroyed
+    ///
+    public init(textures: [Texture], destroyTextures: Bool) {
+        var handles = textures.map { $0.handle }
+        handle = bgfx_create_frame_buffer_from_handles(UInt8(handles.count), &handles, destroyTextures)
+    }
+    
     deinit {
         bgfx_destroy_frame_buffer(handle)
     }
