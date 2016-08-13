@@ -6,7 +6,7 @@ import SwiftMath
 
 extension bgfx {
 
-    // MARK:- Initialization and shutdown
+    // MARK: - Initialization and shutdown
 
     ///
     /// Initialize bgfx library
@@ -34,7 +34,7 @@ extension bgfx {
         bgfx_shutdown()
     }
 
-    // MARK:- Updating
+    // MARK: - Updating
 
     ///
     /// Reset graphic settings and back-buffer size
@@ -66,7 +66,7 @@ extension bgfx {
         return bgfx_frame(capture)
     }
 
-    // MARK:- Debug
+    // MARK: - Debug
 
     /// Set debug options
     public static var debug: DebugOptions = DebugOptions.none {
@@ -87,7 +87,7 @@ extension bgfx {
         bgfx_dbg_text_image(x, y, width, height, data, pitch)
     }
 
-    // MARK:- Renderer
+    // MARK: - Renderer
 
     /// Returns current renderer backend API type
     public static var rendererType: RendererBackend {
@@ -103,11 +103,11 @@ extension bgfx {
         return unsafeBitCast(bgfx_get_stats().pointee, to: Stats.self)
     }
 
-    // MARK:- Head Mounted Display
+    // MARK: - Head Mounted Display
 
     // TODO head mounted display APIs
 
-    // MARK:- Platform Specific
+    // MARK: - Platform Specific
 
     /// Set palette color value
     ///
@@ -123,7 +123,7 @@ extension bgfx {
         bgfx_set_palette_color(index, &rgba.0)
     }
 
-    // MARK:- Views
+    // MARK: - Views
 
     /// Set view name
     ///
@@ -281,7 +281,7 @@ extension bgfx {
         bgfx_set_view_frame_buffer(viewId, buffer.handle)
     }
 
-    // MARK:- Draw
+    // MARK: - Draw
 
     // MARK: Draw State
 

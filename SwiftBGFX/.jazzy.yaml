@@ -1,0 +1,9 @@
+author: Stuart Carnie
+author_url: https://github.com/stuartcarnie
+github_url: https://github.com/stuartcarnie/SwiftBGFX
+documentation: Docs/*.md
+
+custom_categories:
+  - name: Documentation
+    children:
+      - License
