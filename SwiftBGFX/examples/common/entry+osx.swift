@@ -262,7 +262,7 @@ class Context {
             }
             
             switch key {
-            case .keyQ where modifiers.contains(.RightMeta):
+            case .keyQ where modifiers.contains(.rightMeta):
                 eventQueue.postExitEvent()
                 
             default:
@@ -291,7 +291,7 @@ class Context {
     
     func handleKeyEvent(_ ev: NSEvent) -> (KeyCode, KeyModifier, UnicodeScalar) {
         guard let key = ev.charactersIgnoringModifiers else {
-            return (.none, .None, "\u{0}")
+            return (.none, .none, "\u{0}")
         }
         
         let keyNum = key.unicodeScalars.first!
@@ -341,23 +341,23 @@ class Context {
         var mk = KeyModifier()
         
         if flags.contains(.shift) {
-            let _ = mk.insert(.LeftShift)
-            let _ = mk.insert(.RightShift)
+            let _ = mk.insert(.leftShift)
+            let _ = mk.insert(.rightShift)
         }
         
         if flags.contains(.option) {
-            let _ = mk.insert(.LeftAlt)
-            let _ = mk.insert(.RightAlt)
+            let _ = mk.insert(.leftAlt)
+            let _ = mk.insert(.rightAlt)
         }
 
         if flags.contains(.control) {
-            let _ = mk.insert(.LeftCtrl)
-            let _ = mk.insert(.RightCtrl)
+            let _ = mk.insert(.leftCtrl)
+            let _ = mk.insert(.rightCtrl)
         }
 
         if flags.contains(.command) {
-            let _ = mk.insert(.LeftMeta)
-            let _ = mk.insert(.RightMeta)
+            let _ = mk.insert(.leftMeta)
+            let _ = mk.insert(.rightMeta)
         }
 
         return mk

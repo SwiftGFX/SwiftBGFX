@@ -38,15 +38,15 @@ struct KeyModifier : OptionSet {
     let rawValue: UInt8
     init(rawValue: UInt8) { self.rawValue = rawValue }
 
-    static let None = KeyModifier(rawValue: 0x00)
-    static let LeftAlt = KeyModifier(rawValue: 0x01)
-    static let RightAlt = KeyModifier(rawValue: 0x02)
-    static let LeftCtrl = KeyModifier(rawValue: 0x04)
-    static let RightCtrl = KeyModifier(rawValue: 0x08)
-    static let LeftShift = KeyModifier(rawValue: 0x10)
-    static let RightShift = KeyModifier(rawValue: 0x20)
-    static let LeftMeta = KeyModifier(rawValue: 0x40)
-    static let RightMeta = KeyModifier(rawValue: 0x80)
+    static let none = KeyModifier(rawValue: 0x00)
+    static let leftAlt = KeyModifier(rawValue: 0x01)
+    static let rightAlt = KeyModifier(rawValue: 0x02)
+    static let leftCtrl = KeyModifier(rawValue: 0x04)
+    static let rightCtrl = KeyModifier(rawValue: 0x08)
+    static let leftShift = KeyModifier(rawValue: 0x10)
+    static let rightShift = KeyModifier(rawValue: 0x20)
+    static let leftMeta = KeyModifier(rawValue: 0x40)
+    static let rightMeta = KeyModifier(rawValue: 0x80)
 }
 
 enum ButtonState {
