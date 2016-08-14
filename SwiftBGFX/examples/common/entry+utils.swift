@@ -9,7 +9,7 @@ enum ProgramLoadError: Error {
 }
 
 extension AppI {
-    public var runtimePath: String {
+    var runtimePath: String {
         let env = getenv("BGFX_RUNTIME_PATH")
         return env != nil ? String(cString: env!) : ""
     }

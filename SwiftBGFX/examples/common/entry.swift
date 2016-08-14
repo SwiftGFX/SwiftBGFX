@@ -12,9 +12,9 @@ var s_exit: Bool = false
 var s_debug: DebugOptions = []
 var s_reset: ResetOptions = []
 
-extension AppI {
+internal extension AppI {
     
-    public func processEvents(_ width: inout UInt16, height: inout UInt16, debug: inout DebugOptions, reset: inout ResetOptions) -> Bool {
+    internal func processEvents(_ width: inout UInt16, height: inout UInt16, debug: inout DebugOptions, reset: inout ResetOptions) -> Bool {
         s_debug = debug
         var forceReset = reset != s_reset
         s_reset = reset

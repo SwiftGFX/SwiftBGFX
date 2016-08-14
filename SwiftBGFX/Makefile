@@ -4,4 +4,4 @@
 
 docs:
 	@echo Making documentation...
-	@jazzy --output docs/output/master
+	@jazzy --clean --output docs/output/master

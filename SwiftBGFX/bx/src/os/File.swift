@@ -18,7 +18,7 @@ struct File {
 }
 
 extension File: Reader {
-    public func read(_ dest: inout [UInt8]) throws -> Int {
+    func read(_ dest: inout [UInt8]) throws -> Int {
         let c = fread(&dest, 1, dest.count, fd)
         
         return c
@@ -26,7 +26,7 @@ extension File: Reader {
 }
 
 extension File: Closer {
-    public func close() throws {
+    func close() throws {
         fclose(fd)
     }
 }
