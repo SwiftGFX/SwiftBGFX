@@ -14,7 +14,7 @@
     <a title="Shader Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html"> Docs</a> (92% documented)</p>
+        <p><a href="../index.html"> Docs</a> (94% documented)</p>
         <p class="header-right"><a href="https://github.com/stuartcarnie/SwiftBGFX"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -211,7 +211,13 @@
         <section>
           <section class="section">
             <h1>Shader</h1>
-            <p>Undocumented</p>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">Shader</span></code></pre>
+
+                </div>
+              </div>
+            <p>Represents a single compiled shader component</p>
 
           </section>
           <section class="section task-group-section">
@@ -230,8 +236,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The set of uniforms exposed by the shader</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">uniforms</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Uniform.html">Uniform</a></span><span class="p">]</span> <span class="o">=</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -249,8 +263,36 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Initializes a new shader from memory</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">memory</span><span class="p">:</span> <span class="kt"><a href="../Structs/MemoryBlock.html">MemoryBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>memory</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The compiled shader</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
