@@ -12,7 +12,7 @@ public class FrameBuffer {
         self.handle = handle
     }
     
-    /// Creates a new frame buffer
+    /// Initializes a new frame buffer
     ///
     /// - warning: You must call `destroy` to clean up any resources used by the frame buffer
     ///
@@ -27,7 +27,7 @@ public class FrameBuffer {
         handle = bgfx_create_frame_buffer(width, height, bgfx_texture_format_t(format.rawValue), flags.rawValue)
     }
 
-    /// Creates a new frame buffer
+    /// Initializes a new frame buffer
     ///
     /// - parameter ratio: The amount to scale when the backbuffer resizes
     /// - parameter format: The format of the new surface
@@ -39,7 +39,7 @@ public class FrameBuffer {
         handle = bgfx_create_frame_buffer_scaled(bgfx_backbuffer_ratio_t(ratio.rawValue), bgfx_texture_format_t(format.rawValue), flags.rawValue)
     }
 
-    /// Creates a new frame buffer
+    /// Initializes a new frame buffer
     ///
     /// - warning: You must call `destroy` to clean up any resources used by the frame buffer
     ///
@@ -53,7 +53,7 @@ public class FrameBuffer {
     }
 
 
-    /// Create a new frame buffer using textures
+    /// Initializes a new frame buffer using textures
     ///
     /// - parameter textures:        the source textures for the frame buffer
     /// - parameter destroyTextures: if true, textures will be destroyed when the frame buffer is destroyed

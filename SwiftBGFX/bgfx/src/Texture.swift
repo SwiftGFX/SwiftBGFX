@@ -6,6 +6,7 @@ public enum TextureType {
     case type2D
 }
 
+/// Represents a loaded texture
 public final class Texture {
     let handle: bgfx_texture_handle_t
     let info: bgfx_texture_info_t
@@ -69,7 +70,7 @@ public final class Texture {
         bgfx_update_texture_2d(handle, mipLevel, x, y, width, height, memory.handle, pitch)
     }
 
-    /// Blits the contents of the texture to another texture
+    /// Copies the contents of a texture to another texture
     ///
     /// - parameter viewId: The view in which the blit will be ordered.
     /// - parameter dest: The destination texture.
@@ -89,7 +90,7 @@ public final class Texture {
         blit(viewId, dest: dest, destMip: 0, destX: destX, destY: destY, destZ: 0, srcMip: 0, srcX: srcX, srcY: srcY, srcZ: 0, width: width, height: height, depth: 0)
     }
 
-    /// Blits the contents of the texture to another texture
+    /// Copies the contents of a texture to another texture
     ///
     /// - parameter viewId: The view in which the blit will be ordered.
     /// - parameter dest: The destination texture.

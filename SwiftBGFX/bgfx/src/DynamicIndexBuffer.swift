@@ -6,10 +6,18 @@
 public class DynamicIndexBuffer {
     let handle: bgfx_dynamic_index_buffer_handle_t
     
+    /// Initializes a new dynamic index buffer
+    ///
+    /// - parameter indexCount: The number of indices that can fit in the buffer
+    /// - parameter flags:      Flags used to control buffer behavior
     public init(indexCount: UInt32, flags: BufferFlags = [.none]) {
         handle = bgfx_create_dynamic_index_buffer(indexCount, flags.rawValue)
     }
     
+    /// Initializes a new dynamic index buffer from memory
+    ///
+    /// - parameter memory: The initial index data with which to populate the buffer
+    /// - parameter flags:  Flags used to control buffer behavior
     public init(memory: MemoryBlock, flags: BufferFlags = [.none]) {
         handle = bgfx_create_dynamic_index_buffer_mem(memory.handle, flags.rawValue)
     }

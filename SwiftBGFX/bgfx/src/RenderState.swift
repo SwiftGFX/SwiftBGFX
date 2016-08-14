@@ -2,6 +2,7 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
+/// Specifies state information used to configure rendering operations
 public struct RenderState: OptionSet {
     public let rawValue: UInt64
     public init(rawValue: UInt64) {

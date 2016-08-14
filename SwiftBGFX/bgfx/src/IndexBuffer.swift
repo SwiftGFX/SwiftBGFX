@@ -6,6 +6,10 @@
 public class IndexBuffer {
     let handle: bgfx_index_buffer_handle_t
     
+    /// Initializes a new static index buffer from memory
+    ///
+    /// - parameter memory: The 16-bit index data used to populate the buffer
+    /// - parameter flags:  Flags used to control buffer behavior
     public init(memory: MemoryBlock, flags: BufferFlags = [.none]) {
         handle = bgfx_create_index_buffer(memory.handle, flags.rawValue)
     }

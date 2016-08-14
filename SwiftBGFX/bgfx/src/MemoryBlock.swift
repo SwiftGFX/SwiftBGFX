@@ -6,6 +6,7 @@ public enum MemoryBlockError: Error {
     case emptyBuffer
 }
 
+/// Represents a block of memory managed by the graphics API
 public struct MemoryBlock {
     var handle: UnsafePointer<bgfx_memory_t>
        
@@ -23,15 +24,21 @@ public struct MemoryBlock {
         self.handle = handle
     }
     
-    /// Creates a memory buffer of the specified `size`
+    /// Initializes a new memory buffer of a specific size
     public init(size: UInt32) {
         self.init(handle: bgfx_alloc(size))
     }
     
+    /// Initializes a new memory buffer by copying from the source data
+    ///
+    /// - parameter data: the source data
     public init<T>(data: [T]) {
         self.init(handle: bgfx_copy(data, UInt32(sizeof(T.self) * data.count)))
     }
     
+    /// Initializes a new memory buffer by copying from the source text data
+    ///
+    /// - parameter text: the source text data
     public init(text: String) {
         self.init(handle: bgfx_copy(text, UInt32(text.lengthOfBytes(using: String.Encoding.ascii))))
     }
