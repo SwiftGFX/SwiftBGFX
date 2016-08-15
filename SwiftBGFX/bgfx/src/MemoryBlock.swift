@@ -55,7 +55,7 @@ public struct MemoryBlock {
     ///
     /// - throws: `MemoryBlockError.EmptyBuffer` if the `data` is empty
     ///
-    public static func makeRef<T>(_ data: [T]) throws -> MemoryBlock {
+    public static func makeRef<T>(data: [T]) throws -> MemoryBlock {
         if data.count == 0 {
             throw MemoryBlockError.emptyBuffer
         }

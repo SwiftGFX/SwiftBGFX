@@ -15,7 +15,7 @@ class HelloWorld: AppI {
 
         bgfx.reset(width: width, height: height, options: reset)
         bgfx.debug = debug
-        bgfx.setViewClear(0, options: [.color, .depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
+        bgfx.setViewClear(viewId: 0, options: [.color, .depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
     }
 
     func shutdown() -> Int {
@@ -27,7 +27,7 @@ class HelloWorld: AppI {
     func update() -> Bool {
         if !processEvents(&width, height: &height, debug: &debug, reset: &reset) {
             // Set view 0 default viewport.
-            bgfx.setViewRect(0, x: 0, y: 0, width: width, height: height)
+            bgfx.setViewRect(viewId: 0, x: 0, y: 0, width: width, height: height)
             bgfx.touch(0)
 
             bgfx.debugTextClear()

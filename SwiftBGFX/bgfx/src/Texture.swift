@@ -66,7 +66,7 @@ public final class Texture {
     /// - parameter memory: The new image data
     /// - parameter pitch: The pitch of the image data
     ///
-    public func update2D(_ mipLevel: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16, memory: MemoryBlock, pitch: UInt16) {
+    public func update2D(mipLevel: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16, memory: MemoryBlock, pitch: UInt16) {
         bgfx_update_texture_2d(handle, mipLevel, x, y, width, height, memory.handle, pitch)
     }
 
@@ -83,11 +83,11 @@ public final class Texture {
     ///
     /// - remark: The destination texture must be created with the `TextureFlags.BlitDestination` flag
     ///
-    public func blit(_ viewId: UInt8, dest: Texture, destX: UInt16, destY: UInt16,
+    public func blit(viewId: UInt8, dest: Texture, destX: UInt16, destY: UInt16,
                      srcX: UInt16, srcY: UInt16,
                      width: UInt16, height: UInt16, depth: UInt16) {
 
-        blit(viewId, dest: dest, destMip: 0, destX: destX, destY: destY, destZ: 0, srcMip: 0, srcX: srcX, srcY: srcY, srcZ: 0, width: width, height: height, depth: 0)
+        blit(viewId: viewId, dest: dest, destMip: 0, destX: destX, destY: destY, destZ: 0, srcMip: 0, srcX: srcX, srcY: srcY, srcZ: 0, width: width, height: height, depth: 0)
     }
 
     /// Copies the contents of a texture to another texture
@@ -108,7 +108,7 @@ public final class Texture {
     ///
     /// - remark: The destination texture must be created with the `TextureFlags.BlitDestination` flag
     ///
-    public func blit(_ viewId: UInt8, dest: Texture, destMip: UInt8, destX: UInt16, destY: UInt16, destZ: UInt16,
+    public func blit(viewId: UInt8, dest: Texture, destMip: UInt8, destX: UInt16, destY: UInt16, destZ: UInt16,
                      srcMip: UInt8, srcX: UInt16, srcY: UInt16, srcZ: UInt16,
                      width: UInt16, height: UInt16, depth: UInt16) {
 
@@ -123,7 +123,7 @@ public final class Texture {
     ///
     /// - remark: The texture must have been created with the `TextureFlags.ReadBack` flag
     ///
-    public func read(_ data: UnsafeMutablePointer<Void>) -> UInt32 {
+    public func read(data: UnsafeMutablePointer<Void>) -> UInt32 {
         return bgfx_read_texture(handle, data)
     }
 }

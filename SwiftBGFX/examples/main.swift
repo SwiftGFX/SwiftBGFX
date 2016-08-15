@@ -22,9 +22,9 @@ struct PosColorTexCoord0Vertex {
         let l = VertexLayout()
         l
             .begin()
-            .add(.position, num: 3, type: .float)
-            .add(.color0, num: 4, type: .uint8, normalized: true)
-            .add(.texCoord0, num: 2, type: .float)
+            .add(attrib: .position, num: 3, type: .float)
+            .add(attrib: .color0, num: 4, type: .uint8, normalized: true)
+            .add(attrib: .texCoord0, num: 2, type: .float)
             .end()
         
         return l
@@ -34,7 +34,7 @@ struct PosColorTexCoord0Vertex {
 func renderScreenSpaceQuad(_ viewId: UInt8, program: Program, x: Float, y: Float, width: Float, height: Float) {
     var tvb = TransientVertexBuffer()
     var tib = TransientIndexBuffer()
-    bgfx.allocateTransientBuffers(4, layout: PosColorTexCoord0Vertex.layout, indexCount: 6, vertexBuffer: &tvb, indexBuffer: &tib)
+    bgfx.allocateTransientBuffers(vertexCount: 4, layout: PosColorTexCoord0Vertex.layout, indexCount: 6, vertexBuffer: &tvb, indexBuffer: &tib)
     let vertex = UnsafeMutableBufferPointer(start: unsafeBitCast(tvb.data, to: UnsafeMutablePointer<PosColorTexCoord0Vertex>.self), count: 4)
     
     let zz = Float(0.0);
@@ -108,7 +108,7 @@ class ExampleRaymarch: AppI {
         
         bgfx.reset(width: width, height: height, options: reset)
         bgfx.debug = debug
-        bgfx.setViewClear(0, options: [.color, .depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
+        bgfx.setViewClear(viewId: 0, options: [.color, .depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
         
         do {
             prog = try loadProgram("vs_raymarching", fsPath: "fs_raymarching")
@@ -141,8 +141,8 @@ class ExampleRaymarch: AppI {
     
     func update() -> Bool {
         if !processEvents(&width, height: &height, debug: &debug, reset: &reset) {
-            bgfx.setViewRect(0, x: 0, y: 0, width: width, height: height)
-            bgfx.setViewRect(1, x: 0, y: 0, width: width, height: height)
+            bgfx.setViewRect(viewId: 0, x: 0, y: 0, width: width, height: height)
+            bgfx.setViewRect(viewId: 1, x: 0, y: 0, width: width, height: height)
             
             bgfx.touch(0)
             
@@ -173,16 +173,16 @@ class ExampleRaymarch: AppI {
                 0.0, 0.0, 0.0, 1.0
             )
             
-            bgfx.setViewTransform(0, view: view, proj: proj)
+            bgfx.setViewTransform(viewId: 0, view: view, proj: proj)
             
             let ortho = Matrix4x4f.ortho(left: 0, right: 1280, bottom: 720, top: 0, near: 0, far: 100)
-            bgfx.setViewTransform(1, proj: ortho)
+            bgfx.setViewTransform(viewId: 1, proj: ortho)
             
             let vec = vec4(-0.5, -0.3, 0.2, time)
             bgfx.setUniform(u_lightDirTime!, value: vec)
             bgfx.setUniform(u_mtx!, value: mtx)
             
-            bgfx.setViewTransform(0, view: view, proj: proj)
+            bgfx.setViewTransform(viewId: 0, view: view, proj: proj)
             
             renderScreenSpaceQuad(1, program: prog!, x: 0, y: 0, width: 1280, height: 720);
             

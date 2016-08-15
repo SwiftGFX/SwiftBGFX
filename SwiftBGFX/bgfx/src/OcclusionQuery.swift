@@ -21,7 +21,7 @@ public class OcclusionQuery {
     }
     
     /// Sets the condition for which the query should check
-    public func setCondition(_ visible: Bool) {
+    public func setCondition(visible: Bool) {
         bgfx_set_condition(handle, visible)
     }
 }

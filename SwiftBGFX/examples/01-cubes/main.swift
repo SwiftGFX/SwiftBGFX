@@ -19,8 +19,8 @@ struct PosColorVertex {
         let l = VertexLayout()
         l
             .begin()
-            .add(.position, num: 3, type: .float)
-            .add(.color0, num: 4, type: .uint8, normalized: true)
+            .add(attrib: .position, num: 3, type: .float)
+            .add(attrib: .color0, num: 4, type: .uint8, normalized: true)
             .end()
 
         return l
@@ -70,10 +70,10 @@ class ExampleCubes: AppI {
         
         bgfx.reset(width: width, height: height, options: reset)
         bgfx.debug = debug
-        bgfx.setViewClear(0, options: [.color, .depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
+        bgfx.setViewClear(viewId: 0, options: [.color, .depth], rgba: 0x30_30_30_ff, depth: 1.0, stencil: 0)
 
-        vbh = VertexBuffer(memory: try! MemoryBlock.makeRef(cubeVertices), layout: PosColorVertex.layout)
-        ibh = IndexBuffer(memory: try! MemoryBlock.makeRef(cubeIndices))
+        vbh = VertexBuffer(memory: try! MemoryBlock.makeRef(data: cubeVertices), layout: PosColorVertex.layout)
+        ibh = IndexBuffer(memory: try! MemoryBlock.makeRef(data: cubeIndices))
         
         do {
             prog = try loadProgram("vs_cubes", fsPath: "fs_cubes")
@@ -113,8 +113,8 @@ class ExampleCubes: AppI {
             let view = Matrix4x4f.lookAt(eye: vec3(0.0, 0.0, -35.0), at: vec3(0))
             let proj = Matrix4x4f.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
             
-            bgfx.setViewTransform(0, view: view, proj: proj)
-            bgfx.setViewRect(0, x: 0, y: 0, width: width, height: height)
+            bgfx.setViewTransform(viewId: 0, view: view, proj: proj)
+            bgfx.setViewRect(viewId: 0, x: 0, y: 0, width: width, height: height)
             bgfx.touch(0)
             
             for yy in 0...10 {

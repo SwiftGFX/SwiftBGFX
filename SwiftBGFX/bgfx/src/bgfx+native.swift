@@ -17,7 +17,7 @@ extension bgfx {
     /// - returns: `true` if initialization was successful
     ///
     @discardableResult
-    public static func initialize(_ type: RendererBackend = .best, vendorId: VendorID = .none, callback: Callbacks? = nil) -> Bool {
+    public static func initialize(type: RendererBackend = .best, vendorId: VendorID = .none, callback: Callbacks? = nil) -> Bool {
         var cbi: UnsafeMutablePointer<bgfx_callback_interface_t>?
         if let cb = callback {
             cbi = makeCallbackHandler(cb)
@@ -56,7 +56,7 @@ extension bgfx {
     /// buffering data outside the library and passing it to library via
     /// `bgfx::makeRef` calls.
     @discardableResult
-    public static func frame(_ capture: Bool = false) -> UInt32 {
+    public static func frame(capture: Bool = false) -> UInt32 {
         return bgfx_frame(capture)
     }
 
@@ -110,7 +110,7 @@ extension bgfx {
     /// - parameter g: green color value
     /// - parameter b: blue color value
     /// - parameter a: alpha color value
-    public static func setPaletteColor(_ index: UInt8, r: Float, g: Float, b: Float, a: Float) {
+    public static func setPaletteColor(index: UInt8, r: Float, g: Float, b: Float, a: Float) {
         var rgba = (r, g, b, a)
         bgfx_set_palette_color(index, &rgba.0)
     }
@@ -129,7 +129,7 @@ extension bgfx {
     ///
     /// - remark: This is debug only feature
     ///
-    public static func setViewName(_ viewId: UInt8, name: String) {
+    public static func setViewName(viewId: UInt8, name: String) {
         bgfx_set_view_name(viewId, name)
     }
 
@@ -140,7 +140,7 @@ extension bgfx {
     /// - parameter y: Position y from the top corner of the window
     /// - parameter width: Width of the viewport region
     /// - parameter height: Height of the viewport region
-    public static func setViewRect(_ viewId: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16) {
+    public static func setViewRect(viewId: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16) {
         bgfx_set_view_rect(viewId, x, y, width, height)
     }
 
@@ -151,7 +151,7 @@ extension bgfx {
     /// - parameter y: Position y from the top corner of the window
     /// - parameter ratio: Backbuffer ratio
     ///
-    public static func setViewRect(_ viewId: UInt8, x: UInt16, y: UInt16, ratio: BackbufferRatio) {
+    public static func setViewRect(viewId: UInt8, x: UInt16, y: UInt16, ratio: BackbufferRatio) {
         bgfx_set_view_rect_auto(viewId, x, y, bgfx_backbuffer_ratio_t(ratio.rawValue))
     }
 
@@ -163,7 +163,7 @@ extension bgfx {
     ///  - parameter y: Position y from the top corner of the window
     ///  - parameter width: Width of the viewport region
     ///  - parameter height: Height of the viewport region
-    public static func setViewScissor(_ viewId: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16) {
+    public static func setViewScissor(viewId: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16) {
         bgfx_set_view_scissor(viewId, x, y, width, height)
     }
 
@@ -175,7 +175,7 @@ extension bgfx {
     /// - parameter depth: Depth clear value
     /// - parameter stencil: Stencil clear value
     ///
-    public static func setViewClear(_ viewId: UInt8, options: ClearTargets, rgba: UInt32, depth: Float, stencil: UInt8) {
+    public static func setViewClear(viewId: UInt8, options: ClearTargets, rgba: UInt32, depth: Float, stencil: UInt8) {
         bgfx_set_view_clear(viewId, options.rawValue, rgba, depth, stencil)
     }
 
@@ -187,7 +187,7 @@ extension bgfx {
     /// - parameter depth: Depth clear value
     /// - parameter stencil: Stencil clear value
     ///
-    public static func setViewClear(_ viewId: UInt8, options: ClearTargets, depth: Float, stencil: UInt8,
+    public static func setViewClear(viewId: UInt8, options: ClearTargets, depth: Float, stencil: UInt8,
                                     b0: UInt8 = UInt8.max, b1: UInt8 = UInt8.max,
                                     b2: UInt8 = UInt8.max, b3: UInt8 = UInt8.max,
                                     b4: UInt8 = UInt8.max, b5: UInt8 = UInt8.max,
@@ -201,7 +201,7 @@ extension bgfx {
     ///
     /// - parameter viewId: View id
     /// - parameter enabled: `true` to enable sequential mode
-    public static func setViewSequential(_ viewId: UInt8, enabled: Bool) {
+    public static func setViewSequential(viewId: UInt8, enabled: Bool) {
         bgfx_set_view_seq(viewId, enabled)
     }
 
@@ -211,7 +211,7 @@ extension bgfx {
     /// - parameter viewId: View id
     /// - parameter view: View matrix
     /// - parameter proj: Projection matrix
-    public static func setViewTransform(_ viewId: UInt8, view: Matrix4x4f, proj: Matrix4x4f) {
+    public static func setViewTransform(viewId: UInt8, view: Matrix4x4f, proj: Matrix4x4f) {
         var v = view
         var p = proj
         bgfx_set_view_transform(viewId, &v, &p)
@@ -222,7 +222,7 @@ extension bgfx {
     ///
     /// - parameter viewId: View id
     /// - parameter proj: Projection matrix
-    public static func setViewTransform(_ viewId: UInt8, proj: Matrix4x4f) {
+    public static func setViewTransform(viewId: UInt8, proj: Matrix4x4f) {
         var p = proj
         bgfx_set_view_transform(viewId, nil, &p)
     }
@@ -233,7 +233,7 @@ extension bgfx {
     /// - parameter viewId: View id
     /// - parameter view: View matrix
     /// - parameter proj: Projection matrix
-    public static func setViewTransform(_ viewId: UInt8, view: [Float], proj: [Float]) {
+    public static func setViewTransform(viewId: UInt8, view: [Float], proj: [Float]) {
         var v = view
         var p = proj
         bgfx_set_view_transform(viewId, &v, &p)
@@ -247,7 +247,7 @@ extension bgfx {
     ///
     /// - remark: Not persistent after `reset`
     ///
-    public static func setViewFrameBuffer(_ viewId: UInt8, buffer: FrameBuffer) {
+    public static func setViewFrameBuffer(viewId: UInt8, buffer: FrameBuffer) {
         bgfx_set_view_frame_buffer(viewId, buffer.handle)
     }
 
@@ -258,7 +258,7 @@ extension bgfx {
     /// Sets a marker that can be used for debugging purposes
     ///
     /// - parameter name: The user-defined name of the marker
-    public static func setDebugMarker(_ name: String) {
+    public static func setDebugMarker(name: String) {
         bgfx_set_marker(name)
     }
 
@@ -269,7 +269,7 @@ extension bgfx {
     /// - returns: Scissor cache index
     ///
     /// - remark: to set the scissor for all primitives in view see `bgfx.setViewScissor`
-    public static func setScissor(_ x: UInt16, y: UInt16, width: UInt16, height: UInt16) -> UInt16 {
+    public static func setScissor(x: UInt16, y: UInt16, width: UInt16, height: UInt16) -> UInt16 {
         return bgfx_set_scissor(x, y, width, height)
     }
 
@@ -281,7 +281,7 @@ extension bgfx {
     /// - returns: Scissor cache index
     ///
     /// - remark: to set the scissor for all primitives in view see `bgfx.setViewScissor`
-    public static func setScissor(_ cache: UInt16) {
+    public static func setScissor(cache: UInt16) {
         bgfx_set_scissor_cached(cache)
     }
 
@@ -642,8 +642,8 @@ extension bgfx {
     /// Requests that a screenshot be saved. The ScreenshotTaken event will be fired to save the result
     ///
     /// - parameter filePath: The file path that will be passed to the callback event
-    public static func saveScreenShot(_ filePath: String) {
-        bgfx_save_screen_shot(filePath)
+    public static func saveScreenShot(path: String) {
+        bgfx_save_screen_shot(path)
     }
 
     /// Set rendering states used to draw primitives

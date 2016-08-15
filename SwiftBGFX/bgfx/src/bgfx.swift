@@ -13,7 +13,7 @@ public class bgfx {
     /// - parameter indexCount: The number of indices to allocate
     ///
     /// - returns: `true` if there is sufficient space for both vertex and index buffers
-    public static func checkAvailableTransientBufferSpace(_ vertexCount: UInt32, layout: VertexLayout,
+    public static func checkAvailableTransientBufferSpace(vertexCount: UInt32, layout: VertexLayout,
                                                           indexCount: UInt32) -> Bool {
         return bgfx_check_avail_transient_buffers(vertexCount, &layout.handle, indexCount)
     }
@@ -28,7 +28,7 @@ public class bgfx {
     ///
     /// - returns: `true` if both space requirements are satisfied and the buffers were allocated
     @discardableResult
-    public static func allocateTransientBuffers(_ vertexCount: UInt32, layout: VertexLayout, indexCount: UInt32,
+    public static func allocateTransientBuffers(vertexCount: UInt32, layout: VertexLayout, indexCount: UInt32,
                                                 vertexBuffer: inout TransientVertexBuffer,
                                                 indexBuffer: inout TransientIndexBuffer) -> Bool {
         return _allocateTransientBuffers(vertexCount, layout: layout, indexCount: indexCount,
@@ -51,7 +51,7 @@ public class bgfx {
     /// - parameter layout: The layout of the vertex stream
     /// - parameter data: The pointer to the vertex data stream
     /// - parameter index: The index of the vertex within the stream
-    public static func vertexPack(_ input: Vector4f, inputNormalized: Bool, attribute: VertexAttributeUsage,
+    public static func vertexPack(input: Vector4f, inputNormalized: Bool, attribute: VertexAttributeUsage,
                                   layout: VertexLayout, data: UnsafeMutablePointer<Void>, index: UInt32 = 0) {
         typealias tuple = (CFloat, CFloat, CFloat, CFloat)
         var vec = unsafeBitCast(input, to: tuple.self)
@@ -65,7 +65,7 @@ public class bgfx {
     /// - parameter layout: The layout of the vertex stream
     /// - parameter data: The pointer to the vertex data stream
     /// - parameter index: The index of the vertex within the stream
-    public static func vertexUnpack(_ output: inout Vector4f, attribute: VertexAttributeUsage,
+    public static func vertexUnpack(output: inout Vector4f, attribute: VertexAttributeUsage,
                                   layout: VertexLayout, data: UnsafeMutablePointer<Void>, index: UInt32 = 0) {
         let vec = toFloatPtr(&output)
         bgfx_vertex_unpack(vec, bgfx_attrib_t(attribute.rawValue), &layout.handle, data, index)
@@ -78,7 +78,7 @@ public class bgfx {
     /// - parameter sourceLayout: The source vertext format
     /// - parameter sourceData: A pointer to the source data to convert
     /// - parameter count: The number of vertices to convert
-    public static func vertexConvert(_ destinationLayout: VertexLayout, destinationData: UnsafeMutablePointer<Void>,
+    public static func vertexConvert(destinationLayout: VertexLayout, destinationData: UnsafeMutablePointer<Void>,
                                      sourceLayout: VertexLayout, sourceData: UnsafeMutablePointer<Void>,
                                      count: UInt32 = 1) {
         bgfx_vertex_convert(&destinationLayout.handle, destinationData, &sourceLayout.handle, sourceData, count);
@@ -94,7 +94,7 @@ public class bgfx {
     ///
     /// - returns: The number of unique vertices after welding
     @discardableResult
-    public static func weldVertices(_ layout: VertexLayout, data: UnsafeMutablePointer<Void>, count: UInt16,
+    public static func weldVertices(layout: VertexLayout, data: UnsafeMutablePointer<Void>, count: UInt16,
                                     remappingTable: inout [UInt16], epsilon: Float = 0.001) -> UInt16 {
         remappingTable = [UInt16](repeating: 0, count: Int(count))
         return bgfx_weld_vertices(&remappingTable, &layout.handle, data, count, epsilon)
@@ -109,7 +109,7 @@ public class bgfx {
     /// - parameter dest: The destination image data
     ///
     /// - remark: This API can operate in the source data in place
-    public static func imageSwizzleBGR8(_ width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32],
+    public static func imageSwizzleBGR8(width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32],
                                         dest: inout [UInt32]) {
         bgfx_image_swizzle_bgra8(width, height, pitch, source, &dest)
     }
@@ -123,7 +123,7 @@ public class bgfx {
     /// - parameter dest: The destination image data
     ///
     /// - remark: This API can operate in the source data in place
-    public static func imageRGBADownsample2x2(_ width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32],
+    public static func imageRGBADownsample2x2(width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32],
                                               dest: inout [UInt32]) {
         bgfx_image_rgba8_downsample_2x2(width, height, pitch, source, &dest)
     }

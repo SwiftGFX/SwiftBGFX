@@ -22,7 +22,7 @@ public struct TransientVertexBuffer {
     /// - parameter count: The number of 16-bit indices to allocate
     ///
     /// - returns: `true` if there is space available for the given number of indices
-    public static func checkAvailableSpace(_ count: UInt32, layout: VertexLayout) -> Bool {
+    public static func checkAvailableSpace(count: UInt32, layout: VertexLayout) -> Bool {
         return bgfx_check_avail_transient_vertex_buffer(count, &layout.handle)
     }
 }
