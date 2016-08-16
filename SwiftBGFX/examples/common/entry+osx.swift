@@ -23,7 +23,7 @@ class WindowDelegate: NSObject, NSWindowDelegate {
         window.delegate = self
     }
     
-    private func windowShouldClose(_ sender: AnyObject) -> Bool {
+    func windowShouldClose(_ sender: Any) -> Bool {
         let win = sender as! NSWindow
         
         win.delegate = nil
