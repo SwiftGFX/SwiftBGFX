@@ -123,7 +123,7 @@ public final class Texture {
     ///
     /// - remark: The texture must have been created with the `TextureFlags.ReadBack` flag
     ///
-    public func read(data: UnsafeMutablePointer<Void>) -> UInt32 {
+    public func read(data: UnsafeMutableRawPointer) -> UInt32 {
         return bgfx_read_texture(handle, data)
     }
 }

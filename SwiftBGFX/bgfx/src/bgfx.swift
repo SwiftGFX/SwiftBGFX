@@ -52,7 +52,7 @@ public class bgfx {
     /// - parameter data: The pointer to the vertex data stream
     /// - parameter index: The index of the vertex within the stream
     public static func vertexPack(input: Vector4f, inputNormalized: Bool, attribute: VertexAttributeUsage,
-                                  layout: VertexLayout, data: UnsafeMutablePointer<Void>, index: UInt32 = 0) {
+                                  layout: VertexLayout, data: UnsafeMutableRawPointer, index: UInt32 = 0) {
         typealias tuple = (CFloat, CFloat, CFloat, CFloat)
         var vec = unsafeBitCast(input, to: tuple.self)
         bgfx_vertex_pack(&vec.0, inputNormalized, bgfx_attrib_t(attribute.rawValue), &layout.handle, data, index)
@@ -66,7 +66,7 @@ public class bgfx {
     /// - parameter data: The pointer to the vertex data stream
     /// - parameter index: The index of the vertex within the stream
     public static func vertexUnpack(output: inout Vector4f, attribute: VertexAttributeUsage,
-                                  layout: VertexLayout, data: UnsafeMutablePointer<Void>, index: UInt32 = 0) {
+                                  layout: VertexLayout, data: UnsafeMutableRawPointer, index: UInt32 = 0) {
         let vec = toFloatPtr(&output)
         bgfx_vertex_unpack(vec, bgfx_attrib_t(attribute.rawValue), &layout.handle, data, index)
     }
@@ -78,8 +78,8 @@ public class bgfx {
     /// - parameter sourceLayout: The source vertext format
     /// - parameter sourceData: A pointer to the source data to convert
     /// - parameter count: The number of vertices to convert
-    public static func vertexConvert(destinationLayout: VertexLayout, destinationData: UnsafeMutablePointer<Void>,
-                                     sourceLayout: VertexLayout, sourceData: UnsafeMutablePointer<Void>,
+    public static func vertexConvert(destinationLayout: VertexLayout, destinationData: UnsafeMutableRawPointer,
+                                     sourceLayout: VertexLayout, sourceData: UnsafeMutableRawPointer,
                                      count: UInt32 = 1) {
         bgfx_vertex_convert(&destinationLayout.handle, destinationData, &sourceLayout.handle, sourceData, count);
     }
@@ -94,7 +94,7 @@ public class bgfx {
     ///
     /// - returns: The number of unique vertices after welding
     @discardableResult
-    public static func weldVertices(layout: VertexLayout, data: UnsafeMutablePointer<Void>, count: UInt16,
+    public static func weldVertices(layout: VertexLayout, data: UnsafeMutableRawPointer, count: UInt16,
                                     remappingTable: inout [UInt16], epsilon: Float = 0.001) -> UInt16 {
         remappingTable = [UInt16](repeating: 0, count: Int(count))
         return bgfx_weld_vertices(&remappingTable, &layout.handle, data, count, epsilon)

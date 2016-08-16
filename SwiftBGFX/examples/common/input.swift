@@ -2,7 +2,7 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
-typealias InputBindingFn = (ud: Any) -> Void
+typealias InputBindingFn = (_ ud: Any) -> Void
 
 struct InputBinding {
     let key: KeyCode

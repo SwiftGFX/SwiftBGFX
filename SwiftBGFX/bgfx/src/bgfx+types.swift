@@ -6,7 +6,7 @@
 public typealias PlatformData = bgfx_platform_data_t
 
 /// Platform specific native window handle
-public typealias NativeWindowHandle = UnsafeMutablePointer<Void>
+public typealias NativeWindowHandle = UnsafeMutableRawPointer
 
 /// Renderer statistics data
 public struct Stats {

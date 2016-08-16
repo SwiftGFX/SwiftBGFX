@@ -33,7 +33,7 @@ public struct MemoryBlock {
     ///
     /// - parameter data: the source data
     public init<T>(data: [T]) {
-        self.init(handle: bgfx_copy(data, UInt32(sizeof(T.self) * data.count)))
+        self.init(handle: bgfx_copy(data, UInt32(MemoryLayout<T>.size * data.count)))
     }
     
     /// Initializes a new memory buffer by copying from the source text data
@@ -60,6 +60,6 @@ public struct MemoryBlock {
             throw MemoryBlockError.emptyBuffer
         }
         
-        return MemoryBlock(handle: bgfx_make_ref(data, UInt32(sizeof(T.self) * data.count)))
+        return MemoryBlock(handle: bgfx_make_ref(data, UInt32(MemoryLayout<T>.size * data.count)))
     }
 }

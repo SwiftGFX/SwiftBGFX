@@ -23,7 +23,7 @@ class WindowDelegate: NSObject, NSWindowDelegate {
         window.delegate = self
     }
     
-    func windowShouldClose(_ sender: AnyObject) -> Bool {
+    private func windowShouldClose(_ sender: AnyObject) -> Bool {
         let win = sender as! NSWindow
         
         win.delegate = nil
@@ -127,7 +127,7 @@ class Context {
         let dg = AppDelegate()
         NSApp.delegate = dg
         NSApp.setActivationPolicy(.regular)
-        NSApp.activateIgnoringOtherApps(true)
+        NSApp.activate(ignoringOtherApps: true)
         NSApp.finishLaunching()
         
         NotificationCenter.default
@@ -160,7 +160,7 @@ class Context {
         
         
         var pd = PlatformData()
-        pd.nwh = UnsafeMutablePointer(Unmanaged.passRetained(win).toOpaque())
+        pd.nwh = UnsafeMutableRawPointer(Unmanaged.passRetained(win).toOpaque())
         bgfx.setPlatformData(pd)
         
         let mte = MainThreadEntry()
