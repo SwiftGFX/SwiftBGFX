@@ -155,7 +155,7 @@ public struct RenderState: OptionSet {
     /// - parameter alpha: The point size
     ///
     /// - returns: The encoded render state
-    public static func pointSize(_ size: UInt8) -> RenderState {
+    public static func point(size: UInt8) -> RenderState {
         return RenderState(rawValue: (UInt64(size) << PointSizeShift) & PointSizeMask)
     }
 
@@ -165,8 +165,8 @@ public struct RenderState: OptionSet {
     /// - parameter destination: The destination blend operation
     ///
     /// - returns: The render state for the blend function
-    public static func blendFunction(_ source: RenderState, destination: RenderState) -> RenderState {
-        return blendFunction(source, destinationColor: destination, sourceAlpha: source, destinationAlpha: destination)
+    public static func blend(source: RenderState, destination: RenderState) -> RenderState {
+        return blend(sourceColor: source, destinationColor: destination, sourceAlpha: source, destinationAlpha: destination)
     }
 
     /// Builds a render state for a blend function
@@ -177,7 +177,7 @@ public struct RenderState: OptionSet {
     /// - parameter destinationAlpha: The destination alpha blend operation
     ///
     /// - returns: The render state for the blend function
-    public static func blendFunction(_ sourceColor: RenderState, destinationColor: RenderState,
+    public static func blend(sourceColor: RenderState, destinationColor: RenderState,
                                      sourceAlpha: RenderState, destinationAlpha: RenderState) -> RenderState {
         return (sourceColor | (destinationColor << 4)) | ((sourceAlpha | (destinationAlpha << 4)) << 8)
     }
@@ -187,8 +187,8 @@ public struct RenderState: OptionSet {
     /// - parameter equation: The equation
     ///
     /// - returns: The render state for the blend equation
-    public static func blendEquation(_ equation: RenderState) -> RenderState {
-        return blendEquation(equation, alphaEquation: equation)
+    public static func blend(equation: RenderState) -> RenderState {
+        return blend(sourceEquation: equation, alphaEquation: equation)
     }
 
     /// Builds a render state for a blend equation
@@ -197,7 +197,7 @@ public struct RenderState: OptionSet {
     /// - parameter alphaEquation: The alpha equation
     ///
     /// - returns: The render state for the blend equation
-    public static func blendEquation(_ sourceEquation: RenderState, alphaEquation: RenderState) -> RenderState {
+    public static func blend(sourceEquation: RenderState, alphaEquation: RenderState) -> RenderState {
         return sourceEquation | (alphaEquation << 3)
     }
 
@@ -205,12 +205,14 @@ public struct RenderState: OptionSet {
     static let PointSizeShift: UInt64 = 52
     static let AlphaRefMask: UInt64 = 0x0000ff0000000000
     static let PointSizeMask: UInt64 = 0x0ff0000000000000
+    
+    // MARK: - Operators
 
-    public static func |(lhs: RenderState, rhs: RenderState) -> RenderState {
+    static func |(lhs: RenderState, rhs: RenderState) -> RenderState {
         return RenderState(rawValue: lhs.rawValue | rhs.rawValue)
     }
 
-    public static func <<(lhs: RenderState, rhs: Int) -> RenderState {
+    static func <<(lhs: RenderState, rhs: Int) -> RenderState {
         return RenderState(rawValue: lhs.rawValue << UInt64(rhs))
     }
 

@@ -418,29 +418,7 @@ public struct ResetOptions: OptionSet {
     public static let suspend = ResetOptions(rawValue: 0x0004_0000)
 }
 
-/// DebugOptions provides various options for debugging bgfx
-public struct DebugOptions: OptionSet {
-    public let rawValue: UInt32
-    
-    public init(rawValue: UInt32) { self.rawValue = rawValue }
-    
-    /// Don't enable any debugging features
-    public static let none = DebugOptions(rawValue: 0x0000_0000)
-    
-    /// Enable wireframe for all primitives
-    public static let wireframe = DebugOptions(rawValue: 0x0000_0001)
-    
-    /// Enable infinitely fast hardware test. No draw calls will be submitted to
-    /// driver. It’s useful when profiling to quickly assess bottleneck between CPU and GPU.
-    public static let IFH = DebugOptions(rawValue: 0x0000_0002)
-    
-    /// Display internal statistics
-    public static let stats = DebugOptions(rawValue: 0x0000_0004)
-    
-    /// Enable debug text display
-    public static let text = DebugOptions(rawValue: 0x0000_0008)
-}
-
+/// Specifies flags for clearing surfaces.
 public struct ClearTargets: OptionSet {
     public let rawValue: UInt16
     public init(rawValue: UInt16) { self.rawValue = rawValue }
@@ -875,57 +853,6 @@ public enum BgfxError: UInt32 {
     
     /// The graphics device was lost and the library was unable to recover.
     case deviceLost
-}
-
-/// Specifies debug text colors.
-public enum DebugColor: UInt8 {
-    /// Transparent.
-    case transparent = 0
-    
-    /// Red.
-    case red
-    
-    /// Green.
-    case green
-    
-    /// Yellow.
-    case yellow
-    
-    /// Blue.
-    case blue
-    
-    /// Purple.
-    case purple
-    
-    /// Cyan.
-    case cyan
-    
-    /// Gray.
-    case gray
-    
-    /// Dark gray.
-    case darkGray
-    
-    /// Light red.
-    case lightRed
-    
-    /// Light green.
-    case lightGreen
-    
-    /// Light yellow.
-    case lightYellow
-    
-    /// Light blue.
-    case lightBlue
-    
-    /// Light purple.
-    case lightPurple
-    
-    /// Light cyan.
-    case lightCyan
-    
-    /// White.
-    case white
 }
 
 /// Specifies results of an occlusion query.

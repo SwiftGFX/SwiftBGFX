@@ -19,6 +19,7 @@ public class Shader {
         return hh.map { Uniform(handle: $0) }
     }()
     
+    // MARK: - creating new shaders
     
     /// Initializes a new shader from memory
     ///
@@ -26,4 +27,27 @@ public class Shader {
     public init(memory: MemoryBlock) {
         handle = bgfx_create_shader(memory.handle)
     }
+    
+    /// Initializes a new shader from source code
+    ///
+    /// - parameter source:   shader source code
+    /// - parameter language: language of shader source
+    /// - parameter type:     type of shader
+    public init(source: String, language: ShaderLanguage, type: ShaderType) {
+        let ds = DynamicShader(source: source, language: language, type: type)
+        handle = bgfx_create_shader(ds.memory.handle)
+    }
+}
+
+public enum ShaderLanguage {
+    case metal
+    case opengl
+    case opengles
+    case directx
+}
+
+public enum ShaderType {
+    case vertex
+    case fragment
+    case compute
 }

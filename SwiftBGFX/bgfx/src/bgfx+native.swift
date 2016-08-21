@@ -76,7 +76,27 @@ extension bgfx {
     public static func debugTextPrint(x: UInt16, y: UInt16, foreColor: DebugColor, backColor: DebugColor, string: String) {
         bgfx_dbg_text_print(x, y, (backColor.rawValue << 4) | foreColor.rawValue, string)
     }
-
+    
+    public static func debugTextPrint(x: UInt16, y: UInt16, foreColor: DebugColor, backColor: DebugColor, format: String, _ arguments: CVarArg...) {
+        // retain references to array for vprintf call
+        var objs: [ContiguousArray<CChar>] = []
+        
+        let args: [CVarArg] = arguments.map {
+            if let s = $0 as? String {
+                let utf = s.utf8CString
+                objs.append(utf)
+                return utf.withUnsafeBufferPointer {
+                    return $0.baseAddress!
+                }
+            }
+            return $0
+        }
+        
+        withVaList(args) {
+            bgfx_dbg_text_vprintf(x, y, (backColor.rawValue << 4) | foreColor.rawValue, format, $0)
+        }
+    }
+    
     public static func debugTextImage(x: UInt16, y: UInt16, width: UInt16, height: UInt16, data: [UInt8], pitch: UInt16) {
         bgfx_dbg_text_image(x, y, width, height, data, pitch)
     }

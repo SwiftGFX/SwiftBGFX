@@ -225,8 +225,6 @@ class Context {
             return false
         }
         
-        print("event: \(ev)")
-        
         switch ev.type {
         case .mouseMoved, .leftMouseDragged, .rightMouseDragged, .otherMouseDragged:
             updateMousePos()

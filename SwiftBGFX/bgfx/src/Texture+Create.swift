@@ -15,10 +15,10 @@ public extension Texture {
     ///
     /// - returns: The newly created texture handle
     ///
-    public static func make2D(width: UInt16, height: UInt16, mipCount: UInt8, format: TextureFormat, flags: TextureFlags = [.none], memory: MemoryBlock? = nil) -> Texture {
+    public static func make2D(width: UInt16, height: UInt16, mipCount: UInt16, format: TextureFormat, flags: TextureFlags = [.none], memory: MemoryBlock? = nil) -> Texture {
         var info = bgfx_texture_info_t()
-        bgfx_calc_texture_size(&info, width, height, 1, false, mipCount, bgfx_texture_format_t(format.rawValue))
-        let handle = bgfx_create_texture_2d(info.width, info.height, info.numMips, bgfx_texture_format_t(format.rawValue), flags.rawValue, memory?.handle ?? nil)
+        bgfx_calc_texture_size(&info, width, height, 1, false, false, mipCount, bgfx_texture_format_t(format.rawValue))
+        let handle = bgfx_create_texture_2d(info.width, info.height, false, UInt16(info.numMips), bgfx_texture_format_t(format.rawValue), flags.rawValue, memory?.handle ?? nil)
 
         return Texture(handle: handle, info: info)
     }
@@ -32,12 +32,12 @@ public extension Texture {
     ///
     /// - returns: The newly created texture handle
     ///
-    public static func make2D(ratio: BackbufferRatio, mipCount: UInt8, format: TextureFormat, flags: TextureFlags = [.none]) -> Texture {
+    public static func make2D(ratio: BackbufferRatio, mipCount: UInt16, format: TextureFormat, flags: TextureFlags = [.none]) -> Texture {
         var info = bgfx_texture_info_t()
         info.format = unsafeBitCast(format, to: bgfx_texture_format_t.self)
-        info.numMips = mipCount
+        info.numMips = UInt8(mipCount)
 
-        let handle = bgfx_create_texture_2d_scaled(bgfx_backbuffer_ratio_t(ratio.rawValue), mipCount, bgfx_texture_format_t(format.rawValue), flags.rawValue)
+        let handle = bgfx_create_texture_2d_scaled(bgfx_backbuffer_ratio_t(ratio.rawValue), false, mipCount, bgfx_texture_format_t(format.rawValue), flags.rawValue)
 
         return Texture(handle: handle, info: info)
     }
