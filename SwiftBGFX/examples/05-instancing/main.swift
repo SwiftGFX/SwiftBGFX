@@ -123,7 +123,7 @@ class ExampleInstancing: AppI {
             }
             
             let view = Matrix4x4f.lookAt(eye: vec3(0.0, 0.0, -35.0), at: vec3(0))
-            let proj = Matrix4x4f.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
+            let proj = Matrix4x4f.proj(fovy: 60.degrees, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
             
             bgfx.setViewTransform(viewId: 0, view: view, proj: proj)
             bgfx.setViewRect(viewId: 0, x: 0, y: 0, width: width, height: height)
@@ -137,16 +137,16 @@ class ExampleInstancing: AppI {
                 for xx in 0...10 {
                     let sy = Float(yy)*0.1 + 1.0
                     let s = Matrix4x4f.scale(sx: sy, sy: sy, sz: sy)
-                    var mtx: Matrix4x4f = Matrix4x4f.rotate(x: time + Float(xx)*0.21, y: time + Float(yy)*0.37) * s
+                    var mtx: Matrix4x4f = Matrix4x4f.rotate(x: rad(time + Float(xx)*0.21), y: rad(time + Float(yy)*0.37)) * s
                     mtx[3].x = -15.0 + Float(xx)*3.0
                     mtx[3].y = -15.0 + Float(yy)*3.0
                     mtx[3].z = 0.0
                     
                     data.pointee.mtx = mtx
                     data.pointee.col = vec4(
-                        x: sinf(time+Float(xx)/11.0)*0.5+0.5,
-                        y: cosf(time+Float(yy)/11.0)*0.5+0.5,
-                        z: sinf(time*3.0)*0.5+0.5,
+                        x: sin(time+Float(xx)/11.0)*0.5+0.5,
+                        y: cos(time+Float(yy)/11.0)*0.5+0.5,
+                        z: sin(time*3.0)*0.5+0.5,
                         w: 1.0)
                     
                     data = data.advanced(by: 1)

@@ -138,13 +138,13 @@ class HelloWorld: AppI {
             bgfx.debugTextPrint(x: 0, y: 2, foreColor: .white, backColor: .blue, format: "%08.4lf %s", timer.counter, "secs")
             
             let view = Matrix4x4f.lookAt(eye: vec3(0.0, 0.0, -35.0), at: vec3(0))
-            let proj = Matrix4x4f.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
+            let proj = Matrix4x4f.proj(fovy: 60.degrees, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
             
             bgfx.setViewTransform(viewId: 0, view: view, proj: proj)
             bgfx.setViewRect(viewId: 0, x: 0, y: 0, width: width, height: height)
             bgfx.touch(0)
             
-            let mtx = Matrix4x4f.scaleRotateTranslate(sx: 3.0, sy: 3.0, sz: 3.0, ax: Float(timer.counter) * 0.8, ay: Float(timer.counter), az: 0.0, tx: 0.0, ty: 0.0, tz: 0.0)
+            let mtx = Matrix4x4f.scaleRotateTranslate(sx: 3.0, sy: 3.0, sz: 3.0, ax: rad(Float(timer.counter) * 0.8), ay: rad(Float(timer.counter)), az: 0.0, tx: 0.0, ty: 0.0, tz: 0.0)
             
             bgfx.setTransform(mtx)
             bgfx.setVertexBuffer(vbh!)

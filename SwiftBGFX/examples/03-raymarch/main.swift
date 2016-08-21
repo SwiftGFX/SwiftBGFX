@@ -165,7 +165,7 @@ class ExampleRaymarch: AppI {
             }
             
             let view = Matrix4x4f.lookAt(eye: vec3(0.0, 0.0, -15.0), at: vec3(0))
-            let proj = Matrix4x4f.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
+            let proj = Matrix4x4f.proj(fovy: 60.degrees, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
             let mtx = Matrix4x4f(
                 1.0, 0.0, 0.0, 0.0,
                 0.0, 1.0, 0.0, 0.0,

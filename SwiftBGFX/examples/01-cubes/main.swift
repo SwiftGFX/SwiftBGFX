@@ -111,7 +111,7 @@ class ExampleCubes: AppI {
             bgfx.debugTextPrint(x: 0, y: 3, foreColor: .white, backColor: .transparent, string: "Frame: \(frameTimeStr)")
 
             let view = Matrix4x4f.lookAt(eye: vec3(0.0, 0.0, -35.0), at: vec3(0))
-            let proj = Matrix4x4f.proj(fovy: 60.0, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
+            let proj = Matrix4x4f.proj(fovy: 60.degrees, aspect: Float(width)/Float(height), near: 0.1, far: 100.0)
             
             bgfx.setViewTransform(viewId: 0, view: view, proj: proj)
             bgfx.setViewRect(viewId: 0, x: 0, y: 0, width: width, height: height)
@@ -119,7 +119,7 @@ class ExampleCubes: AppI {
             
             for yy in 0...10 {
                 for xx in 0...10 {
-                    var mtx = Matrix4x4f.rotate(x: time + Float(xx)*0.21, y: time + Float(yy)*0.37)
+                    var mtx = Matrix4x4f.rotate(x: rad(time + Float(xx)*0.21), y: rad(time + Float(yy)*0.37))
                     mtx[3].x = -15.0 + Float(xx)*3.0
                     mtx[3].y = -15.0 + Float(yy)*3.0
                     mtx[3].z = 0.0
