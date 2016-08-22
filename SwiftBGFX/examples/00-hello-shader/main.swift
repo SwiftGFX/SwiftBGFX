@@ -144,7 +144,7 @@ class HelloWorld: AppI {
             bgfx.setViewRect(viewId: 0, x: 0, y: 0, width: width, height: height)
             bgfx.touch(0)
             
-            let mtx = Matrix4x4f.scaleRotateTranslate(sx: 3.0, sy: 3.0, sz: 3.0, ax: rad(Float(timer.counter) * 0.8), ay: rad(Float(timer.counter)), az: 0.0, tx: 0.0, ty: 0.0, tz: 0.0)
+            let mtx = Matrix4x4f.scaleRotateTranslate(sx: 3.0, sy: 3.0, sz: 3.0, ax: rad(Float(timer.counter) * 0.8), ay: rad(Float(timer.counter)), az: deg(0.0), tx: 0.0, ty: 0.0, tz: 0.0)
             
             bgfx.setTransform(mtx)
             bgfx.setVertexBuffer(vbh!)
