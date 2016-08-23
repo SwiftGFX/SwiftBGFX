@@ -1,6 +1,8 @@
 author: Stuart Carnie
 author_url: https://github.com/stuartcarnie
-github_url: https://github.com/stuartcarnie/SwiftBGFX
+github_url: https://github.com/SwiftGFX/SwiftBGFX
+dash_url: https://swiftgfx.github.io/SwiftBGFX/master/docsets/SwiftBGFX.xml
+
 documentation: docs/*.md
 exclude:
     - SwiftBGFX/examples
