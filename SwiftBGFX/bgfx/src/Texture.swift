@@ -9,51 +9,27 @@ public enum TextureType {
 /// Represents a loaded texture
 public final class Texture {
     let handle: bgfx_texture_handle_t
-    let info: bgfx_texture_info_t
-    
-    /// The width of the texture
-    public var width: UInt16 {
-        return info.width
-    }
+	
+	public let info: TextureInfo
 
-    /// The height of the texture
-    public var height: UInt16 {
-        return info.height
-    }
-
-    /// The depth of the texture, if 3D
-    public var depth: UInt16 {
-        return info.depth
-    }
-
-    /// Indicates whether the texture is a cubemap
-    public var isCubeMap: Bool {
-        return info.cubeMap
-    }
-
-    /// The number of mip levels in the texture
-    public var mipLevels: UInt8 {
-        return info.numMips
-    }
-
-    /// The number of bits per pixel
-    public var bitsPerPixel: UInt8 {
-        return info.bitsPerPixel
-    }
-
-    /// The size of the entire texture, in bytes
-    public var sizeInBytes: UInt32 {
-        return info.storageSize
-    }
-
-    /// The format of the image data
-    public var format: TextureFormat {
-        return unsafeBitCast(info.format, to: TextureFormat.self)
-    }
-
-    init(handle: bgfx_texture_handle_t, info: bgfx_texture_info_t) {
+    init(handle: bgfx_texture_handle_t, info: TextureInfo) {
         self.handle = handle
         self.info = info
+    }
+
+    /// Updates the data in a 2D texture
+    ///
+    /// - parameter layer: The layer to update
+    /// - parameter mipLevel: The mip level to update
+    /// - parameter x: The X coordinate of the rectangle to update
+    /// - parameter y: The Y coordinate of the rectangle to update
+    /// - parameter width: The width of the rectangle to update
+    /// - parameter height: The height of the rectangle to update
+    /// - parameter memory: The new image data
+    /// - parameter pitch: The pitch of the image data
+    ///
+    public func update2D(mipLevel: UInt8, layer: UInt16, x: UInt16, y: UInt16, width: UInt16, height: UInt16, memory: MemoryBlock, pitch: UInt16) {
+        bgfx_update_texture_2d(handle, layer, mipLevel, x, y, width, height, memory.handle, pitch)
     }
 
     /// Updates the data in a 2D texture
@@ -67,7 +43,7 @@ public final class Texture {
     /// - parameter pitch: The pitch of the image data
     ///
     public func update2D(mipLevel: UInt8, x: UInt16, y: UInt16, width: UInt16, height: UInt16, memory: MemoryBlock, pitch: UInt16) {
-        bgfx_update_texture_2d(handle, mipLevel, x, y, width, height, memory.handle, pitch)
+        bgfx_update_texture_2d(handle, 0, mipLevel, x, y, width, height, memory.handle, pitch)
     }
 
     /// Copies the contents of a texture to another texture

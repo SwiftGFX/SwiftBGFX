@@ -20,7 +20,7 @@ public extension Texture {
         bgfx_calc_texture_size(&info, width, height, 1, false, false, mipCount, bgfx_texture_format_t(format.rawValue))
         let handle = bgfx_create_texture_2d(info.width, info.height, false, UInt16(info.numMips), bgfx_texture_format_t(format.rawValue), flags.rawValue, memory?.handle ?? nil)
 
-        return Texture(handle: handle, info: info)
+        return Texture(handle: handle, info: TextureInfo.make(from: info))
     }
 
     /// Initializes a new 2D texture that scales with the back buffer
@@ -39,7 +39,7 @@ public extension Texture {
 
         let handle = bgfx_create_texture_2d_scaled(bgfx_backbuffer_ratio_t(ratio.rawValue), false, mipCount, bgfx_texture_format_t(format.rawValue), flags.rawValue)
 
-        return Texture(handle: handle, info: info)
+        return Texture(handle: handle, info: TextureInfo.make(from: info))
     }
 
     /// Initializes a new texture from a file loaded in memory
@@ -59,6 +59,6 @@ public extension Texture {
     public convenience init(memory: MemoryBlock, flags: TextureFlags = [.none], skipMips: UInt8 = 0) {
         var info = bgfx_texture_info_t()
         let handle = bgfx_create_texture(memory.handle, unsafeBitCast(flags, to: UInt32.self), skipMips, &info)
-        self.init(handle: handle, info: info)
+        self.init(handle: handle, info: TextureInfo.make(from: info))
     }
 }
