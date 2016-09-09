@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		054764CE1D824099003DC740 /* libbgfxRelease.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 054764CC1D824053003DC740 /* libbgfxRelease.a */; };
 		054764D01D8240A4003DC740 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054764CF1D8240A4003DC740 /* AppKit.framework */; };
+		054764D21D826CAC003DC740 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054764D11D826CAC003DC740 /* Metal.framework */; };
+		054764D41D826CB5003DC740 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054764D31D826CB5003DC740 /* Quartz.framework */; };
 		_LinkFileRef_Cbgfx_via_SwiftBGFX /* Cbgfx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_Cbgfx" /* Cbgfx.framework */; };
 		_LinkFileRef_SwiftMath_via_Cbgfx /* SwiftMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_SwiftMath" /* SwiftMath.framework */; };
 		_LinkFileRef_SwiftMath_via_SwiftBGFX /* SwiftMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_SwiftMath" /* SwiftMath.framework */; };
@@ -80,6 +82,8 @@
 /* Begin PBXFileReference section */
 		054764CC1D824053003DC740 /* libbgfxRelease.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbgfxRelease.a; path = ../3rdparty/bgfx/.build/osx64_clang/bin/libbgfxRelease.a; sourceTree = "<group>"; };
 		054764CF1D8240A4003DC740 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		054764D11D826CAC003DC740 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		054764D31D826CB5003DC740 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		"__PBXFileRef_Packages/SwiftMath-1.0.0/Sources/Angle.swift" /* Angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
 		"__PBXFileRef_Packages/SwiftMath-1.0.0/Sources/Matrix4x4+Extensions.swift" /* Matrix4x4+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Matrix4x4+Extensions.swift"; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				054764D41D826CB5003DC740 /* Quartz.framework in Frameworks */,
+				054764D21D826CAC003DC740 /* Metal.framework in Frameworks */,
 				054764D01D8240A4003DC740 /* AppKit.framework in Frameworks */,
 				054764CE1D824099003DC740 /* libbgfxRelease.a in Frameworks */,
 				_LinkFileRef_SwiftMath_via_Cbgfx /* SwiftMath.framework in Frameworks */,
@@ -166,6 +172,8 @@
 		054764CB1D824053003DC740 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				054764D31D826CB5003DC740 /* Quartz.framework */,
+				054764D11D826CAC003DC740 /* Metal.framework */,
 				054764CF1D8240A4003DC740 /* AppKit.framework */,
 				054764CC1D824053003DC740 /* libbgfxRelease.a */,
 			);
