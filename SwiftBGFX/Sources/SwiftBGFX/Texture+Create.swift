@@ -6,7 +6,7 @@ import Cbgfx
 
 public extension Texture {
     
-    /// Initializes a new 2D texture
+    /// Creates a new 2D texture
     ///
     /// - parameter parameter width: The width of the texture
     /// - parameter height: The height of the texture
@@ -25,7 +25,7 @@ public extension Texture {
         return Texture(handle: handle, info: TextureInfo.make(from: info))
     }
 
-    /// Initializes a new 2D texture that scales with the back buffer
+    /// Creates a new 2D texture that scales with the back buffer
     ///
     /// - parameter ratio: The amount to scale when the backbuffer resizes
     /// - parameter mipCount: The number of mip levels
@@ -44,7 +44,7 @@ public extension Texture {
         return Texture(handle: handle, info: TextureInfo.make(from: info))
     }
 
-    /// Initializes a new texture from a file loaded in memory
+    /// Creates a new texture from a file loaded in memory
     ///
     /// - parameter memory: The content of the file
     /// - parameter flags: Flags that control texture behavior

@@ -8,7 +8,7 @@ import Cbgfx
 public class IndirectBuffer {
     let handle: bgfx_indirect_buffer_handle_t
     
-    /// Initializes a new indirect buffer of a certain size
+    /// Creates a new indirect buffer of a certain size
     ///
     /// - parameter size: The number of commands that can fit in the buffer
     public init(size: UInt32) {

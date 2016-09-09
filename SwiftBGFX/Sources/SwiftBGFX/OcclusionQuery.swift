@@ -13,7 +13,7 @@ public class OcclusionQuery {
         return OcclusionQueryResult(rawValue: bgfx_get_result(handle).rawValue)!
     }
     
-    /// Initializes a new occlusion query
+    /// Creates a new occlusion query
     public init() {
         handle = bgfx_create_occlusion_query()
     }

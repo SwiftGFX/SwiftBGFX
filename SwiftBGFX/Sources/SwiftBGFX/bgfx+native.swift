@@ -11,7 +11,7 @@ extension bgfx {
     // MARK: - Initialization and shutdown
 
     ///
-    /// Initialize bgfx library
+    /// Initialize the SwiftBGFX library
     ///
     /// - parameter type: Select rendering backend. When set to `RendererBackend.Default`,
     ///     default rendering backend will be selected.
@@ -29,7 +29,7 @@ extension bgfx {
         return bgfx_init(bgfx_renderer_type_t(type.rawValue), 0, 0, cbi != nil ? cbi! : nil, nil)
     }
 
-    /// Shutdown bgfx library
+    /// Shutdown the SwiftBGFX library
     public static func shutdown() {
         bgfx_shutdown()
     }

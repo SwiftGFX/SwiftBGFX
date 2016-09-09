@@ -8,7 +8,7 @@ import Cbgfx
 public class DynamicVertexBuffer {
     let handle: bgfx_dynamic_vertex_buffer_handle_t
 
-    /// Initializes a new dynamic vertex buffer
+    /// Creates a new dynamic vertex buffer
     ///
     /// - parameter vertexCount: The number of vertices that fit in the buffer
     /// - parameter layout: The layout of the vertex data
@@ -17,7 +17,7 @@ public class DynamicVertexBuffer {
         handle = bgfx_create_dynamic_vertex_buffer(vertexCount, &layout.handle, flags.rawValue)
     }
     
-    /// Initializes a new dynamic vertex buffer
+    /// Creates a new dynamic vertex buffer
     ///
     /// - parameter memory: The initial vertex data with which to populate the buffer
     /// - parameter layout: The layout of the vertex data

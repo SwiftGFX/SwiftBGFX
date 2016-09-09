@@ -12,7 +12,6 @@
 		054764D21D826CAC003DC740 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054764D11D826CAC003DC740 /* Metal.framework */; };
 		054764D41D826CB5003DC740 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054764D31D826CB5003DC740 /* Quartz.framework */; };
 		_LinkFileRef_Cbgfx_via_SwiftBGFX /* Cbgfx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_Cbgfx" /* Cbgfx.framework */; };
-		_LinkFileRef_SwiftMath_via_Cbgfx /* SwiftMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_SwiftMath" /* SwiftMath.framework */; };
 		_LinkFileRef_SwiftMath_via_SwiftBGFX /* SwiftMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_SwiftMath" /* SwiftMath.framework */; };
 		"__src_cc_ref_Packages/SwiftMath-1.0.0/Sources/Angle.swift" /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/SwiftMath-1.0.0/Sources/Angle.swift" /* Angle.swift */; };
 		"__src_cc_ref_Packages/SwiftMath-1.0.0/Sources/Matrix4x4+Extensions.swift" /* Matrix4x4+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = "__PBXFileRef_Packages/SwiftMath-1.0.0/Sources/Matrix4x4+Extensions.swift" /* Matrix4x4+Extensions.swift */; };
@@ -146,7 +145,6 @@
 				054764D21D826CAC003DC740 /* Metal.framework in Frameworks */,
 				054764D01D8240A4003DC740 /* AppKit.framework in Frameworks */,
 				054764CE1D824099003DC740 /* libbgfxRelease.a in Frameworks */,
-				_LinkFileRef_SwiftMath_via_Cbgfx /* SwiftMath.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,14 +23,14 @@ public class Shader {
     
     // MARK: - creating new shaders
     
-    /// Initializes a new shader from memory
+    /// Creates a new shader from memory
     ///
     /// - parameter memory: The compiled shader
     public init(memory: MemoryBlock) {
         handle = bgfx_create_shader(memory.handle)
     }
     
-    /// Initializes a new shader from source code
+    /// Creates a new shader from source code
     ///
     /// - parameter source:   shader source code
     /// - parameter language: language of shader source

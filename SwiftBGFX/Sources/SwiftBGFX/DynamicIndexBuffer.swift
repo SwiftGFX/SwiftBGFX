@@ -8,7 +8,8 @@ import Cbgfx
 public class DynamicIndexBuffer {
     let handle: bgfx_dynamic_index_buffer_handle_t
     
-    /// Initializes a new dynamic index buffer
+    /// Creates a new dynamic index buffer with enough space to accommodate
+	/// `indexCount` vertex indices
     ///
     /// - parameter indexCount: The number of indices that can fit in the buffer
     /// - parameter flags:      Flags used to control buffer behavior
@@ -16,7 +17,7 @@ public class DynamicIndexBuffer {
         handle = bgfx_create_dynamic_index_buffer(indexCount, flags.rawValue)
     }
     
-    /// Initializes a new dynamic index buffer from memory
+    /// Creates a new dynamic index buffer from memory
     ///
     /// - parameter memory: The initial index data with which to populate the buffer
     /// - parameter flags:  Flags used to control buffer behavior

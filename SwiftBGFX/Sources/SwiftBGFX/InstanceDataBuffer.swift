@@ -18,7 +18,7 @@ public class InstanceDataBuffer {
         return handle.pointee.size
     }
     
-    /// Initializes a new instance buffer
+    /// Creates a new instance buffer
     ///
     /// - parameter count: The number of elements in the buffer
     /// - parameter stride: The stride of each element

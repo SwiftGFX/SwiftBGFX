@@ -8,7 +8,7 @@ import Cbgfx
 public class Program {
     let handle: bgfx_program_handle_t
     
-    /// Initializes a new program with the specified shaders
+    /// Creates a new program with the specified shaders
     ///
     /// - parameter vertex: The vertex shader
     /// - parameter fragment: The fragment shader
@@ -17,7 +17,7 @@ public class Program {
         handle = bgfx_create_program(vertex.handle, fragment.handle, destroyShaders)
     }
 
-    /// Initializes a new compute program
+    /// Creates a new compute program
     ///
     /// - parameter compute: The compute shader
     /// - parameter destroyShaders: specify `true` to release the shaders after creating the program

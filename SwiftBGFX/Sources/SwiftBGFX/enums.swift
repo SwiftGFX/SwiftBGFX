@@ -28,7 +28,7 @@ public enum RendererBackend: UInt32 {
     /// Vulkan
  	case vulkan
     
-    /// Used during initialization; specifies that the library should
+    /// Used during initialization to indicate the library should
     /// pick the best renderer for the running hardware and OS.
  	case best
 }

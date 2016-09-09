@@ -26,19 +26,19 @@ public struct MemoryBlock {
         self.handle = handle
     }
     
-    /// Initializes a new memory buffer of a specific size
+    /// Creates a new memory buffer of a specific size
     public init(size: UInt32) {
         self.init(handle: bgfx_alloc(size))
     }
     
-    /// Initializes a new memory buffer by copying from the source data
+    /// Creates a new memory buffer by copying from the source data
     ///
     /// - parameter data: the source data
     public init<T>(data: [T]) {
         self.init(handle: bgfx_copy(data, UInt32(MemoryLayout<T>.size * data.count)))
     }
     
-    /// Initializes a new memory buffer by copying from the source text data
+    /// Creates a new memory buffer by copying from the source text data
     ///
     /// - parameter text: the source text data
     public init(text: String) {
