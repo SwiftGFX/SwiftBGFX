@@ -1,0 +1,14 @@
+//
+//  Common.xcconfig
+//  Examples
+//
+//  Created by Stuart Carnie on 5/3/16.
+//  Copyright © 2016 SGC. All rights reserved.
+//
+
+SBGFX_BASE  = $(SRCROOT)/../SwiftBGFX2/.build
+
+OTHER_LDFLAGS = $(inherited) -lSwiftMath -lSwiftBGFX
+LIBRARY_SEARCH_PATHS = $(inherited) $(SBGFX_PATH)
+SWIFT_INCLUDE_PATHS = $(inherited) $(SBGFX_PATH)
+MACOSX_DEPLOYMENT_TARGET = 10.11

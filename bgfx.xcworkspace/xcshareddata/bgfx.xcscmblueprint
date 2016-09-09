@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6A1162D3940A6E35EFA0DC5C72134140347287DB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C63116EC57C58DE0419A43F9413CB55989FCC336" : 9223372036854775807,
+    "6A1162D3940A6E35EFA0DC5C72134140347287DB" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "431E551C-A5A8-4AEB-ADD1-B0685E75FCC1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C63116EC57C58DE0419A43F9413CB55989FCC336" : "swift\/3rdparty\/bgfx\/",
+    "6A1162D3940A6E35EFA0DC5C72134140347287DB" : "swift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "bgfx",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "bgfx.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:SwiftGFX\/SwiftBGFX.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6A1162D3940A6E35EFA0DC5C72134140347287DB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:bkaradzic\/bgfx.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C63116EC57C58DE0419A43F9413CB55989FCC336"
+    }
+  ]
+}
