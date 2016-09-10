@@ -37,8 +37,7 @@ class WindowDelegate: NSObject, NSWindowDelegate {
     }
 }
 
-@objc
-class MainThreadEntry: NSObject {
+class MainThreadEntry {
     
     func execute() {
         runApp(sharedApp, argc: 0, argv: [])
@@ -159,15 +158,15 @@ class Context {
         self.win = win
         winDelegate.windowCreated(win)
         
-        
         var pd = PlatformData()
         pd.nwh = UnsafeMutableRawPointer(Unmanaged.passRetained(win).toOpaque())
         bgfx.setPlatformData(pd)
         
-        let mte = MainThreadEntry()
-        let thread = Thread(target: mte, selector: #selector(mte.execute), object: nil)
-        thread.start()
-        
+		DispatchQueue.global(qos: .userInteractive).async {
+			let mte = MainThreadEntry()
+			mte.execute()
+		}
+		
         eventQueue.postSizeEvent(1280, height: 720)
         
         while !dg.applicationHasTerminated {
