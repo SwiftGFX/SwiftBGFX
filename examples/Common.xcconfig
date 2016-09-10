@@ -6,7 +6,7 @@
 //  Copyright © 2016 SGC. All rights reserved.
 //
 
-SBGFX_BASE  = $(SRCROOT)/../SwiftBGFX2/.build
+SBGFX_BASE  = $(SRCROOT)/../SwiftBGFX/.build
 
 OTHER_LDFLAGS = $(inherited) -lSwiftMath -lSwiftBGFX
 LIBRARY_SEARCH_PATHS = $(inherited) $(SBGFX_PATH)
