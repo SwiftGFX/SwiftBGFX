@@ -585,10 +585,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AB1CD885BA00401D8C /* Debug.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -598,10 +594,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AC1CD885C200401D8C /* Release.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -612,10 +604,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AB1CD885BA00401D8C /* Debug.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -625,10 +613,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AC1CD885C200401D8C /* Release.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -639,10 +623,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AB1CD885BA00401D8C /* Debug.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -651,10 +631,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AC1CD885C200401D8C /* Release.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
@@ -748,10 +724,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AB1CD885BA00401D8C /* Debug.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -761,10 +733,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AC1CD885C200401D8C /* Release.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
@@ -775,10 +743,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AB1CD885BA00401D8C /* Debug.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -788,10 +752,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 05B1B6AC1CD885C200401D8C /* Release.xcconfig */;
 			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/bgfx",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
