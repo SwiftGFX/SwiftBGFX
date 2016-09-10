@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/stuartcarnie/projects/macos/bgfx/bgfx Test/SwiftBGFX.xcodeproj">
+      location = "self:/Users/stuartcarnie/projects/macos/bgfx/swift/examples/Examples.xcodeproj">
    </FileRef>
 </Workspace>

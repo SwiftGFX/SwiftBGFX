@@ -475,7 +475,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 058076971CC2B0D600C43477 /* Build configuration list for PBXProject "SwiftBGFX" */;
+			buildConfigurationList = 058076971CC2B0D600C43477 /* Build configuration list for PBXProject "Examples" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -828,7 +828,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		058076971CC2B0D600C43477 /* Build configuration list for PBXProject "SwiftBGFX" */ = {
+		058076971CC2B0D600C43477 /* Build configuration list for PBXProject "Examples" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				058076A11CC2B0D600C43477 /* Debug */,
