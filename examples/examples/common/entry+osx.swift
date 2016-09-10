@@ -44,12 +44,8 @@ class MainThreadEntry {
     }
 }
 
-typealias ch = UnicodeScalar
-
-extension UnicodeScalar {
-    var toInt: Int {
-        return Int(self.value)
-    }
+func ch(_ c: UnicodeScalar) -> Int {
+    return Int(c.value)
 }
 
 class Context {
@@ -59,52 +55,52 @@ class Context {
     
     init() {
         translateKey[27] = .esc
-        translateKey[ch("\n").toInt] = .return
-        translateKey[ch("\t").toInt] = .tab
+        translateKey[ch("\n")] = .return
+        translateKey[ch("\t")] = .tab
         translateKey[127] = .backspace
-        translateKey[ch(" ").toInt] = .space
+        translateKey[ch(" ")] = .space
         
-        translateKey[ch("+").toInt] = .plus
-        translateKey[ch("=").toInt] = .plus
-        translateKey[ch("_").toInt] = .minus
-        translateKey[ch("-").toInt] = .minus
+        translateKey[ch("+")] = .plus
+        translateKey[ch("=")] = .plus
+        translateKey[ch("_")] = .minus
+        translateKey[ch("-")] = .minus
         
-        translateKey[ch("~").toInt] = .tilde
-        translateKey[ch("`").toInt] = .tilde
-
-        translateKey[ch(":").toInt] = .semicolon
-        translateKey[ch(";").toInt] = .semicolon
-        translateKey[ch("\"").toInt] = .quote
-        translateKey[ch("'").toInt] = .quote
+        translateKey[ch("~")] = .tilde
+        translateKey[ch("`")] = .tilde
         
-        translateKey[ch("{").toInt] = .leftBracket
-        translateKey[ch("[").toInt] = .leftBracket
-        translateKey[ch("}").toInt] = .rightBracket
-        translateKey[ch("]").toInt] = .rightBracket
-
-        translateKey[ch("<").toInt] = .comma
-        translateKey[ch(",").toInt] = .comma
-        translateKey[ch(">").toInt] = .period
-        translateKey[ch(".").toInt] = .period
-        translateKey[ch("?").toInt] = .slash
-        translateKey[ch("/").toInt] = .slash
-        translateKey[ch("|").toInt] = .backslash
-        translateKey[ch("\\").toInt] = .backslash
-
-        translateKey[ch("0").toInt] = .key0
-        translateKey[ch("1").toInt] = .key1
-        translateKey[ch("2").toInt] = .key2
-        translateKey[ch("3").toInt] = .key3
-        translateKey[ch("4").toInt] = .key4
-        translateKey[ch("5").toInt] = .key5
-        translateKey[ch("6").toInt] = .key6
-        translateKey[ch("7").toInt] = .key7
-        translateKey[ch("8").toInt] = .key8
-        translateKey[ch("9").toInt] = .key9
+        translateKey[ch(":")] = .semicolon
+        translateKey[ch(";")] = .semicolon
+        translateKey[ch("\"")] = .quote
+        translateKey[ch("'")] = .quote
         
-        let a = ch("a").toInt
-        let spc = ch(" ").toInt
-        for char in a...ch("z").toInt {
+        translateKey[ch("{")] = .leftBracket
+        translateKey[ch("[")] = .leftBracket
+        translateKey[ch("}")] = .rightBracket
+        translateKey[ch("]")] = .rightBracket
+        
+        translateKey[ch("<")] = .comma
+        translateKey[ch(",")] = .comma
+        translateKey[ch(">")] = .period
+        translateKey[ch(".")] = .period
+        translateKey[ch("?")] = .slash
+        translateKey[ch("/")] = .slash
+        translateKey[ch("|")] = .backslash
+        translateKey[ch("\\")] = .backslash
+        
+        translateKey[ch("0")] = .key0
+        translateKey[ch("1")] = .key1
+        translateKey[ch("2")] = .key2
+        translateKey[ch("3")] = .key3
+        translateKey[ch("4")] = .key4
+        translateKey[ch("5")] = .key5
+        translateKey[ch("6")] = .key6
+        translateKey[ch("7")] = .key7
+        translateKey[ch("8")] = .key8
+        translateKey[ch("9")] = .key9
+        
+        let a = ch("a")
+        let spc = ch(" ")
+        for char in a...ch("z") {
             let v = char - a
             let k = KeyCode(rawValue: KeyCode.keyA.rawValue + v)!
             translateKey[char] = k
@@ -162,11 +158,11 @@ class Context {
         pd.nwh = UnsafeMutableRawPointer(Unmanaged.passRetained(win).toOpaque())
         bgfx.setPlatformData(pd)
         
-		DispatchQueue.global(qos: .userInteractive).async {
-			let mte = MainThreadEntry()
-			mte.execute()
-		}
-		
+        DispatchQueue.global(qos: .userInteractive).async {
+            let mte = MainThreadEntry()
+            mte.execute()
+        }
+        
         eventQueue.postSizeEvent(1280, height: 720)
         
         while !dg.applicationHasTerminated {
@@ -180,7 +176,6 @@ class Context {
         eventQueue.postExitEvent()
         
         while bgfx.renderFrame() != .nocontext {}
-        while !thread.isFinished {}
     }
     
     func poll() -> Event? {
@@ -188,10 +183,10 @@ class Context {
     }
     
     func peekEvent() -> NSEvent? {
-        return NSApp.nextEvent(matching: NSEventMask(rawValue: UInt64(Int(NSEventMask.any.rawValue & 0xFFFF_FFFF))),
-                                           until: Date.distantPast,
-                                           inMode: RunLoopMode.defaultRunLoopMode,
-                                           dequeue: true)
+        return NSApp.nextEvent(matching: .any,
+                               until: Date.distantPast,
+                               inMode: RunLoopMode.defaultRunLoopMode,
+                               dequeue: true)
     }
     
     func updateMousePos()
@@ -199,10 +194,10 @@ class Context {
         let originalFrame = win.frame
         let location = win.mouseLocationOutsideOfEventStream
         let adjustFrame = win.contentRect(forFrameRect: originalFrame)
-
+        
         var x = location.x
         var y = adjustFrame.size.height - location.y
-    
+        
         // clamp within the range of the window
         if x < 0 {
             x = 0
@@ -215,7 +210,7 @@ class Context {
         } else if y > adjustFrame.size.height {
             y = adjustFrame.size.height
         }
-
+        
         mx = UInt16(x)
         my = UInt16(y)
     }
@@ -296,8 +291,8 @@ class Context {
         let mod = translateModifiers(ev.modifierFlags)
         
         var keyCode: KeyCode
-        if keyNum.toInt < 256 {
-            keyCode = translateKey[keyNum.toInt]
+        if ch(keyNum) < 256 {
+            keyCode = translateKey[ch(keyNum)]
         } else {
             
             switch Int(ev.keyCode) {
@@ -314,19 +309,19 @@ class Context {
             case NSF10FunctionKey: keyCode = .f10
             case NSF11FunctionKey: keyCode = .f11
             case NSF12FunctionKey: keyCode = .f12
-
+                
             case NSLeftArrowFunctionKey: keyCode = .left
             case NSRightArrowFunctionKey: keyCode = .right
             case NSUpArrowFunctionKey: keyCode = .up
             case NSDownArrowFunctionKey: keyCode = .down
-
+                
             case NSPageUpFunctionKey: keyCode = .pageUp
             case NSPageDownFunctionKey: keyCode = .pageDown
             case NSHomeFunctionKey: keyCode = .home
             case NSEndFunctionKey: keyCode = .end
                 
             case NSPrintScreenFunctionKey: keyCode = .print
-
+                
             default:
                 keyCode = .none
             }
@@ -347,17 +342,17 @@ class Context {
             let _ = mk.insert(.leftAlt)
             let _ = mk.insert(.rightAlt)
         }
-
+        
         if flags.contains(.control) {
             let _ = mk.insert(.leftCtrl)
             let _ = mk.insert(.rightCtrl)
         }
-
+        
         if flags.contains(.command) {
             let _ = mk.insert(.leftMeta)
             let _ = mk.insert(.rightMeta)
         }
-
+        
         return mk
     }
     
