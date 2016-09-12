@@ -7,3 +7,4 @@ COMBINE_HIDPI_IMAGES = YES
 USE_HEADERMAP = NO
 USER_HEADER_SEARCH_PATHS = $(inherited) $(SRCROOT)/Sources/Cbgfx/include
 LIBRARY_SEARCH_PATHS = $(inherited) $(SRCROOT)/../3rdparty/bgfx/.build/osx64_clang/bin
+SWIFT_INCLUDE_PATHS = $(inherited) $(SRCROOT)/Sources/Cbgfx/include

@@ -10,17 +10,19 @@ import Cbgfx
 /// The contents of the buffer are valid for the current frame only.
 /// You must call SetVertexBuffer with the buffer or a leak could occur.
 public struct TransientVertexBuffer {
-    // - NOTE: This structure must match the layout of bgfx_transient_vertex_buffer_t
+    internal var buffer: bgfx_transient_vertex_buffer
     
-    public let data: UnsafeMutablePointer<UInt8>? = nil
-    public let size: UInt32 = 0
-    let startVertex: UInt32 = 0
-    let stride: UInt16 = 0
-    let handle: UInt16 = 0
-    let decl: UInt16 = 0
-	
-	public init() {
-		
+    public var data: UnsafeMutablePointer<UInt8> {
+        return buffer.data!
+    }
+    
+    public var size: UInt32 {
+        return buffer.size
+    }
+    
+    public init(count: UInt32, layout: VertexLayout) {
+        buffer = bgfx_transient_vertex_buffer()
+        bgfx_alloc_transient_vertex_buffer(&buffer, count, &layout.handle)
 	}
 	
     /// Checks for available space to allocate an instance buffer

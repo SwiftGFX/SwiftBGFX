@@ -10,15 +10,20 @@ import Cbgfx
 /// The contents of the buffer are valid for the current frame only.
 /// You must call SetVertexBuffer with the buffer or a leak could occur.
 public struct TransientIndexBuffer {
-    public let data: UnsafeMutablePointer<UInt8>? = nil
-    public let size: UInt32 = 0
+    internal var buffer: bgfx_transient_index_buffer
     
-    let handle: UInt16 = 0
-    let startIndex: UInt32 = 0
-	
-	public init() {
-		
-	}
+    public var data: UnsafeMutablePointer<UInt8> {
+        return buffer.data!
+    }
+    
+    public var size: UInt32 {
+        return buffer.size
+    }
+    
+    public init(count: UInt32) {
+        buffer = bgfx_transient_index_buffer()
+        bgfx_alloc_transient_index_buffer(&buffer, count)
+    }
     
     /// Checks for available space to allocate an instance buffer
     ///

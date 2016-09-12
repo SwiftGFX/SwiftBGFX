@@ -369,7 +369,7 @@ extension bgfx {
     ///
     /// - parameter buf: Transient index buffer
     public static func setIndexBuffer(_ buf: TransientIndexBuffer) {
-        var d = unsafeBitCast(buf, to: bgfx_transient_index_buffer_t.self)
+        var d = unsafeBitCast(buf.buffer, to: bgfx_transient_index_buffer.self)
         bgfx_set_transient_index_buffer(&d, 0, UInt32.max)
     }
 
@@ -379,7 +379,7 @@ extension bgfx {
     /// - parameter firstIndex: First index to render
     /// - parameter count: Number of indices to render
     public static func setIndexBuffer(_ buf: TransientIndexBuffer, firstIndex: UInt32, count: UInt32) {
-        var d = unsafeBitCast(buf, to: bgfx_transient_index_buffer_t.self)
+        var d = unsafeBitCast(buf.buffer, to: bgfx_transient_index_buffer.self)
         bgfx_set_transient_index_buffer(&d, firstIndex, count)
     }
 
@@ -420,7 +420,7 @@ extension bgfx {
     ///
     /// - parameter buf: Transient vertex buffer
     public static func setVertexBuffer(_ buf: TransientVertexBuffer) {
-        var d = unsafeBitCast(buf, to: bgfx_transient_vertex_buffer_t.self)
+        var d = unsafeBitCast(buf.buffer, to: bgfx_transient_vertex_buffer.self)
         bgfx_set_transient_vertex_buffer(&d, 0, UInt32.max)
     }
 
@@ -430,7 +430,7 @@ extension bgfx {
     /// - parameter firstVertex: First vertex to render
     /// - parameter count: Number of indices to render
     public static func setVertexBuffer(_ buf: TransientVertexBuffer, firstVertex: UInt32, count: UInt32) {
-        var d = unsafeBitCast(buf, to: bgfx_transient_vertex_buffer_t.self)
+        var d = unsafeBitCast(buf.buffer, to: bgfx_transient_vertex_buffer.self)
         bgfx_set_transient_vertex_buffer(&d, firstVertex, count)
     }
 
