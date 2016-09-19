@@ -13,7 +13,7 @@ public class DynamicVertexBuffer {
     /// - parameter vertexCount: The number of vertices that fit in the buffer
     /// - parameter layout: The layout of the vertex data
     /// - parameter flags: Flags used to control buffer behavior
-    public init(vertexCount: UInt32, layout: VertexLayout, flags: BufferFlags = [.none]) {
+    public init(vertexCount: UInt32, layout: VertexLayout, flags: BufferOptions = [.none]) {
         handle = bgfx_create_dynamic_vertex_buffer(vertexCount, &layout.handle, flags.rawValue)
     }
     
@@ -22,7 +22,7 @@ public class DynamicVertexBuffer {
     /// - parameter memory: The initial vertex data with which to populate the buffer
     /// - parameter layout: The layout of the vertex data
     /// - parameter flags: Flags used to control buffer behavior
-    public init(memory: MemoryBlock, layout: VertexLayout, flags: BufferFlags = [.none]) {
+    public init(memory: MemoryBlock, layout: VertexLayout, flags: BufferOptions = [.none]) {
         handle = bgfx_create_dynamic_vertex_buffer_mem(memory.handle, &layout.handle, flags.rawValue)
     }
     

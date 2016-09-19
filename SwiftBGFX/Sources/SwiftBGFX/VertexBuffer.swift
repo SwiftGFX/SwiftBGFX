@@ -12,9 +12,9 @@ public class VertexBuffer {
     ///
     /// - parameter memory: The vertex data with which to populate the buffer
     /// - parameter layout: The layout of the vertex data
-    /// - parameter flags:  Flags used to control buffer behavior
-    public init(memory: MemoryBlock, layout: VertexLayout, flags: BufferFlags = [.none]) {
-        handle = bgfx_create_vertex_buffer(memory.handle, &layout.handle, flags.rawValue)
+    /// - parameter options: Flags used to control buffer behavior
+    public init(memory: MemoryBlock, layout: VertexLayout, options: BufferOptions = [.none]) {
+        handle = bgfx_create_vertex_buffer(memory.handle, &layout.handle, options.rawValue)
     }
     
     deinit {

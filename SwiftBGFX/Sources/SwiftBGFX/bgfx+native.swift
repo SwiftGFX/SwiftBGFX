@@ -185,27 +185,27 @@ extension bgfx {
         bgfx_set_view_scissor(viewId, x, y, width, height)
     }
 
-    /// Set view clear flags
+    /// Set view clear options
     ///
     /// - parameter viewId: View id
-    /// - parameter options: Clear options. Use `ClearTargets.none` to remove any clear operation
+    /// - parameter options: Clear options. Use `ClearOptions.none` to remove any clear operation
     /// - parameter rgba: Color clear value
     /// - parameter depth: Depth clear value
     /// - parameter stencil: Stencil clear value
     ///
-    public static func setViewClear(viewId: UInt8, options: ClearTargets, rgba: UInt32, depth: Float, stencil: UInt8) {
+    public static func setViewClear(viewId: UInt8, options: ClearOptions, rgba: UInt32, depth: Float, stencil: UInt8) {
         bgfx_set_view_clear(viewId, options.rawValue, rgba, depth, stencil)
     }
 
-    /// Set view clear flags
+    /// Set view clear options
     ///
     /// - parameter viewId: View id
-    /// - parameter options: Clear options. Use `ClearTargets.none` to remove any clear operation
+    /// - parameter options: Clear options. Use `ClearOptions.none` to remove any clear operation
     /// - parameter rgba: Color clear value
     /// - parameter depth: Depth clear value
     /// - parameter stencil: Stencil clear value
     ///
-    public static func setViewClear(viewId: UInt8, options: ClearTargets, depth: Float, stencil: UInt8,
+    public static func setViewClear(viewId: UInt8, options: ClearOptions, depth: Float, stencil: UInt8,
                                     b0: UInt8 = UInt8.max, b1: UInt8 = UInt8.max,
                                     b2: UInt8 = UInt8.max, b3: UInt8 = UInt8.max,
                                     b4: UInt8 = UInt8.max, b5: UInt8 = UInt8.max,
@@ -477,10 +477,10 @@ extension bgfx {
     /// - parameter unit: The texture unit to set
     /// - parameter sampler: The sampler uniform
     /// - parameter texture: The texture to set
-    /// - parameter flags: Sampling flags that override the default flags in the texture itself
+    /// - parameter options: Sampling options that override the default options in the texture itself
     public static func setTexture(_ unit: UInt8, sampler: Uniform, texture: Texture,
-                                  flags: TextureFlags = [.`default`]) {
-        bgfx_set_texture(unit, sampler.handle, texture.handle, flags.rawValue)
+                                  options: TextureOptions = [.`default`]) {
+        bgfx_set_texture(unit, sampler.handle, texture.handle, options.rawValue)
     }
 
     /// Sets a texture to use for drawing primitives
@@ -489,10 +489,10 @@ extension bgfx {
     /// - parameter sampler: The sampler uniform
     /// - parameter frameBuffer: The frame buffer
     /// - parameter attachment: The index of the attachment to set
-    /// - parameter flags: Sampling flags that override the default flags in the texture itself
+    /// - parameter options: Sampling options that override the default options in the texture itself
     public static func setTexture(_ unit: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8 = 0,
-                                  flags: TextureFlags = [.`default`]) {
-        bgfx_set_texture_from_frame_buffer(unit, sampler.handle, frameBuffer.handle, attachment, flags.rawValue)
+                                  options: TextureOptions = [.`default`]) {
+        bgfx_set_texture_from_frame_buffer(unit, sampler.handle, frameBuffer.handle, attachment, options.rawValue)
     }
 
     /// Sets a texture mip as a compute image
@@ -501,7 +501,7 @@ extension bgfx {
     /// - parameter sampler: The sampler uniform
     /// - parameter texture: The texture to set
     /// - parameter mip: The index of the mip level within the texture to set
-    /// - parameter access: Access control flags
+    /// - parameter access: Access control mode
     /// - parameter format: The format of the buffer data
     public static func setComputeImage(_ stage: UInt8, sampler: Uniform, texture: Texture, mip: UInt8,
                                        access: ComputeBufferAccess, format: TextureFormat = .unknown) {
@@ -515,7 +515,7 @@ extension bgfx {
     /// - parameter sampler: The sampler uniform
     /// - parameter frameBuffer: The frame buffer
     /// - parameter attachment: The attachment index
-    /// - parameter access: Access control flags
+    /// - parameter access: Access control mode
     /// - parameter format: The format of the buffer data
     public static func setComputeImage(_ stage: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8,
                                        access: ComputeBufferAccess, format: TextureFormat = .unknown) {
@@ -527,7 +527,7 @@ extension bgfx {
     ///
     /// - parameter stage: The buffer stage to set
     /// - parameter buffer: The buffer to set
-    /// - parameter access: Access control flags
+    /// - parameter access: Access control mode
     public static func setComputeBuffer(_ stage: UInt8, buffer: IndexBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_index_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
@@ -536,7 +536,7 @@ extension bgfx {
     ///
     /// - parameter stage: The buffer stage to set
     /// - parameter buffer: The buffer to set
-    /// - parameter access: Access control flags
+    /// - parameter access: Access control mode
     public static func setComputeBuffer(_ stage: UInt8, buffer: VertexBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_vertex_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
@@ -545,7 +545,7 @@ extension bgfx {
     ///
     /// - parameter stage: The buffer stage to set
     /// - parameter buffer: The buffer to set
-    /// - parameter access: Access control flags
+    /// - parameter access: Access control mode
     public static func setComputeBuffer(_ stage: UInt8, buffer: DynamicIndexBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_dynamic_index_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
@@ -554,7 +554,7 @@ extension bgfx {
     ///
     /// - parameter stage: The buffer stage to set
     /// - parameter buffer: The buffer to set
-    /// - parameter access: Access control flags
+    /// - parameter access: Access control mode
     public static func setComputeBuffer(_ stage: UInt8, buffer: DynamicVertexBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_dynamic_vertex_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
@@ -563,7 +563,7 @@ extension bgfx {
     ///
     /// - parameter stage: The buffer stage to set
     /// - parameter buffer: The buffer to set
-    /// - parameter access: Access control flags
+    /// - parameter access: Access control mode
     public static func setComputeBuffer(_ stage: UInt8, buffer: IndirectBuffer, access: ComputeBufferAccess) {
         bgfx_set_compute_indirect_buffer(stage, buffer.handle, bgfx_access_t(access.rawValue))
     }
@@ -668,22 +668,22 @@ extension bgfx {
     ///
     /// - parameter state: The set of states to set
     /// - parameter colorRgba: The color used for "factor" blending modes
-    public static func setRenderState(_ state: RenderState, colorRgba: UInt32) {
+    public static func setRenderState(_ state: RenderStateOptions, colorRgba: UInt32) {
         bgfx_set_state(state.rawValue, colorRgba)
     }
 
     /// Sets stencil test state
     ///
     /// - parameter frontFace: The stencil state to use for front faces
-    public static func setStencil(_ frontFace: StencilFlags) {
-        bgfx_set_stencil(frontFace.rawValue, StencilFlags.none.rawValue)
+    public static func setStencil(_ frontFace: StencilOptions) {
+        bgfx_set_stencil(frontFace.rawValue, StencilOptions.none.rawValue)
     }
 
     /// Sets stencil test state
     ///
     /// - parameter frontFace: The stencil state to use for front faces
     /// - parameter backFace: The stencil state to use for back faces
-    public static func setStencil(_ frontFace: StencilFlags, backFace: StencilFlags) {
+    public static func setStencil(_ frontFace: StencilOptions, backFace: StencilOptions) {
         bgfx_set_stencil(frontFace.rawValue, backFace.rawValue)
     }
 }

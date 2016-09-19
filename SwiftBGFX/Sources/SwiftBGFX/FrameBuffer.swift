@@ -21,24 +21,24 @@ public class FrameBuffer {
     /// - parameter width: The width of the render target
     /// - parameter height: The height of the render target
     /// - parameter format: The format of the new surface
-    /// - parameter flags: Texture sampling flags
+    /// - parameter options: Texture sampling options
     ///
     /// - returns: new frame buffer
     ///
-    public init(width: UInt16, height: UInt16, format: TextureFormat, flags: TextureFlags = [.clampU, .clampV]) {
-        handle = bgfx_create_frame_buffer(width, height, bgfx_texture_format_t(format.rawValue), flags.rawValue)
+    public init(width: UInt16, height: UInt16, format: TextureFormat, options: TextureOptions = [.clampU, .clampV]) {
+        handle = bgfx_create_frame_buffer(width, height, bgfx_texture_format_t(format.rawValue), options.rawValue)
     }
     
     /// Creates a new frame buffer
     ///
     /// - parameter ratio: The amount to scale when the backbuffer resizes
     /// - parameter format: The format of the new surface
-    /// - parameter flags: Texture sampling flags
+    /// - parameter options: Texture sampling options
     ///
     /// - returns: new frame buffer
     ///
-    public init(ratio: BackbufferRatio, format: TextureFormat, flags: TextureFlags = [.clampU, .clampV]) {
-        handle = bgfx_create_frame_buffer_scaled(bgfx_backbuffer_ratio_t(ratio.rawValue), bgfx_texture_format_t(format.rawValue), flags.rawValue)
+    public init(ratio: BackbufferRatio, format: TextureFormat, options: TextureOptions = [.clampU, .clampV]) {
+        handle = bgfx_create_frame_buffer_scaled(bgfx_backbuffer_ratio_t(ratio.rawValue), bgfx_texture_format_t(format.rawValue), options.rawValue)
     }
     
     /// Creates a new frame buffer
@@ -81,7 +81,7 @@ public class FrameBuffer {
     /// - parameter width: The width of the region to blit.
     /// - parameter height: The height of the region to blit.
     ///
-    /// - remark: The destination texture must be created with the `TextureFlags.BlitDestination` flag
+    /// - remark: The destination texture must be created with the `TextureOptions.BlitDestination` flag
     ///
     public func blit(viewId: UInt8, dest: Texture, destX: UInt16, destY: UInt16,
                      attachment: UInt8,
@@ -108,7 +108,7 @@ public class FrameBuffer {
     /// - parameter height: The height of the region to blit.
     /// - parameter depth: The depth of the region to blit.
     ///
-    /// - remark: The destination texture must be created with the `TextureFlags.BlitDestination` flag
+    /// - remark: The destination texture must be created with the `TextureOptions.BlitDestination` flag
     ///
     public func blit(viewId: UInt8, dest: Texture, destMip: UInt8, destX: UInt16, destY: UInt16, destZ: UInt16,
                      attachment: UInt8, srcMip: UInt8, srcX: UInt16, srcY: UInt16, srcZ: UInt16,
@@ -124,7 +124,7 @@ public class FrameBuffer {
     ///
     /// - returns: The frame number when the result will be available. See `bgfx.frame`
     ///
-    /// - remark: The attachment must have been created with the `TextureFlags.ReadBack` flag
+    /// - remark: The attachment must have been created with the `TextureOptions.ReadBack` flag
     ///
     public func read(attachment: UInt8, data: UnsafeMutableRawPointer) -> UInt32 {
         return bgfx_read_frame_buffer(handle, attachment, data)

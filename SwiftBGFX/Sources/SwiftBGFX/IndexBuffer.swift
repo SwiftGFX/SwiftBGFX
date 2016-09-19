@@ -11,9 +11,9 @@ public class IndexBuffer {
     /// Creates a new static index buffer from memory
     ///
     /// - parameter memory: The 16-bit index data used to populate the buffer
-    /// - parameter flags:  Flags used to control buffer behavior
-    public init(memory: MemoryBlock, flags: BufferFlags = [.none]) {
-        handle = bgfx_create_index_buffer(memory.handle, flags.rawValue)
+    /// - parameter options: Options used to control buffer behavior
+    public init(memory: MemoryBlock, options: BufferOptions = [.none]) {
+        handle = bgfx_create_index_buffer(memory.handle, options.rawValue)
     }
     
     deinit {

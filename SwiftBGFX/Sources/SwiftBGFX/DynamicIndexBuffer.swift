@@ -13,7 +13,7 @@ public class DynamicIndexBuffer {
     ///
     /// - parameter indexCount: The number of indices that can fit in the buffer
     /// - parameter flags:      Flags used to control buffer behavior
-    public init(indexCount: UInt32, flags: BufferFlags = [.none]) {
+    public init(indexCount: UInt32, flags: BufferOptions = [.none]) {
         handle = bgfx_create_dynamic_index_buffer(indexCount, flags.rawValue)
     }
     
@@ -21,7 +21,7 @@ public class DynamicIndexBuffer {
     ///
     /// - parameter memory: The initial index data with which to populate the buffer
     /// - parameter flags:  Flags used to control buffer behavior
-    public init(memory: MemoryBlock, flags: BufferFlags = [.none]) {
+    public init(memory: MemoryBlock, flags: BufferOptions = [.none]) {
         handle = bgfx_create_dynamic_index_buffer_mem(memory.handle, flags.rawValue)
     }
     

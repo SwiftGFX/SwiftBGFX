@@ -59,7 +59,7 @@ public final class Texture {
     /// - parameter width: The width of the region to blit.
     /// - parameter height: The height of the region to blit.
     ///
-    /// - remark: The destination texture must be created with the `TextureFlags.BlitDestination` flag
+    /// - remark: The destination texture must be created with the `TextureOptions.BlitDestination` flag
     ///
     public func blit(viewId: UInt8, dest: Texture, destX: UInt16, destY: UInt16,
                      srcX: UInt16, srcY: UInt16,
@@ -84,7 +84,7 @@ public final class Texture {
     /// - parameter height: The height of the region to blit.
     /// - parameter depth: The depth of the region to blit.
     ///
-    /// - remark: The destination texture must be created with the `TextureFlags.BlitDestination` flag
+    /// - remark: The destination texture must be created with the `TextureOptions.BlitDestination` flag
     ///
     public func blit(viewId: UInt8, dest: Texture, destMip: UInt8, destX: UInt16, destY: UInt16, destZ: UInt16,
                      srcMip: UInt8, srcX: UInt16, srcY: UInt16, srcZ: UInt16,
@@ -99,7 +99,7 @@ public final class Texture {
     ///
     /// - returns: The frame number when the result will be available. See `bgfx.frame`
     ///
-    /// - remark: The texture must have been created with the `TextureFlags.ReadBack` flag
+    /// - remark: The texture must have been created with the `TextureOptions.ReadBack` flag
     ///
     public func read(data: UnsafeMutableRawPointer) -> UInt32 {
         return bgfx_read_texture(handle, data)
