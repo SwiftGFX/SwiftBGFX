@@ -531,9 +531,18 @@ public struct CapsOptions: OptionSet {
 
     /// Device supports alpha to coverage
     public static let alphaToCoverage = CapsOptions(rawValue: 0x0000_0000_0008_0000)
-
+    
     /// Device supports conservative rasterization
     public static let conservativeRaster = CapsOptions(rawValue: 0x0000_0000_0010_0000)
+    
+    /// Device supports 2d texture arrays
+    public static let texture2dArray = CapsOptions(rawValue: 0x0000_0000_0020_0000)
+    
+    /// Device supports cubemap texture arrays
+    public static let texture3dArray = CapsOptions(rawValue: 0x0000_0000_0040_0000)
+    
+    /// Graphics debugger support is available
+    public static let graphicsDebugger = CapsOptions(rawValue: 0x0000_0000_0080_0000)
 }
 
 /// Indicates the level of support for a specific texture format

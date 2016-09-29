@@ -6,7 +6,7 @@
 #ifndef BGFX_DEFINES_H_HEADER_GUARD
 #define BGFX_DEFINES_H_HEADER_GUARD
 
-#define BGFX_API_VERSION UINT32_C(20)
+#define BGFX_API_VERSION UINT32_C(22)
 
 ///
 #define BGFX_STATE_RGB_WRITE               UINT64_C(0x0000000000000001) //!< Enable RGB write.
@@ -388,6 +388,7 @@
 #define BGFX_CAPS_CONSERVATIVE_RASTER    UINT64_C(0x0000000000100000) //!< Conservative rasterization is supported.
 #define BGFX_CAPS_TEXTURE_2D_ARRAY       UINT64_C(0x0000000000200000) //!< 2D texture array is supported.
 #define BGFX_CAPS_TEXTURE_CUBE_ARRAY     UINT64_C(0x0000000000400000) //!< Cubemap texture array is supported.
+#define BGFX_CAPS_GRAPHICS_DEBUGGER      UINT64_C(0x0000000000800000) //!< Graphics debugger is present.
 
 ///
 #define BGFX_CAPS_FORMAT_TEXTURE_NONE             UINT16_C(0x0000) //!< Texture format is not supported.

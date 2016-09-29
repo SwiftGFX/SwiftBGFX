@@ -13,18 +13,7 @@ public struct Capabilities {
     /// A set of extended features supported by the device
     public let supported: CapsOptions
     
-    /// The maximum size of a texture, in pixels
-    public let maxTextureSize: UInt16
-
-    /// The maximum number of render views supported
-    public let maxViews: UInt16
-
-    /// The maximum number of draw calls in a single frame
-    public let maxDrawCalls: UInt32
     
-    /// The maximum number of attachments to a single framebuffer
-    public let maxFBAttachments: UInt8
-        
     public let vendorId: UInt16
     
     public let deviceId: UInt16
@@ -35,7 +24,7 @@ public struct Capabilities {
     /// Indicates whether the coordinate system origin is at the bottom left or top left
     public let originBottomLeft: Bool
     
-    public class GPU {
+    public struct GPU {
         public var vendorId: UInt16 = 0
         public var deviceId: UInt16 = 0
         
@@ -49,16 +38,16 @@ public struct Capabilities {
     
     public let gpus: [GPU]
     
+    public let limits: Limits
+    
     public let formats: [TextureFormatSupport]
     
     init(caps: UnsafePointer<bgfx_caps_t>) {
         var s = caps.pointee
         backend = RendererBackend(rawValue: s.rendererType.rawValue)!
         supported = CapsOptions(rawValue: s.supported)
-        maxDrawCalls = s.maxDrawCalls
-        maxTextureSize = s.maxTextureSize
-        maxViews = s.maxViews
-        maxFBAttachments = s.maxFBAttachments
+        limits = Limits(s.limits)
+        
         vendorId = s.vendorId
         deviceId = s.deviceId
         homogeneousDepth = s.homogeneousDepth
@@ -91,4 +80,47 @@ public struct Capabilities {
         memcpy(&formats, &s.formats.0, MemoryLayout<TextureFormatSupport>.size * Int(BGFX_TEXTURE_FORMAT_COUNT.rawValue))
         self.formats = formats
     }
+    
+    public struct Limits {
+        public let maxDrawCalls: Int
+        public let maxBlits: Int;
+        public let maxTextureSize: Int;
+        public let maxViews: Int;
+        public let maxFrameBuffers: Int;
+        public let maxFBAttachments: Int;
+        public let maxPrograms: Int;
+        public let maxShaders: Int;
+        public let maxTextures: Int;
+        public let maxTextureSamplers: Int;
+        public let maxVertexDecls: Int;
+        public let maxVertexStreams: Int;
+        public let maxIndexBuffers: Int;
+        public let maxVertexBuffers: Int;
+        public let maxDynamicIndexBuffers: Int;
+        public let maxDynamicVertexBuffers: Int;
+        public let maxUniforms: Int;
+        public let maxOcclusionQueries: Int;
+        
+        init(_ l: bgfx_caps_limits_t) {
+            maxDrawCalls = Int(l.maxDrawCalls)
+            maxBlits = Int(l.maxBlits)
+            maxTextureSize = Int(l.maxTextureSize)
+            maxViews = Int(l.maxViews)
+            maxFrameBuffers = Int(l.maxFrameBuffers)
+            maxFBAttachments = Int(l.maxFBAttachments)
+            maxPrograms = Int(l.maxPrograms)
+            maxShaders = Int(l.maxShaders)
+            maxTextures = Int(l.maxTextures)
+            maxTextureSamplers = Int(l.maxTextureSamplers)
+            maxVertexDecls = Int(l.maxVertexDecls)
+            maxVertexStreams = Int(l.maxVertexStreams)
+            maxIndexBuffers = Int(l.maxIndexBuffers)
+            maxVertexBuffers = Int(l.maxVertexBuffers)
+            maxDynamicIndexBuffers = Int(l.maxDynamicIndexBuffers)
+            maxDynamicVertexBuffers = Int(l.maxDynamicVertexBuffers)
+            maxUniforms = Int(l.maxUniforms)
+            maxOcclusionQueries = Int(l.maxOcclusionQueries)
+        }
+    }
+
 }
