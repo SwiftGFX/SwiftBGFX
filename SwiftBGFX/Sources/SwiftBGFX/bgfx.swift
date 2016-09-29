@@ -166,6 +166,7 @@ public class bgfx {
     /// This call should be only used on platforms that don’t allow creating
     /// separate rendering thread. If it is called before to `initialize`, render
     /// thread won’t be created by `initialize` call.
+    @discardableResult
     public static func renderFrame() -> RenderFrameResult {
         let res = bgfx_render_frame()
         return RenderFrameResult(rawValue: res.rawValue)!

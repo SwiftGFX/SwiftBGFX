@@ -197,13 +197,23 @@ extension bgfx {
         bgfx_set_view_clear(viewId, options.rawValue, rgba, depth, stencil)
     }
 
-    /// Set view clear options
+    /// Set view clear options, with a different color for each frame buffer texture.
     ///
     /// - parameter viewId: View id
     /// - parameter options: Clear options. Use `ClearOptions.none` to remove any clear operation
     /// - parameter rgba: Color clear value
     /// - parameter depth: Depth clear value
     /// - parameter stencil: Stencil clear value
+    /// - parameter b0: palette index for frame buffer 0
+    /// - parameter b1: palette index for frame buffer 1
+    /// - parameter b2: palette index for frame buffer 2
+    /// - parameter b3: palette index for frame buffer 3
+    /// - parameter b4: palette index for frame buffer 4
+    /// - parameter b5: palette index for frame buffer 5
+    /// - parameter b6: palette index for frame buffer 6
+    /// - parameter b7: palette index for frame buffer 7
+    ///
+    /// - remark: use `setPaletteColor` to configure colors for each palette index
     ///
     public static func setViewClear(viewId: UInt8, options: ClearOptions, depth: Float, stencil: UInt8,
                                     b0: UInt8 = UInt8.max, b1: UInt8 = UInt8.max,

@@ -13,7 +13,6 @@ public struct Capabilities {
     /// A set of extended features supported by the device
     public let supported: CapsOptions
     
-    
     public let vendorId: UInt16
     
     public let deviceId: UInt16
@@ -82,7 +81,11 @@ public struct Capabilities {
     }
     
     public struct Limits {
+        
+        /// Maximum number of draw calls per frame
         public let maxDrawCalls: Int
+        
+        /// Maximum number of blits per frame
         public let maxBlits: Int;
         public let maxTextureSize: Int;
         public let maxViews: Int;
