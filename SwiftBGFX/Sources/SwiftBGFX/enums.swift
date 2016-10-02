@@ -14,7 +14,10 @@ public enum RendererBackend: UInt32 {
  	case direct3D11
     
     /// Direct3D 12
- 	case direct3D12
+    case direct3D12
+    
+    /// GNM
+    case gnm
     
     /// Apple Metal.
  	case metal
