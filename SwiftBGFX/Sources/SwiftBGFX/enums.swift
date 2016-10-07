@@ -474,78 +474,78 @@ public struct CapsOptions: OptionSet {
     public let rawValue: UInt64
 
     public init(rawValue: UInt64) { self.rawValue = rawValue }
-
-    /// Device supports "Less than or equal to" texture comparison mode
-    public static let textureCompareLessOrEqual = CapsOptions(rawValue: 0x0000_0000_0000_0001)
-
-    /// Device supports all texture comparison modes
-    public static let textureCompareAll = CapsOptions(rawValue: 0x0000_0000_0000_0003)
-
-    /// Device supports 3D textures
-    public static let texture3D = CapsOptions(rawValue: 0x0000_0000_0000_0004)
-
-    /// Device supports 16-bit floats as vertex attributes
-    public static let vertexAttributeHalf = CapsOptions(rawValue: 0x0000_0000_0000_0008)
-
-    /// UInt10 vertex attributes are supported
-    public static let vertexAttribUInt10 = CapsOptions(rawValue: 0x0000_0000_0000_0010)
-
-    /// Device supports instancing
-    public static let instancing = CapsOptions(rawValue: 0x0000_0000_0000_0020)
-
-    /// Device supports multithreaded rendering
-    public static let rendererMultithreaded = CapsOptions(rawValue: 0x0000_0000_0000_0040)
-
-    /// Fragment shaders can access depth values
-    public static let fragmentDepth = CapsOptions(rawValue: 0x0000_0000_0000_0080)
-
+    
+    /// Device supports alpha to coverage
+    public static let alphaToCoverage = CapsOptions(rawValue: 0x0000_0000_0000_0001)
+    
     /// Device supports independent blending of simultaneous render targets
-    public static let blendIndependent = CapsOptions(rawValue: 0x0000_0000_0000_0100)
-
+    public static let blendIndependent = CapsOptions(rawValue: 0x0000_0000_0000_0003)
+    
     /// Device supports compute shaders
-    public static let compute = CapsOptions(rawValue: 0x0000_0000_0000_0200)
+    public static let compute = CapsOptions(rawValue: 0x0000_0000_0000_0004)
 
-    /// Device supports ordering of fragment output
-    public static let fragmentOrdering = CapsOptions(rawValue: 0x0000_0000_0000_0400)
-
-    /// Indicates whether the device can render to multiple swap chains
-    public static let swapChain = CapsOptions(rawValue: 0x0000_0000_0000_0800)
-
-    /// Head mounted displays are supported
-    public static let headMountedDisplay = CapsOptions(rawValue: 0x0000_0000_0000_1000)
-
-    /// Device supports 32-bit indices
-    public static let index32 = CapsOptions(rawValue: 0x0000_0000_0000_2000)
+    /// Device supports conservative rasterization
+    public static let conservativeRaster = CapsOptions(rawValue: 0x0000_0000_0000_0008)
 
     /// Device supports indirect drawing via GPU buffers
-    public static let drawIndirect = CapsOptions(rawValue: 0x0000_0000_0000_4000)
+    public static let drawIndirect = CapsOptions(rawValue: 0x0000_0000_0000_0010)
+
+    /// Fragment shaders can access depth values
+    public static let fragmentDepth = CapsOptions(rawValue: 0x0000_0000_0000_0020)
+    
+    /// Device supports ordering of fragment output
+    public static let fragmentOrdering = CapsOptions(rawValue: 0x0000_0000_0000_0040)
+
+    /// Graphics debugger support is available
+    public static let graphicsDebugger = CapsOptions(rawValue: 0x0000_0000_0000_0080)
 
     /// Device supports high-DPI rendering
-    public static let hiDPI = CapsOptions(rawValue: 0x0000_0000_0000_8000)
+    public static let hiDPI = CapsOptions(rawValue: 0x0000_0000_0000_0100)
 
-    /// Device supports texture blits
-    public static let textureBlit = CapsOptions(rawValue: 0x0000_0000_0001_0000)
+    /// Head mounted displays are supported
+    public static let headMountedDisplay = CapsOptions(rawValue: 0x0000_0000_0000_0200)
 
-    /// Device supports reading back texture data
-    public static let textureReadBack = CapsOptions(rawValue: 0x0000_0000_0002_0000)
+    /// Device supports 32-bit indices
+    public static let index32 = CapsOptions(rawValue: 0x0000_0000_0000_0400)
+
+    /// Device supports instancing
+    public static let instancing = CapsOptions(rawValue: 0x0000_0000_0000_0800)
 
     /// Device supports occlusion queries
-    public static let occlusionQuery = CapsOptions(rawValue: 0x0000_0000_0004_0000)
+    public static let occlusionQuery = CapsOptions(rawValue: 0x0000_0000_0000_1000)
 
-    /// Device supports alpha to coverage
-    public static let alphaToCoverage = CapsOptions(rawValue: 0x0000_0000_0008_0000)
-    
-    /// Device supports conservative rasterization
-    public static let conservativeRaster = CapsOptions(rawValue: 0x0000_0000_0010_0000)
-    
+    /// Device supports multithreaded rendering
+    public static let rendererMultithreaded = CapsOptions(rawValue: 0x0000_0000_0000_2000)
+
+    /// Indicates whether the device can render to multiple swap chains
+    public static let swapChain = CapsOptions(rawValue: 0x0000_0000_0000_4000)
+
     /// Device supports 2d texture arrays
-    public static let texture2dArray = CapsOptions(rawValue: 0x0000_0000_0020_0000)
+    public static let texture2dArray = CapsOptions(rawValue: 0x0000_0000_0000_8000)
     
+    /// Device supports 3D textures
+    public static let texture3D = CapsOptions(rawValue: 0x0000_0000_0001_0000)
+
+    /// Device supports texture blits
+    public static let textureBlit = CapsOptions(rawValue: 0x0000_0000_0002_0000)
+
+    /// Device supports all texture comparison modes
+    public static let textureCompareAll = CapsOptions(rawValue: 0x0000_0000_0004_0000)
+
+    /// Device supports "Less than or equal to" texture comparison mode
+    public static let textureCompareLessOrEqual = CapsOptions(rawValue: 0x0000_0000_0008_0000)
+
     /// Device supports cubemap texture arrays
-    public static let texture3dArray = CapsOptions(rawValue: 0x0000_0000_0040_0000)
-    
-    /// Graphics debugger support is available
-    public static let graphicsDebugger = CapsOptions(rawValue: 0x0000_0000_0080_0000)
+    public static let texture3dArray = CapsOptions(rawValue: 0x0000_0000_0010_0000)
+
+    /// Device supports reading back texture data
+    public static let textureReadBack = CapsOptions(rawValue: 0x0000_0000_0020_0000)
+
+    /// Device supports 16-bit floats as vertex attributes
+    public static let vertexAttributeHalf = CapsOptions(rawValue: 0x0000_0000_0040_0000)
+
+    /// UInt10 vertex attributes are supported
+    public static let vertexAttribUInt10 = CapsOptions(rawValue: 0x0000_0000_0080_0000)
 }
 
 /// Indicates the level of support for a specific texture format
