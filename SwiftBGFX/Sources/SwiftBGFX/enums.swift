@@ -2,6 +2,8 @@
 // License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
 //
 
+import Cbgfx
+
 /// Specifies the supported rendering backend APIs.
 public enum RendererBackend: UInt32 {
     /// No backend given.
@@ -341,6 +343,10 @@ public enum TextureFormat: UInt32 {
     
     /// 8-bit stencil.
 	case d0s8
+    
+    public static func make(from bgfxType: bgfx_texture_format) -> TextureFormat {
+        return TextureFormat(rawValue: bgfxType.rawValue)!
+    }
 }
 
 /// Specifies the type of uniform data.

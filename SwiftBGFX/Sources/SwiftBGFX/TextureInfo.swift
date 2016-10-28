@@ -33,6 +33,13 @@ public struct TextureInfo {
 	public let isCubeMap: Bool
 	
 	static func make(from: bgfx_texture_info_t) -> TextureInfo {
-		return unsafeBitCast(from, to: TextureInfo.self)
+		return //unsafeBitCast(from, to: TextureInfo.self)
+            TextureInfo(format: TextureFormat.make(from: from.format),
+                        sizeInBytes: from.storageSize,
+                        width: from.width, height: from.height,
+                        depth: from.depth, layers: from.numLayers,
+                        mipLevels: from.numMips,
+                        bitsPerPixel: from.bitsPerPixel,
+                        isCubeMap: from.cubeMap)
 	}
 }
