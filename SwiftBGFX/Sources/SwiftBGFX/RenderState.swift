@@ -201,18 +201,18 @@ public struct RenderStateOptions: OptionSet {
         return sourceEquation | (alphaEquation << 3)
     }
 
-    static let AlphaRefShift: UInt64 = 40
-    static let PointSizeShift: UInt64 = 52
-    static let AlphaRefMask: UInt64 = 0x0000ff0000000000
-    static let PointSizeMask: UInt64 = 0x0ff0000000000000
+    public static let AlphaRefShift: UInt64 = 40
+    public static let PointSizeShift: UInt64 = 52
+    public static let AlphaRefMask: UInt64 = 0x0000ff0000000000
+    public static let PointSizeMask: UInt64 = 0x0ff0000000000000
     
     // MARK: - Operators
 
-    static func |(lhs: RenderStateOptions, rhs: RenderStateOptions) -> RenderStateOptions {
+    public static func |(lhs: RenderStateOptions, rhs: RenderStateOptions) -> RenderStateOptions {
         return RenderStateOptions(rawValue: lhs.rawValue | rhs.rawValue)
     }
 
-    static func <<(lhs: RenderStateOptions, rhs: Int) -> RenderStateOptions {
+    public static func <<(lhs: RenderStateOptions, rhs: Int) -> RenderStateOptions {
         return RenderStateOptions(rawValue: lhs.rawValue << UInt64(rhs))
     }
 
