@@ -96,12 +96,13 @@ public final class Texture {
     /// Reads the contents of the texture and stores them in memory pointed to by `data`
     ///
     /// - parameter data: The destination for the read image data
+    /// - parameter mip: The mip level to read the image data from
     ///
     /// - returns: The frame number when the result will be available. See `bgfx.frame`
     ///
     /// - remark: The texture must have been created with the `TextureOptions.ReadBack` flag
     ///
-    public func read(data: UnsafeMutableRawPointer) -> UInt32 {
-        return bgfx_read_texture(handle, data)
+    public func read(data: UnsafeMutableRawPointer, mip: UInt8) -> UInt32 {
+        return bgfx_read_texture(handle, data, mip)
     }
 }

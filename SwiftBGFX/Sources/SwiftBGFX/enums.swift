@@ -485,7 +485,7 @@ public struct CapsOptions: OptionSet {
     public static let alphaToCoverage = CapsOptions(rawValue: 0x0000_0000_0000_0001)
     
     /// Device supports independent blending of simultaneous render targets
-    public static let blendIndependent = CapsOptions(rawValue: 0x0000_0000_0000_0003)
+    public static let blendIndependent = CapsOptions(rawValue: 0x0000_0000_0000_0002)
     
     /// Device supports compute shaders
     public static let compute = CapsOptions(rawValue: 0x0000_0000_0000_0004)
@@ -536,7 +536,7 @@ public struct CapsOptions: OptionSet {
     public static let textureBlit = CapsOptions(rawValue: 0x0000_0000_0002_0000)
 
     /// Device supports all texture comparison modes
-    public static let textureCompareAll = CapsOptions(rawValue: 0x0000_0000_0004_0000)
+    public static let textureCompareAll = CapsOptions(rawValue: 0x0000_0000_000C_0000)
 
     /// Device supports "Less than or equal to" texture comparison mode
     public static let textureCompareLessOrEqual = CapsOptions(rawValue: 0x0000_0000_0008_0000)

@@ -7,6 +7,9 @@ import Cbgfx
 import SwiftMath
 
 public class bgfx {
+    
+    /// The required API version of bgfx
+    public static let APIVersion = 28
 
     /// Checks for available space to allocate transient index and vertex buffers
     ///
