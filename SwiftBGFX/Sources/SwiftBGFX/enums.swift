@@ -344,7 +344,7 @@ public enum TextureFormat: UInt32 {
     /// 8-bit stencil.
 	case d0s8
     
-    public static func make(from bgfxType: bgfx_texture_format) -> TextureFormat {
+    internal static func make(from bgfxType: bgfx_texture_format) -> TextureFormat {
         return TextureFormat(rawValue: bgfxType.rawValue)!
     }
 }
