@@ -536,7 +536,7 @@ BGFX_C_API void bgfx_image_swizzle_bgra8(uint32_t _width, uint32_t _height, uint
 BGFX_C_API void bgfx_image_rgba8_downsample_2x2(uint32_t _width, uint32_t _height, uint32_t _pitch, const void* _src, void* _dst);
 
 /**/
-BGFX_C_API uint8_t bgfx_get_supported_renderers(bgfx_renderer_type_t _enum[BGFX_RENDERER_TYPE_COUNT]);
+BGFX_C_API uint8_t bgfx_get_supported_renderers(uint8_t _max, bgfx_renderer_type_t* _enum);
 
 /**/
 BGFX_C_API const char* bgfx_get_renderer_name(bgfx_renderer_type_t _type);
@@ -704,7 +704,7 @@ BGFX_C_API void bgfx_update_texture_3d(bgfx_texture_handle_t _handle, uint8_t _m
 BGFX_C_API void bgfx_update_texture_cube(bgfx_texture_handle_t _handle, uint16_t _layer, uint8_t _side, uint8_t _mip, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height, const bgfx_memory_t* _mem, uint16_t _pitch);
 
 /**/
-BGFX_C_API uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void* _data);
+BGFX_C_API uint32_t bgfx_read_texture(bgfx_texture_handle_t _handle, void* _data, uint8_t _mip);
 
 /**/
 BGFX_C_API uint32_t bgfx_read_frame_buffer(bgfx_frame_buffer_handle_t _handle, uint8_t _attachment, void* _data);
