@@ -112,7 +112,7 @@ extension bgfx {
     }
 
     public static var stats: Stats {
-        return unsafeBitCast(bgfx_get_stats().pointee, to: Stats.self)
+        return Stats(stats: bgfx_get_stats())
     }
 
     // MARK: - Head Mounted Display
