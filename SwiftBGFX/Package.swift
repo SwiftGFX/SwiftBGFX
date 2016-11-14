@@ -10,7 +10,7 @@ let package = Package(
 		Target(name: "SwiftBGFX", dependencies: ["Cbgfx"])
 	],
     dependencies: [
-        .Package(url: "https://github.com/SwiftGFX/SwiftMath", Version(2, 1, 1))
+        .Package(url: "https://github.com/SwiftGFX/SwiftMath", Version(2, 2, 0))
     ]
 )
 
