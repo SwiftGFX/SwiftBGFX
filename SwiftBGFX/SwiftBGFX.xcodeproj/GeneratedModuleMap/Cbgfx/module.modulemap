@@ -1,5 +1,0 @@
-framework module Cbgfx {
-    umbrella "/Users/stuartcarnie/projects/macos/bgfx/swift/SwiftBGFX/Sources/Cbgfx/include"
-    link framework "Cbgfx"
-    export *
-}

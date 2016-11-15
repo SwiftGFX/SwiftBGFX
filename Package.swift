@@ -11,7 +11,8 @@ let package = Package(
 	],
     dependencies: [
         .Package(url: "https://github.com/SwiftGFX/SwiftMath", Version(2, 2, 0))
-    ]
+    ],
+    exclude: ["examples"]
 )
 
 let ar = Product(name: "SwiftBGFX", type: .Library(.Dynamic), modules: "SwiftBGFX")
