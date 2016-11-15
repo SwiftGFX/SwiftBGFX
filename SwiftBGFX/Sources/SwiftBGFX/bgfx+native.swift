@@ -266,6 +266,24 @@ extension bgfx {
         var p = proj
         bgfx_set_view_transform(viewId, &v, &p)
     }
+    
+    /// Specify the view render order based on the provided view ids
+    ///
+    /// - Parameters:
+    ///   - viewId: first view to remap
+    ///   - ids: id remap table
+    public static func setViewRemap(viewId: UInt8, ids:[UInt8]) {
+        var p = ids
+        bgfx_set_view_remap(viewId, UInt8(ids.count), &p)
+    }
+    
+    /// Reset the view render order
+    ///
+    /// - Parameters:
+    ///   - viewId: first view
+    public static func clearViewRemap(viewId: UInt8) {
+        bgfx_set_view_remap(viewId, 0, nil)
+    }
 
     /// Set view frame buffer
     ///
