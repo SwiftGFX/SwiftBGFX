@@ -69,28 +69,6 @@ public class FrameBuffer {
         bgfx_destroy_frame_buffer(handle)
     }
     
-    /// Blits the contents of the framebuffer to a texture
-    ///
-    /// - parameter viewId: The view in which the blit will be ordered.
-    /// - parameter dest: The destination texture.
-    /// - parameter destX: The destination X position.
-    /// - parameter destY: The destination Y position.
-    /// - parameter attachment: The frame buffer attachment from which to blit
-    /// - parameter srcX: The source X position.
-    /// - parameter srcY: The source Y position.
-    /// - parameter width: The width of the region to blit.
-    /// - parameter height: The height of the region to blit.
-    ///
-    /// - remark: The destination texture must be created with the `TextureOptions.BlitDestination` flag
-    ///
-    public func blit(viewId: UInt8, dest: Texture, destX: UInt16, destY: UInt16,
-                     attachment: UInt8,
-                     srcX: UInt16, srcY: UInt16,
-                     width: UInt16, height: UInt16, depth: UInt16) {
-        
-        blit(viewId: viewId, dest: dest, destMip: 0, destX: destX, destY: destY, destZ: 0, attachment: attachment, srcMip: 0, srcX: srcX, srcY: srcY, srcZ: 0, width: width, height: height, depth: 0)
-    }
-    
     /// Blits the contents of the texture to another texture
     ///
     /// - parameter viewId: The view in which the blit will be ordered.
@@ -110,11 +88,11 @@ public class FrameBuffer {
     ///
     /// - remark: The destination texture must be created with the `TextureOptions.BlitDestination` flag
     ///
-    public func blit(viewId: UInt8, dest: Texture, destMip: UInt8, destX: UInt16, destY: UInt16, destZ: UInt16,
-                     attachment: UInt8, srcMip: UInt8, srcX: UInt16, srcY: UInt16, srcZ: UInt16,
-                     width: UInt16, height: UInt16, depth: UInt16) {
-        
-        bgfx_blit_frame_buffer(viewId, dest.handle, destMip, destX, destY, destZ, handle, attachment, srcMip, srcX, srcY, srcZ, width, height, depth)
+    public func blit(viewId: UInt8, dest: Texture, destMip: UInt8 = 0, destX: UInt16, destY: UInt16, destZ: UInt16 = 0,
+                     attachment: UInt8, srcMip: UInt8 = 0, srcX: UInt16, srcY: UInt16, srcZ: UInt16 = 0,
+                     width: UInt16, height: UInt16, depth: UInt16 = 0) {
+        let attachment_handle = bgfx_get_texture(self.handle, attachment)
+        bgfx_blit(viewId, dest.handle, destMip, destX, destY, destZ, attachment_handle, srcMip, srcX, srcY, srcZ, width, height, depth)
     }
     
     /// Reads the contents of the framebuffer and stores them in memory pointed to by `data`
@@ -127,6 +105,7 @@ public class FrameBuffer {
     /// - remark: The attachment must have been created with the `TextureOptions.ReadBack` flag
     ///
     public func read(attachment: UInt8, data: UnsafeMutableRawPointer) -> UInt32 {
-        return bgfx_read_frame_buffer(handle, attachment, data)
+        let attachment_handle = bgfx_get_texture(self.handle, attachment)
+        return bgfx_read_texture(attachment_handle, data, 0)
     }
 }

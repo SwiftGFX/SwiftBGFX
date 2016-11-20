@@ -271,18 +271,15 @@ extension bgfx {
     ///
     /// - Parameters:
     ///   - viewId: first view to remap
-    ///   - ids: id remap table
-    public static func setViewRemap(viewId: UInt8, ids:[UInt8]) {
+    ///   - ids: id order table
+    public static func setViewOrder(viewId: UInt8, ids:[UInt8]) {
         var p = ids
-        bgfx_set_view_remap(viewId, UInt8(ids.count), &p)
+        bgfx_set_view_order(viewId, UInt8(ids.count), &p)
     }
     
     /// Reset the view render order
-    ///
-    /// - Parameters:
-    ///   - viewId: first view
-    public static func clearViewRemap(viewId: UInt8) {
-        bgfx_set_view_remap(viewId, 0, nil)
+    public static func clearViewRemap() {
+        bgfx_set_view_order(0, 0, nil)
     }
 
     /// Set view frame buffer
@@ -520,7 +517,8 @@ extension bgfx {
     /// - parameter options: Sampling options that override the default options in the texture itself
     public static func setTexture(_ unit: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8 = 0,
                                   options: TextureOptions = [.`default`]) {
-        bgfx_set_texture_from_frame_buffer(unit, sampler.handle, frameBuffer.handle, attachment, options.rawValue)
+        let attachment_handle = bgfx_get_texture(frameBuffer.handle, attachment)
+        bgfx_set_texture(unit, sampler.handle, attachment_handle, options.rawValue)
     }
 
     /// Sets a texture mip as a compute image
@@ -547,7 +545,8 @@ extension bgfx {
     /// - parameter format: The format of the buffer data
     public static func setComputeImage(_ stage: UInt8, sampler: Uniform, frameBuffer: FrameBuffer, attachment: UInt8,
                                        access: ComputeBufferAccess, format: TextureFormat = .unknown) {
-        bgfx_set_image_from_frame_buffer(stage, sampler.handle, frameBuffer.handle, attachment,
+        let attachment_handle = bgfx_get_texture(frameBuffer.handle, attachment)
+        bgfx_set_image(stage, sampler.handle, attachment_handle, 0,
                                          bgfx_access_t(access.rawValue), bgfx_texture_format_t(format.rawValue))
     }
 
