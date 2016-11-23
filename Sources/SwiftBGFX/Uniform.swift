@@ -4,6 +4,18 @@
 
 import Cbgfx
 
+public struct UniformInfo {
+    public let name: String
+    public let type: UniformType
+    public let num: Int
+    
+    internal init(_ info: bgfx_uniform_info_t) {
+        name = String(cString: UnsafeRawPointer([info.name]).assumingMemoryBound(to: CChar.self))
+        type = UniformType(rawValue: unsafeBitCast(info.type, to: UInt32.self))!
+        num  = Int(info.num)
+    }
+}
+
 // TODO: Split this into UniformAutorelease (class) and Uniform (struct)
 
 /// Represents a shader uniform
@@ -44,6 +56,14 @@ public final class Uniform {
     deinit {
         bgfx_destroy_uniform(handle)
     }
+    
+    public var info: UniformInfo {
+        var bgfxInfo = bgfx_uniform_info()
+        bgfx_get_uniform_info(handle, &bgfxInfo)
+        return UniformInfo(bgfxInfo)
+    }
+}
+
 extension Uniform: Hashable {
     public var hashValue: Int {
         return handle.idx.hashValue
