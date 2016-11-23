@@ -4,6 +4,8 @@
 
 import Cbgfx
 
+// TODO: Split this into UniformAutorelease (class) and Uniform (struct)
+
 /// Represents a shader uniform
 ///
 /// - remark:
@@ -22,7 +24,7 @@ import Cbgfx
 /// - `u_modelViewProj mat4` - concatenated model view projection matrix.
 /// - `u_alphaRef float` - alpha reference value for alpha test.
 ///
-public class Uniform {
+public final class Uniform {
     let handle: bgfx_uniform_handle_t
     
     init(handle: bgfx_uniform_handle_t) {
@@ -41,5 +43,13 @@ public class Uniform {
     
     deinit {
         bgfx_destroy_uniform(handle)
+    }
+extension Uniform: Hashable {
+    public var hashValue: Int {
+        return handle.idx.hashValue
+    }
+    
+    public static func ==(lhs: Uniform, rhs: Uniform) -> Bool {
+        return lhs.handle.idx == rhs.handle.idx
     }
 }
