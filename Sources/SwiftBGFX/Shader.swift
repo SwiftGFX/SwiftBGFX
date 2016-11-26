@@ -53,3 +53,13 @@ public enum ShaderType {
     case fragment
     case compute
 }
+
+extension Shader: Hashable {
+    public var hashValue: Int {
+        return Int(handle.idx)
+    }
+    
+    public static func ==(lhs: Shader, rhs: Shader) -> Bool {
+        return lhs.handle.idx == rhs.handle.idx
+    }
+}
