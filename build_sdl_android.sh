@@ -1,0 +1,15 @@
+swift build -Xcc -I3rdparty/bgfx/3rdparty/khronos \
+-Xcc -I3rdparty/bx/include -Xcc -I3rdparty/bgfx/3rdparty \
+-Xlinker -L3rdparty/bgfx/.build/android-arm/bin \
+-Xswiftc -target -Xswiftc armv7-none-linux-androideabi \
+-Xswiftc -sdk -Xswiftc $ANDROID_NDK_HOME/platforms/android-21/arch-arm \
+-Xlinker -L$ANDROID_NDK_HOME/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a \
+-Xlinker -L$ANDROID_NDK_HOME/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x/ \
+-Xlinker -L$ANDROID_NDK_HOME/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/lib/armv7-a/ \
+-Xswiftc -DNOSIMD \
+-Xlinker -lbgfxDebug -Xlinker -lgcc -Xlinker -lc++ -Xlinker -ldispatch -Xlinker -lFoundation -Xlinker -latomic -Xlinker -lEGL -Xlinker -lGLESv2 -Xlinker -llog \
+-Xswiftc -I/home/s1ddok/Documents/swift/build/Ninja-ReleaseAssert/foundation-linux-x86_64/Foundation \
+-Xswiftc -I/home/s1ddok/Documents/swift/swift-corelibs-foundation \
+-Xswiftc -I/home/s1ddok/Documents/swift/swift-corelibs-foundation/closure \
+-Xlinker -L/usr/local/lib/swift/android/ \
+-Xlinker -L/home/s1ddok/Documents/swift/build/Ninja-ReleaseAssert/foundation-linux-x86_64/Foundation/
