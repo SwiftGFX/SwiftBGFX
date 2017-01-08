@@ -47,10 +47,17 @@ internal func makeCallbackHandler(_ cb: Callbacks) -> UnsafeMutablePointer<bgfx_
     }
     
     // TODO: implement shim in C in order to unpack va_list
+    #if os(iOS)
+    vt.trace_vargs = { (a: UnsafeMutablePointer<bgfx_callback_interface_t>?,
+        path: UnsafePointer<Int8>?, line: UInt16, format: UnsafePointer<Int8>?, args: CVaListPointer?) in
+        callbacks!.reportDebug(String(cString: path!), line: line, format: String(cString: format!))
+    }
+    #else
     vt.trace_vargs = { (a: UnsafeMutablePointer<bgfx_callback_interface_t>?,
         path: UnsafePointer<Int8>?, line: UInt16, format: UnsafePointer<Int8>?, args: CVaListPointer) in
         callbacks!.reportDebug(String(cString: path!), line: line, format: String(cString: format!))
     }
+    #endif
 
     vtablep = UnsafeMutablePointer<bgfx_callback_vtbl_t>.allocate(capacity: 1)
     vtablep?.initialize(to: vt)
