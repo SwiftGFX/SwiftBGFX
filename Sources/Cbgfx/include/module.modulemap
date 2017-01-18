@@ -1,0 +1,5 @@
+module Cbgfx {
+  umbrella "bgfx/c99"
+  link "Cbgfx"
+  export *
+}

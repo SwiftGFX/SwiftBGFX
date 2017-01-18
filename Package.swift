@@ -12,7 +12,7 @@ let package = Package(
     dependencies: [
         .Package(url: "https://github.com/SwiftGFX/SwiftMath", Version(2, 2, 2))
     ],
-    exclude: ["examples"]
+    exclude: ["examples", "Sources/Cbgfx/amalgamated.cpp"]
 )
 
 let ar = Product(name: "SwiftBGFX", type: .Library(.Dynamic), modules: "SwiftBGFX")
