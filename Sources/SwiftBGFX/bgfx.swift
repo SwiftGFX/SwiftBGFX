@@ -43,8 +43,8 @@ public class bgfx {
     private static func _allocateTransientBuffers(_ vertexCount: UInt32, layout: VertexLayout, indexCount: UInt32,
                                                   vertexBuffer: UnsafeMutablePointer<TransientVertexBuffer>,
                                                   indexBuffer: UnsafeMutablePointer<TransientIndexBuffer>) -> Bool {
-        let pvb = unsafeBitCast(vertexBuffer, to: UnsafeMutablePointer<bgfx_transient_vertex_buffer_t>.self)
-        let pib = unsafeBitCast(indexBuffer, to: UnsafeMutablePointer<bgfx_transient_index_buffer_t>.self)
+        let pvb = UnsafeMutableRawPointer(vertexBuffer).assumingMemoryBound(to: bgfx_transient_vertex_buffer_t.self)
+        let pib = UnsafeMutableRawPointer(indexBuffer).assumingMemoryBound(to: bgfx_transient_index_buffer_t.self)
         return bgfx_alloc_transient_buffers(pvb, &layout.handle, vertexCount, pib, indexCount)
     }
 
@@ -71,8 +71,8 @@ public class bgfx {
     /// - parameter data: The pointer to the vertex data stream
     /// - parameter index: The index of the vertex within the stream
     public static func vertexUnpack(output: inout Vector4f, attribute: VertexAttributeUsage,
-                                  layout: VertexLayout, data: UnsafeMutableRawPointer, index: UInt32 = 0) {
-        let vec = toFloatPtr(&output)
+                                    layout: VertexLayout, data: UnsafeMutableRawPointer, index: UInt32 = 0) {
+        let vec = UnsafeMutableRawPointer(&output).assumingMemoryBound(to: Float.self)
         bgfx_vertex_unpack(vec, bgfx_attrib_t(attribute.rawValue), &layout.handle, data, index)
     }
 
@@ -173,9 +173,5 @@ public class bgfx {
     public static func renderFrame() -> RenderFrameResult {
         let res = bgfx_render_frame()
         return RenderFrameResult(rawValue: res.rawValue)!
-    }
-
-    private static func toFloatPtr(_ v: UnsafeMutablePointer<Vector4f>) -> UnsafeMutablePointer<Float> {
-        return unsafeBitCast(v, to: UnsafeMutablePointer<Float>.self)
     }
 }
