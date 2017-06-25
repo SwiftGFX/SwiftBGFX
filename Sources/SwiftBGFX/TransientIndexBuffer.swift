@@ -25,12 +25,12 @@ public struct TransientIndexBuffer {
         bgfx_alloc_transient_index_buffer(&buffer, count)
     }
     
-    /// Checks for available space to allocate an instance buffer
+    /// Returns number of available indices.
     ///
-    /// - parameter count: The number of 16-bit indices to allocate
+    /// - parameter num: Number of required indices
     ///
-    /// - returns: `true` if there is space available for the given number of indices
-    public static func checkAvailableSpace(count: UInt32) -> Bool {
-        return bgfx_check_avail_transient_index_buffer(count)
+    /// - returns: number of available indices.
+    public static func getAvailableSpace(for num: UInt32) -> UInt32 {
+        return bgfx_get_avail_transient_index_buffer(num)
     }
 }

@@ -224,13 +224,12 @@ extension bgfx {
                 b0, b1, b2, b3, b4, b5, b6, b7)
     }
 
-    /// Set view into sequential mode. Draw calls will be sorted in the same order
-    /// in which submit calls were called
+    /// Set view mode. Draw calls will be sorted in the corresponding order.
     ///
+    /// - parameter viewMode: View mode
     /// - parameter viewId: View id
-    /// - parameter enabled: `true` to enable sequential mode
-    public static func setViewSequential(viewId: UInt8, enabled: Bool) {
-        bgfx_set_view_seq(viewId, enabled)
+    public static func set(viewMode: ViewMode, for viewId: UInt8) {
+        bgfx_set_view_mode(viewId, viewMode.bgfxValue)
     }
 
     /// Set view view and projection matrices, all draw primitives in this view
@@ -394,7 +393,7 @@ extension bgfx {
     ///
     /// - parameter buf: Transient index buffer
     public static func setIndexBuffer(_ buf: TransientIndexBuffer) {
-        var d = unsafeBitCast(buf.buffer, to: bgfx_transient_index_buffer.self)
+        var d = buf.buffer
         bgfx_set_transient_index_buffer(&d, 0, UInt32.max)
     }
 
@@ -404,7 +403,7 @@ extension bgfx {
     /// - parameter firstIndex: First index to render
     /// - parameter count: Number of indices to render
     public static func setIndexBuffer(_ buf: TransientIndexBuffer, firstIndex: UInt32, count: UInt32) {
-        var d = unsafeBitCast(buf.buffer, to: bgfx_transient_index_buffer.self)
+        var d = buf.buffer
         bgfx_set_transient_index_buffer(&d, firstIndex, count)
     }
 
@@ -413,7 +412,7 @@ extension bgfx {
     ///
     /// - parameter buf: Vertex buffer
     public static func setVertexBuffer(_ buf: VertexBuffer) {
-        bgfx_set_vertex_buffer(buf.handle, 0, UInt32.max)
+        bgfx_set_vertex_buffer(0, buf.handle, 0, UInt32.max)
     }
 
     /// Sets the vertex buffer to use for drawing primitives
@@ -422,14 +421,14 @@ extension bgfx {
     /// - parameter firstVertex: First vertex to render
     /// - parameter count: Number of indices to render
     public static func setVertexBuffer(_ buf: VertexBuffer, firstVertex: UInt32, count: UInt32) {
-        bgfx_set_vertex_buffer(buf.handle, firstVertex, count)
+        bgfx_set_vertex_buffer(0, buf.handle, firstVertex, count)
     }
 
     /// Sets the vertex buffer to use for drawing primitives
     ///
     /// - parameter buf: Dynamic vertex buffer
     public static func setVertexBuffer(_ buf: DynamicVertexBuffer) {
-        bgfx_set_dynamic_vertex_buffer(buf.handle, 0, UInt32.max)
+        bgfx_set_dynamic_vertex_buffer(0, buf.handle, 0, UInt32.max)
     }
 
     /// Sets the vertex buffer to use for drawing primitives
@@ -438,15 +437,15 @@ extension bgfx {
     /// - parameter firstVertex: First vertex to render
     /// - parameter count: Number of indices to render
     public static func setVertexBuffer(_ buf: DynamicVertexBuffer, firstVertex: UInt32, count: UInt32) {
-        bgfx_set_dynamic_vertex_buffer(buf.handle, firstVertex, count)
+        bgfx_set_dynamic_vertex_buffer(0, buf.handle, firstVertex, count)
     }
 
     /// Sets the vertex buffer to use for drawing primitives
     ///
     /// - parameter buf: Transient vertex buffer
     public static func setVertexBuffer(_ buf: TransientVertexBuffer) {
-        var d = unsafeBitCast(buf.buffer, to: bgfx_transient_vertex_buffer.self)
-        bgfx_set_transient_vertex_buffer(&d, 0, UInt32.max)
+        var d = buf.buffer
+        bgfx_set_transient_vertex_buffer(0, &d, 0, UInt32.max)
     }
 
     /// Sets the vertex buffer to use for drawing primitives
@@ -455,8 +454,8 @@ extension bgfx {
     /// - parameter firstVertex: First vertex to render
     /// - parameter count: Number of indices to render
     public static func setVertexBuffer(_ buf: TransientVertexBuffer, firstVertex: UInt32, count: UInt32) {
-        var d = unsafeBitCast(buf.buffer, to: bgfx_transient_vertex_buffer.self)
-        bgfx_set_transient_vertex_buffer(&d, firstVertex, count)
+        var d = buf.buffer
+        bgfx_set_transient_vertex_buffer(0, &d, firstVertex, count)
     }
 
     /// Sets instance data to use for drawing primitives
@@ -687,8 +686,8 @@ extension bgfx {
     /// Requests that a screenshot be saved. The ScreenshotTaken event will be fired to save the result
     ///
     /// - parameter filePath: The file path that will be passed to the callback event
-    public static func saveScreenShot(path: String) {
-        bgfx_save_screen_shot(path)
+    public static func requestScreenShot(of frameBuffer: FrameBuffer, path: String) {
+        bgfx_request_screen_shot(frameBuffer.handle, path)
     }
 
     /// Set rendering states used to draw primitives

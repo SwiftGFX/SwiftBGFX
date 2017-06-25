@@ -8,21 +8,6 @@ import SwiftMath
 
 public class bgfx {
     
-    /// The required API version of bgfx
-    public static let APIVersion = 28
-
-    /// Checks for available space to allocate transient index and vertex buffers
-    ///
-    /// - parameter vertexCount: The number of vertices to allocate
-    /// - parameter layout: The layout of each vertex
-    /// - parameter indexCount: The number of indices to allocate
-    ///
-    /// - returns: `true` if there is sufficient space for both vertex and index buffers
-    public static func checkAvailableTransientBufferSpace(vertexCount: UInt32, layout: VertexLayout,
-                                                          indexCount: UInt32) -> Bool {
-        return bgfx_check_avail_transient_buffers(vertexCount, &layout.handle, indexCount)
-    }
-
     /// Attempts to allocate both a transient vertex buffer and index buffer
     ///
     /// - parameter vertexCount: The number of vertices to allocate
@@ -103,34 +88,6 @@ public class bgfx {
                                     remappingTable: inout [UInt16], epsilon: Float = 0.001) -> UInt16 {
         remappingTable = [UInt16](repeating: 0, count: Int(count))
         return bgfx_weld_vertices(&remappingTable, &layout.handle, data, count, epsilon)
-    }
-
-    /// Swizzles an RGBA8 image to BGRA8
-    ///
-    /// - parameter width: The width of the image
-    /// - parameter height: The height of the image
-    /// - parameter pitch: The pitch of the image in bytes
-    /// - parameter source: The source image data
-    /// - parameter dest: The destination image data
-    ///
-    /// - remark: This API can operate in the source data in place
-    public static func imageSwizzleBGR8(width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32],
-                                        dest: inout [UInt32]) {
-        bgfx_image_swizzle_bgra8(width, height, pitch, source, &dest)
-    }
-
-    /// Downsamples an RGBA8 image with a 2x2 pixel average filter
-    ///
-    /// - parameter width: The width of the image
-    /// - parameter height: The height of the image
-    /// - parameter pitch: The pitch of the image in bytes
-    /// - parameter source: The source image data
-    /// - parameter dest: The destination image data
-    ///
-    /// - remark: This API can operate in the source data in place
-    public static func imageRGBADownsample2x2(width: UInt32, height: UInt32, pitch: UInt32, input source: [UInt32],
-                                              dest: inout [UInt32]) {
-        bgfx_image_rgba8_downsample_2x2(width, height, pitch, source, &dest)
     }
 
     /// Sets platform-specific data pointers to hook into low-level library functionality

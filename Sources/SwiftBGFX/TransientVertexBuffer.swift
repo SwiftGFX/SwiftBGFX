@@ -25,12 +25,13 @@ public struct TransientVertexBuffer {
         bgfx_alloc_transient_vertex_buffer(&buffer, count, &layout.handle)
 	}
 	
-    /// Checks for available space to allocate an instance buffer
+    /// Gets available space to allocate a vertex buffer
     ///
     /// - parameter count: The number of 16-bit indices to allocate
+    /// - parameter layout: VertexLayout to be used to calculate total space
     ///
     /// - returns: `true` if there is space available for the given number of indices
-    public static func checkAvailableSpace(count: UInt32, layout: VertexLayout) -> Bool {
-        return bgfx_check_avail_transient_vertex_buffer(count, &layout.handle)
+    public static func getAvailableSpace(count: UInt32, layout: VertexLayout) -> UInt32 {
+        return bgfx_get_avail_transient_vertex_buffer(count, &layout.handle)
     }
 }

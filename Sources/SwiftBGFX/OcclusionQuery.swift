@@ -10,7 +10,14 @@ public class OcclusionQuery {
     
     /// Gets the result of the query
     public var result: OcclusionQueryResult {
-        return OcclusionQueryResult(rawValue: bgfx_get_result(handle).rawValue)!
+        return OcclusionQueryResult(rawValue: bgfx_get_result(handle, nil).rawValue)!
+    }
+    
+    public var resultWithNumberOfPixels: (result: OcclusionQueryResult, pixelCount: Int32) {
+        var pixelCount: Int32 = 0
+        let result = bgfx_get_result(handle, &pixelCount).rawValue
+        
+        return (result: OcclusionQueryResult(rawValue: result)!, pixelCount: pixelCount)
     }
     
     /// Creates a new occlusion query

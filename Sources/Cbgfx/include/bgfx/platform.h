@@ -1,363 +1,205 @@
 /*
- * Copyright 2010-2016 Branimir Karadzic. All rights reserved.
- * License: https://github.com/bkaradzic/bx#license-bsd-2-clause
+ * Copyright 2011-2017 Branimir Karadzic. All rights reserved.
+ * License: https://github.com/bkaradzic/bgfx/blob/master/LICENSE
+ *
+ * vim: set tabstop=4 expandtab:
  */
 
-#ifndef BX_PLATFORM_H_HEADER_GUARD
-#define BX_PLATFORM_H_HEADER_GUARD
+#ifndef BGFX_PLATFORM_C99_H_HEADER_GUARD
+#define BGFX_PLATFORM_C99_H_HEADER_GUARD
 
-// Architecture
-#define BX_ARCH_32BIT 0
-#define BX_ARCH_64BIT 0
+// NOTICE:
+// This header file contains platform specific interfaces. It is only
+// necessary to use this header in conjunction with creating windows.
 
-// Compiler
-#define BX_COMPILER_CLANG           0
-#define BX_COMPILER_CLANG_ANALYZER  0
-#define BX_COMPILER_GCC             0
-#define BX_COMPILER_MSVC            0
+#include <bx/platform.h>
+#include "bgfx.h"
 
-// Endianess
-#define BX_CPU_ENDIAN_BIG    0
-#define BX_CPU_ENDIAN_LITTLE 0
+typedef enum bgfx_render_frame
+{
+    BGFX_RENDER_FRAME_NO_CONTEXT,
+    BGFX_RENDER_FRAME_RENDER,
+    BGFX_RENDER_FRAME_TIMEOUT,
+    BGFX_RENDER_FRAME_EXITING,
 
-// CPU
-#define BX_CPU_ARM   0
-#define BX_CPU_JIT   0
-#define BX_CPU_MIPS  0
-#define BX_CPU_PPC   0
-#define BX_CPU_RISCV 0
-#define BX_CPU_X86   0
+    BGFX_RENDER_FRAME_COUNT
 
-// C Runtime
-#define BX_CRT_MSVC   0
-#define BX_CRT_GLIBC  0
-#define BX_CRT_NEWLIB 0
-#define BX_CRT_MINGW  0
-#define BX_CRT_MUSL   0
+} bgfx_render_frame_t;
 
-// Platform
-#define BX_PLATFORM_ANDROID    0
-#define BX_PLATFORM_EMSCRIPTEN 0
-#define BX_PLATFORM_BSD        0
-#define BX_PLATFORM_HURD       0
-#define BX_PLATFORM_IOS        0
-#define BX_PLATFORM_LINUX      0
-#define BX_PLATFORM_NACL       0
-#define BX_PLATFORM_OSX        0
-#define BX_PLATFORM_PS4        0
-#define BX_PLATFORM_QNX        0
-#define BX_PLATFORM_RPI        0
-#define BX_PLATFORM_STEAMLINK  0
-#define BX_PLATFORM_WINDOWS    0
-#define BX_PLATFORM_WINRT      0
-#define BX_PLATFORM_XBOX360    0
-#define BX_PLATFORM_XBOXONE    0
+/**
+ * WARNING: This call should be only used on platforms that don't
+ * allow creating separate rendering thread. If it is called before
+ * to bgfx_init, render thread won't be created by bgfx_init call.
+ */
+BGFX_C_API bgfx_render_frame_t bgfx_render_frame();
 
-// http://sourceforge.net/apps/mediawiki/predef/index.php?title=Compilers
-#if defined(__clang__)
-// clang defines __GNUC__ or _MSC_VER
-#	undef  BX_COMPILER_CLANG
-#	define BX_COMPILER_CLANG (__clang_major__ * 10000 + __clang_minor__ * 100 + __clang_patchlevel__)
-#	if defined(__clang_analyzer__)
-#		undef  BX_COMPILER_CLANG_ANALYZER
-#		define BX_COMPILER_CLANG_ANALYZER 1
-#	endif // defined(__clang_analyzer__)
-#	if defined(_MSC_VER)
-#		undef  BX_CRT_MSVC
-#		define BX_CRT_MSVC 1
-#	elif defined(__GLIBC__)
-#		undef  BX_CRT_GLIBC
-#		define BX_CRT_GLIBC (__GLIBC__ * 10000 + __GLIBC_MINOR__ * 100)
-#	endif // defined(__GLIBC__)
-#elif defined(_MSC_VER)
-#	undef  BX_COMPILER_MSVC
-#	define BX_COMPILER_MSVC _MSC_VER
-#	undef  BX_CRT_MSVC
-#	define BX_CRT_MSVC 1
-#elif defined(__GNUC__)
-#	undef  BX_COMPILER_GCC
-#	define BX_COMPILER_GCC (__GNUC__ * 10000 + __GNUC_MINOR__ * 100 + __GNUC_PATCHLEVEL__)
-#	if defined(__GLIBC__)
-#		undef  BX_CRT_GLIBC
-#		define BX_CRT_GLIBC (__GLIBC__ * 10000 + __GLIBC_MINOR__ * 100)
-#	elif defined(__MINGW32__) || defined(__MINGW64__)
-#		undef  BX_CRT_MINGW
-#		define BX_CRT_MINGW 1
-#	endif //
-#else
-#	error "BX_COMPILER_* is not defined!"
-#endif //
+typedef struct bgfx_platform_data
+{
+    void* ndt;
+    void* nwh;
+    void* context;
+    void* backBuffer;
+    void* backBufferDS;
+    void* session;
 
-// http://sourceforge.net/apps/mediawiki/predef/index.php?title=Architectures
-#if defined(__arm__)     || \
-	defined(__aarch64__) || \
-	defined(_M_ARM)
-#	undef  BX_CPU_ARM
-#	define BX_CPU_ARM 1
-#	define BX_CACHE_LINE_SIZE 64
-#elif defined(__MIPSEL__)     || \
-	  defined(__mips_isa_rev) || \
-	  defined(__mips64)
-#	undef  BX_CPU_MIPS
-#	define BX_CPU_MIPS 1
-#	define BX_CACHE_LINE_SIZE 64
-#elif defined(_M_PPC)        || \
-	  defined(__powerpc__)   || \
-	  defined(__powerpc64__)
-#	undef  BX_CPU_PPC
-#	define BX_CPU_PPC 1
-#	define BX_CACHE_LINE_SIZE 128
-#elif defined(__riscv)   || \
-	  defined(__riscv__) || \
-	  defined(RISCVEL)
-#	undef  BX_CPU_RISCV
-#	define BX_CPU_RISCV 1
-#	define BX_CACHE_LINE_SIZE 64
-#elif defined(_M_IX86)    || \
-	  defined(_M_X64)     || \
-	  defined(__i386__)   || \
-	  defined(__x86_64__)
-#	undef  BX_CPU_X86
-#	define BX_CPU_X86 1
-#	define BX_CACHE_LINE_SIZE 64
-#else // PNaCl doesn't have CPU defined.
-#	undef  BX_CPU_JIT
-#	define BX_CPU_JIT 1
-#	define BX_CACHE_LINE_SIZE 64
-#endif //
+} bgfx_platform_data_t;
 
-#if defined(__x86_64__)    || \
-	defined(_M_X64)        || \
-	defined(__aarch64__)   || \
-	defined(__64BIT__)     || \
-	defined(__mips64)      || \
-	defined(__powerpc64__) || \
-	defined(__ppc64__)     || \
-	defined(__LP64__)
-#	undef  BX_ARCH_64BIT
-#	define BX_ARCH_64BIT 64
-#else
-#	undef  BX_ARCH_32BIT
-#	define BX_ARCH_32BIT 32
-#endif //
+/**/
+BGFX_C_API void bgfx_set_platform_data(const bgfx_platform_data_t* _data);
 
-#if BX_CPU_PPC
-#	undef  BX_CPU_ENDIAN_BIG
-#	define BX_CPU_ENDIAN_BIG 1
-#else
-#	undef  BX_CPU_ENDIAN_LITTLE
-#	define BX_CPU_ENDIAN_LITTLE 1
-#endif // BX_PLATFORM_
+typedef struct bgfx_internal_data
+{
+    const struct bgfx_caps* caps;
+    void* context;
 
-// http://sourceforge.net/apps/mediawiki/predef/index.php?title=Operating_Systems
-#if defined(_XBOX_VER)
-#	undef  BX_PLATFORM_XBOX360
-#	define BX_PLATFORM_XBOX360 1
-#elif defined(_DURANGO) || defined(_XBOX_ONE)
-#	undef  BX_PLATFORM_XBOXONE
-#	define BX_PLATFORM_XBOXONE 1
-#elif defined(_WIN32) || defined(_WIN64)
-// http://msdn.microsoft.com/en-us/library/6sehtctf.aspx
-#	ifndef NOMINMAX
-#		define NOMINMAX
-#	endif // NOMINMAX
-//  If _USING_V110_SDK71_ is defined it means we are using the v110_xp or v120_xp toolset.
-#	if defined(_MSC_VER) && (_MSC_VER >= 1700) && (!_USING_V110_SDK71_)
-#		include <winapifamily.h>
-#	endif // defined(_MSC_VER) && (_MSC_VER >= 1700) && (!_USING_V110_SDK71_)
-#	if !defined(WINAPI_FAMILY) || (WINAPI_FAMILY == WINAPI_FAMILY_DESKTOP_APP)
-#		undef  BX_PLATFORM_WINDOWS
-#		if !defined(WINVER) && !defined(_WIN32_WINNT)
-#			if BX_ARCH_64BIT
-//				When building 64-bit target Win7 and above.
-#				define WINVER 0x0601
-#				define _WIN32_WINNT 0x0601
-#			else
-//				Windows Server 2003 with SP1, Windows XP with SP2 and above
-#				define WINVER 0x0502
-#				define _WIN32_WINNT 0x0502
-#			endif // BX_ARCH_64BIT
-#		endif // !defined(WINVER) && !defined(_WIN32_WINNT)
-#		define BX_PLATFORM_WINDOWS _WIN32_WINNT
-#	else
-#		undef  BX_PLATFORM_WINRT
-#		define BX_PLATFORM_WINRT 1
-#	endif
-#elif defined(__ANDROID__)
-// Android compiler defines __linux__
-#	include <android/api-level.h>
-#	undef  BX_PLATFORM_ANDROID
-#	define BX_PLATFORM_ANDROID __ANDROID_API__
-#elif defined(__native_client__)
-// NaCl compiler defines __linux__
-#	include <ppapi/c/pp_macros.h>
-#	undef  BX_PLATFORM_NACL
-#	define BX_PLATFORM_NACL PPAPI_RELEASE
-#elif defined(__STEAMLINK__)
-// SteamLink compiler defines __linux__
-#	undef  BX_PLATFORM_STEAMLINK
-#	define BX_PLATFORM_STEAMLINK 1
-#elif defined(__VCCOREVER__)
-// RaspberryPi compiler defines __linux__
-#	undef  BX_PLATFORM_RPI
-#	define BX_PLATFORM_RPI 1
-#elif  defined(__linux__) \
-	|| defined(__riscv__)
-#	undef  BX_PLATFORM_LINUX
-#	define BX_PLATFORM_LINUX 1
-#elif  defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) \
-	|| defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__)
-#	undef  BX_PLATFORM_IOS
-#	define BX_PLATFORM_IOS 1
-#elif defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__)
-#	undef  BX_PLATFORM_OSX
-#	if defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__)
-#		define BX_PLATFORM_OSX __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
-#	else
-#		define BX_PLATFORM_OSX 1
-#	endif // defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__)
-#elif defined(__EMSCRIPTEN__)
-#	undef  BX_PLATFORM_EMSCRIPTEN
-#	define BX_PLATFORM_EMSCRIPTEN 1
-#elif defined(__ORBIS__)
-#	undef  BX_PLATFORM_PS4
-#	define BX_PLATFORM_PS4 1
-#elif defined(__QNX__)
-#	undef  BX_PLATFORM_QNX
-#	define BX_PLATFORM_QNX 1
-#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__DragonFly__)
-#	undef  BX_PLATFORM_BSD
-#	define BX_PLATFORM_BSD 1
-#elif defined(__GNU__)
-#	undef  BX_PLATFORM_HURD
-#	define BX_PLATFORM_HURD 1
-#else
-#	error "BX_PLATFORM_* is not defined!"
-#endif //
+} bgfx_internal_data_t;
 
-#define BX_PLATFORM_POSIX (0 \
-						|| BX_PLATFORM_ANDROID \
-						|| BX_PLATFORM_EMSCRIPTEN \
-						|| BX_PLATFORM_BSD \
-						|| BX_PLATFORM_HURD \
-						|| BX_PLATFORM_IOS \
-						|| BX_PLATFORM_LINUX \
-						|| BX_PLATFORM_NACL \
-						|| BX_PLATFORM_OSX \
-						|| BX_PLATFORM_QNX \
-						|| BX_PLATFORM_STEAMLINK \
-						|| BX_PLATFORM_PS4 \
-						|| BX_PLATFORM_RPI \
-						)
+/**/
+BGFX_C_API const bgfx_internal_data_t* bgfx_get_internal_data();
 
-#ifndef  BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS
-#	define BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS 0
-#endif // BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS
+/**/
+BGFX_C_API uintptr_t bgfx_override_internal_texture_ptr(bgfx_texture_handle_t _handle, uintptr_t _ptr);
 
-#if BX_COMPILER_GCC
-#	define BX_COMPILER_NAME "GCC " \
-				BX_STRINGIZE(__GNUC__) "." \
-				BX_STRINGIZE(__GNUC_MINOR__) "." \
-				BX_STRINGIZE(__GNUC_PATCHLEVEL__)
-#elif BX_COMPILER_CLANG
-#	define BX_COMPILER_NAME "Clang " \
-				BX_STRINGIZE(__clang_major__) "." \
-				BX_STRINGIZE(__clang_minor__) "." \
-				BX_STRINGIZE(__clang_patchlevel__)
-#elif BX_COMPILER_MSVC
-#	if BX_COMPILER_MSVC >= 1900 // Visual Studio 2015
-#		define BX_COMPILER_NAME "MSVC 14.0"
-#	elif BX_COMPILER_MSVC >= 1800 // Visual Studio 2013
-#		define BX_COMPILER_NAME "MSVC 12.0"
-#	elif BX_COMPILER_MSVC >= 1700 // Visual Studio 2012
-#		define BX_COMPILER_NAME "MSVC 11.0"
-#	elif BX_COMPILER_MSVC >= 1600 // Visual Studio 2010
-#		define BX_COMPILER_NAME "MSVC 10.0"
-#	elif BX_COMPILER_MSVC >= 1500 // Visual Studio 2008
-#		define BX_COMPILER_NAME "MSVC 9.0"
-#	else
-#		define BX_COMPILER_NAME "MSVC"
-#	endif //
-#endif // BX_COMPILER_
+/**/
+BGFX_C_API uintptr_t bgfx_override_internal_texture(bgfx_texture_handle_t _handle, uint16_t _width, uint16_t _height, uint8_t _numMips, bgfx_texture_format_t _format, uint32_t _flags);
 
-#if BX_PLATFORM_ANDROID
-#	define BX_PLATFORM_NAME "Android " \
-				BX_STRINGIZE(BX_PLATFORM_ANDROID)
-#elif BX_PLATFORM_EMSCRIPTEN
-#	define BX_PLATFORM_NAME "asm.js " \
-				BX_STRINGIZE(__EMSCRIPTEN_major__) "." \
-				BX_STRINGIZE(__EMSCRIPTEN_minor__) "." \
-				BX_STRINGIZE(__EMSCRIPTEN_tiny__)
-#elif BX_PLATFORM_BSD
-#	define BX_PLATFORM_NAME "BSD"
-#elif BX_PLATFORM_HURD
-#	define BX_PLATFORM_NAME "Hurd"
-#elif BX_PLATFORM_IOS
-#	define BX_PLATFORM_NAME "iOS"
-#elif BX_PLATFORM_LINUX
-#	define BX_PLATFORM_NAME "Linux"
-#elif BX_PLATFORM_NACL
-#	define BX_PLATFORM_NAME "NaCl " \
-				BX_STRINGIZE(BX_PLATFORM_NACL)
-#elif BX_PLATFORM_OSX
-#	define BX_PLATFORM_NAME "OSX"
-#elif BX_PLATFORM_PS4
-#	define BX_PLATFORM_NAME "PlayStation 4"
-#elif BX_PLATFORM_QNX
-#	define BX_PLATFORM_NAME "QNX"
-#elif BX_PLATFORM_RPI
-#	define BX_PLATFORM_NAME "RaspberryPi"
-#elif BX_PLATFORM_STEAMLINK
-#	define BX_PLATFORM_NAME "SteamLink"
-#elif BX_PLATFORM_WINDOWS
-#	define BX_PLATFORM_NAME "Windows"
-#elif BX_PLATFORM_WINRT
-#	define BX_PLATFORM_NAME "WinRT"
-#elif BX_PLATFORM_XBOX360
-#	define BX_PLATFORM_NAME "Xbox 360"
-#elif BX_PLATFORM_XBOXONE
-#	define BX_PLATFORM_NAME "Xbox One"
-#endif // BX_PLATFORM_
+/**/
+typedef struct bgfx_interface_vtbl
+{
+    bgfx_render_frame_t (*render_frame)();
+    void (*set_platform_data)(const bgfx_platform_data_t* _data);
+    const bgfx_internal_data_t* (*get_internal_data)();
+    uintptr_t (*override_internal_texture_ptr)(bgfx_texture_handle_t _handle, uintptr_t _ptr);
+    uintptr_t (*override_internal_texture)(bgfx_texture_handle_t _handle, uint16_t _width, uint16_t _height, uint8_t _numMips, bgfx_texture_format_t _format, uint32_t _flags);
+    void (*vertex_decl_begin)(bgfx_vertex_decl_t* _decl, bgfx_renderer_type_t _renderer);
+    void (*vertex_decl_add)(bgfx_vertex_decl_t* _decl, bgfx_attrib_t _attrib, uint8_t _num, bgfx_attrib_type_t _type, bool _normalized, bool _asInt);
+    void (*vertex_decl_skip)(bgfx_vertex_decl_t* _decl, uint8_t _num);
+    void (*vertex_decl_end)(bgfx_vertex_decl_t* _decl);
+    void (*vertex_pack)(const float _input[4], bool _inputNormalized, bgfx_attrib_t _attr, const bgfx_vertex_decl_t* _decl, void* _data, uint32_t _index);
+    void (*vertex_unpack)(float _output[4], bgfx_attrib_t _attr, const bgfx_vertex_decl_t* _decl, const void* _data, uint32_t _index);
+    void (*vertex_convert)(const bgfx_vertex_decl_t* _destDecl, void* _destData, const bgfx_vertex_decl_t* _srcDecl, const void* _srcData, uint32_t _num);
+    uint16_t (*weld_vertices)(uint16_t* _output, const bgfx_vertex_decl_t* _decl, const void* _data, uint16_t _num, float _epsilon);
+    uint32_t (*topology_convert)(bgfx_topology_convert_t _conversion, void* _dst, uint32_t _dstSize, const void* _indices, uint32_t _numIndices, bool _index32);
+    void (*topology_sort_tri_list)(bgfx_topology_sort_t _sort, void* _dst, uint32_t _dstSize, const float _dir[3], const float _pos[3], const void* _vertices, uint32_t _stride, const void* _indices, uint32_t _numIndices, bool _index32);
+    uint8_t (*get_supported_renderers)(uint8_t _max, bgfx_renderer_type_t* _enum);
+    const char* (*get_renderer_name)(bgfx_renderer_type_t _type);
+    bool (*init)(bgfx_renderer_type_t _type, uint16_t _vendorId, uint16_t _deviceId, bgfx_callback_interface_t* _callback, bgfx_allocator_interface_t* _allocator);
+    void (*shutdown)();
+    void (*reset)(uint32_t _width, uint32_t _height, uint32_t _flags);
+    uint32_t (*frame)(bool _capture);
+    bgfx_renderer_type_t (*get_renderer_type)();
+    const bgfx_caps_t* (*get_caps)();
+    const bgfx_hmd_t* (*get_hmd)();
+    const bgfx_stats_t* (*get_stats)();
+    const bgfx_memory_t* (*alloc)(uint32_t _size);
+    const bgfx_memory_t* (*copy)(const void* _data, uint32_t _size);
+    const bgfx_memory_t* (*make_ref)(const void* _data, uint32_t _size);
+    const bgfx_memory_t* (*make_ref_release)(const void* _data, uint32_t _size, bgfx_release_fn_t _releaseFn, void* _userData);
+    void (*set_debug)(uint32_t _debug);
+    void (*dbg_text_clear)(uint8_t _attr, bool _small);
+    void (*dbg_text_printf)(uint16_t _x, uint16_t _y, uint8_t _attr, const char* _format, ...);
+    void (*dbg_text_vprintf)(uint16_t _x, uint16_t _y, uint8_t _attr, const char* _format, va_list _argList);
+    void (*dbg_text_image)(uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height, const void* _data, uint16_t _pitch);
+    bgfx_index_buffer_handle_t (*create_index_buffer)(const bgfx_memory_t* _mem, uint16_t _flags);
+    void (*destroy_index_buffer)(bgfx_index_buffer_handle_t _handle);
+    bgfx_vertex_buffer_handle_t (*create_vertex_buffer)(const bgfx_memory_t* _mem, const bgfx_vertex_decl_t* _decl, uint16_t _flags);
+    void (*destroy_vertex_buffer)(bgfx_vertex_buffer_handle_t _handle);
+    bgfx_dynamic_index_buffer_handle_t (*create_dynamic_index_buffer)(uint32_t _num, uint16_t _flags);
+    bgfx_dynamic_index_buffer_handle_t (*create_dynamic_index_buffer_mem)(const bgfx_memory_t* _mem, uint16_t _flags);
+    void (*update_dynamic_index_buffer)(bgfx_dynamic_index_buffer_handle_t _handle, uint32_t _startIndex, const bgfx_memory_t* _mem);
+    void (*destroy_dynamic_index_buffer)(bgfx_dynamic_index_buffer_handle_t _handle);
+    bgfx_dynamic_vertex_buffer_handle_t (*create_dynamic_vertex_buffer)(uint32_t _num, const bgfx_vertex_decl_t* _decl, uint16_t _flags);
+    bgfx_dynamic_vertex_buffer_handle_t (*create_dynamic_vertex_buffer_mem)(const bgfx_memory_t* _mem, const bgfx_vertex_decl_t* _decl, uint16_t _flags);
+    void (*update_dynamic_vertex_buffer)(bgfx_dynamic_vertex_buffer_handle_t _handle, uint32_t _startVertex, const bgfx_memory_t* _mem);
+    void (*destroy_dynamic_vertex_buffer)(bgfx_dynamic_vertex_buffer_handle_t _handle);
+    uint32_t (*get_avail_transient_index_buffer)(uint32_t _num);
+    uint32_t (*get_avail_transient_vertex_buffer)(uint32_t _num, const bgfx_vertex_decl_t* _decl);
+    uint32_t (*get_avail_instance_data_buffer)(uint32_t _num, uint16_t _stride);
+    void (*alloc_transient_index_buffer)(bgfx_transient_index_buffer_t* _tib, uint32_t _num);
+    void (*alloc_transient_vertex_buffer)(bgfx_transient_vertex_buffer_t* _tvb, uint32_t _num, const bgfx_vertex_decl_t* _decl);
+    bool (*alloc_transient_buffers)(bgfx_transient_vertex_buffer_t* _tvb, const bgfx_vertex_decl_t* _decl, uint32_t _numVertices, bgfx_transient_index_buffer_t* _tib, uint32_t _numIndices);
+    const bgfx_instance_data_buffer_t* (*alloc_instance_data_buffer)(uint32_t _num, uint16_t _stride);
+    bgfx_indirect_buffer_handle_t (*create_indirect_buffer)(uint32_t _num);
+    void (*destroy_indirect_buffer)(bgfx_indirect_buffer_handle_t _handle);
+    bgfx_shader_handle_t (*create_shader)(const bgfx_memory_t* _mem);
+    uint16_t (*get_shader_uniforms)(bgfx_shader_handle_t _handle, bgfx_uniform_handle_t* _uniforms, uint16_t _max);
+    void (*destroy_shader)(bgfx_shader_handle_t _handle);
+    bgfx_program_handle_t (*create_program)(bgfx_shader_handle_t _vsh, bgfx_shader_handle_t _fsh, bool _destroyShaders);
+    bgfx_program_handle_t (*create_compute_program)(bgfx_shader_handle_t _csh, bool _destroyShaders);
+    void (*destroy_program)(bgfx_program_handle_t _handle);
+    bool (*is_texture_valid)(uint16_t _depth, bool _cubeMap, uint16_t _numLayers, bgfx_texture_format_t _format, uint32_t _flags);
+    void (*calc_texture_size)(bgfx_texture_info_t* _info, uint16_t _width, uint16_t _height, uint16_t _depth, bool _cubeMap, bool _hasMips, uint16_t _numLayers, bgfx_texture_format_t _format);
+    bgfx_texture_handle_t (*create_texture)(const bgfx_memory_t* _mem, uint32_t _flags, uint8_t _skip, bgfx_texture_info_t* _info);
+    bgfx_texture_handle_t (*create_texture_2d)(uint16_t _width, uint16_t _height, bool _hasMips, uint16_t _numLayers, bgfx_texture_format_t _format, uint32_t _flags, const bgfx_memory_t* _mem);
+    bgfx_texture_handle_t (*create_texture_2d_scaled)(bgfx_backbuffer_ratio_t _ratio, bool _hasMips, uint16_t _numLayers, bgfx_texture_format_t _format, uint32_t _flags);
+    bgfx_texture_handle_t (*create_texture_3d)(uint16_t _width, uint16_t _height, uint16_t _depth, bool _hasMips, bgfx_texture_format_t _format, uint32_t _flags, const bgfx_memory_t* _mem);
+    bgfx_texture_handle_t (*create_texture_cube)(uint16_t _size, bool _hasMips, uint16_t _numLayers, bgfx_texture_format_t _format, uint32_t _flags, const bgfx_memory_t* _mem);
+    void (*update_texture_2d)(bgfx_texture_handle_t _handle, uint16_t _layer, uint8_t _mip, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height, const bgfx_memory_t* _mem, uint16_t _pitch);
+    void (*update_texture_3d)(bgfx_texture_handle_t _handle, uint8_t _mip, uint16_t _x, uint16_t _y, uint16_t _z, uint16_t _width, uint16_t _height, uint16_t _depth, const bgfx_memory_t* _mem);
+    void (*update_texture_cube)(bgfx_texture_handle_t _handle, uint16_t _layer, uint8_t _side, uint8_t _mip, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height, const bgfx_memory_t* _mem, uint16_t _pitch);
+    uint32_t (*read_texture)(bgfx_texture_handle_t _handle, void* _data, uint8_t _mip);
+    void (*destroy_texture)(bgfx_texture_handle_t _handle);
+    bgfx_frame_buffer_handle_t (*create_frame_buffer)(uint16_t _width, uint16_t _height, bgfx_texture_format_t _format, uint32_t _textureFlags);
+    bgfx_frame_buffer_handle_t (*create_frame_buffer_scaled)(bgfx_backbuffer_ratio_t _ratio, bgfx_texture_format_t _format, uint32_t _textureFlags);
+    bgfx_frame_buffer_handle_t (*create_frame_buffer_from_attachment)(uint8_t _num, const bgfx_attachment_t* _attachment, bool _destroyTextures);
+    bgfx_frame_buffer_handle_t (*create_frame_buffer_from_nwh)(void* _nwh, uint16_t _width, uint16_t _height, bgfx_texture_format_t _depthFormat);
+    bgfx_texture_handle_t (*get_texture)(bgfx_frame_buffer_handle_t _handle, uint8_t _attachment);
+    void (*destroy_frame_buffer)(bgfx_frame_buffer_handle_t _handle);
+    bgfx_uniform_handle_t (*create_uniform)(const char* _name, bgfx_uniform_type_t _type, uint16_t _num);
+    void (*get_uniform_info)(bgfx_uniform_handle_t _handle, bgfx_uniform_info_t* _info);
+    void (*destroy_uniform)(bgfx_uniform_handle_t _handle);
+    bgfx_occlusion_query_handle_t (*create_occlusion_query)();
+    bgfx_occlusion_query_result_t (*get_result)(bgfx_occlusion_query_handle_t _handle, int32_t* _result);
+    void (*destroy_occlusion_query)(bgfx_occlusion_query_handle_t _handle);
+    void (*set_palette_color)(uint8_t _index, const float _rgba[4]);
+    void (*set_view_name)(uint8_t _id, const char* _name);
+    void (*set_view_rect)(uint8_t _id, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height);
+    void (*set_view_scissor)(uint8_t _id, uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height);
+    void (*set_view_clear)(uint8_t _id, uint16_t _flags, uint32_t _rgba, float _depth, uint8_t _stencil);
+    void (*set_view_clear_mrt)(uint8_t _id, uint16_t _flags, float _depth, uint8_t _stencil, uint8_t _0, uint8_t _1, uint8_t _2, uint8_t _3, uint8_t _4, uint8_t _5, uint8_t _6, uint8_t _7);
+    void (*set_view_mode)(uint8_t _id, bgfx_view_mode_t _mode);
+    void (*set_view_frame_buffer)(uint8_t _id, bgfx_frame_buffer_handle_t _handle);
+    void (*set_view_transform)(uint8_t _id, const void* _view, const void* _proj);
+    void (*set_view_transform_stereo)(uint8_t _id, const void* _view, const void* _projL, uint8_t _flags, const void* _projR);
+    void (*set_view_order)(uint8_t _id, uint8_t _num, const void* _order);
+    void (*set_marker)(const char* _marker);
+    void (*set_state)(uint64_t _state, uint32_t _rgba);
+    void (*set_condition)(bgfx_occlusion_query_handle_t _handle, bool _visible);
+    void (*set_stencil)(uint32_t _fstencil, uint32_t _bstencil);
+    uint16_t (*set_scissor)(uint16_t _x, uint16_t _y, uint16_t _width, uint16_t _height);
+    void (*set_scissor_cached)(uint16_t _cache);
+    uint32_t (*set_transform)(const void* _mtx, uint16_t _num);
+    uint32_t (*alloc_transform)(bgfx_transform_t* _transform, uint16_t _num);
+    void (*set_transform_cached)(uint32_t _cache, uint16_t _num);
+    void (*set_uniform)(bgfx_uniform_handle_t _handle, const void* _value, uint16_t _num);
+    void (*set_index_buffer)(bgfx_index_buffer_handle_t _handle, uint32_t _firstIndex, uint32_t _numIndices);
+    void (*set_dynamic_index_buffer)(bgfx_dynamic_index_buffer_handle_t _handle, uint32_t _firstIndex, uint32_t _numIndices);
+    void (*set_transient_index_buffer)(const bgfx_transient_index_buffer_t* _tib, uint32_t _firstIndex, uint32_t _numIndices);
+    void (*set_vertex_buffer)(uint8_t _stream, bgfx_vertex_buffer_handle_t _handle, uint32_t _startVertex, uint32_t _numVertices);
+    void (*set_dynamic_vertex_buffer)(uint8_t _stream, bgfx_dynamic_vertex_buffer_handle_t _handle, uint32_t _startVertex, uint32_t _numVertices);
+    void (*set_transient_vertex_buffer)(uint8_t _stream, const bgfx_transient_vertex_buffer_t* _tvb, uint32_t _startVertex, uint32_t _numVertices);
+    void (*set_instance_data_buffer)(const bgfx_instance_data_buffer_t* _idb, uint32_t _num);
+    void (*set_instance_data_from_vertex_buffer)(bgfx_vertex_buffer_handle_t _handle, uint32_t _startVertex, uint32_t _num);
+    void (*set_instance_data_from_dynamic_vertex_buffer)(bgfx_dynamic_vertex_buffer_handle_t _handle, uint32_t _startVertex, uint32_t _num);
+    void (*set_texture)(uint8_t _stage, bgfx_uniform_handle_t _sampler, bgfx_texture_handle_t _handle, uint32_t _flags);
+    uint32_t (*touch)(uint8_t _id);
+    uint32_t (*submit)(uint8_t _id, bgfx_program_handle_t _handle, int32_t _depth, bool _preserveState);
+    uint32_t (*submit_occlusion_query)(uint8_t _id, bgfx_program_handle_t _program, bgfx_occlusion_query_handle_t _occlusionQuery, int32_t _depth, bool _preserveState);
+    uint32_t (*submit_indirect)(uint8_t _id, bgfx_program_handle_t _handle, bgfx_indirect_buffer_handle_t _indirectHandle, uint16_t _start, uint16_t _num, int32_t _depth, bool _preserveState);
+    void (*set_image)(uint8_t _stage, bgfx_uniform_handle_t _sampler, bgfx_texture_handle_t _handle, uint8_t _mip, bgfx_access_t _access, bgfx_texture_format_t _format);
+    void (*set_compute_index_buffer)(uint8_t _stage, bgfx_index_buffer_handle_t _handle, bgfx_access_t _access);
+    void (*set_compute_vertex_buffer)(uint8_t _stage, bgfx_vertex_buffer_handle_t _handle, bgfx_access_t _access);
+    void (*set_compute_dynamic_index_buffer)(uint8_t _stage, bgfx_dynamic_index_buffer_handle_t _handle, bgfx_access_t _access);
+    void (*set_compute_dynamic_vertex_buffer)(uint8_t _stage, bgfx_dynamic_vertex_buffer_handle_t _handle, bgfx_access_t _access);
+    void (*set_compute_indirect_buffer)(uint8_t _stage, bgfx_indirect_buffer_handle_t _handle, bgfx_access_t _access);
+    uint32_t (*dispatch)(uint8_t _id, bgfx_program_handle_t _handle, uint16_t _numX, uint16_t _numY, uint16_t _numZ, uint8_t _flags);
+    uint32_t (*dispatch_indirect)(uint8_t _id, bgfx_program_handle_t _handle, bgfx_indirect_buffer_handle_t _indirectHandle, uint16_t _start, uint16_t _num, uint8_t _flags);
+    void (*discard)();
+    void (*blit)(uint8_t _id, bgfx_texture_handle_t _dst, uint8_t _dstMip, uint16_t _dstX, uint16_t _dstY, uint16_t _dstZ, bgfx_texture_handle_t _src, uint8_t _srcMip, uint16_t _srcX, uint16_t _srcY, uint16_t _srcZ, uint16_t _width, uint16_t _height, uint16_t _depth);
+    void (*request_screen_shot)(bgfx_frame_buffer_handle_t _handle, const char* _filePath);
 
-#if BX_CPU_ARM
-#	define BX_CPU_NAME "ARM"
-#elif BX_CPU_JIT
-#	define BX_CPU_NAME "JIT-VM"
-#elif BX_CPU_MIPS
-#	define BX_CPU_NAME "MIPS"
-#elif BX_CPU_PPC
-#	define BX_CPU_NAME "PowerPC"
-#elif BX_CPU_RISCV
-#	define BX_CPU_NAME "RISC-V"
-#elif BX_CPU_X86
-#	define BX_CPU_NAME "x86"
-#endif // BX_CPU_
+} bgfx_interface_vtbl_t;
 
-#if BX_ARCH_32BIT
-#	define BX_ARCH_NAME "32-bit"
-#elif BX_ARCH_64BIT
-#	define BX_ARCH_NAME "64-bit"
-#endif // BX_ARCH_
+typedef bgfx_interface_vtbl_t* (*PFN_BGFX_GET_INTERFACE)(uint32_t _version);
 
-#if BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS && BX_COMPILER_MSVC
-#	pragma warning(error:4062) // ENABLE warning C4062: enumerator'...' in switch of enum '...' is not handled
-#	pragma warning(error:4100) // ENABLE warning C4100: '' : unreferenced formal parameter
-#	pragma warning(error:4189) // ENABLE warning C4189: '' : local variable is initialized but not referenced
-#	pragma warning(error:4121) // ENABLE warning C4121: 'symbol' : alignment of a member was sensitive to packing
-//#	pragma warning(error:4127) // ENABLE warning C4127: conditional expression is constant
-#	pragma warning(error:4130) // ENABLE warning C4130: 'operator' : logical operation on address of string constant
-#	pragma warning(error:4239) // ENABLE warning C4239: nonstandard extension used : 'argument' : conversion from '*' to '* &' A non-const reference may only be bound to an lvalue
-//#	pragma warning(error:4244) // ENABLE warning C4244: 'argument' : conversion from 'type1' to 'type2', possible loss of data
-#	pragma warning(error:4245) // ENABLE warning C4245: 'conversion' : conversion from 'type1' to 'type2', signed/unsigned mismatch
-#	pragma warning(error:4263) // ENABLE warning C4263: 'function' : member function does not override any base class virtual member function
-#	pragma warning(error:4265) // ENABLE warning C4265: class has virtual functions, but destructor is not virtual
-#	pragma warning(error:4431) // ENABLE warning C4431: missing type specifier - int assumed. Note: C no longer supports default-int
-#	pragma warning(error:4505) // ENABLE warning C4505: '' : unreferenced local function has been removed
-#	pragma warning(error:4545) // ENABLE warning C4545: expression before comma evaluates to a function which is missing an argument list
-#	pragma warning(error:4549) // ENABLE warning C4549: 'operator' : operator before comma has no effect; did you intend 'operator'?
-#	pragma warning(error:4701) // ENABLE warning C4701: potentially uninitialized local variable 'name' used
-#	pragma warning(error:4706) // ENABLE warning C4706: assignment within conditional expression
-#	pragma warning(error:4800) // ENABLE warning C4800: '': forcing value to bool 'true' or 'false' (performance warning)
-#endif // BX_CONFIG_ENABLE_MSVC_LEVEL4_WARNINGS && BX_COMPILER_MSVC
-
-#endif // BX_PLATFORM_H_HEADER_GUARD
+#endif // BGFX_PLATFORM_C99_H_HEADER_GUARD
