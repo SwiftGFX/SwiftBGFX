@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Paper",
+    name: "SwiftBGFX",
     products: [
         .library(name: "SwiftBGFX", type: .static, targets: ["SwiftBGFX"])
     ],
