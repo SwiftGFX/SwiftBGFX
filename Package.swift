@@ -1,19 +1,22 @@
-// Copyright 2016 Stuart Carnie.
-// License: https://github.com/stuartcarnie/SwiftBGFX#license-bsd-2-clause
-//
+// swift-tools-version:4.0
 
 import PackageDescription
 
 let package = Package(
-    name: "SwiftBGFX",
-	targets: [
-		Target(name: "SwiftBGFX", dependencies: ["Cbgfx"])
-	],
-    dependencies: [
-        .Package(url: "https://github.com/SwiftGFX/SwiftMath", Version(2, 2, 2))
+    name: "Paper",
+    products: [
+        .library(name: "SwiftBGFX", type: .static, targets: ["SwiftBGFX"])
     ],
-    exclude: ["examples"]
+    dependencies: [
+        .package(url: "https://github.com/SwiftGFX/SwiftMath", .upToNextMinor(from: "3.0.0")),
+    ],
+    targets: [
+        .target(
+            name: "SwiftBGFX",
+            dependencies: [
+                .product(name: "SwiftMath"),
+                .target(name: "Cbgfx")
+            ]),
+        .target(name: "Cbgfx")
+    ]
 )
-
-let ar = Product(name: "SwiftBGFX", type: .Library(.Dynamic), modules: "SwiftBGFX")
-products.append(ar)
