@@ -58,6 +58,12 @@ public enum VertexAttributeUsage: UInt32 {
     /// Second color channel.
 	case color1
     
+    /// Third color channel.
+    case color2
+    
+    /// Fourth color channel.
+    case color3
+    
     /// Indices.
 	case indices
     
@@ -353,7 +359,10 @@ public enum TextureFormat: UInt32 {
 public enum UniformType : UInt32 {
     
     /// Single integer.
-    case int1
+    case int1 = 0
+    
+    ///
+    case end
     
     /// 4D vector.
     case vector4 = 2
