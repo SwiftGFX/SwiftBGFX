@@ -26,7 +26,7 @@ extension bgfx {
         }
 
         //var cbi = makeCallbackHandler(callback)
-        return bgfx_init(bgfx_renderer_type_t(type.rawValue), 0, 0, cbi != nil ? cbi! : nil, nil)
+        return bgfx_init(bgfx_renderer_type_t(type.rawValue), 0, 0, cbi, nil)
     }
 
     /// Shutdown the SwiftBGFX library
